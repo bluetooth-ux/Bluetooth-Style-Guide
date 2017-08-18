@@ -1,0 +1,22 @@
+/**
+ * Fabricator styles
+ * @author Luke Askew
+ * Class selectors are namespaced with "f-"
+ */
+
+$settings: (
+	theme: dark,
+	accent: hsl(209, 100%, 49%),
+	menu-width: 14rem
+);
+
+@import 'partials/variables';
+@import 'partials/code';
+@import 'partials/color-chips';
+@import 'partials/controls';
+@import 'partials/item';
+@import 'partials/layout';
+@import 'partials/menu';
+
+//build bootstrap into style guide assembler
+@import '../../../../node_modules/bootstrap/scss/bootstrap';

@@ -1,0 +1,21 @@
+<div class="f-item-controls">
+	{{#if notes}}
+	<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
+		<svg>
+			<use xlink:href="#f-icon-notes" />
+		</svg>
+	</span>
+	{{/if}}
+	<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+		<svg>
+			<use xlink:href="#f-icon-code" />
+		</svg>
+	</span>
+	{{#if data.css}}
+	<span class="f-control f-icon" data-f-toggle-control="css" title="Toggle CSS">
+		<svg>
+			<use xlink:href="#f-icon-css" />
+		</svg>
+	</span>
+	{{/if}}
+</div>

@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+
+	<link rel="stylesheet" href="assets/fabricator/styles/f.css">
+
+	<!-- toolkit styles -->
+	<link rel="stylesheet" href="assets/toolkit/styles/toolkit.css">
+	<!-- /toolkit styles -->
+
+</head>
+<body>
+
+		<!-- fabricator icons -->
+		<svg style="display: none;">
+			<symbol id="f-icon-css" viewBox="0 0 512 512">
+				<path d="M87.32,322.12q0-19.24-14.48-29.41T30.71,282.54V229.68q27.86,0,42.24-9.73t14.37-27.86V120q0-33.84,21.45-47.66t75.41-13.82v49.76q-21.89.66-30.19,8.4t-8.29,22.78v66.12q-1.33,41.58-51.75,49.1v2.65q51.75,7.74,51.75,46.88v68.11q0,15,8.18,22.78t30.3,8.4v50q-54,0-75.41-13.82T87.32,391.78V322.12Z" transform="translate(-30.71 -58.51)"/><path d="M217.3,178.44q0-18.58,10-28.09t29-9.51q18.35,0,28.42,9.73t10.06,27.86q0,17.91-10.28,27.75T256.22,216q-18.58,0-28.75-9.73T217.3,178.44Zm0,160.88q0-18.58,10-28.09t29-9.51q18.35,0,28.42,9.73t10.06,27.86q0,17.47-10.17,27.53t-28.31,10.06q-18.58,0-28.75-9.84T217.3,339.31Z" transform="translate(-30.71 -58.51)"/><path d="M424.68,391.78q0,24.76-9.07,37.37t-30,18.47q-20.9,5.86-57.83,5.86v-50q21.89-.45,30.19-8t8.29-23.22V303.77q0-19,13-30.85t38.48-15.59v-2.65q-50.2-7.52-51.53-49.1V139.46q0-15.48-8.18-23t-30.3-8.18V58.51q36.93,0,57.94,5.86t30,18.58q9,12.72,9,37v72.54q0,18.58,13.6,27.86t43,9.29v52.85q-27.65,0-42.13,9.07t-14.48,30.52v69.66Z" transform="translate(-30.71 -58.51)"/>
+			</symbol>
+			<symbol id="f-icon-code" viewBox="0 0 512 512">
+				<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+			</symbol>
+			<symbol id="f-icon-notes" viewBox="0 0 512 512">
+				<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+			</symbol>
+			<symbol id="f-icon-labels" viewBox="0 0 512 512">
+				<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+			</symbol>
+			<symbol id="f-icon-menu" viewBox="0 0 512 512">
+				<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+			</symbol>
+			<symbol id="f-icon-settings" viewBox="0 0 512 512">
+				<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+			</symbol>
+		</svg>
+		<!-- /fabricator icons -->
+		<!-- fabricator menu -->
+		<div class="f-menu">
+		
+			<div class="f-controls">
+				<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
+					<svg>
+						<use xlink:href="#f-icon-labels" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
+					<svg>
+						<use xlink:href="#f-icon-notes" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
+					<svg>
+						<use xlink:href="#f-icon-code" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="css" title="Toggle CSS">
+					<svg>
+						<use xlink:href="#f-icon-css" />
+					</svg>
+				</div>
+			</div>
+		
+			<ul>
+		
+				<li>
+					<a href="index.html" class="f-menu__heading">Overview</a>
+				</li>
+		
+				<li>
+					<a href="components.html" class="f-menu__heading">Components</a>
+					<ul>
+						<li>
+							<a href="components.html#button">Button</a>
+						</li>
+						<li>
+							<a href="components.html#checkbox">Checkbox</a>
+						</li>
+						<li>
+							<a href="components.html#lists">Lists</a>
+						</li>
+						<li>
+							<a href="components.html#paragraph">Paragraph</a>
+						</li>
+						<li>
+							<a href="components.html#radio">Radio</a>
+						</li>
+						<li>
+							<a href="components.html#select">Select</a>
+						</li>
+						<li>
+							<a href="components.html#table">Table</a>
+						</li>
+						<li>
+							<a href="components.html#text-input">Text Input</a>
+						</li>
+						<li>
+							<a href="components.html#textarea">Textarea</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="structures.html" class="f-menu__heading">Structures</a>
+					<ul>
+						<li>
+							<a href="structures.html#card">Card</a>
+						</li>
+						<li>
+							<a href="structures.html#form">Form</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="updates.html" class="f-menu__heading">Updates</a>
+					<ul>
+						<li>
+							<a href="updates.html#templates">Templates</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="pages.html" class="f-menu__heading">Pages</a>
+					<ul>
+						<li>
+							<a href="pages/home.html" target="_blank">Home</a>
+						</li>
+					</ul>
+				</li>
+		
+				<li>
+					<a href="docs.html" class="f-menu__heading">Docs</a>
+					<ul>
+						<li>
+							<a href="docs.html#code-highlighting">Code Highlighting</a>
+						</li>
+						<li>
+							<a href="docs.html#extensible-style-guide">Extensible Style Guide</a>
+						</li>
+						<li>
+							<a href="docs.html#javascript">Javascript</a>
+						</li>
+						<li>
+							<a href="docs.html#materials">Materials</a>
+						</li>
+						<li>
+							<a href="docs.html#structures">Structures</a>
+						</li>
+						<li>
+							<a href="docs.html#UXSG-troubleshooting">Uxsg Troubleshooting</a>
+						</li>
+					</ul>
+				</li>
+		
+			</ul>
+		
+		
+		</div>
+		<!-- /fabricator menu -->
+		<div class="f-container">
+			<div class="f-control-bar">
+				<div class="f-control f-menu-toggle">
+					<svg>
+						<use xlink:href="#f-icon-menu" />
+					</svg>
+				</div>
+			</div>
+
+
+	
+<h1 data-f-toggle="labels">Docs</h1>
+
+
+	<div class="f-item-group">
+		<h2 id="code-highlighting"><a href="#code-highlighting">Code Highlighting</a></h2>
+		<p>Code highlighting is achieved with <a href="http://prismjs.com/">Prism</a>.</p>
+<p>Wrap the code you want to highlight in a <code>&lt;pre&gt;</code> block to get mono-spacing and a subtle background color. Specify the code language with a class on the <code>&lt;pre&gt;</code> block. Example: <code>&lt;pre class=&quot;language-markup&quot;&gt;</code> for HTML or <code>&lt;pre class=&quot;language-css&quot;&gt;</code> for CSS.</p>
+<p>See the <a href="http://prismjs.com/#languages-list">languages list</a> for supported languages and class names.</p>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="extensible-style-guide"><a href="#extensible-style-guide">Extensible Style Guide</a></h2>
+		<p>Any 'front-matter' data added to a material can be automatically added to the style guide output. (see <a href="#materials">Materials</a> for instructions on adding 'front-matter' data to materials)</p>
+<p>To create additional content types and corresponding toggles, the following files will need to be updated:</p>
+<h4>fabricator.js</h4>
+<p><code>src/assets/fabricator/scripts/fabricator.js</code></p>
+<pre><code class="language-javascript">LINE ~14
+  fabricator.options = {
+    toggles: {
+      labels: true,
+      notes: true,
+      code: false,
+      css: false,
+      NEW_TOGGLE_NAME: {true/false determines if it is checked by default}, //note the trailing comma
+    },
+
+LINE ~87
+  fabricator.allItemsToggles = () =&gt; {
+    const itemCache = {
+      labels: document.querySelectorAll('[data-f-toggle=&quot;labels&quot;]'),
+      notes: document.querySelectorAll('[data-f-toggle=&quot;notes&quot;]'),
+      code: document.querySelectorAll('[data-f-toggle=&quot;code&quot;]'),
+      css: document.querySelectorAll('[data-f-toggle=&quot;css&quot;]'),
+      NEW_TOGGLE_NAME: document.querySelectorAll('[data-f-toggle=&quot;NEW_TOGGLE_NAME&quot;]'), //note the trailing comma
+    };
+</code></pre>
+<h4>f-icons.html</h4>
+<p><code>src/views/layouts/includes/f-icons.html</code></p>
+<pre><code class="language-markup">  &lt;symbol id=&quot;f-icon-NEW_TOGGLE_NAME&quot; viewBox=&quot;0 0 512 512&quot;&gt;
+    &lt;path d=&quot;SOME SVG PATH&quot;/&gt;
+  &lt;/symbol&gt;
+</code></pre>
+<p>This icon will be used both in the main navigation and as the toggle for each individual section. You can save any path from Illustrator as an SVG to use here. Start with a 512pt x 512pt file and 'export' it with the following settings:</p>
+<pre><code class="language-javascript">//Export
+'Format': SVG
+[X]'Use artboards'
+
+//SVG Options
+'Styling': Inline Style
+'Font': Convert To Outlines
+'Images': Preserve //don't use images
+'Object IDs':_ Layer Names //this doesn't matter
+'Decimal': 2 //this doesn't matter
+[X]'Minify' [X]'Responsive'
+</code></pre>
+<p>Open the SVG in your code editor. The output will include a <code>&lt;svg&gt;</code> tag, a <code>&lt;title&gt;</code> tag, and (probably) one <code>&lt;path&gt;</code> tag per shape. Copy all of the <code>&lt;path&gt;</code> tags and paste them into the corresponding <code>symbol</code> declaration (replace the <code>&lt;path d=&quot;SOME SVG PATH&quot;/&gt;</code> in the sample markup above). At the end of each path tag, Illustrator adds a <code>style</code> property with a fill color. Remove that style property to allow the SVG to recolor according to the Fabricator styles.</p>
+<h4>f-controls.html</h4>
+<p><code>src/views/layouts/includes/f-controls.html</code></p>
+<p>This adds the toggle to the main navigation.</p>
+<pre><code class="language-markup">  &lt;div class=&quot;f-control f-global-control&quot; data-f-toggle-control=&quot;NEW_TOGGLE_NAME&quot; title=&quot;Toggle NEW_TOGGLE_NAME&quot;&gt;
+    &lt;svg&gt;
+      &lt;use xlink:href=&quot;#f-icon-NEW_TOGGLE_NAME&quot; /&gt;
+    &lt;/svg&gt;
+  &lt;/div&gt;
+</code></pre>
+<h4>f-item-controls.html</h4>
+<p><code>src/views/layouts/includes/f-item-controls.html</code></p>
+<p>This adds the toggle to the individual component controls.</p>
+<pre><code class="language-markup">  {{#if data.NEW_TOGGLE_NAME}}
+  &lt;span class=&quot;f-control f-icon&quot; data-f-toggle-control=&quot;NEW_TOGGLE_NAME&quot; title=&quot;Toggle NEW_TOGGLE_NAME&quot;&gt;
+    &lt;svg&gt;
+      &lt;use xlink:href=&quot;#f-icon-NEW_TOGGLE_NAME&quot; /&gt;
+    &lt;/svg&gt;
+  &lt;/span&gt;
+  {{/if}}
+</code></pre>
+<h4>f-item-content.html</h4>
+<p><code>src/views/layouts/includes/f-item-content.html</code></p>
+<p>Add this content wherever you want the content to appear in the component template.</p>
+<pre><code class="language-markup">  {{#if data.NEW_TOGGLE_NAME}}
+  &lt;div class=&quot;f-item-NEW_TOGGLE_NAME&quot; data-f-toggle=&quot;NEW_TOGGLE_NAME&quot;&gt;
+    &lt;pre&gt;&lt;code class=&quot;language-NEW_TOGGLE_NAME&quot;&gt;{{{data.NEW_TOGGLE_NAME}}}&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+  {{/if}}
+</code></pre>
+<h4>OPTIONAL: index.js</h4>
+<p><code>node_modules/fabricator-assemble/index.js</code></p>
+<p>If for some reason your data isn't rendering or you need a discrete entity that isn't bundled under data, you can update the <strong>node_module</strong> for the assembler. When using this method, omit the <code>data.</code> from the blocks in the <code>content</code> and <code>controls</code> files above.</p>
+<pre><code class="language-javascript">LINE ~332
+  // capture meta data for the material
+  if (!isSubCollection) {
+    assembly.materials[collection].items[key] = {
+      name: toTitleCase(id),
+      notes: (fileMatter.data.notes) ? md.render(fileMatter.data.notes) : '',
+
+      NEW_TOGGLE_NAME: (fileMatter.data.NEW_TOGGLE_NAME) ? md.render(fileMatter.data.NEW_TOGGLE_NAME) : '',
+
+      data: localData
+    };
+  } else {
+    assembly.materials[parent].items[collection].items[key] = {
+      name: toTitleCase(id.split('.')[1]),
+      notes: (fileMatter.data.notes) ? md.render(fileMatter.data.notes) : '',
+
+      NEW_TOGGLE_NAME: (fileMatter.data.NEW_TOGGLE_NAME) ? md.render(fileMatter.data.NEW_TOGGLE_NAME) : '',
+
+      data: localData
+    };
+  }
+</code></pre>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="javascript"><a href="#javascript">Javascript</a></h2>
+		<p>This is a markdown document.</p>
+<pre><code class="language-javascript">var foo = 'bar'
+</code></pre>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="materials"><a href="#materials">Materials</a></h2>
+		<p>See the <a href="http://fbrctr.github.io/building-a-toolkit/materials.html">Fabricator 'Materials' documentation</a> for basic guidelines.</p>
+<p>Materials have been extended in the following way:</p>
+<ol>
+<li>By adding &quot;front-matter&quot; data, you can also add code-highlighted CSS to any material.</li>
+</ol>
+<p>Be aware, there should already be a JavaScript utility running that collects the relevant rules and properties for each material and adds that code to the styles section for each component.</p>
+<pre><code class="language-markup">---
+notes: This is a note in `markup`.
+css: |
+  .btn {some: styles;}
+  .btn-grey {some: other styles;}
+---
+</code></pre>
+<p>&quot;Front-matter&quot; <code>css</code> data is written in the <code>f-item-content.html</code> template with <code>{{data.css}}</code>. It is rendered as highlighted code in the <code>Styles</code> section of the material.</p>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="structures"><a href="#structures">Structures</a></h2>
+		<p>Structures are groups of components. You can template structures using <a href="Handlebars">http://handlebarsjs.com</a>, which will keep your markup in structures up-to-date with the components they're built on.</p>
+<p>Use <code>{{</code>something<code>}}</code> with a component name in the middle to incorporate components from the <code>materials</code> folder.</p>
+
+	</div>
+
+
+	<div class="f-item-group">
+		<h2 id="UXSG-troubleshooting"><a href="#UXSG-troubleshooting">Uxsg Troubleshooting</a></h2>
+		<p>In order to create the desired behaviors and output in this style guide, some <code>library</code> files had to be modified. This presents a potential maintenance issue in which the modifications could be wiped out or overwritten by updating the libraries or frameworks this style guide is built upon.</p>
+<p>Please use the template when updating this document.</p>
+<p>This document should list all library files that have been modified. Each entry should include the:</p>
+<ol>
+<li>reason for modifying a library file</li>
+<li>absolute file path</li>
+<li>approximate line number(s) that have been modified <!-- LINE ~#-# --></li>
+<li>modified code, with comments <!-- use Prism values and a 'code fence' to block out code. Put the line numbers at the top inside each code block --></li>
+<li>reason for modifying the library files, including: <!-- L5 heading, bold - ##### __filename__ -->
+<ul>
+<li>a summary of the default behavior</li>
+<li>an explanation of the problem</li>
+<li>an explanation of the solution</li>
+</ul>
+</li>
+</ol>
+<!-- TEMPLATE
+#### reason for modifying the file
+`absolute/file/path.md`
+
+```css (this can be any supported PRISM language)
+LINE ~##-##
+  code //try to keep this lean
+  code //comment only what was changed
+  code
+  code //explain the changes below
+  code
+```
+
+##### __Default Behavior__
+Some succinct explanation.
+
+##### __Problem__
+Some explanation of how this is causing an undesirable effect. Provide additional code snippets here to demonstrate the issue if it will add clarity or aid in understanding.
+
+##### __Solution__
+Some explanation of how the solution at the top solves the problem.
+
+---
+
+-->
+<hr>
+<h4>Set Custom Bootstrap Overrides</h4>
+<p><code>/node_modules/bootstrap/scss/bootstrap.scss</code></p>
+<pre><code class="language-css">LINE ~8-12
+  // Core variables and mixins
+  @import &quot;custom&quot;; //moved this line to the top of the list of imports
+  @import &quot;variables&quot;;
+  @import &quot;mixins&quot;;
+</code></pre>
+<h5><strong>Default Behavior</strong></h5>
+<p>Variables in the Bootstrap 4 <code>variables.scss</code> file are all defined with the <code>!default</code> property, meaning that the variables won't be re-assigned if they already have a value.</p>
+<h5><strong>Problem</strong></h5>
+<p><em>Example Code</em></p>
+<pre><code class="language-css">// _variables.scss
+$white: #fff !default;
+$input-bg: $white !default;
+
+// _custom-variables.scss
+$white: #f0f0f0;
+
+// _forms.scss
+.form-control {
+  background-color: $input-bg;
+}
+</code></pre>
+<p>In this example I want to change the value of $white from <code>#fff</code> to <code>#f0f0f0</code>.</p>
+<p>I can override it inside _custom-variables.scss; however, the output of <code>.form-control</code> is still:</p>
+<pre><code class="language-css">.form-control {
+  background-color: #fff;
+}
+</code></pre>
+<p>The problem is that since <code>$white</code> is being referenced in <code>$input-bg</code> before it is overwritten in <code>_custom-variables.scss</code>, the <code>$input-bg</code> variable is defined using the initial value of <code>$white</code>.</p>
+<p>This behavior is true for every reference to <code>$white</code> throughout the style sheet. It is possible to redefine every component that references the custom variables, but that solution requires ongoing maintenance to ensure that all instances of <code>$white</code> correctly update to <code>#f0f0f0</code> as Bootstrap is updated. This problem also grows significantly as the number of customizations increases.</p>
+<h5><strong>Solution</strong></h5>
+<p>By importing the <code>_custom.scss</code> partial before the <code>_variables.scss</code> partial, we're able to set our custom properties as defaults without worrying about the <code>_variables.scss</code> values overwriting them. This also means that all of our custom values will automatically cascade throughout the rest of the style sheets.</p>
+<hr>
+<!-- USE TEMPLATE COMMENTED ABOVE -->
+	</div>
+
+
+
+
+		</div>
+	<script src="assets/fabricator/scripts/f.js"></script>
+
+	<!-- toolkit scripts -->
+	<script src="assets/toolkit/scripts/toolkit.js"></script>
+	<!-- /toolkit scripts -->
+
+</body>
+</html>
