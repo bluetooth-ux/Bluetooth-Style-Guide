@@ -1,4 +1,5 @@
 'use strict';
+require ('./prism');
 var $ = require('jquery');
 var specificity = require('specificity');
 
@@ -71,7 +72,9 @@ window.getParseFilterCSS = function (cssElement) {
 
     return arr; // [ [property, value] , [property, value] ]
   }).forEach(function(potentiallyNestedArray){
-    if (potentiallyNestedArray.reduce(function(a,b){return a.concat(b);}).length > 2) {
+    if (potentiallyNestedArray.reduce(function(a,b){
+        return a === null ? b : a.concat(b);
+      }, []).length > 2) {
       potentiallyNestedArray.forEach(function(array){
         arrayOfProperties.push(array);
       });
@@ -80,7 +83,11 @@ window.getParseFilterCSS = function (cssElement) {
     }
   });
   arrayOfProperties.forEach(function(propertySet){
-    listOfProperties[ propertySet[0].trim() ] = propertySet[1].trim();
+    if (propertySet === undefined) {
+      // do nothing
+    } else {
+      listOfProperties[ propertySet[0].trim() ] = propertySet[1].trim();
+    }
   });
 
   // create a list of all of the selectors that properties are being drawn from, and filter duplicates
@@ -92,14 +99,46 @@ window.getParseFilterCSS = function (cssElement) {
     if($.inArray(el, listOfSelectors) === -1) listOfSelectors.push(el);
   });
 
-  console.log(listOfSelectors, listOfProperties);
-}
-
-window.writeToBody = function (cssElement) {
-  getParseFilterCSS(cssElement).forEach(function(rule){
-    rule = rule.split("{").join("{<ul><li>").split(";").join(";</li><li>").split("<li> }").join("</ul>}");
-    $('body').append($('<div style="margin-left:300px;"/>').append($('<pre/>').html(rule)));
-  });
+  return [listOfSelectors, listOfProperties];
+  //listOfSelectors ["*", "button", ".btn", … ]
+  //listOfProperties {margin: "0px", font-family: "inherit", font-size: "1rem", … }
 };
 
-//writeToBody($(**SOME_ELEMENT**));
+window.writeToBody = function (jqueryElement) {
+  var computedProperties = getParseFilterCSS(jqueryElement[0]);
+  var selectors = computedProperties[0], unorderedProperties = computedProperties[1], orderedProperties = {}, cssPropertiesArray = [];
+
+  var cssPreNode = jqueryElement.parent('.f-item-preview').siblings('.f-item-css').find('pre');
+  var cssCodeNode = cssPreNode.find('code');
+
+  cssPreNode.prepend($('<p/>')
+           .append($('<span class="inherits-heading"/>')
+             .text('inherits from: '))
+           .append($('<span class="inherits-elements"/>')
+             .text(selectors.join(', '))
+           )
+         );
+
+  // alphabetize the properties
+  Object.keys(unorderedProperties).sort().forEach(function(key) {
+    orderedProperties[key] = unorderedProperties[key];
+  });
+
+  // write the properties to an array
+  for (var property in orderedProperties) {
+    cssPropertiesArray.push(property + ': ' + orderedProperties[property] + '; ');
+  }
+
+  cssCodeNode.text('compiled properties {\n\t' + cssPropertiesArray.join('\n\t') + '\n}');
+
+  Prism.highlightElement(cssCodeNode[0])
+};
+
+window.fillAllCssBlocks = function() {
+  // find all elements with CSS 'front-matter'
+  var elements = $('.f-item-css').siblings('.f-item-preview').children();
+  elements.each(function(i, element){
+    // run each element through writeToBody()
+    writeToBody($(element));
+  });
+};

@@ -342,3 +342,5 @@ fabricator
  .buildColorChips()
  .setActiveItem()
  .bindCodeAutoSelect();
+
+fillAllCssBlocks();
