@@ -58,8 +58,6 @@ typings/
 .env
 
 # Keep Bootstrap
-!node_modules/bootstrap/scss/
-!node_modules/bootstrap/scss/*
-!node_modules/bootstrap/scss/**/*
-
-#ignore dist files
+!/node_modules/bootstrap/scss/
+!/node_modules/bootstrap/scss/*
+!/node_modules/bootstrap/scss/**/*
