@@ -60,6 +60,7 @@ window.getParseFilterCSS = function (cssElement) {
 // SECTION 3
   // create an object and add a key for each property.
   // if a key already exists, it will be overwritten.
+  // mappedMatchingRules = [ { selector: [CSS selector(s)], properties: 'some CSS properties' } ]
   nestedArrayOfProperties = mappedMatchingRules.map(function(rule){
     arr = rule.properties.split(';').map(function(properties){
       return properties.split(':');
@@ -79,14 +80,14 @@ window.getParseFilterCSS = function (cssElement) {
     }
   });
   arrayOfProperties.forEach(function(propertySet){
-    listOfProperties[ propertySet[0] ] = propertySet[1];
+    listOfProperties[ propertySet[0].trim() ] = propertySet[1].trim();
   });
 
   // create a list of all of the selectors that properties are being drawn from, and filter duplicates
+  // mappedMatchingRules = [ { selector: [CSS selector(s)], properties: 'some CSS properties' } ]
   duplicativeListOfSelectors = mappedMatchingRules.map(function(rule){
-    return listOfSelectors.indexOf(rule.selector) == -1 ? rule.selector : undefined;
+    return listOfSelectors.indexOf(rule.selector.trim()) == -1 ? rule.selector.trim() : undefined;
   });
-  //need to remove leading ' ' space character from elements before removing duplicates
   $.each(duplicativeListOfSelectors, function(i, el){
     if($.inArray(el, listOfSelectors) === -1) listOfSelectors.push(el);
   });
