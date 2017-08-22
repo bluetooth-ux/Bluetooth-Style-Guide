@@ -52,9 +52,12 @@ window.getParseFilterCSS = function (cssElement) {
     }).filter(function( selector ) {
       return selector !== undefined;
     });
-    matchingSelectors = matchingSelectors.length === 1 ? matchingSelectors[0] : matchingSelectors; // if there is only one element in the array, just return that one element instead of an array containing that one element.
+    matchingSelectors = matchingSelectors.length === 1 ? matchingSelectors[0] : matchingSelectors.sort(function(a, b){return specificity.compare(a, b);})[matchingSelectors.length-1];
+    // is there is only one element in the array? if so, return only that element instead of the whole array
+    // if there is more than one element, find the most specific selector and get rid of the others
     return { selector: matchingSelectors , properties: rule.slice( (rule.indexOf('{')+1) , -1) };
   }).sort(function(a, b){
+    // console.log(a.selector, ", ", b.selector);
     return specificity.compare(a.selector, b.selector);
   });
 
