@@ -21,7 +21,12 @@ window.getParseFilterCSS = function (cssElement) {
     }
   }
 
-// SECTION 1
+/**
+ * SECTION 1
+ 1 Get all rules
+ 2 Filter rules for matching selectors
+ 3 Return array of matching rule strings //["a, .link, button {display: inline-block; padding: 5px;}", "a, input, .bold {font-weight: bold; border: 1px solid blue;}"]
+ */
   var rule, rules;
   if (cssElement.matches && typeof cssElement.matches === 'function') {
     for (var i in sheets) {
@@ -39,9 +44,15 @@ window.getParseFilterCSS = function (cssElement) {
     console.log('cssElement.matches is ', cssElement.matches);
   }
 
-// SECTION 2
+/**
+ * SECTION 2
+ 1 Split selectors per rule
+ 2 Filter for matching selectors (if we're working on an <a>, remove the '.link' and 'button' selectors from the first rule in the SECTION 1 example, and remove 'input' and '.bold' from the second rule)
+ 3 Sort rules by specificity (using Specificity.js)
+ 4 Return an array of matching rule objects [ { selector: 'CSS selector', properties: 'some CSS properties' } , { selector: 'CSS selector', properties: 'some CSS properties' } ]
+ */
   // split arrayOfMatchingRules into an array of objects, filter for matching rules, and sort objects by SPECIFICITY
-  // mappedMatchingRules = [ { selector: [CSS selector(s)], properties: 'some CSS properties' } ]
+  // mappedMatchingRules = [ { selector: 'CSS selector', properties: 'some CSS properties' } ]
   mappedMatchingRules = arrayOfMatchingRules.map(function(rule){
     // rule "*, ::before, ::after { box-sizing: inherit; }"
     selectors = rule.slice(0 , rule.indexOf('{') ).split(','); // [*, ::before, ::after]
@@ -57,14 +68,19 @@ window.getParseFilterCSS = function (cssElement) {
     // if there is more than one element, find the most specific selector and get rid of the others
     return { selector: matchingSelectors , properties: rule.slice( (rule.indexOf('{')+1) , -1) };
   }).sort(function(a, b){
-    // console.log(a.selector, ", ", b.selector);
     return specificity.compare(a.selector, b.selector);
   });
 
-// SECTION 3
+/**
+ * SECTION 3
+ 1 Create an object with CSS properties as keys
+ 2 Flatten arrays
+ 3 Eliminate duplicate & 'undefined' elements
+ 4 Return nested array of aggregate properties and selectors // [ [selector, selector, selector] , {property: value, property: value, property: value} ]
+ */
   // create an object and add a key for each property.
   // if a key already exists, it will be overwritten.
-  // mappedMatchingRules = [ { selector: [CSS selector(s)], properties: 'some CSS properties' } ]
+  // mappedMatchingRules = [ { selector: 'CSS selector', properties: 'some CSS properties' } ]
   nestedArrayOfProperties = mappedMatchingRules.map(function(rule){
     arr = rule.properties.split(';').map(function(properties){
       return properties.split(':');
