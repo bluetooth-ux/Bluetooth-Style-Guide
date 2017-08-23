@@ -1,3 +1,4 @@
+### Front-Matter Data
 Any 'front-matter' data added to a material can be automatically added to the style guide output. (see [Materials](#materials) for instructions on adding 'front-matter' data to materials)
 
 To create additional content types and corresponding toggles, the following files will need to be updated:
@@ -124,3 +125,28 @@ LINE ~332
     };
   }
 ```
+
+### Handlebars Helpers
+#### index.js
+`node_modules/fabricator-assemble/index.js`
+
+Added {{#times [numner]}} function to enable writing a block of code multiple times in a template.
+
+```javascript
+LINE ~219
+  /* HANDLEBARS HELPER */
+  Handlebars.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i)
+        accum += block.fn(i);
+    return accum;
+  });
+```
+
+##### Usage
+```css
+  {{#times 3}}
+    {{> accordion-panel}}
+  {{/times}}
+```
+This will stamp out 3 accordion panels.
