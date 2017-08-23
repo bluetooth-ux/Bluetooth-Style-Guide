@@ -75,6 +75,9 @@
 					<a href="components.html" class="f-menu__heading">Components</a>
 					<ul>
 						<li>
+							<a href="components.html#accordion-panel">Accordion Panel</a>
+						</li>
+						<li>
 							<a href="components.html#alerts">Alerts</a>
 						</li>
 						<li>
@@ -165,9 +168,6 @@
 					<a href="structures.html" class="f-menu__heading">Structures</a>
 					<ul>
 						<li>
-							<a href="structures.html#card">Card</a>
-						</li>
-						<li>
 							<a href="structures.html#form">Form</a>
 						</li>
 					</ul>
@@ -244,7 +244,8 @@
 
 	<div class="f-item-group">
 		<h2 id="extensible-style-guide"><a href="#extensible-style-guide">Extensible Style Guide</a></h2>
-		<p>Any 'front-matter' data added to a material can be automatically added to the style guide output. (see <a href="#materials">Materials</a> for instructions on adding 'front-matter' data to materials)</p>
+		<h3>Front-Matter Data</h3>
+<p>Any 'front-matter' data added to a material can be automatically added to the style guide output. (see <a href="#materials">Materials</a> for instructions on adding 'front-matter' data to materials)</p>
 <p>To create additional content types and corresponding toggles, the following files will need to be updated:</p>
 <h4>fabricator.js</h4>
 <p><code>src/assets/fabricator/scripts/fabricator.js</code></p>
@@ -342,6 +343,25 @@ LINE ~87
     };
   }
 </code></pre>
+<h3>Handlebars Helpers</h3>
+<h4>index.js</h4>
+<p><code>node_modules/fabricator-assemble/index.js</code></p>
+<p>Added {{#times [numner]}} function to enable writing a block of code multiple times in a template.</p>
+<pre><code class="language-javascript">LINE ~219
+  /* HANDLEBARS HELPER */
+  Handlebars.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i &lt; n; ++i)
+        accum += block.fn(i);
+    return accum;
+  });
+</code></pre>
+<h5>Usage</h5>
+<pre><code class="language-css">  {{#times 3}}
+    {{&gt; accordion-panel}}
+  {{/times}}
+</code></pre>
+<p>This will stamp out 3 accordion panels.</p>
 
 	</div>
 
