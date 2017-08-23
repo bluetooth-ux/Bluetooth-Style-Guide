@@ -58,6 +58,11 @@ typings/
 .env
 
 # Keep Bootstrap
-!/node_modules/bootstrap/scss/
-!/node_modules/bootstrap/scss/*
-!/node_modules/bootstrap/scss/**/*
+!node_modules/bootstrap
+node_modules/bootstrap/
+!node_modules/bootstrap/scss
+
+# Keep Fabricator-Assemble
+!node_modules/fabricator-assemble
+node_modules/fabricator-assemble/*
+!node_modules/fabricator-assemble/index.js
