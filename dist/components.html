@@ -125,6 +125,12 @@
 					<a href="modules.html" class="f-menu__heading">Modules</a>
 					<ul>
 						<li>
+							<a href="modules.html#accordion">Accordion</a>
+						</li>
+						<li>
+							<a href="modules.html#card">Card</a>
+						</li>
+						<li>
 							<a href="modules.html#form-group">Form Group</a>
 						</li>
 						<li>
@@ -1518,6 +1524,318 @@
 	<div class="f-item-heading-group">
 		<h2 class="f-item-heading" data-f-toggle="labels">Tables</h2>
 	</div>
+		<div class="f-item-group" id="tables.table-contextual-classes-on-row">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Table Contextual Classes On Row</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<table class="table">
+	<thead>
+		<tr>
+			<th>Type</th>
+			<th>Column heading</th>
+			<th>Column heading</th>
+			<th>Column heading</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="table-active">
+			<th scope="row">Active</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr>
+			<th scope="row">Default</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+
+
+		<tr class="table-primary">
+			<th scope="row">Primary</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-secondary">
+			<th scope="row">Secondary</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-success">
+			<th scope="row">Success</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-danger">
+			<th scope="row">Danger</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-warning">
+			<th scope="row">Warning</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-info">
+			<th scope="row">Info</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-light">
+			<th scope="row">Light</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+		<tr class="table-dark">
+			<th scope="row">Dark</th>
+			<td>Column content</td>
+			<td>Column content</td>
+			<td>Column content</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;table class&#x3D;&quot;table&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;Type&lt;/th&gt;
+			&lt;th&gt;Column heading&lt;/th&gt;
+			&lt;th&gt;Column heading&lt;/th&gt;
+			&lt;th&gt;Column heading&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr class&#x3D;&quot;table-active&quot;&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Active&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Default&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+
+
+		&lt;tr class&#x3D;&quot;table-primary&quot;&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Primary&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;table-secondary&quot;&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Secondary&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;table-success&quot;&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Success&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;table-danger&quot;&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Danger&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;table-warning&quot;&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Warning&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;table-info&quot;&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Info&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;table-light&quot;&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Light&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;table-dark&quot;&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;Dark&lt;/th&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+			&lt;td&gt;Column content&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+</div>
+
+		</div>
+		<div class="f-item-group" id="tables.table-hover">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Table Hover</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Username</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">1</th>
+			<td>Mark</td>
+			<td>Otto</td>
+			<td>@mdo</td>
+		</tr>
+		<tr>
+			<th scope="row">2</th>
+			<td>Jacob</td>
+			<td>Thornton</td>
+			<td>@fat</td>
+		</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td colspan="2">Larry the Bird</td>
+			<td>@twitter</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;table class&#x3D;&quot;table table-hover&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;#&lt;/th&gt;
+			&lt;th&gt;First Name&lt;/th&gt;
+			&lt;th&gt;Last Name&lt;/th&gt;
+			&lt;th&gt;Username&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;1&lt;/th&gt;
+			&lt;td&gt;Mark&lt;/td&gt;
+			&lt;td&gt;Otto&lt;/td&gt;
+			&lt;td&gt;@mdo&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;2&lt;/th&gt;
+			&lt;td&gt;Jacob&lt;/td&gt;
+			&lt;td&gt;Thornton&lt;/td&gt;
+			&lt;td&gt;@fat&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;3&lt;/th&gt;
+			&lt;td colspan&#x3D;&quot;2&quot;&gt;Larry the Bird&lt;/td&gt;
+			&lt;td&gt;@twitter&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+</div>
+
+		</div>
+		<div class="f-item-group" id="tables.table-small">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Table Small</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<table class="table table-sm">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Username</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row">1</th>
+			<td>Mark</td>
+			<td>Otto</td>
+			<td>@mdo</td>
+		</tr>
+		<tr>
+			<th scope="row">2</th>
+			<td>Jacob</td>
+			<td>Thornton</td>
+			<td>@fat</td>
+		</tr>
+		<tr>
+			<th scope="row">3</th>
+			<td colspan="2">Larry the Bird</td>
+			<td>@twitter</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;table class&#x3D;&quot;table table-sm&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr&gt;
+			&lt;th&gt;#&lt;/th&gt;
+			&lt;th&gt;First Name&lt;/th&gt;
+			&lt;th&gt;Last Name&lt;/th&gt;
+			&lt;th&gt;Username&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;1&lt;/th&gt;
+			&lt;td&gt;Mark&lt;/td&gt;
+			&lt;td&gt;Otto&lt;/td&gt;
+			&lt;td&gt;@mdo&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;2&lt;/th&gt;
+			&lt;td&gt;Jacob&lt;/td&gt;
+			&lt;td&gt;Thornton&lt;/td&gt;
+			&lt;td&gt;@fat&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;th scope&#x3D;&quot;row&quot;&gt;3&lt;/th&gt;
+			&lt;td colspan&#x3D;&quot;2&quot;&gt;Larry the Bird&lt;/td&gt;
+			&lt;td&gt;@twitter&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="tables.table-standard">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Table Standard</h3>
