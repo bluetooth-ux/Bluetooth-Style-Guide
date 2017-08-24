@@ -358,22 +358,19 @@ LINE ~87
 <h3>Handlebars Helpers</h3>
 <h4>index.js</h4>
 <p><code>node_modules/fabricator-assemble/index.js</code></p>
-<p>Added {{#times [numner]}} function to enable writing a block of code multiple times in a template.</p>
+<p>Add a {{#NEW_HELPER}} function.</p>
 <pre><code class="language-javascript">LINE ~219
   /* HANDLEBARS HELPER */
-  Handlebars.registerHelper('times', function(n, block) {
-    var accum = '';
-    for(var i = 0; i &lt; n; ++i)
-        accum += block.fn(i);
-    return accum;
+  Handlebars.registerHelper('NEW_HELPER', function(n, block) {
+    // do something to 'block'
   });
 </code></pre>
 <h5>Usage</h5>
-<pre><code class="language-css">  {{#times 3}}
-    {{&gt; accordion-panel}}
-  {{/times}}
+<pre><code class="language-css">  {{#NEW_HELPER}}
+    //html or handlebars block
+  {{/NEW_HELPER}}
 </code></pre>
-<p>This will stamp out 3 accordion panels.</p>
+<p>This will apply the helper to the inner block.</p>
 
 	</div>
 
