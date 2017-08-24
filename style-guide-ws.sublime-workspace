@@ -1,0 +1,218 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/modules/card.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/structures/form.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/navigation/nav-fill-justify.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/tables/table-contextual-classes-on-row.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/modules/accordion.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/blockquote.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/assets/fabricator/scripts/getCSS.js",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/modules/modal.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/buttons/link-button.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/navigation/button-toggle.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/alerts/text-info.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/node_modules/bootstrap/scss/_custom.scss",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/tables/table-striped.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/caption.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/navigation/tabs.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/alerts/dark-alert.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/views/navigation.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/alerts/primary-alert.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/inputs/input-valid-state.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/alerts/Secondary Alert.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/inputs/input-readonly.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/modules/inline-form.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/modules/input-button-group.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/help-text.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/anchor.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/views/modules.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/label.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/buttons/warning-button.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/table.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/textarea.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/select.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/radio.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/checkbox.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/text-input.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/headings/h6.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/button.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/headings/h3.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/components/headings/h2.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/node_modules/fabricator-assemble/index.js",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/.gitattributes",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/.gitignore",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/views/pages.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/views/index.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/views/components.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"</blockquote",
+			"blockquote",
+			"Button",
+			"button",
+			".some-class",
+			"}\n\n",
+			"\n\n.",
+			"B",
+			"b",
+			"<button class=\"btn btn-primary\" id=\"b\">Button</button>"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "style-guide-project.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 245.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
