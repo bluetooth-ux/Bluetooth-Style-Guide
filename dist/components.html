@@ -827,6 +827,36 @@
 	<div class="f-item-heading-group">
 		<h2 class="f-item-heading" data-f-toggle="labels">Buttons</h2>
 	</div>
+		<div class="f-item-group" id="buttons.close-button">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Close Button</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+					<span class="f-control f-icon" data-f-toggle-control="css" title="Toggle CSS">
+						<svg>
+							<use xlink:href="#f-icon-css" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<button type="button" class="close" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+  &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+</div>
+<div class="f-item-css" data-f-toggle="css">
+	<pre><code class="language-css"><!-- display CSS --></code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="buttons.danger-button">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Danger Button</h3>
@@ -1466,10 +1496,9 @@
 	<div class="modal-content">
 		<div class="modal-header">
 			<h5 class="modal-title">Modal title</h5>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<button type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
-		</div>
+        </button> </div>
 		<div class="modal-body">
 			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
 				nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus.</p>
@@ -1485,10 +1514,9 @@
 	&lt;div class&#x3D;&quot;modal-content&quot;&gt;
 		&lt;div class&#x3D;&quot;modal-header&quot;&gt;
 			&lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Modal title&lt;/h5&gt;
-			&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+			&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; aria-label&#x3D;&quot;Close&quot;&gt;
           &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
-        &lt;/button&gt;
-		&lt;/div&gt;
+        &lt;/button&gt; &lt;/div&gt;
 		&lt;div class&#x3D;&quot;modal-body&quot;&gt;
 			&lt;p&gt;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
 				nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;
