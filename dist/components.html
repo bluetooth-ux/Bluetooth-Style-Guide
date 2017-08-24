@@ -84,6 +84,9 @@
 							<a href="components.html#anchor">Anchor</a>
 						</li>
 						<li>
+							<a href="components.html#badge">Badge</a>
+						</li>
+						<li>
 							<a href="components.html#blockquote">Blockquote</a>
 						</li>
 						<li>
@@ -94,6 +97,9 @@
 						</li>
 						<li>
 							<a href="components.html#checkbox">Checkbox</a>
+						</li>
+						<li>
+							<a href="components.html#dropdown">Dropdown</a>
 						</li>
 						<li>
 							<a href="components.html#headings">Headings</a>
@@ -124,6 +130,9 @@
 						</li>
 						<li>
 							<a href="components.html#tables">Tables</a>
+						</li>
+						<li>
+							<a href="components.html#tooltip">Tooltip</a>
 						</li>
 					</ul>
 				</li>
@@ -747,6 +756,36 @@
 </div>
 
 
+<div class="f-item-group" id="badge">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Badge</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+			<span class="f-control f-icon" data-f-toggle-control="css" title="Toggle CSS">
+				<svg>
+					<use xlink:href="#f-icon-css" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<span class="badge badge-secondary">New</span>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;span class&#x3D;&quot;badge badge-secondary&quot;&gt;New&lt;/span&gt;</code></pre>
+</div>
+<div class="f-item-css" data-f-toggle="css">
+	<pre><code class="language-css"><!-- display CSS --></code></pre>
+</div>
+
+
+</div>
+
+
 <div class="f-item-group" id="blockquote">
 
 	<div class="f-item-heading-group" data-f-toggle="labels">
@@ -1051,6 +1090,46 @@
 </div>
 
 
+<div class="f-item-group" id="dropdown">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Dropdown</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<div class="dropdown">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Dropdown button
+  </button>
+	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<a class="dropdown-item" href="#">Action</a>
+		<a class="dropdown-item" href="#">Another action</a>
+		<a class="dropdown-item" href="#">Something else here</a>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;dropdown&quot;&gt;
+	&lt;button class&#x3D;&quot;btn btn-secondary dropdown-toggle&quot; type&#x3D;&quot;button&quot; id&#x3D;&quot;dropdownMenuButton&quot; data-toggle&#x3D;&quot;dropdown&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;
+    Dropdown button
+  &lt;/button&gt;
+	&lt;div class&#x3D;&quot;dropdown-menu&quot; aria-labelledby&#x3D;&quot;dropdownMenuButton&quot;&gt;
+		&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Action&lt;/a&gt;
+		&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Another action&lt;/a&gt;
+		&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Something else here&lt;/a&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+
+</div>
+
+
 <div class="f-item-group" id="headings">
 
 	<div class="f-item-heading-group">
@@ -1275,32 +1354,6 @@
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control is-invalid&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;textInput&quot; placeholder&#x3D;&quot;Input - Invalid State&quot; /&gt;</code></pre>
-</div>
-<div class="f-item-css" data-f-toggle="css">
-	<pre><code class="language-css"><!-- display CSS --></code></pre>
-</div>
-
-		</div>
-		<div class="f-item-group" id="inputs.input-plain-text">
-			<div class="f-item-heading-group" data-f-toggle="labels">
-				<h3 class="f-item-heading">Input Plain Text</h3>
-				<div class="f-item-controls">
-					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
-						<svg>
-							<use xlink:href="#f-icon-code" />
-						</svg>
-					</span>
-					<span class="f-control f-icon" data-f-toggle-control="css" title="Toggle CSS">
-						<svg>
-							<use xlink:href="#f-icon-css" />
-						</svg>
-					</span>
-				</div>
-			</div><div class="f-item-preview">
-	<input class="form-control-plaintext" type="text" id="textInput" value="Input - Static Plain Text" />
-</div>
-<div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control-plaintext&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;textInput&quot; value&#x3D;&quot;Input - Static Plain Text&quot; /&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -2167,6 +2220,32 @@
 </div>
 
 		</div>
+
+</div>
+
+
+<div class="f-item-group" id="tooltip">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Tooltip</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="f-item-preview">
+	<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+  Tooltip on right
+</button>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;right&quot; title&#x3D;&quot;Tooltip on right&quot;&gt;
+  Tooltip on right
+&lt;/button&gt;</code></pre>
+</div>
+
 
 </div>
 
