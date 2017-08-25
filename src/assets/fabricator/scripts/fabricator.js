@@ -18,7 +18,8 @@ fabricator.options = {
     labels: true,
     notes: true,
     code: false,
-    css: true,
+    css: false,
+    variations: true,
   },
   menu: false,
   mq: '(min-width: 60em)',
@@ -193,6 +194,7 @@ fabricator.allItemsToggles = () => {
     notes: document.querySelectorAll('[data-f-toggle="notes"]'),
     code: document.querySelectorAll('[data-f-toggle="code"]'),
     css: document.querySelectorAll('[data-f-toggle="css"]'),
+    variations: document.querySelectorAll('[data-f-toggle="variations"]'),
   };
 
   const toggleAllControls = document.querySelectorAll('.f-controls [data-f-toggle-control]');
