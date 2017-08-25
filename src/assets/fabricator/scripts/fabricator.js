@@ -1,5 +1,6 @@
 require('./prism');
 require('./getCSS');
+require('./getVariations');
 require('jquery');
 /**
  * Global `fabricator` object
@@ -346,6 +347,7 @@ fabricator
  .bindCodeAutoSelect();
 
 fillAllCssBlocks();
+addVariationTags();
 
 
 /**
