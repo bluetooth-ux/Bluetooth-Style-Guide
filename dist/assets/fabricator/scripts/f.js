@@ -48,6 +48,7 @@
 	
 	__webpack_require__(2);
 	__webpack_require__(3);
+	__webpack_require__(4);
 	__webpack_require__(1);
 	/**
 	 * Global `fabricator` object
@@ -66,7 +67,8 @@
 	    labels: true,
 	    notes: true,
 	    code: false,
-	    css: true
+	    css: false,
+	    variations: true
 	  },
 	  menu: false,
 	  mq: '(min-width: 60em)'
@@ -228,7 +230,8 @@
 	    labels: document.querySelectorAll('[data-f-toggle="labels"]'),
 	    notes: document.querySelectorAll('[data-f-toggle="notes"]'),
 	    code: document.querySelectorAll('[data-f-toggle="code"]'),
-	    css: document.querySelectorAll('[data-f-toggle="css"]')
+	    css: document.querySelectorAll('[data-f-toggle="css"]'),
+	    variations: document.querySelectorAll('[data-f-toggle="variations"]')
 	  };
 	
 	  var toggleAllControls = document.querySelectorAll('.f-controls [data-f-toggle-control]');
@@ -361,6 +364,7 @@
 	fabricator.setInitialMenuState().menuToggle().allItemsToggles().singleItemToggle().buildColorChips().setActiveItem().bindCodeAutoSelect();
 	
 	fillAllCssBlocks();
+	addVariationTags();
 	
 	/**
 	 * Prevent events from firing when example elements are clicked
@@ -11228,7 +11232,7 @@
 	
 	__webpack_require__(2);
 	var $ = __webpack_require__(1);
-	var specificity = __webpack_require__(4);
+	var specificity = __webpack_require__(5);
 	
 	window.getParseFilterCSS = function (cssElement) {
 	  // section 1 variables
@@ -11398,6 +11402,24 @@
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(2);
+	var $ = __webpack_require__(1);
+	
+	window.addVariationTags = function () {
+	  // find all elements with CSS 'front-matter'
+	  var elements = $('.f-item-variations').siblings('.f-item-preview').children();
+	  elements.each(function (i, element) {
+	    $(element).attr('data-variation', 'true');
+	    return element;
+	  });
+	};
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var SPECIFICITY = (function() {

@@ -22,6 +22,9 @@
 			<symbol id="f-icon-css" viewBox="0 0 512 512">
 				<path d="M87.32,322.12q0-19.24-14.48-29.41T30.71,282.54V229.68q27.86,0,42.24-9.73t14.37-27.86V120q0-33.84,21.45-47.66t75.41-13.82v49.76q-21.89.66-30.19,8.4t-8.29,22.78v66.12q-1.33,41.58-51.75,49.1v2.65q51.75,7.74,51.75,46.88v68.11q0,15,8.18,22.78t30.3,8.4v50q-54,0-75.41-13.82T87.32,391.78V322.12Z" transform="translate(-30.71 -58.51)"/><path d="M217.3,178.44q0-18.58,10-28.09t29-9.51q18.35,0,28.42,9.73t10.06,27.86q0,17.91-10.28,27.75T256.22,216q-18.58,0-28.75-9.73T217.3,178.44Zm0,160.88q0-18.58,10-28.09t29-9.51q18.35,0,28.42,9.73t10.06,27.86q0,17.47-10.17,27.53t-28.31,10.06q-18.58,0-28.75-9.84T217.3,339.31Z" transform="translate(-30.71 -58.51)"/><path d="M424.68,391.78q0,24.76-9.07,37.37t-30,18.47q-20.9,5.86-57.83,5.86v-50q21.89-.45,30.19-8t8.29-23.22V303.77q0-19,13-30.85t38.48-15.59v-2.65q-50.2-7.52-51.53-49.1V139.46q0-15.48-8.18-23t-30.3-8.18V58.51q36.93,0,57.94,5.86t30,18.58q9,12.72,9,37v72.54q0,18.58,13.6,27.86t43,9.29v52.85q-27.65,0-42.13,9.07t-14.48,30.52v69.66Z" transform="translate(-30.71 -58.51)"/>
 			</symbol>
+			<symbol id="f-icon-variations" viewBox="0 0 512 512">
+				<polygon points="431.03 280.82 431.03 170.68 254.56 170.68 254.56 111.18 287.65 111.18 287.65 0 176.47 0 176.47 111.18 209.56 111.18 209.56 170.68 33.09 170.68 33.09 280.82 0 280.82 0 392 111.18 392 111.18 280.82 78.09 280.82 78.09 215.68 209.56 215.68 209.56 280.82 176.47 280.82 176.47 392 287.65 392 287.65 280.82 254.56 280.82 254.56 215.68 386.03 215.68 386.03 280.82 352.94 280.82 352.94 392 464.12 392 464.12 280.82 431.03 280.82"/>
+			</symbol>
 			<symbol id="f-icon-code" viewBox="0 0 512 512">
 				<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
 			</symbol>
@@ -61,6 +64,11 @@
 				<div class="f-control f-global-control" data-f-toggle-control="css" title="Toggle CSS">
 					<svg>
 						<use xlink:href="#f-icon-css" />
+					</svg>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="variations" title="Toggle Variations">
+					<svg>
+						<use xlink:href="#f-icon-variations" />
 					</svg>
 				</div>
 			</div>
@@ -562,14 +570,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<p class="text-danger">
-	This is a danger text treatment.
-</p>
+	<p class="text-danger">This is a danger text treatment.</p>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-danger&quot;&gt;
-	This is a danger text treatment.
-&lt;/p&gt;</code></pre>
+	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-danger&quot;&gt;This is a danger text treatment.&lt;/p&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -592,14 +596,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<p class="text-info">
-	This is a info text treatment.
-</p>
+	<p class="text-info">This is a info text treatment.</p>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-info&quot;&gt;
-	This is a info text treatment.
-&lt;/p&gt;</code></pre>
+	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-info&quot;&gt;This is a info text treatment.&lt;/p&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -622,14 +622,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<p class="text-primary">
-	This is a primary text treatment.
-</p>
+	<p class="text-primary">This is a primary text treatment.</p>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-primary&quot;&gt;
-	This is a primary text treatment.
-&lt;/p&gt;</code></pre>
+	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-primary&quot;&gt;This is a primary text treatment.&lt;/p&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -652,14 +648,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<p class="text-secondary">
-	This is a secondary text treatment.
-</p>
+	<p class="text-secondary">This is a secondary text treatment.</p>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-secondary&quot;&gt;
-	This is a secondary text treatment.
-&lt;/p&gt;</code></pre>
+	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-secondary&quot;&gt;This is a secondary text treatment.&lt;/p&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -682,14 +674,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<p class="text-success">
-	This is a success text treatment.
-</p>
+	<p class="text-success">This is a success text treatment.</p>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-success&quot;&gt;
-	This is a success text treatment.
-&lt;/p&gt;</code></pre>
+	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-success&quot;&gt;This is a success text treatment.&lt;/p&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -712,14 +700,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<p class="text-warning">
-	This is a warning text treatment.
-</p>
+	<p class="text-warning">This is a warning text treatment.</p>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-warning&quot;&gt;
-	This is a warning text treatment.
-&lt;/p&gt;</code></pre>
+	<pre><code class="language-markup">&lt;p class&#x3D;&quot;text-warning&quot;&gt;This is a warning text treatment.&lt;/p&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -846,19 +830,37 @@
 					<use xlink:href="#f-icon-css" />
 				</svg>
 			</span>
+			<span class="f-control f-icon" data-f-toggle-control="variations" title="Toggle Variations">
+				<svg>
+					<use xlink:href="#f-icon-variations" />
+				</svg>
+			</span>
 		</div>
 	</div><div class="f-item-notes" data-f-toggle="notes">
 	<p>This is a note in <code>markup</code>.</p>
 
 </div>
 <div class="f-item-preview">
-	<button class="btn btn-primary">Button</button>
+	<button class="btn">Button</button>
+<button class="btn btn-primary">Primary Button</button>
+<button class="btn btn-secondary">Secondary Button</button>
+<button class="btn btn-info">Info Button</button>
+<button class="btn btn-warning">Warning Button</button>
+<button class="btn btn-danger">Danger Button</button>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;button class&#x3D;&quot;btn btn-primary&quot;&gt;Button&lt;/button&gt;</code></pre>
+	<pre><code class="language-markup">&lt;button class&#x3D;&quot;btn&quot;&gt;Button&lt;/button&gt;
+&lt;button class&#x3D;&quot;btn btn-primary&quot;&gt;Primary Button&lt;/button&gt;
+&lt;button class&#x3D;&quot;btn btn-secondary&quot;&gt;Secondary Button&lt;/button&gt;
+&lt;button class&#x3D;&quot;btn btn-info&quot;&gt;Info Button&lt;/button&gt;
+&lt;button class&#x3D;&quot;btn btn-warning&quot;&gt;Warning Button&lt;/button&gt;
+&lt;button class&#x3D;&quot;btn btn-danger&quot;&gt;Danger Button&lt;/button&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
+</div>
+<div class="f-item-variations" data-f-toggle="variations">
+	<pre><code class="language-css">.btn-default,.btn-primary,.btn-secondary,.btn-info,.btn-warning,.btn-danger</code></pre>
 </div>
 
 
@@ -1107,9 +1109,7 @@
 		</div>
 	</div><div class="f-item-preview">
 	<div class="dropdown">
-	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ropdown button</button>
 	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 		<a class="dropdown-item" href="#">Action</a>
 		<a class="dropdown-item" href="#">Another action</a>
@@ -1119,9 +1119,7 @@
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;div class&#x3D;&quot;dropdown&quot;&gt;
-	&lt;button class&#x3D;&quot;btn btn-secondary dropdown-toggle&quot; type&#x3D;&quot;button&quot; id&#x3D;&quot;dropdownMenuButton&quot; data-toggle&#x3D;&quot;dropdown&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;
-    Dropdown button
-  &lt;/button&gt;
+	&lt;button class&#x3D;&quot;btn btn-secondary dropdown-toggle&quot; type&#x3D;&quot;button&quot; id&#x3D;&quot;dropdownMenuButton&quot; data-toggle&#x3D;&quot;dropdown&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;ropdown button&lt;/button&gt;
 	&lt;div class&#x3D;&quot;dropdown-menu&quot; aria-labelledby&#x3D;&quot;dropdownMenuButton&quot;&gt;
 		&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Action&lt;/a&gt;
 		&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Another action&lt;/a&gt;
@@ -1316,14 +1314,10 @@
 			</span>
 		</div>
 	</div><div class="f-item-preview">
-	<small class="form-text text-muted">
-  Help text to assist with filling out forms. Picture me below a form input.
-</small>
+	<small class="form-text text-muted">Help text to assist with filling out forms. Picture me below a form input.</small>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;small class&#x3D;&quot;form-text text-muted&quot;&gt;
-  Help text to assist with filling out forms. Picture me below a form input.
-&lt;/small&gt;</code></pre>
+	<pre><code class="language-markup">&lt;small class&#x3D;&quot;form-text text-muted&quot;&gt;Help text to assist with filling out forms. Picture me below a form input.&lt;/small&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -1354,10 +1348,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<input class="form-control is-invalid" type="text" id="textInput" placeholder="Input - Invalid State" />
+	<input class="form-control is-invalid" type="text" placeholder="Input - Invalid State" />
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control is-invalid&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;textInput&quot; placeholder&#x3D;&quot;Input - Invalid State&quot; /&gt;</code></pre>
+	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control is-invalid&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input - Invalid State&quot; /&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -1380,10 +1374,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<input class="form-control" type="text" id="textInput" placeholder="Input - Readonly" readonly />
+	<input class="form-control" type="text" placeholder="Input - Readonly" readonly />
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;textInput&quot; placeholder&#x3D;&quot;Input - Readonly&quot; readonly /&gt;</code></pre>
+	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input - Readonly&quot; readonly /&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -1406,10 +1400,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<input class="form-control is-valid" type="text" id="textInput" placeholder="Input - Valid State" />
+	<input class="form-control is-valid" type="text" placeholder="Input - Valid State" />
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control is-valid&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;textInput&quot; placeholder&#x3D;&quot;Input - Valid State&quot; /&gt;</code></pre>
+	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control is-valid&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Input - Valid State&quot; /&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -1432,10 +1426,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+	<textarea class="form-control" name="" cols="30" rows="10"></textarea>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;textarea class&#x3D;&quot;form-control&quot; name&#x3D;&quot;&quot; id&#x3D;&quot;&quot; cols&#x3D;&quot;30&quot; rows&#x3D;&quot;10&quot;&gt;&lt;/textarea&gt;</code></pre>
+	<pre><code class="language-markup">&lt;textarea class&#x3D;&quot;form-control&quot; name&#x3D;&quot;&quot; cols&#x3D;&quot;30&quot; rows&#x3D;&quot;10&quot;&gt;&lt;/textarea&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -1458,10 +1452,10 @@
 					</span>
 				</div>
 			</div><div class="f-item-preview">
-	<input class="form-control" type="text" id="textInput" />
+	<input class="form-control" type="text" />
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;textInput&quot; /&gt;</code></pre>
+	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; /&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -1577,38 +1571,38 @@
 	</div><div class="f-item-preview">
 	<div class="modal-dialog" role="document">
 	<div class="modal-content">
-		<div class="modal-header">
+		<header class="modal-header">
 			<h5 class="modal-title">Modal title</h5>
 			<button type="button" class="close" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-		</div>
+		</header>
 		<div class="modal-body">
 			<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
 				nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus.</p>
 		</div>
-		<div class="modal-footer">
+		<footer class="modal-footer">
 			<button class="btn btn-primary">Primary Button</button><button class="btn btn-secondary">Secondary Button</button>
-		</div>
+		</footer>
 	</div>
 </div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
 	&lt;div class&#x3D;&quot;modal-content&quot;&gt;
-		&lt;div class&#x3D;&quot;modal-header&quot;&gt;
+		&lt;header class&#x3D;&quot;modal-header&quot;&gt;
 			&lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Modal title&lt;/h5&gt;
 			&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; aria-label&#x3D;&quot;Close&quot;&gt;
           &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
         &lt;/button&gt;
-		&lt;/div&gt;
+		&lt;/header&gt;
 		&lt;div class&#x3D;&quot;modal-body&quot;&gt;
 			&lt;p&gt;Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam id dolor id nibh ultricies vehicula ut id elit. Nullam quis risus eget urna mollis ornare vel eu leo. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
 				nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus.&lt;/p&gt;
 		&lt;/div&gt;
-		&lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+		&lt;footer class&#x3D;&quot;modal-footer&quot;&gt;
 			&lt;button class&#x3D;&quot;btn btn-primary&quot;&gt;Primary Button&lt;/button&gt;&lt;button class&#x3D;&quot;btn btn-secondary&quot;&gt;Secondary Button&lt;/button&gt;
-		&lt;/div&gt;
+		&lt;/footer&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
@@ -2244,14 +2238,10 @@
 			</span>
 		</div>
 	</div><div class="f-item-preview">
-	<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
-  Tooltip on right
-</button>
+	<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;right&quot; title&#x3D;&quot;Tooltip on right&quot;&gt;
-  Tooltip on right
-&lt;/button&gt;</code></pre>
+	<pre><code class="language-markup">&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-toggle&#x3D;&quot;tooltip&quot; data-placement&#x3D;&quot;right&quot; title&#x3D;&quot;Tooltip on right&quot;&gt;Tooltip on right&lt;/button&gt;</code></pre>
 </div>
 
 
