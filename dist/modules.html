@@ -151,7 +151,7 @@
 							<a href="modules.html#accordion">Accordion</a>
 						</li>
 						<li>
-							<a href="modules.html#card">Card</a>
+							<a href="modules.html#cards">Cards</a>
 						</li>
 						<li>
 							<a href="modules.html#form-group">Form Group</a>
@@ -175,6 +175,9 @@
 						</li>
 						<li>
 							<a href="navigation.html#nav-horizontal">Nav Horizontal</a>
+						</li>
+						<li>
+							<a href="navigation.html#nav-list">Nav List</a>
 						</li>
 						<li>
 							<a href="navigation.html#pagination">Pagination</a>
@@ -361,38 +364,81 @@
 </div>
 
 
-<div class="f-item-group" id="card">
+<div class="f-item-group" id="cards">
 
-	<div class="f-item-heading-group" data-f-toggle="labels">
-		<h2 class="f-item-heading">Card</h2>
-		<div class="f-item-controls">
-			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
-				<svg>
-					<use xlink:href="#f-icon-code" />
-				</svg>
-			</span>
-		</div>
-	</div><div class="f-item-preview">
+	<div class="f-item-heading-group">
+		<h2 class="f-item-heading" data-f-toggle="labels">Cards</h2>
+	</div>
+		<div class="f-item-group" id="cards.001-card">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Card</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<div class="col-sm-3">
 	<div class="card">
-	<img class="card-img-top" src="..." alt="Card image cap">
-	<div class="card-body">
-		<h4 class="card-title">Card title</h4>
-		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-		<a href="#" class="btn btn-primary">Go somewhere</a>
+		<div class="card-body">
+			<h4 class="card-title">Card title</h4>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
 	</div>
 </div>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;div class&#x3D;&quot;card&quot;&gt;
-	&lt;img class&#x3D;&quot;card-img-top&quot; src&#x3D;&quot;...&quot; alt&#x3D;&quot;Card image cap&quot;&gt;
-	&lt;div class&#x3D;&quot;card-body&quot;&gt;
-		&lt;h4 class&#x3D;&quot;card-title&quot;&gt;Card title&lt;/h4&gt;
-		&lt;p class&#x3D;&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.&lt;/p&gt;
-		&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;col-sm-3&quot;&gt;
+	&lt;div class&#x3D;&quot;card&quot;&gt;
+		&lt;div class&#x3D;&quot;card-body&quot;&gt;
+			&lt;h4 class&#x3D;&quot;card-title&quot;&gt;Card title&lt;/h4&gt;
+			&lt;p class&#x3D;&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.&lt;/p&gt;
+			&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;
+		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 </div>
 
+		</div>
+		<div class="f-item-group" id="cards.card-with-image">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Card With Image</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="f-item-preview">
+	<div class="col-sm-3">
+	<div class="card">
+		<img class="card-img-top" src="https://www.bluetooth.com/~/media/images/news-events/ledsmeshnews071817.ashx" alt="Card image cap">
+		<div class="card-body">
+			<h4 class="card-title">Card title</h4>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
+	</div>
+</div>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;col-sm-3&quot;&gt;
+	&lt;div class&#x3D;&quot;card&quot;&gt;
+		&lt;img class&#x3D;&quot;card-img-top&quot; src&#x3D;&quot;https://www.bluetooth.com/~/media/images/news-events/ledsmeshnews071817.ashx&quot; alt&#x3D;&quot;Card image cap&quot;&gt;
+		&lt;div class&#x3D;&quot;card-body&quot;&gt;
+			&lt;h4 class&#x3D;&quot;card-title&quot;&gt;Card title&lt;/h4&gt;
+			&lt;p class&#x3D;&quot;card-text&quot;&gt;Some quick example text to build on the card title and make up the bulk of the card&#x27;s content.&lt;/p&gt;
+			&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Go somewhere&lt;/a&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+</div>
+
+		</div>
 
 </div>
 
