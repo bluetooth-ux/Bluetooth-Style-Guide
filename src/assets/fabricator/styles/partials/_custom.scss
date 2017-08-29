@@ -1,0 +1,22 @@
+// FABRICATOR CUSTOMIZATIONS
+// getVariations styles
+[data-variation="true"] {
+	position: relative !important;
+	margin-top: 10px;
+	display:block;
+	margin-right:30%;
+	float:none;
+}
+[data-variation]::after {
+	content: 'class: ' attr(class);
+    position: absolute;
+    bottom: -2px;
+    left: calc(100% + 10px);
+	font: 1rem normal monospace;
+    color: black;
+    background-color: #fff6e3;
+    border: 1px solid #ffd9b8;
+    padding: 3px 5px;
+    border-radius: 3px;
+    white-space: nowrap;
+}

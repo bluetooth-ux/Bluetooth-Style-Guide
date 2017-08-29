@@ -2,6 +2,5 @@
  * Toolkit styles
  */
 
-body {
-  font-family: sans-serif;
-}
+//build bootstrap into style guide output
+@import '../../../../node_modules/bootstrap/scss/bootstrap';

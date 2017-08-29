@@ -17,6 +17,4 @@ $settings: (
 @import 'partials/item';
 @import 'partials/layout';
 @import 'partials/menu';
-
-//build bootstrap into style guide assembler
-@import '../../../../node_modules/bootstrap/scss/bootstrap';
+@import 'partials/custom';
