@@ -2,14 +2,14 @@
     <div class="modal-content">
       <header class="modal-header">
         <h5 class="modal-title">Modal title</h5>
-        {{> buttons.close-button}}
-
+        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </header>
       <div class="modal-body">
         {{> paragraph}}
       </div>
       <footer class="modal-footer">
-        {{> buttons.primary-button}}{{> buttons.secondary-button}}
+        <button class="btn btn-primary">Primary Button</button>
+        <button class="btn btn-secondary">Secondary Button</button>
       </footer>
     </div>
   </div>
