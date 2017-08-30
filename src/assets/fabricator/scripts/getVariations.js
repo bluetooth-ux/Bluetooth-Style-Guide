@@ -12,8 +12,9 @@ window.addVariations = function() {
 			//do something
 			className = className.split('');
 			return className.slice(className.indexOf('.')+1, className.length).join('');
-		});
-		classes.shift(); //removes empty string at the beginning of the array
+		}); //first array element is empty string - generates 'base' rendering
+
+		preview.html(''); //clears contents of preview section
 
 		classes.forEach(function(className){
 			preview.append($(baseElement).clone().addClass(className));
