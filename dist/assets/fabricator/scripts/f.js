@@ -11411,34 +11411,34 @@
 	var $ = __webpack_require__(1);
 	
 	window.addVariations = function () {
-		//dealing with each component's variations block
-		$('.f-item-variations').each(function (i, element) {
-			var preview = $(element).parents('.componentClasses').siblings('.f-item-preview');
-			var baseElement = preview.children()[0];
+			//dealing with each component's variations block
+			$('.f-item-variations').each(function (i, element) {
+					var preview = $(element).parents('.componentClasses').siblings('.f-item-preview');
+					var baseElement = preview.children()[0];
 	
-			var classes = element.textContent.split(' ').map(function (className) {
-				//do something
-				className = className.split('');
-				return className.slice(className.indexOf('.') + 1, className.length).join('');
-			}); //first array element is empty string - generates 'base' rendering
+					var classes = element.textContent.split(' ').map(function (className) {
+							//do something
+							className = className.split('');
+							return className.slice(className.indexOf('.') + 1, className.length).join('');
+					}); //first array element is empty string - generates 'base' rendering
 	
-			preview.html(''); //clears contents of preview section
+					preview.html(''); //clears contents of preview section
 	
-			classes.forEach(function (className) {
-				preview.append($(baseElement).clone().addClass(className));
+					classes.forEach(function (className) {
+							preview.append($(baseElement).clone().addClass(className));
+					});
+	
+					return;
 			});
-	
-			return;
-		});
 	};
 	
 	window.addVariationTags = function () {
-		// find all elements with CSS 'front-matter'
-		var elements = $('.f-item-variations').parents('.componentClasses').siblings('.f-item-preview').children();
-		elements.each(function (i, element) {
-			$(element).attr('data-variation', 'true');
-			return element;
-		});
+			// find all elements with CSS 'front-matter'
+			var elements = $('.f-item-variations').parents('.componentClasses').siblings('.f-item-preview').children();
+			elements.each(function (i, element) {
+					$(element).attr('data-variation', 'true');
+					return element;
+			});
 	};
 
 /***/ }),
