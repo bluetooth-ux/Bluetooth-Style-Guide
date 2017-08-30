@@ -7,6 +7,7 @@ window.addVariations = function() {
 	$('.f-item-variations').each(function(i, element){
 		var preview = $(element).parents('.componentClasses').siblings('.f-item-preview');
 		var baseElement = preview.children()[0];
+		var previewElement = '';
 
 		var classes = element.textContent.split(' ').map(function(className){
 			//do something
@@ -16,8 +17,10 @@ window.addVariations = function() {
 
 		preview.html(''); //clears contents of preview section
 
-		classes.forEach(function(className){
-			preview.append($(baseElement).clone().addClass(className));
+		classes.forEach(function(className, i){
+			previewElement = $(baseElement).clone().addClass(className).attr('data-f-toggle', (i > 0 ? 'variations' : ''));
+			if (className === "readonly") {previewElement.attr('readonly', '');}
+			preview.append( previewElement );
 		});
 
 		return;
