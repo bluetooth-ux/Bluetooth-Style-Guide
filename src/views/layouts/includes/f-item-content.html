@@ -1,6 +1,6 @@
 <div class="componentClasses" data-f-toggle="labels">
 {{#if data.variations}}<pre class="language-markup" data-f-toggle="variations">
-<code class="language-markup">CLASS: {{#if data.base}}{{data.base}}{{else}} (none) {{/if}} +<span class="f-item-variations" data-f-toggle="variations">{{#each data.variations}} {{this}}{{/each}}</span></code>
+<code class="language-markup">CLASS: {{#if data.base}}{{data.base}}{{else}}(none){{/if}} +<span class="f-item-variations" data-f-toggle="variations">{{#each data.variations}} {{this}}{{/each}}</span></code>
 </pre>{{/if}}
 </div>
 {{#if notes}}
