@@ -9,14 +9,32 @@
 }
 [data-variation]::after {
 	content: 'class: ' attr(class);
-    position: absolute;
-    bottom: -2px;
-    left: calc(100% + 10px);
+	position: absolute;
+	bottom: -2px;
+	left: calc(100% + 10px);
 	font: 1rem normal monospace;
+	color: black;
+	background-color: #fff6e3;
+	border: 1px solid #ffd9b8;
+	padding: 3px 5px;
+	border-radius: 3px;
+	white-space: nowrap;
+}
+span.textInputClasses {
+	float:right;
+    font: 1rem normal monospace;
     color: black;
     background-color: #fff6e3;
     border: 1px solid #ffd9b8;
+	margin: 20px 0 0;
     padding: 3px 5px;
     border-radius: 3px;
     white-space: nowrap;
+    &::after{
+    	content:none;
+    	display:none;
+    }
+}
+span.textInputClasses + input[type="text"] {
+	width: 80%;
 }

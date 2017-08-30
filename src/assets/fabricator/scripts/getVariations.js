@@ -20,6 +20,9 @@ window.addVariations = function() {
 		classes.forEach(function(className, i){
 			previewElement = $(baseElement).clone().addClass(className).attr('data-f-toggle', (i > 0 ? 'variations' : ''));
 			if (className === "readonly") {previewElement.attr('readonly', '');}
+			if ($(baseElement).is('input[type="text"]')){
+				preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('data-f-toggle', (i > 0 ? 'variations' : '')));
+			}
 			preview.append( previewElement );
 		});
 
