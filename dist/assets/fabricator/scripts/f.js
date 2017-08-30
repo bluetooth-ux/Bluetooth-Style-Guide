@@ -11416,12 +11416,12 @@
 			var preview = $(element).parents('.componentClasses').siblings('.f-item-preview');
 			var baseElement = preview.children()[0];
 	
-			var classes = element.textContent.split(',').map(function (className) {
+			var classes = element.textContent.split(' ').map(function (className) {
 				//do something
 				className = className.split('');
 				return className.slice(className.indexOf('.') + 1, className.length).join('');
 			});
-			classes.pop(); //removes empty element at end of array
+			classes.shift(); //removes empty string at the beginning of the array
 	
 			classes.forEach(function (className) {
 				preview.append($(baseElement).clone().addClass(className));
