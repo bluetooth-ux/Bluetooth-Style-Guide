@@ -347,6 +347,7 @@ fabricator
  .bindCodeAutoSelect();
 
 fillAllCssBlocks();
+addVariations();
 addVariationTags();
 
 
@@ -363,4 +364,6 @@ $(document).ready(function(){
 
   $('.f-item-preview').find('[href]').each(preventLinkAndButtonEvents);
   $('.f-item-preview').find('button').each(preventLinkAndButtonEvents);
+
+
 });

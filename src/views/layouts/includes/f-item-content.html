@@ -1,3 +1,14 @@
+<div class="componentClasses" data-f-toggle="labels">
+	<p>{{#if data.variations}}
+		Class: {{#if data.base}}{{data.base}}{{else}} (none) {{/if}} +
+		<span class="f-item-variations" data-f-toggle="variations">
+			{{#each data.variations}}
+				{{this}},
+			{{/each}}
+		</span>
+		{{/if}}
+	</p>
+</div>
 {{#if notes}}
 <div class="f-item-notes" data-f-toggle="notes">
 	{{{notes}}}
@@ -12,10 +23,5 @@
 {{#if data.css}}
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css">{{{data.css}}}</code></pre>
-</div>
-{{/if}}
-{{#if data.variations}}
-<div class="f-item-variations" data-f-toggle="variations">
-	<pre><code class="language-css">{{data.variations}}</code></pre>
 </div>
 {{/if}}
