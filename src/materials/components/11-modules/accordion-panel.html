@@ -1,7 +1,7 @@
 ---
+notes: To allow multiple accordion tabs to be open simultaneously, omit the `data-parent` attribute from the `[role="tabpanel"]` `<div>`s.
 css: <!-- display CSS -->
 ---
-{{#iterate 1}}
 <div class="card">
   <div class="card-header" role="tab" id="heading-{{this}}">
     <h5 class="mb-0">
@@ -9,10 +9,9 @@ css: <!-- display CSS -->
     </h5>
   </div>
 
-  <div id="collapse-{{this}}" class="collapse show" role="tabpanel" aria-labelledby="heading-{{this}}" data-parent="#accordion">
+  <div id="collapse-{{this}}" class="collapse show" role="tabpanel" aria-labelledby="heading-{{this}}" data-parent=".accordion">
     <div class="card-body">
       {{> typography.paragraph}}
     </div>
   </div>
 </div>
-{{/iterate}}
