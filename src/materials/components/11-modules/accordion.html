@@ -1,8 +1,24 @@
-<div id="accordion" role="tablist">
+---
+notes: To allow multiple accordion tabs to be open simultaneously, omit the `data-parent` attribute on each `[role="tabpanel"]` `<div>`.
+---
+<div class="accordion" role="tablist">
   {{#iterate 3}}
     {{> modules.accordion-panel}}
   {{/iterate}}
 </div>
+
 <script type="text/javascript">
-	$('.collapse').collapse()
+// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+// use standard ` $(document).ready(function(){ ... }) ` in production code.
+// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+document.addEventListener("DOMContentLoaded", function(event) {
+
+	$('.accordion').find('[role="tabpanel"]').collapse();
+
+	/* ENABLES CLICKING ANYWHERE ON TAB HEADER TO TRIGGER COLLAPSE-TOGGLE */
+	$('.accordion').on('click', '[role="tab"]',function(){
+		$(this).next('[role="tabpanel"]').collapse('toggle');
+	});
+
+});
 </script>
