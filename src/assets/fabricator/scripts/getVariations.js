@@ -1,5 +1,6 @@
 'use strict';
 require ('./prism');
+require ('./getCSS');
 var $ = require('jquery');
 
 window.addVariations = function() {
@@ -26,10 +27,46 @@ window.addVariations = function() {
 			preview.append( previewElement );
 		});
 
+		addVariationStyles(classes, element);
+
 		return;
 	});
 };
 
+function addVariationStyles(variationClasses, element){
+	var styleBlock = $('<pre class="language-css variations" />');
+	var properties;
+	variationClasses.filter(function( selector ) {
+      return selector !== '';
+    }).forEach(function(className){
+    	$('body').append($('<test class='+className+'/>'));
+		styleBlock.append($('<code class="language-css" />'));
+
+		properties = getParseFilterCSS($('test')[0]);
+		var selector = properties[0],
+			unorderedProperties = properties[1],
+			orderedProperties = {},
+			cssPropertiesArray = [];
+/* NEW CODE */
+		// alphabetize the properties
+		Object.keys(unorderedProperties).sort().forEach(function(key) {
+		orderedProperties[key] = unorderedProperties[key];
+		});
+
+		// write the properties to an array
+		for (var property in orderedProperties) {
+		cssPropertiesArray.push(property + ': ' + orderedProperties[property] + '; ');
+		}
+
+		styleBlock.find('code.language-css:last-of-type').text(selector + ' {\n\t' + cssPropertiesArray.join('\n\t') + '\n}');
+
+		//remove $('test') to reset for next loop
+		$('test').remove();
+	});
+	$(element).parents('.componentClasses').siblings('.f-item-css').append(styleBlock);
+
+	Prism.highlightElement(styleBlock);
+}
 
 window.addVariationTags = function() {
   // find all elements with CSS 'front-matter'
