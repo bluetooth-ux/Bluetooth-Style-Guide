@@ -47,7 +47,7 @@ function addVariationStyles(variationClasses, element){
 			unorderedProperties = properties[1],
 			orderedProperties = {},
 			cssPropertiesArray = [];
-/* NEW CODE */
+
 		// alphabetize the properties
 		Object.keys(unorderedProperties).sort().forEach(function(key) {
 		orderedProperties[key] = unorderedProperties[key];
