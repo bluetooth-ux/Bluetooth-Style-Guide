@@ -44,7 +44,7 @@
 
 .f-item-heading-group {
 	@include clearfix;
-	margin-bottom: 2rem;
+	margin-bottom: .6rem; //reduced margin to make it look better
 	vertical-align: middle;
 }
 
