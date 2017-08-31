@@ -11295,21 +11295,29 @@
 	    // rule "*, ::before, ::after { box-sizing: inherit; }"
 	    selectors = rule.slice(0, rule.indexOf('{')).split(','); // [*, ::before, ::after]
 	    matchingSelectors = selectors.map(function (selector) {
-	      if (cssElement.matches && typeof cssElement.matches === 'function' && cssElement.matches(selector)) {
+	      if (cssElement.matches && typeof cssElement.matches === 'function' && cssElement.matches(selector) && selector !== '*') {
 	        return selector;
 	      }
 	    }).filter(function (selector) {
 	      return selector !== undefined;
 	    });
-	    matchingSelectors = matchingSelectors.length === 1 ? matchingSelectors[0] : matchingSelectors.sort(function (a, b) {
-	      return specificity.compare(a, b);
-	    })[matchingSelectors.length - 1];
+	    if (!matchingSelectors.length) {
+	      return;
+	    } else if (matchingSelectors.length === 1) {
+	      matchingSelectors = matchingSelectors[0];
+	    } else {
+	      matchingSelectors = matchingSelectors.sort(function (a, b) {
+	        return specificity.compare(a, b);
+	      })[matchingSelectors.length - 1];
+	    }
 	    // is there is only one element in the array? if so, return only that element instead of the whole array
 	    // if there is more than one element, find the most specific selector and get rid of the others
 	    return { selector: matchingSelectors, properties: rule.slice(rule.indexOf('{') + 1, -1) };
 	  }).sort(function (a, b) {
 	    return specificity.compare(a.selector, b.selector);
-	  });
+	  }).filter(function (style) {
+	    return style !== undefined;
+	  });;
 	
 	  /**
 	   * SECTION 3
@@ -11415,6 +11423,7 @@
 		$('.f-item-variations').each(function (i, element) {
 			var preview = $(element).parents('.componentClasses').siblings('.f-item-preview');
 			var baseElement = preview.children()[0];
+			var previewElement = '';
 	
 			var classes = element.textContent.split(' ').map(function (className) {
 				//do something
@@ -11424,8 +11433,15 @@
 	
 			preview.html(''); //clears contents of preview section
 	
-			classes.forEach(function (className) {
-				preview.append($(baseElement).clone().addClass(className));
+			classes.forEach(function (className, i) {
+				previewElement = $(baseElement).clone().addClass(className).attr('data-f-toggle', i > 0 ? 'variations' : '');
+				if (className === "readonly") {
+					previewElement.attr('readonly', '');
+				}
+				if ($(baseElement).is('input[type="text"]')) {
+					preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('data-f-toggle', i > 0 ? 'variations' : ''));
+				}
+				preview.append(previewElement);
 			});
 	
 			return;
