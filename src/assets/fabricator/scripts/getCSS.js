@@ -158,7 +158,7 @@ window.writeToBody = function (jqueryElement) {
 
   cssCodeNode.text('compiled properties {\n\t' + cssPropertiesArray.join('\n\t') + '\n}');
 
-  Prism.highlightElement(cssCodeNode[0])
+  Prism.highlightElement(cssCodeNode[0]);
 };
 
 window.fillAllCssBlocks = function() {
