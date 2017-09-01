@@ -19,10 +19,10 @@ window.addVariations = function() {
 		preview.html(''); //clears contents of preview section
 
 		classes.forEach(function(className, i){
-			previewElement = $(baseElement).clone().addClass(className).attr('data-f-toggle', (i > 0 ? 'variations' : ''));
+			previewElement = $(baseElement).clone().addClass(className).attr('variation', (i > 0 ? 'true' : ''));
 			if (className === "readonly") {previewElement.attr('readonly', '');}
 			if ($(baseElement).is('input[type="text"]')){
-				preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('data-f-toggle', (i > 0 ? 'variations' : '')));
+				preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('data-f-toggle', (i > 0 ? 'variationsPreview' : '')));
 			}
 			preview.append( previewElement );
 		});
@@ -76,3 +76,30 @@ window.addVariationTags = function() {
     return element;
   });
 };
+
+window.bindVariationToggles = function() {
+	//individual
+	$('[data-f-toggle-control="variations"]').on('click',function(){
+		var controls = $(this).parents('.f-item-heading-group'),
+			classes = controls.siblings('.componentClasses').find('pre'),
+			variations = $(this).parents('.f-item-heading-group').siblings('.f-item-preview').find('[variation="true"]');
+		if (classes.hasClass('f-item-hidden')) {
+			variations.each(function(i, element){
+				$(element).addClass('f-item-hidden');
+			});
+		} else {
+			variations.each(function(i, element){
+				$(element).removeClass('f-item-hidden');
+			});
+		}
+	});
+
+	// global
+	$('.f-global-control[data-f-toggle-control="variations"]').on('click',function(){
+		if ( $(this).hasClass('f-active') ) {
+			$('[data-f-toggle="variationsPreview"]').addClass('f-item-hidden');
+		} else {
+			$('[data-f-toggle="variationsPreview"]').removeClass('f-item-hidden');
+		}
+	});
+}
