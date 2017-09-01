@@ -1,6 +1,7 @@
 require('./prism');
 require('./getCSS');
 require('./getVariations');
+require('./filterSampleText');
 require('jquery');
 /**
  * Global `fabricator` object
@@ -349,6 +350,9 @@ fabricator
 fillAllCssBlocks();
 addVariations();
 addVariationTags();
+bindVariationToggles();
+// running filter before adding variations breaks variations function. Memory leak? Unclosed tag?
+filterSampleText();
 
 
 /**
