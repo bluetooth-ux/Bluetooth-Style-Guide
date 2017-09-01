@@ -268,7 +268,9 @@ fabricator.singleItemToggle = () => {
   const toggleSingleItemCode = (e) => {
     const group = e.currentTarget.parentNode.parentNode.parentNode;
     const type = e.currentTarget.getAttribute('data-f-toggle-control');
-    group.querySelector(`[data-f-toggle=${type}]`).classList.toggle('f-item-hidden');
+    if (group.querySelector(`[data-f-toggle=${type}]`) !== null) {
+      group.querySelector(`[data-f-toggle=${type}]`).classList.toggle('f-item-hidden');
+    }
   };
 
   for (let i = 0; i < itemToggleSingle.length; i++) {
