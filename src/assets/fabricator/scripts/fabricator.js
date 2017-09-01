@@ -343,8 +343,8 @@ fabricator
  .allItemsToggles()
  .singleItemToggle()
  .buildColorChips()
- .setActiveItem()
- .bindCodeAutoSelect();
+ .setActiveItem();
+ //.bindCodeAutoSelect(); //highlight all code in code sections
 
 fillAllCssBlocks();
 addVariations();
