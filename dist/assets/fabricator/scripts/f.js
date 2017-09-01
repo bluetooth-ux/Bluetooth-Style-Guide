@@ -48,6 +48,7 @@
 	
 	__webpack_require__(2);
 	__webpack_require__(3);
+	__webpack_require__(5);
 	__webpack_require__(4);
 	__webpack_require__(1);
 	/**
@@ -361,11 +362,15 @@
 	/**
 	 * Initialization
 	 */
-	fabricator.setInitialMenuState().menuToggle().allItemsToggles().singleItemToggle().buildColorChips().setActiveItem().bindCodeAutoSelect();
+	fabricator.setInitialMenuState().menuToggle().allItemsToggles().singleItemToggle().buildColorChips().setActiveItem();
+	//.bindCodeAutoSelect(); //highlight all code in code sections
 	
 	fillAllCssBlocks();
 	addVariations();
 	addVariationTags();
+	bindVariationToggles();
+	// running filter before adding variations breaks variations function. Memory leak? Unclosed tag?
+	filterSampleText();
 	
 	/**
 	 * Prevent events from firing when example elements are clicked
@@ -11233,7 +11238,7 @@
 	
 	__webpack_require__(2);
 	var $ = __webpack_require__(1);
-	var specificity = __webpack_require__(6);
+	var specificity = __webpack_require__(8);
 	
 	window.getParseFilterCSS = function (cssElement) {
 	  // section 1 variables
@@ -11411,6 +11416,37 @@
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	window.filterSampleText = function () {
+	  $('code').each(function (i, snippet) {
+	    splice(snippet);
+	  });
+	};
+	
+	function splice(snippet) {
+	  var patternBegin = new RegExp("<sample>"),
+	      patternEnd = new RegExp("</sample>"),
+	      partOne = 0,
+	      partTwo = 0,
+	      text = $(snippet).text();
+	
+	  while (patternBegin.test(text)) {
+	    var stringSlices = [];
+	    partOne = text.search(patternBegin);
+	    partTwo = text.search(patternEnd) + 9; // +10 trims off the </sample> (9 characters)
+	    stringSlices.push(text.slice(0, partOne));
+	    stringSlices.push(text.slice(partTwo));
+	    text = stringSlices.join('...');
+	  }
+	
+	  $(snippet).text(text);
+	}
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11420,84 +11456,112 @@
 	var $ = __webpack_require__(1);
 	
 	window.addVariations = function () {
-			//dealing with each component's variations block
-			$('.f-item-variations').each(function (i, element) {
-					var preview = $(element).parents('.componentClasses').siblings('.f-item-preview');
-					var baseElement = preview.children()[0];
-					var previewElement = '';
+		//dealing with each component's variations block
+		$('.f-item-variations').each(function (i, element) {
+			var preview = $(element).parents('.componentClasses').siblings('.f-item-preview');
+			var baseElement = preview.children()[0];
+			var previewElement = '';
 	
-					var classes = element.textContent.split(' ').map(function (className) {
-							//do something
-							className = className.split('');
-							return className.slice(className.indexOf('.') + 1, className.length).join('');
-					}); //first array element is empty string - generates 'base' rendering
+			var classes = element.textContent.split(' ').map(function (className) {
+				//do something
+				className = className.split('');
+				return className.slice(className.indexOf('.') + 1, className.length).join('');
+			}); //first array element is empty string - generates 'base' rendering
 	
-					preview.html(''); //clears contents of preview section
+			preview.html(''); //clears contents of preview section
 	
-					classes.forEach(function (className, i) {
-							previewElement = $(baseElement).clone().addClass(className).attr('data-f-toggle', i > 0 ? 'variations' : '');
-							if (className === "readonly") {
-									previewElement.attr('readonly', '');
-							}
-							if ($(baseElement).is('input[type="text"]')) {
-									preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('data-f-toggle', i > 0 ? 'variations' : ''));
-							}
-							preview.append(previewElement);
-					});
-	
-					addVariationStyles(classes, element);
-	
-					return;
+			classes.forEach(function (className, i) {
+				previewElement = $(baseElement).clone().addClass(className).attr('variation', i > 0 ? 'true' : '');
+				if (className === "readonly") {
+					previewElement.attr('readonly', '');
+				}
+				if ($(baseElement).is('input[type="text"]')) {
+					preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('data-f-toggle', i > 0 ? 'variationsPreview' : ''));
+				}
+				preview.append(previewElement);
 			});
+	
+			addVariationStyles(classes, element);
+	
+			return;
+		});
 	};
 	
 	function addVariationStyles(variationClasses, element) {
-			var styleBlock = $('<pre class="language-css variations" />');
-			var properties;
-			variationClasses.filter(function (selector) {
-					return selector !== '';
-			}).forEach(function (className) {
-					$('body').append($('<test class=' + className + '/>'));
-					styleBlock.append($('<code class="language-css" />'));
+		var styleBlock = $('<pre class="language-css variations" />');
+		var properties;
+		variationClasses.filter(function (selector) {
+			return selector !== '';
+		}).forEach(function (className) {
+			$('body').append($('<test class=' + className + '/>'));
+			styleBlock.append($('<code class="language-css" />'));
 	
-					properties = getParseFilterCSS($('test')[0]);
-					var selector = properties[0],
-					    unorderedProperties = properties[1],
-					    orderedProperties = {},
-					    cssPropertiesArray = [];
+			properties = getParseFilterCSS($('test')[0]);
+			var selector = properties[0],
+			    unorderedProperties = properties[1],
+			    orderedProperties = {},
+			    cssPropertiesArray = [];
 	
-					// alphabetize the properties
-					Object.keys(unorderedProperties).sort().forEach(function (key) {
-							orderedProperties[key] = unorderedProperties[key];
-					});
-	
-					// write the properties to an array
-					for (var property in orderedProperties) {
-							cssPropertiesArray.push(property + ': ' + orderedProperties[property] + '; ');
-					}
-	
-					styleBlock.find('code.language-css:last-of-type').text(selector + ' {\n\t' + cssPropertiesArray.join('\n\t') + '\n}');
-	
-					//remove $('test') to reset for next loop
-					$('test').remove();
+			// alphabetize the properties
+			Object.keys(unorderedProperties).sort().forEach(function (key) {
+				orderedProperties[key] = unorderedProperties[key];
 			});
-			$(element).parents('.componentClasses').siblings('.f-item-css').append(styleBlock);
 	
-			Prism.highlightElement(styleBlock);
+			// write the properties to an array
+			for (var property in orderedProperties) {
+				cssPropertiesArray.push(property + ': ' + orderedProperties[property] + '; ');
+			}
+	
+			styleBlock.find('code.language-css:last-of-type').text(selector + ' {\n\t' + cssPropertiesArray.join('\n\t') + '\n}');
+	
+			//remove $('test') to reset for next loop
+			$('test').remove();
+		});
+		$(element).parents('.componentClasses').siblings('.f-item-css').append(styleBlock);
+	
+		Prism.highlightElement(styleBlock);
 	}
 	
 	window.addVariationTags = function () {
-			// find all elements with CSS 'front-matter'
-			var elements = $('.f-item-variations').parents('.componentClasses').siblings('.f-item-preview').children();
-			elements.each(function (i, element) {
-					$(element).attr('data-variation', 'true');
-					return element;
-			});
+		// find all elements with CSS 'front-matter'
+		var elements = $('.f-item-variations').parents('.componentClasses').siblings('.f-item-preview').children();
+		elements.each(function (i, element) {
+			$(element).attr('data-variation', 'true');
+			return element;
+		});
+	};
+	
+	window.bindVariationToggles = function () {
+		//individual
+		$('[data-f-toggle-control="variations"]').on('click', function () {
+			var controls = $(this).parents('.f-item-heading-group'),
+			    classes = controls.siblings('.componentClasses').find('pre'),
+			    variations = $(this).parents('.f-item-heading-group').siblings('.f-item-preview').find('[variation="true"]');
+			if (classes.hasClass('f-item-hidden')) {
+				variations.each(function (i, element) {
+					$(element).addClass('f-item-hidden');
+				});
+			} else {
+				variations.each(function (i, element) {
+					$(element).removeClass('f-item-hidden');
+				});
+			}
+		});
+	
+		// global
+		$('.f-global-control[data-f-toggle-control="variations"]').on('click', function () {
+			if ($(this).hasClass('f-active')) {
+				$('[data-f-toggle="variationsPreview"]').addClass('f-item-hidden');
+			} else {
+				$('[data-f-toggle="variationsPreview"]').removeClass('f-item-hidden');
+			}
+		});
 	};
 
 /***/ }),
-/* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */,
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var SPECIFICITY = (function() {

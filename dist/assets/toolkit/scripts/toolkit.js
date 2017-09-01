@@ -49,10 +49,11 @@
 	/**
 	 * Toolkit JavaScript
 	 */
-	var jquery = __webpack_require__(1);
-	window.$ = jquery;
+	window.jQuery = __webpack_require__(1);
+	window.$ = window.jQuery;
+	__webpack_require__(7);
 	
-	__webpack_require__(5);
+	__webpack_require__(6);
 
 /***/ }),
 /* 1 */
@@ -10317,7 +10318,24 @@
 /* 2 */,
 /* 3 */,
 /* 4 */,
-/* 5 */
+/* 5 */,
+/* 6 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	// Find elements with inline styles
+	// USAGE run ` debugInlineStyles() ` in inspector console.
+	window.debugInlineStyles = function () {
+		$('[style]').each(function (i, element) {
+			$(element).attr('data-localname', element.localName);
+		});
+	
+		$('body').attr('debug', true);
+	};
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports) {
 
 	/*!
