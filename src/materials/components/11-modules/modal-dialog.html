@@ -15,6 +15,7 @@
 </div>
 
 <!-- Button trigger modal -->
+
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
 </button>
@@ -39,3 +40,21 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+// use standard ` $(document).ready(function(){ ... }) ` in production code.
+// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+document.addEventListener("DOMContentLoaded", function(event) {
+
+  $('div').find('.modal').hide();
+
+  // This is only a good solution if there is one modal on the page
+  // For multiple modals be specific with button and modal IDs
+  $('[data-toggle="modal"]').click(function(){
+    $('.modal').show();
+  });
+
+});
+
+</script>

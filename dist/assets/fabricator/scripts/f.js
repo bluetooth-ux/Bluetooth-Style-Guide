@@ -299,7 +299,9 @@
 	  var toggleSingleItemCode = function toggleSingleItemCode(e) {
 	    var group = e.currentTarget.parentNode.parentNode.parentNode;
 	    var type = e.currentTarget.getAttribute('data-f-toggle-control');
-	    group.querySelector('[data-f-toggle=' + type + ']').classList.toggle('f-item-hidden');
+	    if (group.querySelector('[data-f-toggle=' + type + ']') !== null) {
+	      group.querySelector('[data-f-toggle=' + type + ']').classList.toggle('f-item-hidden');
+	    }
 	  };
 	
 	  for (var i = 0; i < itemToggleSingle.length; i++) {
@@ -369,6 +371,7 @@
 	addVariations();
 	addVariationTags();
 	bindVariationToggles();
+	highlightCSS();
 	// running filter before adding variations breaks variations function. Memory leak? Unclosed tag?
 	filterSampleText();
 	
@@ -11476,7 +11479,7 @@
 					previewElement.attr('readonly', '');
 				}
 				if ($(baseElement).is('input[type="text"]')) {
-					preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('data-f-toggle', i > 0 ? 'variationsPreview' : ''));
+					preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('variation', i > 0 ? 'true' : ''));
 				}
 				preview.append(previewElement);
 			});
@@ -11535,15 +11538,14 @@
 		//individual
 		$('[data-f-toggle-control="variations"]').on('click', function () {
 			var controls = $(this).parents('.f-item-heading-group'),
-			    classes = controls.siblings('.componentClasses').find('pre'),
-			    variations = $(this).parents('.f-item-heading-group').siblings('.f-item-preview').find('[variation="true"]');
-			if (classes.hasClass('f-item-hidden')) {
+			    variations = controls.siblings('.f-item-preview').find('[variation="true"]');
+			if (variations.hasClass('f-item-hidden')) {
 				variations.each(function (i, element) {
-					$(element).addClass('f-item-hidden');
+					$(element).removeClass('f-item-hidden');
 				});
 			} else {
 				variations.each(function (i, element) {
-					$(element).removeClass('f-item-hidden');
+					$(element).addClass('f-item-hidden');
 				});
 			}
 		});
@@ -11551,10 +11553,18 @@
 		// global
 		$('.f-global-control[data-f-toggle-control="variations"]').on('click', function () {
 			if ($(this).hasClass('f-active')) {
-				$('[data-f-toggle="variationsPreview"]').addClass('f-item-hidden');
+				$('[variation="true"]').removeClass('f-item-hidden');
 			} else {
-				$('[data-f-toggle="variationsPreview"]').removeClass('f-item-hidden');
+				$('[variation="true"]').addClass('f-item-hidden');
 			}
+		});
+	};
+	
+	window.highlightCSS = function () {
+		$('[variation]').on('click', function () {
+			var CSSSnippets = $(this).parents('.f-item-preview').siblings('.f-item-css').find('code');
+			CSSSnippets.removeClass('selected');
+			$(CSSSnippets[$(this).index()]).addClass('selected');
 		});
 	};
 

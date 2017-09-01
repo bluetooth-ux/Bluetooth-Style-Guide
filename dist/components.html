@@ -534,7 +534,7 @@
 					</span>
 				</div>
 			</div><div class="componentClasses" data-f-toggle="labels">
-<pre class="language-markup" data-f-toggle="variations">
+<pre class="language-markup" data-f-toggle="classes">
 <code class="language-markup">CLASS: (none) +<span class="f-item-variations"> .text-primary .text-secondary .text-success .text-info .text-warning</span></code>
 </pre>
 </div>
@@ -621,7 +621,7 @@
 					</span>
 				</div>
 			</div><div class="componentClasses" data-f-toggle="labels">
-<pre class="language-markup" data-f-toggle="variations">
+<pre class="language-markup" data-f-toggle="classes">
 <code class="language-markup">CLASS: .btn +<span class="f-item-variations"> .btn-primary .btn-secondary .btn-info .btn-warning .btn-danger</span></code>
 </pre>
 </div>
@@ -1104,7 +1104,7 @@
 					</span>
 				</div>
 			</div><div class="componentClasses" data-f-toggle="labels">
-<pre class="language-markup" data-f-toggle="variations">
+<pre class="language-markup" data-f-toggle="classes">
 <code class="language-markup">CLASS: .form-control +<span class="f-item-variations"> .readonly .is-valid .is-invalid</span></code>
 </pre>
 </div>
@@ -1514,7 +1514,7 @@
 					</span>
 				</div>
 			</div><div class="componentClasses" data-f-toggle="labels">
-<pre class="language-markup" data-f-toggle="variations">
+<pre class="language-markup" data-f-toggle="classes">
 <code class="language-markup">CLASS: .alert +<span class="f-item-variations"> .alert-primary .alert-secondary .alert-success .alert-info .alert-warning .alert-danger</span></code>
 </pre>
 </div>
@@ -1563,7 +1563,7 @@
 					</span>
 				</div>
 			</div><div class="componentClasses" data-f-toggle="labels">
-<pre class="language-markup" data-f-toggle="variations">
+<pre class="language-markup" data-f-toggle="classes">
 <code class="language-markup">CLASS: .badge +<span class="f-item-variations"> .badge-primary .badge-secondary</span></code>
 </pre>
 </div>
@@ -1851,11 +1851,6 @@
 							<use xlink:href="#f-icon-code" />
 						</svg>
 					</span>
-					<span class="f-control f-icon" data-f-toggle-control="css" title="Toggle CSS">
-						<svg>
-							<use xlink:href="#f-icon-css" />
-						</svg>
-					</span>
 					<span class="f-control f-icon" data-f-toggle-control="variations" title="Toggle Variations">
 						<svg>
 							<use xlink:href="#f-icon-variations" />
@@ -1863,7 +1858,7 @@
 					</span>
 				</div>
 			</div><div class="componentClasses" data-f-toggle="labels">
-<pre class="language-markup" data-f-toggle="variations">
+<pre class="language-markup" data-f-toggle="classes">
 <code class="language-markup">CLASS: .table +<span class="f-item-variations"> .table-hover .table-striped .table-sm</span></code>
 </pre>
 </div>
@@ -1942,9 +1937,6 @@
 		&lt;/tr&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-</div>
-<div class="f-item-css" data-f-toggle="css">
-	<pre><code class="language-css"><!-- display CSS --></code></pre>
 </div>
 
 		</div>
@@ -2415,6 +2407,7 @@
 </div>
 
 <!-- Button trigger modal -->
+
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
 </button>
@@ -2439,6 +2432,23 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+	// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+	// use standard ` $(document).ready(function(){ ... }) ` in production code.
+	// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+	document.addEventListener("DOMContentLoaded", function(event) {
+
+		$('div').find('.modal').hide();
+
+		// This is only a good solution if there is one modal on the page
+		// For multiple modals be specific with button and modal IDs
+		$('[data-toggle="modal"]').click(function() {
+			$('.modal').show();
+		});
+
+	});
+</script>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
@@ -2460,6 +2470,7 @@
 &lt;/div&gt;
 
 &lt;!-- Button trigger modal --&gt;
+
 &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#exampleModal&quot;&gt;
   Launch demo modal
 &lt;/button&gt;
@@ -2483,7 +2494,24 @@
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+
+&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+	// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
+	// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
+	// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
+	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+
+		$(&#x27;div&#x27;).find(&#x27;.modal&#x27;).hide();
+
+		// This is only a good solution if there is one modal on the page
+		// For multiple modals be specific with button and modal IDs
+		$(&#x27;[data-toggle&#x3D;&quot;modal&quot;]&#x27;).click(function() {
+			$(&#x27;.modal&#x27;).show();
+		});
+
+	});
+&lt;/script&gt;</code></pre>
 </div>
 
 		</div>
