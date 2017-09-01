@@ -20,6 +20,16 @@
 	border-radius: 3px;
 	white-space: nowrap;
 }
+.table[data-variation="true"] {
+	display: table;
+	magin-right: 0;
+	margin-top: 30px;
+}
+.table[data-variation]::after {
+	top: -1.6rem;
+	bottom: auto;
+	left: 0;
+}
 span.textInputClasses {
 	float:right;
     font: 1rem normal monospace;
