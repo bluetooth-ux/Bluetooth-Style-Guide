@@ -353,6 +353,7 @@ fillAllCssBlocks();
 addVariations();
 addVariationTags();
 bindVariationToggles();
+highlightCSS();
 // running filter before adding variations breaks variations function. Memory leak? Unclosed tag?
 filterSampleText();
 

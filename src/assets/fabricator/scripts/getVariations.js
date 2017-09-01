@@ -102,3 +102,11 @@ window.bindVariationToggles = function() {
 		}
 	});
 }
+
+window.highlightCSS = function() {
+	$('[variation]').on('click', function(){
+		var CSSSnippets = $(this).parents('.f-item-preview').siblings('.f-item-css').find('code');
+		CSSSnippets.removeClass('selected');
+		$(CSSSnippets[$(this).index()]).addClass('selected');
+	});
+}
