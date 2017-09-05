@@ -64,6 +64,23 @@ span.textInputClasses + input[type="text"] {
 .f-item-hidden[variation="true"] {
 	display: none !important;
 }
+// Modal Overrides
+body.modal-open {
+	overflow: hidden !important;
+	& .f-container {
+		transform:none;
+	}
+	.modal {
+		display: unset;
+		opacity: 0;
+		&.show {
+			opacity: 1;
+		}
+	}
+	.modal-backdrop {
+		z-index:-1;
+	}
+}
 
 // Form Builder
 #form-builder {
