@@ -2,13 +2,12 @@ require('./prism');
 require('./getCSS');
 require('./getVariations');
 require('./filterSampleText');
-require('jquery');
 /**
  * Global `fabricator` object
  * @namespace
  */
 var fabricator = window.fabricator = {};
-var jquery = require('jquery');
+window.jquery = require('jquery');
 window.$ = jquery;
 
 /**
