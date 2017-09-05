@@ -17,9 +17,15 @@ function splice (snippet) {
     var stringSlices = [];
     partOne = text.search(patternBegin);
     partTwo = text.search(patternEnd) + 9; // +10 trims off the </sample> (9 characters)
-    stringSlices.push( text.slice( 0 , partOne ) );
-    stringSlices.push( text.slice( partTwo ) );
-    text = stringSlices.join('...');
+    if (partOne === 0) {
+      text = text.slice( partTwo );
+    } else if (partTwo === text.length) {
+      text = text.slice( 0 , partOne );
+    } else {
+      stringSlices.push( text.slice( 0 , partOne ) );
+      stringSlices.push( text.slice( partTwo ) );
+      text = stringSlices.join('...');
+    }
   }
 
   $(snippet).text(text);
