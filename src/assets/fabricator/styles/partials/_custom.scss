@@ -103,11 +103,14 @@ body.modal-open {
 		margin: 20px 0;
 	}
 
-	aside {
+	aside { //container for form builder element reference
 		border-top: 2px solid grey;
 		margin-top: 30px;
 		padding-top: 10px;
 	}
+}
+#form-builder-controls button {
+	cursor: pointer;
 }
 #inputSelect {
 	min-width: 30%;

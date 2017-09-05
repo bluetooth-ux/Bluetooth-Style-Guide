@@ -7,10 +7,11 @@
 
 <form></form>
 
-<div class="container"><div class="row">
+<div class="input-group" id="form-builder-controls">
+	<button class="btn btn-secondary" id="addGroup">Add Form Group</button>
 	<select class="custom-select" id="inputSelect"><!-- input elements --></select>
 	<button class="btn btn-primary" id="addElement">Add Element</button>
-</div></div>
+</div>
 
 <aside>
 	<h3>Form Element Reference</h3>
@@ -41,12 +42,22 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	var form = $('#form-builder form'),
 		selectBox = $('#inputSelect'),
-		formElements = $('.form-builder-element');
+		formElements = $('.form-builder-element'),
+		group;
+
 	formElements.each(function(i, element){
 		selectBox.append($('<option value='+i+' />').text($(element).data('name')));
 	});
+	$('#addGroup').on('click', function(){
+		form.append($('<div class="form-group" />'));
+	});
 	$('#addElement').on('click', function(){
-		form.append($($(formElements[selectBox[0].value]).children()[0]).clone());
+		group = form.find('.form-group:last-of-type');
+		if (group.length === 0) {
+			form.append($('<div class="form-group" />'));
+			group = form.find('.form-group:last-of-type');
+		}
+		group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
 	});
 });
 </script>
