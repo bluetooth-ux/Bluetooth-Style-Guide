@@ -4,7 +4,7 @@
 <select class="custom-select" id="formSelect">
 	<option>Some pre-built form</option>
 </select>
-
+<input class="form-check-input" type="checkbox" id="showOutlines" checked /><label class="form-check-label"> Show Form Group Outlines</label>
 <form></form>
 
 <div class="input-group" id="form-builder-controls">
@@ -47,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	formElements.each(function(i, element){
 		selectBox.append($('<option value='+i+' />').text($(element).data('name')));
+	});
+	$('#showOutlines + label').on('click',function(){
+		$('#showOutlines').click();
 	});
 	$('#addGroup').on('click', function(){
 		form.append($('<div class="form-group" />'));
