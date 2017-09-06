@@ -39,7 +39,7 @@ window.addVariations = function() {
 				previewElement.addClass(className);
 				if (className === "readonly") {previewElement.attr('readonly', '');}
 				if ($(baseElement).is('input[type="text"]')){
-					preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('variation', (i > 0 ? 'true' : '')));
+					preview.append($('<span class="textInputClasses" input-variation="' + previewElement.attr('class') + '">class: ' + previewElement.attr('class') + '</span>').attr('variation', (i > 0 ? 'true' : '')));
 				}
 			}
 			preview.append( previewElement );
