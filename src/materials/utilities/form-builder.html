@@ -58,6 +58,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('#showOutlines').click();
 	});
 	$('#addGroup').on('click', function(){
+		var lastGroup = form.find('.form-group:last-of-type');
+		$('#addGroup').attr('disabled','disabled');
+		if (lastGroup.length === 1 && lastGroup.children().length === 0) { return; }
 		form.append($('<div class="form-group" />'));
 	});
 	$('#addElement').on('click', function(){
@@ -67,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			group = form.find('.form-group:last-of-type');
 		}
 		group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
+		$('#addGroup').removeAttr('disabled');
 	});
 });
 </script>
