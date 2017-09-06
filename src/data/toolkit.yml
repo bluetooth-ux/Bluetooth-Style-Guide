@@ -11,6 +11,5 @@ colors:
     Blue 50%: "#80C0FC"
     Blue 20%: "#CCE6FE"
   secondary:
-    Red: "rgb(201, 55, 6)"
-    Yellow: "rgb(252, 207, 80)"
-    Blue: "rgb(39, 102, 143)"
+    Warning: '#F0AD4E'
+    Danger: '#e60000'
