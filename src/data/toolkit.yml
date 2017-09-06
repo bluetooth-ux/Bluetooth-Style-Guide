@@ -1,7 +1,15 @@
 colors:
-  primary:
-    Dark: "rgb(30, 30, 30)"
-    Light: "rgb(242, 242, 242)"
+  greyscale:
+    Black: "#000000"
+    Gray  Dark: "#65666A"
+    Gray Med: "#D1CFCC"
+    Gray Light: "#EEEEED"
+    White: "#FFFFFF"
+  blues:
+    Blue 100%: "#0082FC"
+    Blue 75%: "#40A0FC"
+    Blue 50%: "#80C0FC"
+    Blue 20%: "#CCE6FE"
   secondary:
     Red: "rgb(201, 55, 6)"
     Yellow: "rgb(252, 207, 80)"
