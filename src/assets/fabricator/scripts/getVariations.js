@@ -6,9 +6,13 @@ var $ = require('jquery');
 window.addVariations = function() {
 	//dealing with each component's variations block
 	$('.f-item-variations').each(function(i, element){
-		var preview = $(element).parents('.componentClasses').siblings('.f-item-preview');
+		var componentClasses = $(element).parents('.componentClasses');
+		var classList = [];
+		var preview = componentClasses.siblings('.f-item-preview');
 		var baseElement = preview.children()[0];
 		var previewElement = '';
+		var iconClass = '';
+		var iconName = '';
 
 		var classes = element.textContent.split(' ').map(function(className){
 			//do something
@@ -18,13 +22,32 @@ window.addVariations = function() {
 
 		preview.html(''); //clears contents of preview section
 
-		classes.forEach(function(className, i){
-			previewElement = $(baseElement).clone().addClass(className).attr('variation', (i > 0 ? 'true' : ''));
-			if (className === "readonly") {previewElement.attr('readonly', '');}
-			if ($(baseElement).is('input[type="text"]')){
-				preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('variation', (i > 0 ? 'true' : '')));
+		classes.forEach(function(className, i, classes){
+			previewElement = $(baseElement).clone().attr('variation', (i > 0 ? 'true' : ''));
+			if ($(baseElement).is('i.fa')){
+				if (className.length > 0) {
+					iconClass = className.slice(0,className.indexOf('|'));
+					iconName = className.slice(className.indexOf('|')+1);
+					iconName = iconName.indexOf('_') > 0 ? iconName.split('_').join(' ') : iconName;
+					previewElement.addClass(iconClass).text(' \u00a0 ' + iconName).attr('data-variation','true');
+					classList.push(' .' + iconClass);
+				} else {
+					// get rid of the empty .fa preview element
+					previewElement = null;
+				}
+			} else {
+				previewElement.addClass(className);
+				if (className === "readonly") {previewElement.attr('readonly', '');}
+				if ($(baseElement).is('input[type="text"]')){
+					preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('variation', (i > 0 ? 'true' : '')));
+				}
 			}
 			preview.append( previewElement );
+
+			if ($(baseElement).is('i.fa') && i === classes.length - 1) {
+				// reset the 'classes' list to strip out the icon name
+				componentClasses.find('code').text('CLASS: .fa +' + classList.join(''));
+			}
 		});
 
 		addVariationStyles(classes, element);

@@ -64,6 +64,17 @@ span.textInputClasses + input[type="text"] {
 .f-item-hidden[variation="true"] {
 	display: none !important;
 }
+
+// Icon Overrides
+.fa[data-variation="true"] {
+	margin-right: 0;
+	min-width: 50%;
+	&::after {
+		left: auto;
+		right: 20px;
+	}
+}
+
 // Modal Overrides
 body.modal-open {
 	overflow: hidden !important;
