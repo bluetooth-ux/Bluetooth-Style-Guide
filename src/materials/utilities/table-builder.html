@@ -2,7 +2,7 @@
 
 <div class="container-fluid"><div class="row">
 	<div class="col-sm-auto">
-	<select id="style" class="form-control">
+	<select id="style" class="custom-select">
 		<option value="">standard table</option>
 		<option value="table-hover">hover highlight</option>
 		<option value="table-striped">striped rows</option>
@@ -11,8 +11,8 @@
 	</div>
 	<div class="col-sm-auto ml-auto">
 		<div class="input-group">
-			<label class="form-check-label"><input class="form-check-input" id="toggleHeader" type="checkbox" /> Header Row</label>
-			<label class="form-check-label"><input class="form-check-input" id="toggleFooter" type="checkbox" /> Footer Row</label>
+			<button class="btn btn-sm btn-primary" id="addRow">Add Row</button>
+			<button class="btn btn-sm" id="removeRow">Remove Row</button>
 		</div>
 	</div>
 </div></div>
@@ -26,8 +26,8 @@
 <div class="container-fluid"><div class="row">
 	<div class="col-sm-auto">
 		<div class="input-group">
-			<button class="btn btn-sm btn-primary" id="addRow">Add Row</button>
-			<button class="btn btn-sm" id="removeRow">Remove Row</button>
+			<label class="form-check-label"><input class="form-check-input" id="toggleHeader" type="checkbox" /> Header Row</label>
+			<label class="form-check-label"><input class="form-check-input" id="toggleFooter" type="checkbox" /> Footer Row</label>
 		</div>
 	</div>
 	<div class="col-sm-auto ml-auto">
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	// ROWS
 	$('#addRow').on('click', function(){
 		row = body.find('tr:last-of-type');
-		body.append(row.clone().removeClass());
+		body.append(row.clone());
 	});
 	$('#removeRow').on('click', function(){
 		if (body.find('tr').length > 1) {
