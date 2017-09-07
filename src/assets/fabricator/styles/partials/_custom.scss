@@ -1,4 +1,29 @@
 // FABRICATOR CUSTOMIZATIONS
+@mixin no-select {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+
+// Main Navigation 'Controls' labels
+.f-controls .f-control {
+	@include no-select;
+	padding: .75rem 0 .5rem;
+	color: #888;
+	&.f-active {
+		color: #fff;
+		background-color: #08447d;
+		& use {
+			fill: #fff;
+		}
+	}
+	span {
+		font-size: .75rem;
+		display: block;
+	}
+}
+
 // getVariations styles
 [data-variation="true"] {
 	position: relative !important;
