@@ -72,5 +72,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
 		$('#addGroup').removeAttr('disabled');
 	});
+
+	// remove unnecessary content
+	$('.f-item-code, .componentClasses').remove();
+	if (window.location.hash) {hideOtherBlocks();}
+	window.onhashchange = hideOtherBlocks;
+
+	function hideOtherBlocks () {
+		$('.f-item-group:not(' + window.location.hash + ')').addClass('f-item-hidden');
+		$(window.location.hash).removeClass('f-item-hidden');
+	}
 });
 </script>

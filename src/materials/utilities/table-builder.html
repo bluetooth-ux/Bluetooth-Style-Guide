@@ -99,5 +99,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			$('tfoot').remove();
 		}
 	});
+
+	// STYLES
+	$('#style').on('change',function(){
+		table.removeClass().addClass('table ' + $(this).val());
+	});
+
+	// remove unnecessary content
+	$('.f-item-code, .componentClasses').remove();
 });
 </script>
