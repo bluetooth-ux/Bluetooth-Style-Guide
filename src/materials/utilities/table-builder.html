@@ -1,0 +1,103 @@
+<p>Once you've finished building your table, use your browser's <code>web inspector</code> to copy the whole <code>&lt;table&gt;</code> element.</p>
+
+<div class="container-fluid"><div class="row">
+	<div class="col-sm-auto">
+	<select id="style" class="form-control">
+		<option value="">standard table</option>
+		<option value="table-hover">hover highlight</option>
+		<option value="table-striped">striped rows</option>
+		<option value="table-sm">small table</option>
+	</select>
+	</div>
+	<div class="col-sm-auto ml-auto">
+		<div class="input-group">
+			<label class="form-check-label"><input class="form-check-input" id="toggleHeader" type="checkbox" /> Header Row</label>
+			<label class="form-check-label"><input class="form-check-input" id="toggleFooter" type="checkbox" /> Footer Row</label>
+		</div>
+	</div>
+</div></div>
+
+<table class="table">
+	<tr>
+		<td>Cell</td>
+	</tr>
+</table>
+
+<div class="container-fluid"><div class="row">
+	<div class="col-sm-auto">
+		<div class="input-group">
+			<button class="btn btn-sm btn-primary" id="addRow">Add Row</button>
+			<button class="btn btn-sm" id="removeRow">Remove Row</button>
+		</div>
+	</div>
+	<div class="col-sm-auto ml-auto">
+		<div class="input-group">
+			<button class="btn btn-sm btn-primary" id="addColumn">Add Column</button>
+			<button class="btn btn-sm" id="removeColumn">Remove Column</button>
+		</div>
+	</div>
+</div></div>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+	var table = $('#table-builder table'),
+		body = table.find('tbody'),
+		row,
+		cell;
+
+	// ROWS
+	$('#addRow').on('click', function(){
+		row = body.find('tr:last-of-type');
+		body.append(row.clone().removeClass());
+	});
+	$('#removeRow').on('click', function(){
+		if (body.find('tr').length > 1) {
+			body.find('tr:last-of-type').remove();
+		}
+	});
+
+	// COLUMNS
+	$('#addColumn').on('click', function(){
+		table.find('tr').each(function(i, row){
+			cell = $(row).find(':last-child').clone();
+			row.append(cell[0]);
+		});
+	});
+	$('#removeColumn').on('click', function(){
+		table.find('tr').each(function(i, row){
+			if ($(row).children().length > 1) {
+				$(row).find(':last-child').remove();
+			}
+		});
+	});
+
+	// HEADER
+	$('#toggleHeader').on('click', function(){
+		if ($(this).is(':checked')) {
+			var tableHeaderRow = $('<tr />');
+			for (var i = 0; i < $('tbody tr:last-child td').length; i++){
+				tableHeaderRow.append($('<th>Header</th>'));
+			}
+			table.prepend($('<thead />').append(tableHeaderRow));
+		} else {
+			$('thead').remove();
+		}
+	});
+	$('#toggleFooter').on('click', function(){
+		if ($(this).is(':checked')) {
+			var tableFooterRow = $('<tr />');
+			for (var i = 0; i < $('tbody tr:last-child td').length; i++){
+				tableFooterRow.append($('<th>Footer</th>'));
+			}
+
+			if ($('thead').length) {
+				$('thead').after($('<tfoot />').append(tableFooterRow));
+			} else {
+				table.prepend($('<tfoot />').append(tableFooterRow));
+			}
+		} else {
+			$('tfoot').remove();
+		}
+	});
+});
+</script>
