@@ -141,7 +141,7 @@ window.writeToBody = function (jqueryElement) {
   var propertiesToFilter = ["touch-action", "-webkit-appearance", "display", "overflow", "flex-direction", "float", "clear", "white-space", "word-wrap", "transition", "background-clip", "cursor", "user-select", "pointer-events"];
 
   if (cssPreNode.find('.inherits-heading').length > 1) {
-    console.log(selectors);
+    // console.log(selectors);
   }
   cssPreNode.prepend($('<p/>')
            .append($('<span class="inherits-heading"/>')
