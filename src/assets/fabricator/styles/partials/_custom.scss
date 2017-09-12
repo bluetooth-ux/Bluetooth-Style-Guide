@@ -5,6 +5,9 @@
 	    -ms-user-select: none;
 	        user-select: none;
 }
+.f-item-preview {
+	overflow-x: auto;
+}
 
 // Main Navigation 'Controls' labels
 .f-controls .f-control {
