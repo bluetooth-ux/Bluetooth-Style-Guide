@@ -1090,26 +1090,34 @@
 			$('.slushbucket').on('click', 'button', function(e) {
 				var allList = $(this).parent().prev('div').find('[role="allList"]'),
 					userList = $(this).parent().next('div').find('[role="userList"]');
-				var selectedRows, srcRow,
-					allOptions = allList.find('option');
+				var selectedRows, srcRow;
 
 				if ($(e.target).attr('role') === "add" || $(e.target).parents('button').attr('role') === "add") {
+					if (allList[0].selectedIndex === -1) {
+						return;
+					}
 					selectedRows = getSelectValues(allList[0]);
 					// copy selected options to userList
 					// mark options that have been moved
 					for (var row in selectedRows) {
 						userList.append($(selectedRows[row]).clone().attr('srcIndex', row));
-						$(selectedRows[row]).addClass('selected');
+						$(selectedRows[row]).after($('<span class="selected"/>').append($(selectedRows[row]).clone()));
+						$(selectedRows[row]).remove();
 					}
 				} else {
+					if (userList[0].selectedIndex === -1) {
+						return;
+					}
 					selectedRows = getSelectValues(userList[0]);
+					var allOptions = allList.find('> *');
 					// un-mark options that have been removed
 					// remove selected options from userList
 					for (var row in selectedRows) {
 						srcRow = $(selectedRows[row]).attr('srcIndex');
 
-						$(allOptions[srcRow]).removeClass('selected');
+						$(allOptions[srcRow]).after($(allOptions[srcRow]).children());
 						$(selectedRows[row]).remove();
+						$(allOptions[srcRow]).remove();
 					}
 				}
 			});
@@ -1167,26 +1175,34 @@
 			$(&#x27;.slushbucket&#x27;).on(&#x27;click&#x27;, &#x27;button&#x27;, function(e) {
 				var allList &#x3D; $(this).parent().prev(&#x27;div&#x27;).find(&#x27;[role&#x3D;&quot;allList&quot;]&#x27;),
 					userList &#x3D; $(this).parent().next(&#x27;div&#x27;).find(&#x27;[role&#x3D;&quot;userList&quot;]&#x27;);
-				var selectedRows, srcRow,
-					allOptions &#x3D; allList.find(&#x27;option&#x27;);
+				var selectedRows, srcRow;
 
 				if ($(e.target).attr(&#x27;role&#x27;) &#x3D;&#x3D;&#x3D; &quot;add&quot; || $(e.target).parents(&#x27;button&#x27;).attr(&#x27;role&#x27;) &#x3D;&#x3D;&#x3D; &quot;add&quot;) {
+					if (allList[0].selectedIndex &#x3D;&#x3D;&#x3D; -1) {
+						return;
+					}
 					selectedRows &#x3D; getSelectValues(allList[0]);
 					// copy selected options to userList
 					// mark options that have been moved
 					for (var row in selectedRows) {
 						userList.append($(selectedRows[row]).clone().attr(&#x27;srcIndex&#x27;, row));
-						$(selectedRows[row]).addClass(&#x27;selected&#x27;);
+						$(selectedRows[row]).after($(&#x27;&lt;span class&#x3D;&quot;selected&quot;/&gt;&#x27;).append($(selectedRows[row]).clone()));
+						$(selectedRows[row]).remove();
 					}
 				} else {
+					if (userList[0].selectedIndex &#x3D;&#x3D;&#x3D; -1) {
+						return;
+					}
 					selectedRows &#x3D; getSelectValues(userList[0]);
+					var allOptions &#x3D; allList.find(&#x27;&gt; *&#x27;);
 					// un-mark options that have been removed
 					// remove selected options from userList
 					for (var row in selectedRows) {
 						srcRow &#x3D; $(selectedRows[row]).attr(&#x27;srcIndex&#x27;);
 
-						$(allOptions[srcRow]).removeClass(&#x27;selected&#x27;);
+						$(allOptions[srcRow]).after($(allOptions[srcRow]).children());
 						$(selectedRows[row]).remove();
+						$(allOptions[srcRow]).remove();
 					}
 				}
 			});

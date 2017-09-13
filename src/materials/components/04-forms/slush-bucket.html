@@ -40,26 +40,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	$('.slushbucket').on('click', 'button', function(e){
 		var allList = $(this).parent().prev('div').find('[role="allList"]'),
 			userList = $(this).parent().next('div').find('[role="userList"]');
-		var selectedRows, srcRow,
-			allOptions = allList.find('option');
+		var selectedRows, srcRow;
 
 		if($(e.target).attr('role') === "add" || $(e.target).parents('button').attr('role') === "add" ){
+			if (allList[0].selectedIndex === -1) {return;}
 			selectedRows = getSelectValues(allList[0]);
 			// copy selected options to userList
 			// mark options that have been moved
 			for (var row in selectedRows) {
 				userList.append( $(selectedRows[row]).clone().attr('srcIndex', row) );
-				$(selectedRows[row]).addClass('selected');
+				$(selectedRows[row]).after($('<span class="selected"/>').append($(selectedRows[row]).clone()));
+				$(selectedRows[row]).remove();
 			}
 		} else {
+			if (userList[0].selectedIndex === -1) {return;}
 			selectedRows = getSelectValues(userList[0]);
+			var allOptions = allList.find('> *');
 			// un-mark options that have been removed
 			// remove selected options from userList
 			for (var row in selectedRows) {
 				srcRow = $(selectedRows[row]).attr('srcIndex');
 
-				$(allOptions[ srcRow ]).removeClass('selected');
+				$(allOptions[srcRow]).after($(allOptions[srcRow]).children());
 				$(selectedRows[row]).remove();
+				$(allOptions[srcRow]).remove();
 			}
 		}
 	});
