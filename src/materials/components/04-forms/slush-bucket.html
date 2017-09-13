@@ -1,3 +1,77 @@
 ---
 notes: <!-- something -->
+base: .slushbucket
+variations:
+  - .stacked
 ---
+<section class="slushbucket">
+<div>
+	<label>All Documents</label>
+	<select size="10" role="allList" multiple>
+		<option><sample>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-First-Item-In-This-List-Version-One.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Second-Item-In-This-List-Version-Two.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Third-Item-In-This-List-Version-Three.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fourth-Item-In-This-List-Version-Four.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fifth-Item-In-This-List-Version-Five.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Sixth-Item-In-This-List-Version-Six.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Seventh-Item-In-This-List-Version-Seven.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Eighth-Item-In-This-List-Version-Eight.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Ninth-Item-In-This-List-Version-Nine.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Tenth-Item-In-This-List-Version-Ten.DOC</sample></option>
+	</select>
+</div>
+
+<nav class="input-group">
+	<button class="btn btn-primary btn-sm" role="add"><span class="stacked nav">Add Document <i class="fa fa-chevron-down"></i></span><i class="fa fa-chevron-right"></i></button>
+	<button class="btn btn-sm" role="remove"><span class="stacked nav">Remove Document <i class="fa fa-chevron-up"></i></span></span><i class="fa fa-chevron-left"></i></button>
+</nav>
+
+<div>
+	<label>Selected Documents</label>
+	<select size="4" role="userList" multiple></select>
+</div>
+</section>
+<sample>
+<script type="text/javascript">
+// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+// use standard ` $(document).ready(function(){ ... }) ` in production code.
+// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+document.addEventListener("DOMContentLoaded", function(event) {
+	$('.slushbucket').on('click', 'button', function(e){
+		var allList = $(this).parent().prev('div').find('[role="allList"]'),
+			userList = $(this).parent().next('div').find('[role="userList"]');
+		var selectedRows, srcRow,
+			allOptions = allList.find('option');
+
+		if($(e.target).attr('role') === "add" || $(e.target).parents('button').attr('role') === "add" ){
+			selectedRows = getSelectValues(allList[0]);
+			// copy selected options to userList
+			// mark options that have been moved
+			for (var row in selectedRows) {
+				userList.append( $(selectedRows[row]).clone().attr('srcIndex', row) );
+				$(selectedRows[row]).addClass('selected');
+			}
+		} else {
+			selectedRows = getSelectValues(userList[0]);
+			// un-mark options that have been removed
+			// remove selected options from userList
+			for (var row in selectedRows) {
+				srcRow = $(selectedRows[row]).attr('srcIndex');
+
+				$(allOptions[ srcRow ]).removeClass('selected');
+				$(selectedRows[row]).remove();
+			}
+		}
+	});
+
+});
+function getSelectValues(bucket) {
+	var result = {};
+	var options = bucket && bucket.options;
+
+	for (var i=0; i < options.length; i++) {
+		if (options[i].selected) { result[i] = options[i]; }
+	}
+	return result;
+}
+</script></sample>
