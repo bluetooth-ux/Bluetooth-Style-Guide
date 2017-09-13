@@ -50,26 +50,31 @@
 					<svg>
 						<use xlink:href="#f-icon-labels" />
 					</svg>
+					<span>Labels</span>
 				</div>
 				<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
 					<svg>
 						<use xlink:href="#f-icon-notes" />
 					</svg>
+					<span>Notes</span>
 				</div>
 				<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
 					<svg>
 						<use xlink:href="#f-icon-code" />
 					</svg>
+					<span>HTML</span>
 				</div>
 				<div class="f-control f-global-control" data-f-toggle-control="css" title="Toggle CSS">
 					<svg>
 						<use xlink:href="#f-icon-css" />
 					</svg>
+					<span>CSS</span>
 				</div>
 				<div class="f-control f-global-control" data-f-toggle-control="variations" title="Toggle Variations">
 					<svg>
 						<use xlink:href="#f-icon-variations" />
 					</svg>
+					<span>Variations</span>
 				</div>
 			</div>
 		
@@ -115,10 +120,13 @@
 					</ul>
 				</li>
 				<li>
-					<a href="pages.html" class="f-menu__heading">Pages</a>
+					<a href="utilities.html" class="f-menu__heading">Utilities</a>
 					<ul>
 						<li>
-							<a href="pages.html#form-components">Form Components</a>
+							<a href="utilities.html#form-builder">Form Builder</a>
+						</li>
+						<li>
+							<a href="utilities.html#table-builder">Table Builder</a>
 						</li>
 					</ul>
 				</li>
@@ -443,6 +451,34 @@
 </div>
 
 		</div>
+		<div class="f-item-group" id="01-typography.icons">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Icons</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+					<span class="f-control f-icon" data-f-toggle-control="variations" title="Toggle Variations">
+						<svg>
+							<use xlink:href="#f-icon-variations" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="componentClasses" data-f-toggle="labels">
+<pre class="language-markup" data-f-toggle="classes">
+<code class="language-markup">CLASS: .fa +<span class="f-item-variations"> .fa-file-excel-o|Excel .fa-files-o|Copy_File .fa-upload|Upload .fa-download|Download .fa-search|Search .fa-external-link|New_Window_/_Tab .fa-check-circle|Success .fa-info-circle|Information .fa-exclamation-triangle|Warning .fa-exclamation-circle|Danger .fa-pencil-square-o|Edit .fa-bars|Layer .fa-envelope-o|Notes .fa-refresh|Refresh .fa-plus|Add .fa-minus|Remove .fa-angle-left|Previous .fa-angle-right|Next .fa-angle-double-left|First .fa-angle-double-right|Last .fa-question-circle|Tooltip_/_Help</span></code>
+</pre>
+</div>
+<div class="f-item-preview">
+	<i class="fa" aria-hidden="true"></i>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;i class&#x3D;&quot;fa&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;</code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="01-typography.list-ordered">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">List Ordered</h3>
@@ -457,7 +493,7 @@
 
 </div>
 <div class="f-item-preview">
-	<ol>
+	<ol class="standard">
 	<li>
 		<sample>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
 	<li>Aliquam tincidunt mauris eu risus.</li>
@@ -466,7 +502,7 @@
 </ol>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;ol&gt;
+	<pre><code class="language-markup">&lt;ol class&#x3D;&quot;standard&quot;&gt;
 	&lt;li&gt;
 		&lt;sample&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
 	&lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
@@ -490,25 +526,21 @@
 
 </div>
 <div class="f-item-preview">
-	<ul>
+	<ul class="standard">
 	<li>
-		<sample>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</sample>
+		<sample>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+	<li>Aliquam tincidunt mauris eu risus.</li>
+	<li>Vestibulum auctor dapibus neque.</sample>
 	</li>
-	<sample>
-		<li>Aliquam tincidunt mauris eu risus.</li>
-		<li>Vestibulum auctor dapibus neque.</li>
-	</sample>
 </ul>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;ul&gt;
+	<pre><code class="language-markup">&lt;ul class&#x3D;&quot;standard&quot;&gt;
 	&lt;li&gt;
-		&lt;sample&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/sample&gt;
+		&lt;sample&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/li&gt;
+	&lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
+	&lt;li&gt;Vestibulum auctor dapibus neque.&lt;/sample&gt;
 	&lt;/li&gt;
-	&lt;sample&gt;
-		&lt;li&gt;Aliquam tincidunt mauris eu risus.&lt;/li&gt;
-		&lt;li&gt;Vestibulum auctor dapibus neque.&lt;/li&gt;
-	&lt;/sample&gt;
 &lt;/ul&gt;</code></pre>
 </div>
 
@@ -595,9 +627,9 @@
 </div>
 
 		</div>
-		<div class="f-item-group" id="02-buttons.buttons">
+		<div class="f-item-group" id="02-buttons.button">
 			<div class="f-item-heading-group" data-f-toggle="labels">
-				<h3 class="f-item-heading">Buttons</h3>
+				<h3 class="f-item-heading">Button</h3>
 				<div class="f-item-controls">
 					<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
 						<svg>
@@ -622,7 +654,7 @@
 				</div>
 			</div><div class="componentClasses" data-f-toggle="labels">
 <pre class="language-markup" data-f-toggle="classes">
-<code class="language-markup">CLASS: .btn +<span class="f-item-variations"> .btn-primary .btn-secondary .btn-info .btn-warning .btn-danger</span></code>
+<code class="language-markup">CLASS: .btn +<span class="f-item-variations"> .btn-sm .btn-primary .btn-secondary .btn-info .btn-warning .btn-danger</span></code>
 </pre>
 </div>
 <div class="f-item-notes" data-f-toggle="notes">
@@ -765,63 +797,6 @@
 </div>
 
 		</div>
-		<div class="f-item-group" id="04-forms.forms-2">
-			<div class="f-item-heading-group" data-f-toggle="labels">
-				<h3 class="f-item-heading">Forms 2</h3>
-				<div class="f-item-controls">
-					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
-						<svg>
-							<use xlink:href="#f-icon-code" />
-						</svg>
-					</span>
-				</div>
-			</div><div class="componentClasses" data-f-toggle="labels">
-
-</div>
-<div class="f-item-preview">
-	<input class="form-control" type="text" /><label class="form-check-label">
-	<input class="form-check-input" type="checkbox" /> Checkbox Label
-</label><small class="form-text text-muted"><sample>Help text to assist with filling out forms. Picture me below a form input.</sample></small><label class="control-label"><sample>Label</sample></label><select class="form-control" name="" id="">
-	<option value=""><sample>Option 1</sample></option>
-	<sample><option value="">Option 2</option>
-	<option value="">Option 3</option>
-	<option value="">Option 4</option>
-	<option value="">Option 5</option></sample>
-</select><label class="form-check-label">
-	<input class="form-check-input" type="radio" name="groupName" id="radio1" /> Radio 1
-</label>
-
-<label class="form-check-label">
-	<input class="form-check-input" type="radio" name="groupName" id="radio2" /> Radio 2
-</label>
-
-<label class="form-check-label">
-	<input class="form-check-input" type="radio" name="groupName" id="radio3" /> Radio 3
-</label><textarea class="form-control" name="" cols="30" rows="10"></textarea><button class="btn"><sample>Button</sample></button>
-</div>
-<div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; /&gt;&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
-	&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; /&gt; Checkbox Label
-&lt;/label&gt;&lt;small class&#x3D;&quot;form-text text-muted&quot;&gt;&lt;sample&gt;Help text to assist with filling out forms. Picture me below a form input.&lt;/sample&gt;&lt;/small&gt;&lt;label class&#x3D;&quot;control-label&quot;&gt;&lt;sample&gt;Label&lt;/sample&gt;&lt;/label&gt;&lt;select class&#x3D;&quot;form-control&quot; name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
-	&lt;option value&#x3D;&quot;&quot;&gt;&lt;sample&gt;Option 1&lt;/sample&gt;&lt;/option&gt;
-	&lt;sample&gt;&lt;option value&#x3D;&quot;&quot;&gt;Option 2&lt;/option&gt;
-	&lt;option value&#x3D;&quot;&quot;&gt;Option 3&lt;/option&gt;
-	&lt;option value&#x3D;&quot;&quot;&gt;Option 4&lt;/option&gt;
-	&lt;option value&#x3D;&quot;&quot;&gt;Option 5&lt;/option&gt;&lt;/sample&gt;
-&lt;/select&gt;&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
-	&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;groupName&quot; id&#x3D;&quot;radio1&quot; /&gt; Radio 1
-&lt;/label&gt;
-
-&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
-	&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;groupName&quot; id&#x3D;&quot;radio2&quot; /&gt; Radio 2
-&lt;/label&gt;
-
-&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
-	&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;groupName&quot; id&#x3D;&quot;radio3&quot; /&gt; Radio 3
-&lt;/label&gt;&lt;textarea class&#x3D;&quot;form-control&quot; name&#x3D;&quot;&quot; cols&#x3D;&quot;30&quot; rows&#x3D;&quot;10&quot;&gt;&lt;/textarea&gt;&lt;button class&#x3D;&quot;btn&quot;&gt;&lt;sample&gt;Button&lt;/sample&gt;&lt;/button&gt;</code></pre>
-</div>
-
-		</div>
 		<div class="f-item-group" id="04-forms.help-text">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Help Text</h3>
@@ -876,11 +851,9 @@
 	</div>
 
 	<div class="form-check mb-2 mr-sm-2 mb-sm-0">
-		<label class="form-check-label">
-      <input class="form-check-input" type="checkbox"> Remember me
-    </label>
+		<label class="form-check-label"><input class="form-check-input" type="checkbox"> Remember me</label>
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<button type="submit" class="btn btn-primary btn-sm">Submit</button>
 </form>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
@@ -895,11 +868,9 @@
 	&lt;/div&gt;
 
 	&lt;div class&#x3D;&quot;form-check mb-2 mr-sm-2 mb-sm-0&quot;&gt;
-		&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
-      &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot;&gt; Remember me
-    &lt;/label&gt;
+		&lt;label class&#x3D;&quot;form-check-label&quot;&gt;&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot;&gt; Remember me&lt;/label&gt;
 	&lt;/div&gt;
-	&lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;
+	&lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary btn-sm&quot;&gt;Submit&lt;/button&gt;
 &lt;/form&gt;</code></pre>
 </div>
 
@@ -921,7 +892,7 @@
 	<div class="input-group">
 	<input type="text" class="form-control" placeholder="Text">
 	<span class="input-group-btn">
-		<button class="btn btn-default" type="button">Action</button>
+		<button class="btn btn-secondary btn-sm" type="button">Action</button>
 	</span>
 </div>
 </div>
@@ -929,7 +900,7 @@
 	<pre><code class="language-markup">&lt;div class&#x3D;&quot;input-group&quot;&gt;
 	&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Text&quot;&gt;
 	&lt;span class&#x3D;&quot;input-group-btn&quot;&gt;
-		&lt;button class&#x3D;&quot;btn btn-default&quot; type&#x3D;&quot;button&quot;&gt;Action&lt;/button&gt;
+		&lt;button class&#x3D;&quot;btn btn-secondary btn-sm&quot; type&#x3D;&quot;button&quot;&gt;Action&lt;/button&gt;
 	&lt;/span&gt;
 &lt;/div&gt;</code></pre>
 </div>
@@ -1054,6 +1025,190 @@
 </div>
 
 		</div>
+		<div class="f-item-group" id="04-forms.slush-bucket">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Slush Bucket</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
+						<svg>
+							<use xlink:href="#f-icon-notes" />
+						</svg>
+					</span>
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+					<span class="f-control f-icon" data-f-toggle-control="variations" title="Toggle Variations">
+						<svg>
+							<use xlink:href="#f-icon-variations" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="componentClasses" data-f-toggle="labels">
+<pre class="language-markup" data-f-toggle="classes">
+<code class="language-markup">CLASS: .slushbucket +<span class="f-item-variations"> .stacked</span></code>
+</pre>
+</div>
+<div class="f-item-notes" data-f-toggle="notes">
+	<!-- something -->
+</div>
+<div class="f-item-preview">
+	<section class="slushbucket">
+	<div>
+		<label>All Documents</label>
+		<select size="10" role="allList" multiple>
+		<option><sample>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-First-Item-In-This-List-Version-One.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Second-Item-In-This-List-Version-Two.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Third-Item-In-This-List-Version-Three.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fourth-Item-In-This-List-Version-Four.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fifth-Item-In-This-List-Version-Five.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Sixth-Item-In-This-List-Version-Six.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Seventh-Item-In-This-List-Version-Seven.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Eighth-Item-In-This-List-Version-Eight.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Ninth-Item-In-This-List-Version-Nine.DOC</option>
+		<option>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Tenth-Item-In-This-List-Version-Ten.DOC</sample></option>
+	</select>
+	</div>
+
+	<nav class="input-group">
+		<button class="btn btn-primary btn-sm" role="add"><span class="stacked nav">Add Document <i class="fa fa-chevron-down"></i></span><i class="fa fa-chevron-right"></i></button>
+		<button class="btn btn-sm" role="remove"><span class="stacked nav">Remove Document <i class="fa fa-chevron-up"></i></span></span><i class="fa fa-chevron-left"></i></button>
+	</nav>
+
+	<div>
+		<label>Selected Documents</label>
+		<select size="4" role="userList" multiple></select>
+	</div>
+</section>
+<sample>
+	<script type="text/javascript">
+		// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard ` $(document).ready(function(){ ... }) ` in production code.
+		// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+		document.addEventListener("DOMContentLoaded", function(event) {
+			$('.slushbucket').on('click', 'button', function(e) {
+				var allList = $(this).parent().prev('div').find('[role="allList"]'),
+					userList = $(this).parent().next('div').find('[role="userList"]');
+				var selectedRows, srcRow,
+					allOptions = allList.find('option');
+
+				if ($(e.target).attr('role') === "add" || $(e.target).parents('button').attr('role') === "add") {
+					selectedRows = getSelectValues(allList[0]);
+					// copy selected options to userList
+					// mark options that have been moved
+					for (var row in selectedRows) {
+						userList.append($(selectedRows[row]).clone().attr('srcIndex', row));
+						$(selectedRows[row]).addClass('selected');
+					}
+				} else {
+					selectedRows = getSelectValues(userList[0]);
+					// un-mark options that have been removed
+					// remove selected options from userList
+					for (var row in selectedRows) {
+						srcRow = $(selectedRows[row]).attr('srcIndex');
+
+						$(allOptions[srcRow]).removeClass('selected');
+						$(selectedRows[row]).remove();
+					}
+				}
+			});
+
+		});
+
+		function getSelectValues(bucket) {
+			var result = {};
+			var options = bucket && bucket.options;
+
+			for (var i = 0; i < options.length; i++) {
+				if (options[i].selected) {
+					result[i] = options[i];
+				}
+			}
+			return result;
+		}
+	</script>
+</sample>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;section class&#x3D;&quot;slushbucket&quot;&gt;
+	&lt;div&gt;
+		&lt;label&gt;All Documents&lt;/label&gt;
+		&lt;select size&#x3D;&quot;10&quot; role&#x3D;&quot;allList&quot; multiple&gt;
+		&lt;option&gt;&lt;sample&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-First-Item-In-This-List-Version-One.DOC&lt;/option&gt;
+		&lt;option&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Second-Item-In-This-List-Version-Two.DOC&lt;/option&gt;
+		&lt;option&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Third-Item-In-This-List-Version-Three.DOC&lt;/option&gt;
+		&lt;option&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fourth-Item-In-This-List-Version-Four.DOC&lt;/option&gt;
+		&lt;option&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fifth-Item-In-This-List-Version-Five.DOC&lt;/option&gt;
+		&lt;option&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Sixth-Item-In-This-List-Version-Six.DOC&lt;/option&gt;
+		&lt;option&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Seventh-Item-In-This-List-Version-Seven.DOC&lt;/option&gt;
+		&lt;option&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Eighth-Item-In-This-List-Version-Eight.DOC&lt;/option&gt;
+		&lt;option&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Ninth-Item-In-This-List-Version-Nine.DOC&lt;/option&gt;
+		&lt;option&gt;ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Tenth-Item-In-This-List-Version-Ten.DOC&lt;/sample&gt;&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;/div&gt;
+
+	&lt;nav class&#x3D;&quot;input-group&quot;&gt;
+		&lt;button class&#x3D;&quot;btn btn-primary btn-sm&quot; role&#x3D;&quot;add&quot;&gt;&lt;span class&#x3D;&quot;stacked nav&quot;&gt;Add Document &lt;i class&#x3D;&quot;fa fa-chevron-down&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;i class&#x3D;&quot;fa fa-chevron-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+		&lt;button class&#x3D;&quot;btn btn-sm&quot; role&#x3D;&quot;remove&quot;&gt;&lt;span class&#x3D;&quot;stacked nav&quot;&gt;Remove Document &lt;i class&#x3D;&quot;fa fa-chevron-up&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/span&gt;&lt;i class&#x3D;&quot;fa fa-chevron-left&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+	&lt;/nav&gt;
+
+	&lt;div&gt;
+		&lt;label&gt;Selected Documents&lt;/label&gt;
+		&lt;select size&#x3D;&quot;4&quot; role&#x3D;&quot;userList&quot; multiple&gt;&lt;/select&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+&lt;sample&gt;
+	&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+		// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
+		// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
+		document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+			$(&#x27;.slushbucket&#x27;).on(&#x27;click&#x27;, &#x27;button&#x27;, function(e) {
+				var allList &#x3D; $(this).parent().prev(&#x27;div&#x27;).find(&#x27;[role&#x3D;&quot;allList&quot;]&#x27;),
+					userList &#x3D; $(this).parent().next(&#x27;div&#x27;).find(&#x27;[role&#x3D;&quot;userList&quot;]&#x27;);
+				var selectedRows, srcRow,
+					allOptions &#x3D; allList.find(&#x27;option&#x27;);
+
+				if ($(e.target).attr(&#x27;role&#x27;) &#x3D;&#x3D;&#x3D; &quot;add&quot; || $(e.target).parents(&#x27;button&#x27;).attr(&#x27;role&#x27;) &#x3D;&#x3D;&#x3D; &quot;add&quot;) {
+					selectedRows &#x3D; getSelectValues(allList[0]);
+					// copy selected options to userList
+					// mark options that have been moved
+					for (var row in selectedRows) {
+						userList.append($(selectedRows[row]).clone().attr(&#x27;srcIndex&#x27;, row));
+						$(selectedRows[row]).addClass(&#x27;selected&#x27;);
+					}
+				} else {
+					selectedRows &#x3D; getSelectValues(userList[0]);
+					// un-mark options that have been removed
+					// remove selected options from userList
+					for (var row in selectedRows) {
+						srcRow &#x3D; $(selectedRows[row]).attr(&#x27;srcIndex&#x27;);
+
+						$(allOptions[srcRow]).removeClass(&#x27;selected&#x27;);
+						$(selectedRows[row]).remove();
+					}
+				}
+			});
+
+		});
+
+		function getSelectValues(bucket) {
+			var result &#x3D; {};
+			var options &#x3D; bucket &amp;&amp; bucket.options;
+
+			for (var i &#x3D; 0; i &lt; options.length; i++) {
+				if (options[i].selected) {
+					result[i] &#x3D; options[i];
+				}
+			}
+			return result;
+		}
+	&lt;/script&gt;
+&lt;/sample&gt;</code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="04-forms.text-area">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Text Area</h3>
@@ -1105,14 +1260,14 @@
 				</div>
 			</div><div class="componentClasses" data-f-toggle="labels">
 <pre class="language-markup" data-f-toggle="classes">
-<code class="language-markup">CLASS: .form-control +<span class="f-item-variations"> .readonly .is-valid .is-invalid</span></code>
+<code class="language-markup">CLASS: .form-control +<span class="f-item-variations"> .input-lg .input-sm .readonly .is-valid .is-invalid</span></code>
 </pre>
 </div>
 <div class="f-item-preview">
-	<input class="form-control" type="text" />
+	<input class="form-control" type="text" placeholder="Placeholder text" />
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; /&gt;</code></pre>
+	<pre><code class="language-markup">&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Placeholder text&quot; /&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -1655,6 +1810,265 @@
 	<div class="f-item-heading-group">
 		<h2 class="f-item-heading" data-f-toggle="labels">Tables</h2>
 	</div>
+		<div class="f-item-group" id="10-tables.nested-table">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Nested Table</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="componentClasses" data-f-toggle="labels">
+
+</div>
+<div class="f-item-preview">
+	<table aria-describedby="DataTables_Table_3_info" class="table table-striped table-hover ng-isolate-scope dataTable no-footer" datatable="" dt-columns="ctrl.dtColumns_technicaleditor" dt-instance="ctrl.OnInstanceReady" dt-options="ctrl.dtOptions_technicaleditor"
+ id="DataTables_Table_3" role="grid" style="display: table;" width="100%">
+	<thead>
+		<tr role="row">
+			<th class="sorting_disabled"></th>
+			<th>Review Title</th>
+			<th>Type</th>
+			<th>Phase</th>
+			<th>Documents To Review</th>
+			<th>Assoc. Group</th>
+			<th>Status</th>
+			<th>Requested Date</th>
+			<th>Due Date</th>
+			<th>Comments</th>
+			<th class="sorting_disabled"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd" id="trReview_145d5ad0-00a1-4cea-aeb6-c3da57cd7445" role="row">
+			<td><span class="glyphicon glyphicon-minus-sign"></span></td>
+			<td>
+				<a>GATT Caching Improvements [08]</a>
+			</td>
+			<td>Core</td>
+			<td>FIPD</td>
+			<td>
+				<a>Core_GATT_Caching_FIPDr01.docx</a>
+			</td>
+			<td>
+				<a>Core Specification Working Group (core)</a>
+			</td>
+			<td><span class="text-primary">Reviewers Assigned</span></td>
+			<td><time datetime="2017-08-31T03:21:21">2017-08-31 <b>03:21:21</b></td>
+			<td><time datetime="2017-09-14T00:00:00">2017-09-14 <b>00:00:00</b></td>
+			<td></td>
+			<td>
+				<a>Projected Dates</a>
+			</td>
+		</tr>
+		<tr class="taskTable">
+			<td class="taskTable" colspan="11">
+				<table class="nestedTaskTable dataTable no-footer" role="grid">
+					<thead>
+						<tr role="row">
+							<th>Task</th>
+							<th>Assigned To</th>
+							<th>Status</th>
+							<th>Due Date</th>
+							<th>Completed Date</th>
+							<th>Reviewed Document(s)</th>
+							<th>Comments</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="odd" role="row">
+							<td>
+								<a>GATT Caching Improvements [08]</a>
+							</td>
+							<td>Peter Hecke (Bluetooth SIG, Inc.)</td>
+							<td>Not Started</td>
+							<td><time datetime="2017-09-14T07:00:00">2017-09-14 <b>07:00:00</b></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr class="even" role="row">
+			<td><span class="glyphicon glyphicon-plus-sign"></span></td>
+			<td>
+				<a>Beacons for Mesh Channel Indication [01]</a>
+			</td>
+			<td>Core</td>
+			<td>FRD</td>
+			<td>
+				<a>Core_BLE_Mesh_Enhancements_FRD_r07.docx</a>
+			</td>
+			<td>
+				<a>Core Specification WG NWP Subgroup (core-nwp)</a>
+			</td>
+			<td><span class="text-primary">Reviewers Assigned</span></td>
+			<td><time datetime="2017-08-29T11:10:32">2017-08-29 <b>11:10:32</b></td>
+			<td><time datetime="2017-09-12T00:00:00">2017-09-12 <b>00:00:00</b></td>
+			<td></td>
+			<td>
+				<a>Projected Dates</a>
+			</td>
+		</tr>
+		<tr class="odd" id="trReview_4d428ea2-ca1d-470c-b948-8bd49dcd46fa" role="row">
+			<td><span class="glyphicon glyphicon-plus-sign"></span></td>
+			<td>
+				<a>Enhancement of Message Forward Feature [01]</a>
+			</td>
+			<td>NWP</td>
+			<td>NWP</td>
+			<td>
+				<a>Message_Forward.doc</a><br>
+				<a>Message_Forwarding_Feature_NWP_r01_CJR.docx</a>
+			</td>
+			<td></td>
+			<td><span class="text-danger">Completed, Changes Required</span></td>
+			<td><time datetime="2017-08-10T02:47:39">2017-08-10 <b>02:47:39</b></td>
+			<td><time datetime="2017-08-16T00:00:00">2017-08-16 <b>00:00:00</b></td>
+			<td>Technical Publications review complete. Please review my changes and comments.</td>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+
+<style type="text/css">
+.nestedTaskTable.dataTable {
+	width: 100%;
+	font-size: 12px;
+}
+time b {
+	display: none;
+}
+</style>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;table aria-describedby&#x3D;&quot;DataTables_Table_3_info&quot; class&#x3D;&quot;table table-striped table-hover ng-isolate-scope dataTable no-footer&quot; datatable&#x3D;&quot;&quot; dt-columns&#x3D;&quot;ctrl.dtColumns_technicaleditor&quot; dt-instance&#x3D;&quot;ctrl.OnInstanceReady&quot; dt-options&#x3D;&quot;ctrl.dtOptions_technicaleditor&quot;
+ id&#x3D;&quot;DataTables_Table_3&quot; role&#x3D;&quot;grid&quot; style&#x3D;&quot;display: table;&quot; width&#x3D;&quot;100%&quot;&gt;
+	&lt;thead&gt;
+		&lt;tr role&#x3D;&quot;row&quot;&gt;
+			&lt;th class&#x3D;&quot;sorting_disabled&quot;&gt;&lt;/th&gt;
+			&lt;th&gt;Review Title&lt;/th&gt;
+			&lt;th&gt;Type&lt;/th&gt;
+			&lt;th&gt;Phase&lt;/th&gt;
+			&lt;th&gt;Documents To Review&lt;/th&gt;
+			&lt;th&gt;Assoc. Group&lt;/th&gt;
+			&lt;th&gt;Status&lt;/th&gt;
+			&lt;th&gt;Requested Date&lt;/th&gt;
+			&lt;th&gt;Due Date&lt;/th&gt;
+			&lt;th&gt;Comments&lt;/th&gt;
+			&lt;th class&#x3D;&quot;sorting_disabled&quot;&gt;&lt;/th&gt;
+		&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr class&#x3D;&quot;odd&quot; id&#x3D;&quot;trReview_145d5ad0-00a1-4cea-aeb6-c3da57cd7445&quot; role&#x3D;&quot;row&quot;&gt;
+			&lt;td&gt;&lt;span class&#x3D;&quot;glyphicon glyphicon-minus-sign&quot;&gt;&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;GATT Caching Improvements [08]&lt;/a&gt;
+			&lt;/td&gt;
+			&lt;td&gt;Core&lt;/td&gt;
+			&lt;td&gt;FIPD&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;Core_GATT_Caching_FIPDr01.docx&lt;/a&gt;
+			&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;Core Specification Working Group (core)&lt;/a&gt;
+			&lt;/td&gt;
+			&lt;td&gt;&lt;span class&#x3D;&quot;text-primary&quot;&gt;Reviewers Assigned&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;time datetime&#x3D;&quot;2017-08-31T03:21:21&quot;&gt;2017-08-31 &lt;b&gt;03:21:21&lt;/b&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;time datetime&#x3D;&quot;2017-09-14T00:00:00&quot;&gt;2017-09-14 &lt;b&gt;00:00:00&lt;/b&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;Projected Dates&lt;/a&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;taskTable&quot;&gt;
+			&lt;td class&#x3D;&quot;taskTable&quot; colspan&#x3D;&quot;11&quot;&gt;
+				&lt;table class&#x3D;&quot;nestedTaskTable dataTable no-footer&quot; role&#x3D;&quot;grid&quot;&gt;
+					&lt;thead&gt;
+						&lt;tr role&#x3D;&quot;row&quot;&gt;
+							&lt;th&gt;Task&lt;/th&gt;
+							&lt;th&gt;Assigned To&lt;/th&gt;
+							&lt;th&gt;Status&lt;/th&gt;
+							&lt;th&gt;Due Date&lt;/th&gt;
+							&lt;th&gt;Completed Date&lt;/th&gt;
+							&lt;th&gt;Reviewed Document(s)&lt;/th&gt;
+							&lt;th&gt;Comments&lt;/th&gt;
+						&lt;/tr&gt;
+					&lt;/thead&gt;
+					&lt;tbody&gt;
+						&lt;tr class&#x3D;&quot;odd&quot; role&#x3D;&quot;row&quot;&gt;
+							&lt;td&gt;
+								&lt;a&gt;GATT Caching Improvements [08]&lt;/a&gt;
+							&lt;/td&gt;
+							&lt;td&gt;Peter Hecke (Bluetooth SIG, Inc.)&lt;/td&gt;
+							&lt;td&gt;Not Started&lt;/td&gt;
+							&lt;td&gt;&lt;time datetime&#x3D;&quot;2017-09-14T07:00:00&quot;&gt;2017-09-14 &lt;b&gt;07:00:00&lt;/b&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;/td&gt;
+							&lt;td&gt;&lt;/td&gt;
+						&lt;/tr&gt;
+					&lt;/tbody&gt;
+				&lt;/table&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;even&quot; role&#x3D;&quot;row&quot;&gt;
+			&lt;td&gt;&lt;span class&#x3D;&quot;glyphicon glyphicon-plus-sign&quot;&gt;&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;Beacons for Mesh Channel Indication [01]&lt;/a&gt;
+			&lt;/td&gt;
+			&lt;td&gt;Core&lt;/td&gt;
+			&lt;td&gt;FRD&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;Core_BLE_Mesh_Enhancements_FRD_r07.docx&lt;/a&gt;
+			&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;Core Specification WG NWP Subgroup (core-nwp)&lt;/a&gt;
+			&lt;/td&gt;
+			&lt;td&gt;&lt;span class&#x3D;&quot;text-primary&quot;&gt;Reviewers Assigned&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;time datetime&#x3D;&quot;2017-08-29T11:10:32&quot;&gt;2017-08-29 &lt;b&gt;11:10:32&lt;/b&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;time datetime&#x3D;&quot;2017-09-12T00:00:00&quot;&gt;2017-09-12 &lt;b&gt;00:00:00&lt;/b&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;Projected Dates&lt;/a&gt;
+			&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr class&#x3D;&quot;odd&quot; id&#x3D;&quot;trReview_4d428ea2-ca1d-470c-b948-8bd49dcd46fa&quot; role&#x3D;&quot;row&quot;&gt;
+			&lt;td&gt;&lt;span class&#x3D;&quot;glyphicon glyphicon-plus-sign&quot;&gt;&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;Enhancement of Message Forward Feature [01]&lt;/a&gt;
+			&lt;/td&gt;
+			&lt;td&gt;NWP&lt;/td&gt;
+			&lt;td&gt;NWP&lt;/td&gt;
+			&lt;td&gt;
+				&lt;a&gt;Message_Forward.doc&lt;/a&gt;&lt;br&gt;
+				&lt;a&gt;Message_Forwarding_Feature_NWP_r01_CJR.docx&lt;/a&gt;
+			&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;span class&#x3D;&quot;text-danger&quot;&gt;Completed, Changes Required&lt;/span&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;time datetime&#x3D;&quot;2017-08-10T02:47:39&quot;&gt;2017-08-10 &lt;b&gt;02:47:39&lt;/b&gt;&lt;/td&gt;
+			&lt;td&gt;&lt;time datetime&#x3D;&quot;2017-08-16T00:00:00&quot;&gt;2017-08-16 &lt;b&gt;00:00:00&lt;/b&gt;&lt;/td&gt;
+			&lt;td&gt;Technical Publications review complete. Please review my changes and comments.&lt;/td&gt;
+			&lt;td&gt;&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;style type&#x3D;&quot;text/css&quot;&gt;
+.nestedTaskTable.dataTable {
+	width: 100%;
+	font-size: 12px;
+}
+time b {
+	display: none;
+}
+&lt;/style&gt;</code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="10-tables.table-contextual-classes-on-row">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Table Contextual Classes On Row</h3>
@@ -1979,9 +2393,9 @@
 <div class="f-item-preview">
 	<div class="card">
 	<div class="card-header" role="tab" id="heading-[object Object]">
-		<h5 class="mb-0">
+		<h4 class="mb-0">
 			<a data-toggle="collapse" href="#collapse-[object Object]" aria-expanded="true" aria-controls="collapse-[object Object]">Collapsible Group Item #[object Object]</a>
-		</h5>
+		</h4>
 	</div>
 
 	<div id="collapse-[object Object]" class="collapse show" role="tabpanel" aria-labelledby="heading-[object Object]" data-parent=".accordion">
@@ -1989,6 +2403,9 @@
 			<p>
 				<sample>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</sample>
 			</p>
+			<a href="#">
+				<sample>Anchor / Hyperlinked Text.</sample>
+			</a>
 		</div>
 	</div>
 </div>
@@ -1996,9 +2413,9 @@
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;div class&#x3D;&quot;card&quot;&gt;
 	&lt;div class&#x3D;&quot;card-header&quot; role&#x3D;&quot;tab&quot; id&#x3D;&quot;heading-[object Object]&quot;&gt;
-		&lt;h5 class&#x3D;&quot;mb-0&quot;&gt;
+		&lt;h4 class&#x3D;&quot;mb-0&quot;&gt;
 			&lt;a data-toggle&#x3D;&quot;collapse&quot; href&#x3D;&quot;#collapse-[object Object]&quot; aria-expanded&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapse-[object Object]&quot;&gt;Collapsible Group Item #[object Object]&lt;/a&gt;
-		&lt;/h5&gt;
+		&lt;/h4&gt;
 	&lt;/div&gt;
 
 	&lt;div id&#x3D;&quot;collapse-[object Object]&quot; class&#x3D;&quot;collapse show&quot; role&#x3D;&quot;tabpanel&quot; aria-labelledby&#x3D;&quot;heading-[object Object]&quot; data-parent&#x3D;&quot;.accordion&quot;&gt;
@@ -2006,6 +2423,9 @@
 			&lt;p&gt;
 				&lt;sample&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.&lt;/sample&gt;
 			&lt;/p&gt;
+			&lt;a href&#x3D;&quot;#&quot;&gt;
+				&lt;sample&gt;Anchor / Hyperlinked Text.&lt;/sample&gt;
+			&lt;/a&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -2041,9 +2461,9 @@
 	<div class="accordion" role="tablist">
 	<div class="card">
 		<div class="card-header" role="tab" id="heading-0">
-			<h5 class="mb-0">
+			<h4 class="mb-0">
 				<a data-toggle="collapse" href="#collapse-0" aria-expanded="true" aria-controls="collapse-0">Collapsible Group Item #0</a>
-			</h5>
+			</h4>
 		</div>
 
 		<div id="collapse-0" class="collapse show" role="tabpanel" aria-labelledby="heading-0" data-parent=".accordion">
@@ -2051,14 +2471,17 @@
 				<p>
 					<sample>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</sample>
 				</p>
+				<a href="#">
+					<sample>Anchor / Hyperlinked Text.</sample>
+				</a>
 			</div>
 		</div>
 	</div>
 	<div class="card">
 		<div class="card-header" role="tab" id="heading-1">
-			<h5 class="mb-0">
+			<h4 class="mb-0">
 				<a data-toggle="collapse" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1">Collapsible Group Item #1</a>
-			</h5>
+			</h4>
 		</div>
 
 		<div id="collapse-1" class="collapse show" role="tabpanel" aria-labelledby="heading-1" data-parent=".accordion">
@@ -2066,14 +2489,17 @@
 				<p>
 					<sample>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</sample>
 				</p>
+				<a href="#">
+					<sample>Anchor / Hyperlinked Text.</sample>
+				</a>
 			</div>
 		</div>
 	</div>
 	<div class="card">
 		<div class="card-header" role="tab" id="heading-2">
-			<h5 class="mb-0">
+			<h4 class="mb-0">
 				<a data-toggle="collapse" href="#collapse-2" aria-expanded="true" aria-controls="collapse-2">Collapsible Group Item #2</a>
-			</h5>
+			</h4>
 		</div>
 
 		<div id="collapse-2" class="collapse show" role="tabpanel" aria-labelledby="heading-2" data-parent=".accordion">
@@ -2081,6 +2507,9 @@
 				<p>
 					<sample>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</sample>
 				</p>
+				<a href="#">
+					<sample>Anchor / Hyperlinked Text.</sample>
+				</a>
 			</div>
 		</div>
 	</div>
@@ -2106,9 +2535,9 @@
 	<pre><code class="language-markup">&lt;div class&#x3D;&quot;accordion&quot; role&#x3D;&quot;tablist&quot;&gt;
 	&lt;div class&#x3D;&quot;card&quot;&gt;
 		&lt;div class&#x3D;&quot;card-header&quot; role&#x3D;&quot;tab&quot; id&#x3D;&quot;heading-0&quot;&gt;
-			&lt;h5 class&#x3D;&quot;mb-0&quot;&gt;
+			&lt;h4 class&#x3D;&quot;mb-0&quot;&gt;
 				&lt;a data-toggle&#x3D;&quot;collapse&quot; href&#x3D;&quot;#collapse-0&quot; aria-expanded&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapse-0&quot;&gt;Collapsible Group Item #0&lt;/a&gt;
-			&lt;/h5&gt;
+			&lt;/h4&gt;
 		&lt;/div&gt;
 
 		&lt;div id&#x3D;&quot;collapse-0&quot; class&#x3D;&quot;collapse show&quot; role&#x3D;&quot;tabpanel&quot; aria-labelledby&#x3D;&quot;heading-0&quot; data-parent&#x3D;&quot;.accordion&quot;&gt;
@@ -2116,14 +2545,17 @@
 				&lt;p&gt;
 					&lt;sample&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.&lt;/sample&gt;
 				&lt;/p&gt;
+				&lt;a href&#x3D;&quot;#&quot;&gt;
+					&lt;sample&gt;Anchor / Hyperlinked Text.&lt;/sample&gt;
+				&lt;/a&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 	&lt;div class&#x3D;&quot;card&quot;&gt;
 		&lt;div class&#x3D;&quot;card-header&quot; role&#x3D;&quot;tab&quot; id&#x3D;&quot;heading-1&quot;&gt;
-			&lt;h5 class&#x3D;&quot;mb-0&quot;&gt;
+			&lt;h4 class&#x3D;&quot;mb-0&quot;&gt;
 				&lt;a data-toggle&#x3D;&quot;collapse&quot; href&#x3D;&quot;#collapse-1&quot; aria-expanded&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapse-1&quot;&gt;Collapsible Group Item #1&lt;/a&gt;
-			&lt;/h5&gt;
+			&lt;/h4&gt;
 		&lt;/div&gt;
 
 		&lt;div id&#x3D;&quot;collapse-1&quot; class&#x3D;&quot;collapse show&quot; role&#x3D;&quot;tabpanel&quot; aria-labelledby&#x3D;&quot;heading-1&quot; data-parent&#x3D;&quot;.accordion&quot;&gt;
@@ -2131,14 +2563,17 @@
 				&lt;p&gt;
 					&lt;sample&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.&lt;/sample&gt;
 				&lt;/p&gt;
+				&lt;a href&#x3D;&quot;#&quot;&gt;
+					&lt;sample&gt;Anchor / Hyperlinked Text.&lt;/sample&gt;
+				&lt;/a&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 	&lt;div class&#x3D;&quot;card&quot;&gt;
 		&lt;div class&#x3D;&quot;card-header&quot; role&#x3D;&quot;tab&quot; id&#x3D;&quot;heading-2&quot;&gt;
-			&lt;h5 class&#x3D;&quot;mb-0&quot;&gt;
+			&lt;h4 class&#x3D;&quot;mb-0&quot;&gt;
 				&lt;a data-toggle&#x3D;&quot;collapse&quot; href&#x3D;&quot;#collapse-2&quot; aria-expanded&#x3D;&quot;true&quot; aria-controls&#x3D;&quot;collapse-2&quot;&gt;Collapsible Group Item #2&lt;/a&gt;
-			&lt;/h5&gt;
+			&lt;/h4&gt;
 		&lt;/div&gt;
 
 		&lt;div id&#x3D;&quot;collapse-2&quot; class&#x3D;&quot;collapse show&quot; role&#x3D;&quot;tabpanel&quot; aria-labelledby&#x3D;&quot;heading-2&quot; data-parent&#x3D;&quot;.accordion&quot;&gt;
@@ -2146,6 +2581,9 @@
 				&lt;p&gt;
 					&lt;sample&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.&lt;/sample&gt;
 				&lt;/p&gt;
+				&lt;a href&#x3D;&quot;#&quot;&gt;
+					&lt;sample&gt;Anchor / Hyperlinked Text.&lt;/sample&gt;
+				&lt;/a&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
@@ -2251,129 +2689,6 @@
 </div>
 
 		</div>
-		<div class="f-item-group" id="11-modules.form-group">
-			<div class="f-item-heading-group" data-f-toggle="labels">
-				<h3 class="f-item-heading">Form Group</h3>
-				<div class="f-item-controls">
-					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
-						<svg>
-							<use xlink:href="#f-icon-code" />
-						</svg>
-					</span>
-				</div>
-			</div><div class="componentClasses" data-f-toggle="labels">
-
-</div>
-<div class="f-item-preview">
-	<form>
-	<div class="form-group">
-		<label class="form-control-label" for="formGroupExampleInput">Example label</label>
-		<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-	</div>
-	<div class="form-group">
-		<label class="form-control-label" for="formGroupExampleInput2">Another label</label>
-		<input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-	</div>
-</form>
-</div>
-<div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;form&gt;
-	&lt;div class&#x3D;&quot;form-group&quot;&gt;
-		&lt;label class&#x3D;&quot;form-control-label&quot; for&#x3D;&quot;formGroupExampleInput&quot;&gt;Example label&lt;/label&gt;
-		&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;formGroupExampleInput&quot; placeholder&#x3D;&quot;Example input&quot;&gt;
-	&lt;/div&gt;
-	&lt;div class&#x3D;&quot;form-group&quot;&gt;
-		&lt;label class&#x3D;&quot;form-control-label&quot; for&#x3D;&quot;formGroupExampleInput2&quot;&gt;Another label&lt;/label&gt;
-		&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;formGroupExampleInput2&quot; placeholder&#x3D;&quot;Another input&quot;&gt;
-	&lt;/div&gt;
-&lt;/form&gt;</code></pre>
-</div>
-
-		</div>
-		<div class="f-item-group" id="11-modules.inline-form">
-			<div class="f-item-heading-group" data-f-toggle="labels">
-				<h3 class="f-item-heading">Inline Form</h3>
-				<div class="f-item-controls">
-					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
-						<svg>
-							<use xlink:href="#f-icon-code" />
-						</svg>
-					</span>
-				</div>
-			</div><div class="componentClasses" data-f-toggle="labels">
-
-</div>
-<div class="f-item-preview">
-	<form class="form-inline">
-	<label class="sr-only" for="inlineFormInputName2">Name</label>
-	<input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Jane Doe">
-
-	<label class="sr-only" for="inlineFormInputGroupUsername2">Username</label>
-	<div class="input-group mb-2 mr-sm-2 mb-sm-0">
-		<div class="input-group-addon">@</div>
-		<input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username">
-	</div>
-
-	<div class="form-check mb-2 mr-sm-2 mb-sm-0">
-		<label class="form-check-label">
-      <input class="form-check-input" type="checkbox"> Remember me
-    </label>
-	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
-<div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;form class&#x3D;&quot;form-inline&quot;&gt;
-	&lt;label class&#x3D;&quot;sr-only&quot; for&#x3D;&quot;inlineFormInputName2&quot;&gt;Name&lt;/label&gt;
-	&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control mb-2 mr-sm-2 mb-sm-0&quot; id&#x3D;&quot;inlineFormInputName2&quot; placeholder&#x3D;&quot;Jane Doe&quot;&gt;
-
-	&lt;label class&#x3D;&quot;sr-only&quot; for&#x3D;&quot;inlineFormInputGroupUsername2&quot;&gt;Username&lt;/label&gt;
-	&lt;div class&#x3D;&quot;input-group mb-2 mr-sm-2 mb-sm-0&quot;&gt;
-		&lt;div class&#x3D;&quot;input-group-addon&quot;&gt;@&lt;/div&gt;
-		&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;inlineFormInputGroupUsername2&quot; placeholder&#x3D;&quot;Username&quot;&gt;
-	&lt;/div&gt;
-
-	&lt;div class&#x3D;&quot;form-check mb-2 mr-sm-2 mb-sm-0&quot;&gt;
-		&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
-      &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot;&gt; Remember me
-    &lt;/label&gt;
-	&lt;/div&gt;
-	&lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Submit&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-</div>
-
-		</div>
-		<div class="f-item-group" id="11-modules.input-button-group">
-			<div class="f-item-heading-group" data-f-toggle="labels">
-				<h3 class="f-item-heading">Input Button Group</h3>
-				<div class="f-item-controls">
-					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
-						<svg>
-							<use xlink:href="#f-icon-code" />
-						</svg>
-					</span>
-				</div>
-			</div><div class="componentClasses" data-f-toggle="labels">
-
-</div>
-<div class="f-item-preview">
-	<div class="input-group">
-	<input type="text" class="form-control" placeholder="Text">
-	<span class="input-group-btn">
-		<button class="btn btn-default" type="button">Action</button>
-	</span>
-</div>
-</div>
-<div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;div class&#x3D;&quot;input-group&quot;&gt;
-	&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Text&quot;&gt;
-	&lt;span class&#x3D;&quot;input-group-btn&quot;&gt;
-		&lt;button class&#x3D;&quot;btn btn-default&quot; type&#x3D;&quot;button&quot;&gt;Action&lt;/button&gt;
-	&lt;/span&gt;
-&lt;/div&gt;</code></pre>
-</div>
-
-		</div>
 		<div class="f-item-group" id="11-modules.modal-dialog">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Modal Dialog</h3>
@@ -2388,29 +2703,26 @@
 
 </div>
 <div class="f-item-preview">
+	<sample>
 	<div class="modal-dialog" role="document">
-	<div class="modal-content">
-		<header class="modal-header">
-			<h5 class="modal-title">Modal title</h5>
-			<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		</header>
-		<div class="modal-body">
-			<p>
-				<sample>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</sample>
-			</p>
+		<div class="modal-content">
+			<header class="modal-header">
+				<h5 class="modal-title">Modal title</h5>
+				<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</header>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</p>
+			</div>
+			<footer class="modal-footer">
+				<button class="btn btn-primary">Primary Button</button>
+				<button class="btn btn-secondary">Secondary Button</button>
+			</footer>
 		</div>
-		<footer class="modal-footer">
-			<button class="btn btn-primary">Primary Button</button>
-			<button class="btn btn-secondary">Secondary Button</button>
-		</footer>
 	</div>
-</div>
-
+</sample>
 <!-- Button trigger modal -->
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch demo modal</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -2423,57 +2735,69 @@
         </button>
 			</div>
 			<div class="modal-body">
-				...
+				<p>
+					<sample>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</sample>
+				</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				<button type="button" class="btn btn-primary">Save changes</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
 </div>
+<sample>
+	<script type="text/javascript">
+		// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard ` $(document).ready(function(){ ... }) ` in production code.
+		// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+		document.addEventListener("DOMContentLoaded", function(event) {
+			// Make sure the button data-target matches the ID of the modal you want to trigger.
+			// Data-Target should start with a #
 
-<script type="text/javascript">
-	// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
-	// use standard ` $(document).ready(function(){ ... }) ` in production code.
-	// ` DOMContentLoaded ` is not supported in IE8 or earlier.
-	document.addEventListener("DOMContentLoaded", function(event) {
+			// None of this javascript should be necessary outside of the `Fabricator` environment.
+			// Please follow the bootstrap instructions instead of reusing this code.
+			// https://getbootstrap.com/docs/4.0/components/modal/
 
-		$('div').find('.modal').hide();
+			$('[data-toggle="modal"]').click(function() {
+				$('body').addClass('modal-open').find('.modal').append($('<div class="modal-backdrop fade show"/>'));
+				var modal = $(this).data('target');
+				window.setTimeout(function() {
+					$(modal).addClass('show');
+				}, 100);
 
-		// This is only a good solution if there is one modal on the page
-		// For multiple modals be specific with button and modal IDs
-		$('[data-toggle="modal"]').click(function() {
-			$('.modal').show();
+				// Add listeners to close modal
+				$('[data-dismiss="modal"], .modal-backdrop').on('click', function() {
+					$('.modal').removeClass('show');
+					$('.modal-backdrop').remove();
+					$('body').removeClass('modal-open');
+				});
+			});
 		});
-
-	});
-</script>
+	</script>
+</sample>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
-	&lt;div class&#x3D;&quot;modal-content&quot;&gt;
-		&lt;header class&#x3D;&quot;modal-header&quot;&gt;
-			&lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Modal title&lt;/h5&gt;
-			&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
-		&lt;/header&gt;
-		&lt;div class&#x3D;&quot;modal-body&quot;&gt;
-			&lt;p&gt;
-				&lt;sample&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.&lt;/sample&gt;
-			&lt;/p&gt;
+	<pre><code class="language-markup">&lt;sample&gt;
+	&lt;div class&#x3D;&quot;modal-dialog&quot; role&#x3D;&quot;document&quot;&gt;
+		&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+			&lt;header class&#x3D;&quot;modal-header&quot;&gt;
+				&lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Modal title&lt;/h5&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
+			&lt;/header&gt;
+			&lt;div class&#x3D;&quot;modal-body&quot;&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;footer class&#x3D;&quot;modal-footer&quot;&gt;
+				&lt;button class&#x3D;&quot;btn btn-primary&quot;&gt;Primary Button&lt;/button&gt;
+				&lt;button class&#x3D;&quot;btn btn-secondary&quot;&gt;Secondary Button&lt;/button&gt;
+			&lt;/footer&gt;
 		&lt;/div&gt;
-		&lt;footer class&#x3D;&quot;modal-footer&quot;&gt;
-			&lt;button class&#x3D;&quot;btn btn-primary&quot;&gt;Primary Button&lt;/button&gt;
-			&lt;button class&#x3D;&quot;btn btn-secondary&quot;&gt;Secondary Button&lt;/button&gt;
-		&lt;/footer&gt;
 	&lt;/div&gt;
-&lt;/div&gt;
-
+&lt;/sample&gt;
 &lt;!-- Button trigger modal --&gt;
 
-&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#exampleModal&quot;&gt;
-  Launch demo modal
-&lt;/button&gt;
+&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#exampleModal&quot;&gt;Launch demo modal&lt;/button&gt;
 
 &lt;!-- Modal --&gt;
 &lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;exampleModal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;exampleModalLabel&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
@@ -2486,32 +2810,47 @@
         &lt;/button&gt;
 			&lt;/div&gt;
 			&lt;div class&#x3D;&quot;modal-body&quot;&gt;
-				...
+				&lt;p&gt;
+					&lt;sample&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.&lt;/sample&gt;
+				&lt;/p&gt;
 			&lt;/div&gt;
 			&lt;div class&#x3D;&quot;modal-footer&quot;&gt;
-				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
 				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
+&lt;sample&gt;
+	&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+		// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
+		// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
+		document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+			// Make sure the button data-target matches the ID of the modal you want to trigger.
+			// Data-Target should start with a #
 
-&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-	// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
-	// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
-	// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
-	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+			// None of this javascript should be necessary outside of the &#x60;Fabricator&#x60; environment.
+			// Please follow the bootstrap instructions instead of reusing this code.
+			// https://getbootstrap.com/docs/4.0/components/modal/
 
-		$(&#x27;div&#x27;).find(&#x27;.modal&#x27;).hide();
+			$(&#x27;[data-toggle&#x3D;&quot;modal&quot;]&#x27;).click(function() {
+				$(&#x27;body&#x27;).addClass(&#x27;modal-open&#x27;).find(&#x27;.modal&#x27;).append($(&#x27;&lt;div class&#x3D;&quot;modal-backdrop fade show&quot;/&gt;&#x27;));
+				var modal &#x3D; $(this).data(&#x27;target&#x27;);
+				window.setTimeout(function() {
+					$(modal).addClass(&#x27;show&#x27;);
+				}, 100);
 
-		// This is only a good solution if there is one modal on the page
-		// For multiple modals be specific with button and modal IDs
-		$(&#x27;[data-toggle&#x3D;&quot;modal&quot;]&#x27;).click(function() {
-			$(&#x27;.modal&#x27;).show();
+				// Add listeners to close modal
+				$(&#x27;[data-dismiss&#x3D;&quot;modal&quot;], .modal-backdrop&#x27;).on(&#x27;click&#x27;, function() {
+					$(&#x27;.modal&#x27;).removeClass(&#x27;show&#x27;);
+					$(&#x27;.modal-backdrop&#x27;).remove();
+					$(&#x27;body&#x27;).removeClass(&#x27;modal-open&#x27;);
+				});
+			});
 		});
-
-	});
-&lt;/script&gt;</code></pre>
+	&lt;/script&gt;
+&lt;/sample&gt;</code></pre>
 </div>
 
 		</div>

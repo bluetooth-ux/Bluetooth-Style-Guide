@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+
+	<link rel="stylesheet" href="assets/fabricator/styles/f.css">
+
+	<!-- toolkit styles -->
+	<link rel="stylesheet" href="assets/toolkit/styles/toolkit.css">
+	<!-- /toolkit styles -->
+
+</head>
+<body>
+
+		<!-- fabricator icons -->
+		<svg style="display: none;">
+			<symbol id="f-icon-css" viewBox="0 0 512 512">
+				<path d="M87.32,322.12q0-19.24-14.48-29.41T30.71,282.54V229.68q27.86,0,42.24-9.73t14.37-27.86V120q0-33.84,21.45-47.66t75.41-13.82v49.76q-21.89.66-30.19,8.4t-8.29,22.78v66.12q-1.33,41.58-51.75,49.1v2.65q51.75,7.74,51.75,46.88v68.11q0,15,8.18,22.78t30.3,8.4v50q-54,0-75.41-13.82T87.32,391.78V322.12Z" transform="translate(-30.71 -58.51)"/><path d="M217.3,178.44q0-18.58,10-28.09t29-9.51q18.35,0,28.42,9.73t10.06,27.86q0,17.91-10.28,27.75T256.22,216q-18.58,0-28.75-9.73T217.3,178.44Zm0,160.88q0-18.58,10-28.09t29-9.51q18.35,0,28.42,9.73t10.06,27.86q0,17.47-10.17,27.53t-28.31,10.06q-18.58,0-28.75-9.84T217.3,339.31Z" transform="translate(-30.71 -58.51)"/><path d="M424.68,391.78q0,24.76-9.07,37.37t-30,18.47q-20.9,5.86-57.83,5.86v-50q21.89-.45,30.19-8t8.29-23.22V303.77q0-19,13-30.85t38.48-15.59v-2.65q-50.2-7.52-51.53-49.1V139.46q0-15.48-8.18-23t-30.3-8.18V58.51q36.93,0,57.94,5.86t30,18.58q9,12.72,9,37v72.54q0,18.58,13.6,27.86t43,9.29v52.85q-27.65,0-42.13,9.07t-14.48,30.52v69.66Z" transform="translate(-30.71 -58.51)"/>
+			</symbol>
+			<symbol id="f-icon-variations" viewBox="0 0 512 512">
+				<polygon points="431.03 280.82 431.03 170.68 254.56 170.68 254.56 111.18 287.65 111.18 287.65 0 176.47 0 176.47 111.18 209.56 111.18 209.56 170.68 33.09 170.68 33.09 280.82 0 280.82 0 392 111.18 392 111.18 280.82 78.09 280.82 78.09 215.68 209.56 215.68 209.56 280.82 176.47 280.82 176.47 392 287.65 392 287.65 280.82 254.56 280.82 254.56 215.68 386.03 215.68 386.03 280.82 352.94 280.82 352.94 392 464.12 392 464.12 280.82 431.03 280.82"/>
+			</symbol>
+			<symbol id="f-icon-code" viewBox="0 0 512 512">
+				<path d="M377.3 121.3l-40.5 40.4 94.4 94.3-94.4 94.3 40.5 40.4L512 256zM134.7 121.3L0 256l134.7 134.7 40.5-40.4L80.8 256l94.4-94.3zM281.8 103.8zM230.183 408.16l-29.233-7.97 80.85-296.484 29.234 7.972z"/>
+			</symbol>
+			<symbol id="f-icon-notes" viewBox="0 0 512 512">
+				<path d="M443.8 0H68.2C30.6 0 0 30.5 0 68v264.2c0 16.6 8.9 29.5 25.9 37.5 15.3 7.2 33.1 8.4 40.1 8.5V512l201.6-134h176.1c37.6 0 68.2-30.3 68.2-67.8V68c.1-37.5-30.5-68-68.1-68zM114 438V330H68.2c-11.1 0-19.2-8.8-19.2-19.8V68c0-11 8.2-20 19.2-20h375.5c11.1 0 19.2 9 19.2 20v242.2c0 11-8.2 19.8-19.2 19.8H244.2L114 438z"/>
+			</symbol>
+			<symbol id="f-icon-labels" viewBox="0 0 512 512">
+				<path d="M304 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM464 280c0 13.2-10.8 24-24 24h-48c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48zM144 280c0 13.2-10.8 24-24 24H72c-13.2 0-24-10.8-24-24v-48c0-13.2 10.8-24 24-24h48c13.2 0 24 10.8 24 24v48z"/>
+			</symbol>
+			<symbol id="f-icon-menu" viewBox="0 0 512 512">
+				<path d="M512 100c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 212c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 324c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24zM512 436c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12v-24c0-6.6 5.4-12 12-12h488c6.6 0 12 5.4 12 12v24z"/>
+			</symbol>
+			<symbol id="f-icon-settings" viewBox="0 0 512 512">
+				<path d="M256 377.3c-67.5 0-121.6-53.9-121.6-121.3s54-121.3 121.6-121.3S377.6 188.6 377.6 256 323.5 377.3 256 377.3zm0-215.6c-52.7 0-94.6 41.8-94.6 94.3s41.9 94.3 94.6 94.3 94.6-41.8 94.6-94.3-41.9-94.3-94.6-94.3zM293.2 512h-72.9L200 450c-13.5-4-27-9.4-39.2-16.2l-59.4 29.6L50 412.3 79.7 353c-6.8-12.1-12.2-25.6-16.2-39.1L0 292.4v-72.8l62.1-20.2c4.1-13.5 9.5-26.9 16.2-39.1L48.6 101 100 49.9l59.4 29.6c12.2-6.7 25.7-12.1 39.2-16.2L220.2 0h72.9l20.3 62c13.5 4 27 9.4 39.2 16.2L412 48.5l51.3 51.2-29.7 59.3c6.8 12.1 12.2 25.6 16.2 39.1l62.1 20.2V291l-62.1 20.2c-4.1 13.5-9.5 26.9-16.2 39.1l29.7 59.3-51.3 51.2-59.4-29.6c-12.2 6.7-25.7 12.1-39.2 16.2L293.2 512zm-54.1-26.9h35.1l18.9-57.9 6.8-1.3c16.2-4 31.1-10.8 45.9-18.9l6.8-4 54 26.9 24.3-24.3-27-53.9 4.1-6.7c8.1-13.5 14.9-29.6 18.9-45.8l1.4-6.7 58.1-18.9v-35l-58.1-18.9-1.4-6.7c-4.1-16.2-10.8-31-18.9-45.8l-4.1-6.7 27-53.9-24.3-24.3-54 26.9-6.8-4c-14.8-8.2-29.7-14.9-45.9-19l-6.8-1.3L274.2 27h-35.1l-18.9 57.9-6.8 1.3c-16.2 4-31.1 10.8-45.9 18.9l-6.8 4-54-26.9-24.3 24.3 27 53.9-4.1 6.7c-8.1 13.5-14.9 29.6-18.9 45.8l-1.4 6.7-58 18.9v35l58.1 18.9 1.4 6.7c4.1 16.2 10.8 31 18.9 45.8l4.1 6.7-27 53.9 24.3 24.3 54-26.9 6.8 4c14.9 8.1 29.7 14.8 45.9 18.9l6.8 1.3 18.8 58z"/>
+			</symbol>
+		</svg>
+		<!-- /fabricator icons -->
+		<!-- fabricator menu -->
+		<div class="f-menu">
+		
+			<div class="f-controls">
+				<div class="f-control f-global-control" data-f-toggle-control="labels" title="Toggle Labels">
+					<svg>
+						<use xlink:href="#f-icon-labels" />
+					</svg>
+					<span>Labels</span>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="notes" title="Toggle Notes">
+					<svg>
+						<use xlink:href="#f-icon-notes" />
+					</svg>
+					<span>Notes</span>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="code" title="Toggle Code">
+					<svg>
+						<use xlink:href="#f-icon-code" />
+					</svg>
+					<span>HTML</span>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="css" title="Toggle CSS">
+					<svg>
+						<use xlink:href="#f-icon-css" />
+					</svg>
+					<span>CSS</span>
+				</div>
+				<div class="f-control f-global-control" data-f-toggle-control="variations" title="Toggle Variations">
+					<svg>
+						<use xlink:href="#f-icon-variations" />
+					</svg>
+					<span>Variations</span>
+				</div>
+			</div>
+		
+			<ul>
+		
+				<li>
+					<a href="index.html" class="f-menu__heading">Overview</a>
+				</li>
+		
+				<li>
+					<a href="components.html" class="f-menu__heading">Components</a>
+					<ul>
+						<li>
+							<a href="components.html#01-typography">Typography</a>
+						</li>
+						<li>
+							<a href="components.html#02-buttons">Buttons</a>
+						</li>
+						<li>
+							<a href="components.html#03-dropdowns">Dropdowns</a>
+						</li>
+						<li>
+							<a href="components.html#04-forms">Forms</a>
+						</li>
+						<li>
+							<a href="components.html#05-navigation">Navigation</a>
+						</li>
+						<li>
+							<a href="components.html#06-alerts">Alerts</a>
+						</li>
+						<li>
+							<a href="components.html#07-notifications">Notifications</a>
+						</li>
+						<li>
+							<a href="components.html#08-images">Images</a>
+						</li>
+						<li>
+							<a href="components.html#10-tables">Tables</a>
+						</li>
+						<li>
+							<a href="components.html#11-modules">Modules</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="utilities.html" class="f-menu__heading">Utilities</a>
+					<ul>
+						<li>
+							<a href="utilities.html#form-builder">Form Builder</a>
+						</li>
+						<li>
+							<a href="utilities.html#table-builder">Table Builder</a>
+						</li>
+					</ul>
+				</li>
+		
+		
+				<li>
+					<a href="docs.html" class="f-menu__heading">Docs</a>
+					<ul>
+						<li>
+							<a href="docs.html#code-highlighting">Code Highlighting</a>
+						</li>
+						<li>
+							<a href="docs.html#extensible-style-guide">Extensible Style Guide</a>
+						</li>
+						<li>
+							<a href="docs.html#materials">Materials</a>
+						</li>
+						<li>
+							<a href="docs.html#structures">Structures</a>
+						</li>
+						<li>
+							<a href="docs.html#UXSG-troubleshooting">Uxsg Troubleshooting</a>
+						</li>
+					</ul>
+				</li>
+		
+			</ul>
+		
+		
+		</div>
+		<!-- /fabricator menu -->
+		<div class="f-container">
+			<div class="f-control-bar">
+				<div class="f-control f-menu-toggle">
+					<svg>
+						<use xlink:href="#f-icon-menu" />
+					</svg>
+				</div>
+			</div>
+
+
+	
+<h1 data-f-toggle="labels">Utilities</h1>
+
+
+<div class="f-item-group" id="form-builder">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Form Builder</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="componentClasses" data-f-toggle="labels">
+
+</div>
+<div class="f-item-preview">
+	<p>Some great instructions on how to use this component.</p>
+<p>Once you've finished building your form, use your browser's <code>web inspector</code> to copy the whole <code>&lt;form&gt;</code> element (outlined with a dashed gray border).</p>
+
+<select class="custom-select" id="formSelect">
+	<option>Some pre-built form</option>
+</select>
+<input class="form-check-input" type="checkbox" id="showOutlines" checked /><label class="form-check-label"> Show Form Group Outlines</label>
+<form></form>
+
+<div class="input-group" id="form-builder-controls">
+	<button class="btn btn-sm btn-secondary" id="addGroup">Add Form Group</button>
+	<select class="custom-select" id="inputSelect"><!-- input elements --></select>
+	<button class="btn btn-sm btn-primary" id="addElement">Add Element</button>
+</div>
+
+<aside>
+	<h3>Form Element Reference</h3>
+	<div class="form-builder-element" data-name="label">
+		<label class="control-label"><sample>Label</sample></label> </div>
+	<div class="form-builder-element" data-name="checkbox">
+		<label class="form-check-label">
+			<input class="form-check-input" type="checkbox" /> Checkbox Label
+		</label> </div>
+	<div class="form-builder-element" data-name="radio">
+		<label class="form-check-label">
+			<input class="form-check-input" type="radio" name="groupName" id="radio1" /> Radio 1
+		</label>
+
+		<label class="form-check-label">
+			<input class="form-check-input" type="radio" name="groupName" id="radio2" /> Radio 2
+		</label>
+
+		<label class="form-check-label">
+			<input class="form-check-input" type="radio" name="groupName" id="radio3" /> Radio 3
+		</label> </div>
+	<div class="form-builder-element" data-name="select">
+		<select class="form-control" name="" id="">
+			<option value=""><sample>Option 1</sample></option>
+			<sample><option value="">Option 2</option>
+			<option value="">Option 3</option>
+			<option value="">Option 4</option>
+			<option value="">Option 5</option></sample>
+		</select> </div>
+	<div class="form-builder-element" data-name="text-input">
+		<input class="form-control" type="text" placeholder="Placeholder text" /> </div>
+	<div class="form-builder-element" data-name="input-button-group">
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="Text">
+			<span class="input-group-btn">
+				<button class="btn btn-secondary btn-sm" type="button">Action</button>
+			</span>
+		</div>
+	</div>
+	<div class="form-builder-element" data-name="text-area">
+		<textarea class="form-control" name="" cols="30" rows="10"></textarea> </div>
+	<div class="form-builder-element" data-name="button">
+		<button class="btn"><sample>Button</sample></button> </div>
+	<div class="form-builder-element" data-name="help-text">
+		<small class="form-text text-muted"><sample>Help text to assist with filling out forms. Picture me below a form input.</sample></small> </div>
+</aside>
+
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(event) {
+		var form = $('#form-builder form'),
+			selectBox = $('#inputSelect'),
+			formElements = $('.form-builder-element'),
+			group;
+
+		formElements.each(function(i, element) {
+			selectBox.append($('<option value=' + i + ' />').text($(element).data('name')));
+		});
+		$('#showOutlines + label').on('click', function() {
+			$('#showOutlines').click();
+		});
+		$('#addGroup').on('click', function() {
+			var lastGroup = form.find('.form-group:last-of-type');
+			$('#addGroup').attr('disabled', 'disabled');
+			if (lastGroup.length === 1 && lastGroup.children().length === 0) {
+				return;
+			}
+			form.append($('<div class="form-group" />'));
+		});
+		$('#addElement').on('click', function() {
+			group = form.find('.form-group:last-of-type');
+			if (group.length === 0) {
+				form.append($('<div class="form-group" />'));
+				group = form.find('.form-group:last-of-type');
+			}
+			group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
+			$('#addGroup').removeAttr('disabled');
+		});
+
+		// remove unnecessary content
+		$('.f-item-code, .componentClasses').remove();
+		if (window.location.hash) {
+			hideOtherBlocks();
+		}
+		window.onhashchange = hideOtherBlocks;
+
+		function hideOtherBlocks() {
+			$('.f-item-group:not(' + window.location.hash + ')').addClass('f-item-hidden');
+			$(window.location.hash).removeClass('f-item-hidden');
+		}
+	});
+</script>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;p&gt;Some great instructions on how to use this component.&lt;/p&gt;
+&lt;p&gt;Once you&#x27;ve finished building your form, use your browser&#x27;s &lt;code&gt;web inspector&lt;/code&gt; to copy the whole &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element (outlined with a dashed gray border).&lt;/p&gt;
+
+&lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;formSelect&quot;&gt;
+	&lt;option&gt;Some pre-built form&lt;/option&gt;
+&lt;/select&gt;
+&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;showOutlines&quot; checked /&gt;&lt;label class&#x3D;&quot;form-check-label&quot;&gt; Show Form Group Outlines&lt;/label&gt;
+&lt;form&gt;&lt;/form&gt;
+
+&lt;div class&#x3D;&quot;input-group&quot; id&#x3D;&quot;form-builder-controls&quot;&gt;
+	&lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; id&#x3D;&quot;addGroup&quot;&gt;Add Form Group&lt;/button&gt;
+	&lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;inputSelect&quot;&gt;&lt;!-- input elements --&gt;&lt;/select&gt;
+	&lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; id&#x3D;&quot;addElement&quot;&gt;Add Element&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;aside&gt;
+	&lt;h3&gt;Form Element Reference&lt;/h3&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;label&quot;&gt;
+		&lt;label class&#x3D;&quot;control-label&quot;&gt;&lt;sample&gt;Label&lt;/sample&gt;&lt;/label&gt; &lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;checkbox&quot;&gt;
+		&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+			&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; /&gt; Checkbox Label
+		&lt;/label&gt; &lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;radio&quot;&gt;
+		&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+			&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;groupName&quot; id&#x3D;&quot;radio1&quot; /&gt; Radio 1
+		&lt;/label&gt;
+
+		&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+			&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;groupName&quot; id&#x3D;&quot;radio2&quot; /&gt; Radio 2
+		&lt;/label&gt;
+
+		&lt;label class&#x3D;&quot;form-check-label&quot;&gt;
+			&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; name&#x3D;&quot;groupName&quot; id&#x3D;&quot;radio3&quot; /&gt; Radio 3
+		&lt;/label&gt; &lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;select&quot;&gt;
+		&lt;select class&#x3D;&quot;form-control&quot; name&#x3D;&quot;&quot; id&#x3D;&quot;&quot;&gt;
+			&lt;option value&#x3D;&quot;&quot;&gt;&lt;sample&gt;Option 1&lt;/sample&gt;&lt;/option&gt;
+			&lt;sample&gt;&lt;option value&#x3D;&quot;&quot;&gt;Option 2&lt;/option&gt;
+			&lt;option value&#x3D;&quot;&quot;&gt;Option 3&lt;/option&gt;
+			&lt;option value&#x3D;&quot;&quot;&gt;Option 4&lt;/option&gt;
+			&lt;option value&#x3D;&quot;&quot;&gt;Option 5&lt;/option&gt;&lt;/sample&gt;
+		&lt;/select&gt; &lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;text-input&quot;&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Placeholder text&quot; /&gt; &lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;input-button-group&quot;&gt;
+		&lt;div class&#x3D;&quot;input-group&quot;&gt;
+			&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Text&quot;&gt;
+			&lt;span class&#x3D;&quot;input-group-btn&quot;&gt;
+				&lt;button class&#x3D;&quot;btn btn-secondary btn-sm&quot; type&#x3D;&quot;button&quot;&gt;Action&lt;/button&gt;
+			&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;text-area&quot;&gt;
+		&lt;textarea class&#x3D;&quot;form-control&quot; name&#x3D;&quot;&quot; cols&#x3D;&quot;30&quot; rows&#x3D;&quot;10&quot;&gt;&lt;/textarea&gt; &lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;button&quot;&gt;
+		&lt;button class&#x3D;&quot;btn&quot;&gt;&lt;sample&gt;Button&lt;/sample&gt;&lt;/button&gt; &lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;help-text&quot;&gt;
+		&lt;small class&#x3D;&quot;form-text text-muted&quot;&gt;&lt;sample&gt;Help text to assist with filling out forms. Picture me below a form input.&lt;/sample&gt;&lt;/small&gt; &lt;/div&gt;
+&lt;/aside&gt;
+
+&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+		var form &#x3D; $(&#x27;#form-builder form&#x27;),
+			selectBox &#x3D; $(&#x27;#inputSelect&#x27;),
+			formElements &#x3D; $(&#x27;.form-builder-element&#x27;),
+			group;
+
+		formElements.each(function(i, element) {
+			selectBox.append($(&#x27;&lt;option value&#x3D;&#x27; + i + &#x27; /&gt;&#x27;).text($(element).data(&#x27;name&#x27;)));
+		});
+		$(&#x27;#showOutlines + label&#x27;).on(&#x27;click&#x27;, function() {
+			$(&#x27;#showOutlines&#x27;).click();
+		});
+		$(&#x27;#addGroup&#x27;).on(&#x27;click&#x27;, function() {
+			var lastGroup &#x3D; form.find(&#x27;.form-group:last-of-type&#x27;);
+			$(&#x27;#addGroup&#x27;).attr(&#x27;disabled&#x27;, &#x27;disabled&#x27;);
+			if (lastGroup.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp; lastGroup.children().length &#x3D;&#x3D;&#x3D; 0) {
+				return;
+			}
+			form.append($(&#x27;&lt;div class&#x3D;&quot;form-group&quot; /&gt;&#x27;));
+		});
+		$(&#x27;#addElement&#x27;).on(&#x27;click&#x27;, function() {
+			group &#x3D; form.find(&#x27;.form-group:last-of-type&#x27;);
+			if (group.length &#x3D;&#x3D;&#x3D; 0) {
+				form.append($(&#x27;&lt;div class&#x3D;&quot;form-group&quot; /&gt;&#x27;));
+				group &#x3D; form.find(&#x27;.form-group:last-of-type&#x27;);
+			}
+			group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
+			$(&#x27;#addGroup&#x27;).removeAttr(&#x27;disabled&#x27;);
+		});
+
+		// remove unnecessary content
+		$(&#x27;.f-item-code, .componentClasses&#x27;).remove();
+		if (window.location.hash) {
+			hideOtherBlocks();
+		}
+		window.onhashchange &#x3D; hideOtherBlocks;
+
+		function hideOtherBlocks() {
+			$(&#x27;.f-item-group:not(&#x27; + window.location.hash + &#x27;)&#x27;).addClass(&#x27;f-item-hidden&#x27;);
+			$(window.location.hash).removeClass(&#x27;f-item-hidden&#x27;);
+		}
+	});
+&lt;/script&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+<div class="f-item-group" id="table-builder">
+
+	<div class="f-item-heading-group" data-f-toggle="labels">
+		<h2 class="f-item-heading">Table Builder</h2>
+		<div class="f-item-controls">
+			<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+				<svg>
+					<use xlink:href="#f-icon-code" />
+				</svg>
+			</span>
+		</div>
+	</div><div class="componentClasses" data-f-toggle="labels">
+
+</div>
+<div class="f-item-preview">
+	<p>Once you've finished building your table, use your browser's <code>web inspector</code> to copy the whole <code>&lt;table&gt;</code> element.</p>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-auto">
+			<select id="style" class="custom-select">
+		<option value="">standard table</option>
+		<option value="table-hover">hover highlight</option>
+		<option value="table-striped">striped rows</option>
+		<option value="table-sm">small table</option>
+	</select>
+		</div>
+		<div class="col-sm-auto ml-auto">
+			<div class="input-group">
+				<button class="btn btn-sm btn-primary" id="addRow">Add Row</button>
+				<button class="btn btn-sm" id="removeRow">Remove Row</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<table class="table">
+	<tr>
+		<td>Cell</td>
+	</tr>
+</table>
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-auto">
+			<div class="input-group">
+				<label class="form-check-label"><input class="form-check-input" id="toggleHeader" type="checkbox" /> Header Row</label>
+				<label class="form-check-label"><input class="form-check-input" id="toggleFooter" type="checkbox" /> Footer Row</label>
+			</div>
+		</div>
+		<div class="col-sm-auto ml-auto">
+			<div class="input-group">
+				<button class="btn btn-sm btn-primary" id="addColumn">Add Column</button>
+				<button class="btn btn-sm" id="removeColumn">Remove Column</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(event) {
+		var table = $('#table-builder table'),
+			body = table.find('tbody'),
+			row,
+			cell;
+
+		// ROWS
+		$('#addRow').on('click', function() {
+			row = body.find('tr:last-of-type');
+			body.append(row.clone());
+		});
+		$('#removeRow').on('click', function() {
+			if (body.find('tr').length > 1) {
+				body.find('tr:last-of-type').remove();
+			}
+		});
+
+		// COLUMNS
+		$('#addColumn').on('click', function() {
+			table.find('tr').each(function(i, row) {
+				cell = $(row).find(':last-child').clone();
+				row.append(cell[0]);
+			});
+		});
+		$('#removeColumn').on('click', function() {
+			table.find('tr').each(function(i, row) {
+				if ($(row).children().length > 1) {
+					$(row).find(':last-child').remove();
+				}
+			});
+		});
+
+		// HEADER
+		$('#toggleHeader').on('click', function() {
+			if ($(this).is(':checked')) {
+				var tableHeaderRow = $('<tr />');
+				for (var i = 0; i < $('tbody tr:last-child td').length; i++) {
+					tableHeaderRow.append($('<th>Header</th>'));
+				}
+				table.prepend($('<thead />').append(tableHeaderRow));
+			} else {
+				$('thead').remove();
+			}
+		});
+		$('#toggleFooter').on('click', function() {
+			if ($(this).is(':checked')) {
+				var tableFooterRow = $('<tr />');
+				for (var i = 0; i < $('tbody tr:last-child td').length; i++) {
+					tableFooterRow.append($('<th>Footer</th>'));
+				}
+
+				if ($('thead').length) {
+					$('thead').after($('<tfoot />').append(tableFooterRow));
+				} else {
+					table.prepend($('<tfoot />').append(tableFooterRow));
+				}
+			} else {
+				$('tfoot').remove();
+			}
+		});
+
+		// STYLES
+		$('#style').on('change', function() {
+			table.removeClass().addClass('table ' + $(this).val());
+		});
+
+		// remove unnecessary content
+		$('.f-item-code, .componentClasses').remove();
+	});
+</script>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;p&gt;Once you&#x27;ve finished building your table, use your browser&#x27;s &lt;code&gt;web inspector&lt;/code&gt; to copy the whole &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; element.&lt;/p&gt;
+
+&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-sm-auto&quot;&gt;
+			&lt;select id&#x3D;&quot;style&quot; class&#x3D;&quot;custom-select&quot;&gt;
+		&lt;option value&#x3D;&quot;&quot;&gt;standard table&lt;/option&gt;
+		&lt;option value&#x3D;&quot;table-hover&quot;&gt;hover highlight&lt;/option&gt;
+		&lt;option value&#x3D;&quot;table-striped&quot;&gt;striped rows&lt;/option&gt;
+		&lt;option value&#x3D;&quot;table-sm&quot;&gt;small table&lt;/option&gt;
+	&lt;/select&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-sm-auto ml-auto&quot;&gt;
+			&lt;div class&#x3D;&quot;input-group&quot;&gt;
+				&lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; id&#x3D;&quot;addRow&quot;&gt;Add Row&lt;/button&gt;
+				&lt;button class&#x3D;&quot;btn btn-sm&quot; id&#x3D;&quot;removeRow&quot;&gt;Remove Row&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;table class&#x3D;&quot;table&quot;&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Cell&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;div class&#x3D;&quot;container-fluid&quot;&gt;
+	&lt;div class&#x3D;&quot;row&quot;&gt;
+		&lt;div class&#x3D;&quot;col-sm-auto&quot;&gt;
+			&lt;div class&#x3D;&quot;input-group&quot;&gt;
+				&lt;label class&#x3D;&quot;form-check-label&quot;&gt;&lt;input class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;toggleHeader&quot; type&#x3D;&quot;checkbox&quot; /&gt; Header Row&lt;/label&gt;
+				&lt;label class&#x3D;&quot;form-check-label&quot;&gt;&lt;input class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;toggleFooter&quot; type&#x3D;&quot;checkbox&quot; /&gt; Footer Row&lt;/label&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;col-sm-auto ml-auto&quot;&gt;
+			&lt;div class&#x3D;&quot;input-group&quot;&gt;
+				&lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; id&#x3D;&quot;addColumn&quot;&gt;Add Column&lt;/button&gt;
+				&lt;button class&#x3D;&quot;btn btn-sm&quot; id&#x3D;&quot;removeColumn&quot;&gt;Remove Column&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+		var table &#x3D; $(&#x27;#table-builder table&#x27;),
+			body &#x3D; table.find(&#x27;tbody&#x27;),
+			row,
+			cell;
+
+		// ROWS
+		$(&#x27;#addRow&#x27;).on(&#x27;click&#x27;, function() {
+			row &#x3D; body.find(&#x27;tr:last-of-type&#x27;);
+			body.append(row.clone());
+		});
+		$(&#x27;#removeRow&#x27;).on(&#x27;click&#x27;, function() {
+			if (body.find(&#x27;tr&#x27;).length &gt; 1) {
+				body.find(&#x27;tr:last-of-type&#x27;).remove();
+			}
+		});
+
+		// COLUMNS
+		$(&#x27;#addColumn&#x27;).on(&#x27;click&#x27;, function() {
+			table.find(&#x27;tr&#x27;).each(function(i, row) {
+				cell &#x3D; $(row).find(&#x27;:last-child&#x27;).clone();
+				row.append(cell[0]);
+			});
+		});
+		$(&#x27;#removeColumn&#x27;).on(&#x27;click&#x27;, function() {
+			table.find(&#x27;tr&#x27;).each(function(i, row) {
+				if ($(row).children().length &gt; 1) {
+					$(row).find(&#x27;:last-child&#x27;).remove();
+				}
+			});
+		});
+
+		// HEADER
+		$(&#x27;#toggleHeader&#x27;).on(&#x27;click&#x27;, function() {
+			if ($(this).is(&#x27;:checked&#x27;)) {
+				var tableHeaderRow &#x3D; $(&#x27;&lt;tr /&gt;&#x27;);
+				for (var i &#x3D; 0; i &lt; $(&#x27;tbody tr:last-child td&#x27;).length; i++) {
+					tableHeaderRow.append($(&#x27;&lt;th&gt;Header&lt;/th&gt;&#x27;));
+				}
+				table.prepend($(&#x27;&lt;thead /&gt;&#x27;).append(tableHeaderRow));
+			} else {
+				$(&#x27;thead&#x27;).remove();
+			}
+		});
+		$(&#x27;#toggleFooter&#x27;).on(&#x27;click&#x27;, function() {
+			if ($(this).is(&#x27;:checked&#x27;)) {
+				var tableFooterRow &#x3D; $(&#x27;&lt;tr /&gt;&#x27;);
+				for (var i &#x3D; 0; i &lt; $(&#x27;tbody tr:last-child td&#x27;).length; i++) {
+					tableFooterRow.append($(&#x27;&lt;th&gt;Footer&lt;/th&gt;&#x27;));
+				}
+
+				if ($(&#x27;thead&#x27;).length) {
+					$(&#x27;thead&#x27;).after($(&#x27;&lt;tfoot /&gt;&#x27;).append(tableFooterRow));
+				} else {
+					table.prepend($(&#x27;&lt;tfoot /&gt;&#x27;).append(tableFooterRow));
+				}
+			} else {
+				$(&#x27;tfoot&#x27;).remove();
+			}
+		});
+
+		// STYLES
+		$(&#x27;#style&#x27;).on(&#x27;change&#x27;, function() {
+			table.removeClass().addClass(&#x27;table &#x27; + $(this).val());
+		});
+
+		// remove unnecessary content
+		$(&#x27;.f-item-code, .componentClasses&#x27;).remove();
+	});
+&lt;/script&gt;</code></pre>
+</div>
+
+
+</div>
+
+
+
+		</div>
+	<script src="assets/fabricator/scripts/f.js"></script>
+
+	<!-- toolkit scripts -->
+	<script src="assets/toolkit/scripts/toolkit.js"></script>
+	<!-- /toolkit scripts -->
+
+</body>
+</html>

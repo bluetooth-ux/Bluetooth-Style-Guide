@@ -50,13 +50,12 @@
 	__webpack_require__(3);
 	__webpack_require__(5);
 	__webpack_require__(4);
-	__webpack_require__(1);
 	/**
 	 * Global `fabricator` object
 	 * @namespace
 	 */
 	var fabricator = window.fabricator = {};
-	var jquery = __webpack_require__(1);
+	window.jquery = __webpack_require__(1);
 	window.$ = jquery;
 	
 	/**
@@ -11391,7 +11390,17 @@
 	  var cssPreNode = jqueryElement.parent('.f-item-preview').siblings('.f-item-css').find('pre');
 	  var cssCodeNode = cssPreNode.find('code');
 	
+	  var propertiesToFilter = ["touch-action", "-webkit-appearance", "display", "overflow", "flex-direction", "float", "clear", "white-space", "word-wrap", "transition", "background-clip", "cursor", "user-select", "pointer-events"];
+	
+	  if (cssPreNode.find('.inherits-heading').length > 1) {
+	    // console.log(selectors);
+	  }
 	  cssPreNode.prepend($('<p/>').append($('<span class="inherits-heading"/>').text('inherits from: ')).append($('<span class="inherits-elements"/>').text(selectors.join(', '))));
+	
+	  // filter out "meaningless" properties that don't affect marketing, design, or desktop development
+	  propertiesToFilter.forEach(function (property, i) {
+	    delete unorderedProperties[property];
+	  });
 	
 	  // alphabetize the properties
 	  Object.keys(unorderedProperties).sort().forEach(function (key) {
@@ -11440,9 +11449,15 @@
 	    var stringSlices = [];
 	    partOne = text.search(patternBegin);
 	    partTwo = text.search(patternEnd) + 9; // +10 trims off the </sample> (9 characters)
-	    stringSlices.push(text.slice(0, partOne));
-	    stringSlices.push(text.slice(partTwo));
-	    text = stringSlices.join('...');
+	    if (partOne === 0) {
+	      text = text.slice(partTwo);
+	    } else if (partTwo === text.length) {
+	      text = text.slice(0, partOne);
+	    } else {
+	      stringSlices.push(text.slice(0, partOne));
+	      stringSlices.push(text.slice(partTwo));
+	      text = stringSlices.join('...');
+	    }
 	  }
 	
 	  $(snippet).text(text);
@@ -11461,9 +11476,13 @@
 	window.addVariations = function () {
 		//dealing with each component's variations block
 		$('.f-item-variations').each(function (i, element) {
-			var preview = $(element).parents('.componentClasses').siblings('.f-item-preview');
+			var componentClasses = $(element).parents('.componentClasses');
+			var classList = [];
+			var preview = componentClasses.siblings('.f-item-preview');
 			var baseElement = preview.children()[0];
 			var previewElement = '';
+			var iconClass = '';
+			var iconName = '';
 	
 			var classes = element.textContent.split(' ').map(function (className) {
 				//do something
@@ -11473,15 +11492,34 @@
 	
 			preview.html(''); //clears contents of preview section
 	
-			classes.forEach(function (className, i) {
-				previewElement = $(baseElement).clone().addClass(className).attr('variation', i > 0 ? 'true' : '');
-				if (className === "readonly") {
-					previewElement.attr('readonly', '');
-				}
-				if ($(baseElement).is('input[type="text"]')) {
-					preview.append($('<span class="textInputClasses">class: ' + previewElement.attr('class') + '</span>').attr('variation', i > 0 ? 'true' : ''));
+			classes.forEach(function (className, i, classes) {
+				previewElement = $(baseElement).clone().attr('variation', i > 0 ? 'true' : '');
+				if ($(baseElement).is('i.fa')) {
+					if (className.length > 0) {
+						iconClass = className.slice(0, className.indexOf('|'));
+						iconName = className.slice(className.indexOf('|') + 1);
+						iconName = iconName.indexOf('_') > 0 ? iconName.split('_').join(' ') : iconName;
+						previewElement.addClass(iconClass).text(' \xA0 ' + iconName).attr('data-variation', 'true');
+						classList.push(' .' + iconClass);
+					} else {
+						// get rid of the empty .fa preview element
+						previewElement = null;
+					}
+				} else {
+					previewElement.addClass(className);
+					if (className === "readonly") {
+						previewElement.attr('readonly', '');
+					}
+					if ($(baseElement).is('input[type="text"]')) {
+						preview.append($('<span class="textInputClasses" input-variation="' + previewElement.attr('class') + '">class: ' + previewElement.attr('class') + '</span>').attr('variation', i > 0 ? 'true' : ''));
+					}
 				}
 				preview.append(previewElement);
+	
+				if ($(baseElement).is('i.fa') && i === classes.length - 1) {
+					// reset the 'classes' list to strip out the icon name
+					componentClasses.find('code').text('CLASS: .fa +' + classList.join(''));
+				}
 			});
 	
 			addVariationStyles(classes, element);
