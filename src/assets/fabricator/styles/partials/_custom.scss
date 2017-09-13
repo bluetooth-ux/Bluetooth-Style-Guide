@@ -7,6 +7,7 @@
 }
 .f-item-preview {
 	overflow-x: auto;
+	padding-bottom: 2px;
 }
 
 // Main Navigation 'Controls' labels
@@ -73,6 +74,15 @@ span.textInputClasses {
     	display: none;
     }
 }
+// Slush-Bucket
+.slushbucket[data-variation="true"] {
+	margin-top: 60px;
+    margin-right: 190px;
+    &:first-of-type {
+    	margin-top: 10px;
+    }
+}
+
 // Input overrides
 span.textInputClasses + input[type="text"] {
 	width: 70%;
