@@ -28,6 +28,15 @@
 	}
 }
 
+// Fabricator headings
+.f-item-heading {
+	font-family: 'Roboto Condensed', sans-serif;;
+	background-color: #0082fc;
+	color: white;
+	font-size: 1rem;
+	padding: 2px 3px 2px;
+}
+
 // getVariations styles
 [data-variation="true"] {
 	position: relative !important;
