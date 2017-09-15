@@ -1,0 +1,95 @@
+---
+notes: <!-- something -->
+base: .listbuilder
+variations:
+  - .sort
+---
+<section class="listbuilder">
+	<label>All Documents</label>
+	<section for="all">
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-First-Item-In-This-List-Version-One.DOC" data-modified="January 01, 2017" data-group="ABC"><div><sample>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-First-Item-In-This-List-Version-One.DOC</div></label>
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Second-Item-In-This-List-Version-Two.DOC" data-modified="February 02, 2017" data-group="DEF"><div>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Second-Item-In-This-List-Version-Two.DOC</div></label>
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Third-Item-In-This-List-Version-Three.DOC" data-modified="March 03, 2017" data-group="GHI"><div>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Third-Item-In-This-List-Version-Three.DOC</div></label>
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fourth-Item-In-This-List-Version-Four.DOC" data-modified="April 04, 2017" data-group="JKL"><div>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fourth-Item-In-This-List-Version-Four.DOC</div></label>
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fifth-Item-In-This-List-Version-Five.DOC" data-modified="May 05, 2017" data-group="MNO"><div>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Fifth-Item-In-This-List-Version-Five.DOC</div></label>
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Sixth-Item-In-This-List-Version-Six.DOC" data-modified="June 06, 2017" data-group="PQR"><div>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Sixth-Item-In-This-List-Version-Six.DOC</div></label>
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Seventh-Item-In-This-List-Version-Seven.DOC" data-modified="July 07, 2017" data-group="STU"><div>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Seventh-Item-In-This-List-Version-Seven.DOC</div></label>
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Eighth-Item-In-This-List-Version-Eight.DOC" data-modified="August 08, 2017" data-group="VWX"><div>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Eighth-Item-In-This-List-Version-Eight.DOC</div></label>
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Ninth-Item-In-This-List-Version-Nine.DOC" data-modified="September 09, 2017" data-group="Y&Z"><div>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Ninth-Item-In-This-List-Version-Nine.DOC</div></label>
+		<label><input type="checkbox" value="ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Tenth-Item-In-This-List-Version-Ten.DOC" data-modified="October 10, 2017" data-group="123"><div>ABC/ DEF/ GHI/ Super-Incredibly-Long-File-Name-for-the-Tenth-Item-In-This-List-Version-Ten.DOC</sample></div></label>
+	</section>
+	<label>Selected Documents</label>
+	<section for="selected"></section>
+</section>
+<sample>
+<script type="text/javascript">
+// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+// use standard ` $(document).ready(function(){ ... }) ` in production code.
+// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+document.addEventListener("DOMContentLoaded", function(event) {
+	var duplicateEvent;
+	$('.listbuilder').on('click', 'label', function(e){
+		//prevent event from firing twice.
+		if (e.target.tagName !== "INPUT") {
+			return;
+		}
+
+		var block;
+
+		if ($(this).find('input')[0].checked) {
+			// add a block to the 'selected' section
+			var input = $(this).find('input');
+			var sort = $(this).parents('.listbuilder').hasClass('sort');
+			if (sort) {
+				var selectedListPosition = 0;
+				// count how many previous siblings are :checked
+				for (var i=0; i < $(this).index(); i++) {
+					if ($($(this).siblings()[i]).find('input')[0].checked) {selectedListPosition++;}
+				}
+			}
+
+			// build the block
+			block = $(this).find('div').clone();
+			block.addClass('adding');
+			block.attr('srcIndex', $(this).index());
+			block.html($('<p/>').text(block.text()));
+			block.prepend($('<i class="fa fa-times" purpose="removeSelection" />'));
+			block.append($('<aside />').append($('<p/>').html('<b>Modified:</b> '+ input.data('modified'))).append($('<p/>').html('<b>Group:</b> '+ input.data('group'))));
+
+			var selectedSection = $(this).parent().siblings('[for="selected"]');
+			if (sort && selectedSection.children().length && selectedSection.children().length > selectedListPosition) {
+				// put the block in the correct position
+				$(selectedSection.children()[selectedListPosition]).before(block);
+			} else {
+				// put the block at the end
+				block.appendTo(selectedSection);
+			}
+
+			// animate in
+			block.slideDown('fast', function(){
+				$(this).removeAttr('class').removeAttr('style');
+			});
+		} else {
+			// remove the block from the 'selected' section
+			block = $(this).parent().siblings('[for="selected"]').find("[srcIndex=\""+ $(this).index() +"\"]");
+			block.addClass('removing');
+			block.slideUp(function(){
+				this.remove();
+			});
+		}
+	});
+	$('.listbuilder [for="selected"]').on('click', 'div', function(e){
+		if ($(e.target).attr('purpose') === "removeSelection") {
+			$($(this).parent().siblings('[for="all"]').children()[$(this).attr('srcIndex')]).find('input').click();
+		} else {
+			if ($(this).hasClass('expanded')) {
+				$(this).removeClass('expanded');
+				$(this).find('aside').slideUp('fast');
+			} else {
+				$(this).addClass('expanded');
+				$(this).find('aside').slideDown('fast');
+			}
+		}
+	});
+});
+</script></sample>
