@@ -139,6 +139,20 @@ window.writeToBody = function (jqueryElement) {
   var cssCodeNode = cssPreNode.find('code');
 
   var propertiesToFilter = ["touch-action", "-webkit-appearance", "-webkit-text-decoration-skip", "display", "overflow", "flex-direction", "float", "clear", "white-space", "word-wrap", "transition", "background-clip", "cursor", "user-select", "pointer-events"];
+  var propertyValuePairsToFilter = [
+      {"background-color": "transparent"},
+      {"background-image": "none"},
+      {"background-position": "initial initial"},
+      {"background-repeat": "initial initial"},
+      {"font-family": "inherit"},
+      {"font-size": "1rem"},
+      {"font-weight": "normal"},
+      {"line-height": "1"},
+      {"opacity": "1"},
+      {"position": "relative"},
+      {"text-transform": "none"},
+      {"-webkit-user-select": "none"}
+    ];
 
   if (cssPreNode.find('.inherits-heading').length > 1) {
     // console.log(selectors);
