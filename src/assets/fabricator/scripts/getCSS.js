@@ -175,8 +175,17 @@ window.writeToBody = function (jqueryElement) {
     orderedProperties[key] = unorderedProperties[key];
   });
 
+
   // write the properties to an array
   for (var property in orderedProperties) {
+
+    // TODO: Multiply out rem values to px values
+    // 1. If there's an instance of 'rem' in orderedProperties[property]
+    // 2. Slice to orderedProperties[property].indexof('rem')
+    // 3. Multiply sliced value by 16
+    // 4. Add 'px' to the string
+    // 5. Assign the result to orderedProperties[property]
+
     cssPropertiesArray.push(property + ': ' + orderedProperties[property] + '; ');
   }
 
