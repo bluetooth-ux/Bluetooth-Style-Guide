@@ -1,5 +1,8 @@
 ---
 notes: <!-- something -->
+base: .listbuilder
+variations:
+  - .sort
 ---
 <section class="listbuilder">
 	<label>All Documents</label>
@@ -36,6 +39,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		if ($(this).find('input')[0].checked) {
 			// add a block to the 'selected' section
 			var input = $(this).find('input');
+			var sort = $(this).parents('.listbuilder').hasClass('sort');
+			if (sort) {
+				var selectedListPosition = 0;
+				// count how many previous siblings are :checked
+				for (var i=0; i < $(this).index(); i++) {
+					if ($($(this).siblings()[i]).find('input')[0].checked) {selectedListPosition++;}
+				}
+			}
 
 			// build the block
 			block = $(this).find('div').clone();
@@ -46,8 +57,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			block.append($('<aside />').append($('<p/>').html('<b>Modified:</b> '+ input.data('modified'))).append($('<p/>').html('<b>Group:</b> '+ input.data('group'))));
 
 			var selectedSection = $(this).parent().siblings('[for="selected"]');
+			if (sort && selectedSection.children().length && selectedSection.children().length > selectedListPosition) {
+				// put the block in the correct position
+				$(selectedSection.children()[selectedListPosition]).before(block);
+			} else {
 				// put the block at the end
 				block.appendTo(selectedSection);
+			}
 
 			// animate in
 			block.slideDown('fast', function(){
