@@ -1344,7 +1344,7 @@
 
 		function getSelectValues(bucket) {
 			var result = {};
-			var options = bucket && bucket.options;
+			var options = bucket && $(bucket).children();
 
 			for (var i = 0; i < options.length; i++) {
 				if (options[i].selected) {
@@ -1429,7 +1429,7 @@
 
 		function getSelectValues(bucket) {
 			var result &#x3D; {};
-			var options &#x3D; bucket &amp;&amp; bucket.options;
+			var options &#x3D; bucket &amp;&amp; $(bucket).children();
 
 			for (var i &#x3D; 0; i &lt; options.length; i++) {
 				if (options[i].selected) {

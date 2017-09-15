@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 function getSelectValues(bucket) {
 	var result = {};
-	var options = bucket && bucket.options;
+	var options = bucket && $(bucket).children();
 
 	for (var i=0; i < options.length; i++) {
 		if (options[i].selected) { result[i] = options[i]; }
