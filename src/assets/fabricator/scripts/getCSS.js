@@ -138,7 +138,7 @@ window.writeToBody = function (jqueryElement) {
   var cssPreNode = jqueryElement.parent('.f-item-preview').siblings('.f-item-css').find('pre');
   var cssCodeNode = cssPreNode.find('code');
 
-  var propertiesToFilter = ["touch-action", "-webkit-appearance", "display", "overflow", "flex-direction", "float", "clear", "white-space", "word-wrap", "transition", "background-clip", "cursor", "user-select", "pointer-events"];
+  var propertiesToFilter = ["touch-action", "-webkit-appearance", "-webkit-text-decoration-skip", "display", "overflow", "flex-direction", "float", "clear", "white-space", "word-wrap", "transition", "background-clip", "cursor", "user-select", "pointer-events"];
 
   if (cssPreNode.find('.inherits-heading').length > 1) {
     // console.log(selectors);
