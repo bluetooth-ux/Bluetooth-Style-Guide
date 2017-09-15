@@ -11390,7 +11390,8 @@
 	  var cssPreNode = jqueryElement.parent('.f-item-preview').siblings('.f-item-css').find('pre');
 	  var cssCodeNode = cssPreNode.find('code');
 	
-	  var propertiesToFilter = ["touch-action", "-webkit-appearance", "display", "overflow", "flex-direction", "float", "clear", "white-space", "word-wrap", "transition", "background-clip", "cursor", "user-select", "pointer-events"];
+	  var propertiesToFilter = ["touch-action", "-webkit-appearance", "-webkit-text-decoration-skip", "display", "overflow", "flex-direction", "float", "clear", "white-space", "word-wrap", "transition", "background-clip", "cursor", "user-select", "pointer-events"];
+	  var propertyValuePairsToFilter = [{ "background-color": "transparent" }, { "background-image": "none" }, { "background-position": "initial initial" }, { "background-repeat": "initial initial" }, { "font-family": "inherit" }, { "font-size": "1rem" }, { "font-weight": "normal" }, { "line-height": "1" }, { "opacity": "1" }, { "position": "relative" }, { "text-transform": "none" }, { "-webkit-user-select": "none" }];
 	
 	  if (cssPreNode.find('.inherits-heading').length > 1) {
 	    // console.log(selectors);
@@ -11409,6 +11410,14 @@
 	
 	  // write the properties to an array
 	  for (var property in orderedProperties) {
+	
+	    // TODO: Multiply out rem values to px values
+	    // 1. If there's an instance of 'rem' in orderedProperties[property]
+	    // 2. Slice to orderedProperties[property].indexof('rem')
+	    // 3. Multiply sliced value by 16
+	    // 4. Add 'px' to the string
+	    // 5. Assign the result to orderedProperties[property]
+	
 	    cssPropertiesArray.push(property + ': ' + orderedProperties[property] + '; ');
 	  }
 	
