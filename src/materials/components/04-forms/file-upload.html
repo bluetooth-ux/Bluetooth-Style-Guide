@@ -1,0 +1,51 @@
+---
+notes: <!--some usage guidelines-->
+base: .form-group .upload
+variations:
+  - .multi
+---
+<div class="form-group upload">
+	<label for="exampleFormControlFile1">Example file input</label>
+	<label class="custom-file">
+		<input type="file" class="custom-file-input">
+		<span class="custom-file-control"><button class="btn btn-sm">Select </button></span>
+	</label>
+	<div class="uploadGroup"></div>
+</div>
+
+<sample>
+<script type="text/javascript">
+// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+// use standard ` $(document).ready(function(){ ... }) ` in production code.
+// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+document.addEventListener("DOMContentLoaded", function(event) {
+	$('.custom-file-input').on('change', function () {
+		if (this.value === "") {return;}
+
+		var uploads = $(this).parent().next('.uploadGroup');
+
+		// add file line item
+		uploads.append(
+			$('<div class="input-group"/>').append(
+				$('<input type="text" disabled value="'+this.value+'" />')
+			).append(
+				$('<button class="btn btn-sm btn-info" purpose="remove">Remove</button>')
+			)
+		);
+
+		// clear input value
+		this.value = "";
+
+		// hide selection field for single upload
+		if(!$(this).parents('.upload').hasClass('multi')) {
+			$(this).parent('.custom-file').hide();
+		}
+	});
+
+	$('.uploadGroup').on('click', '[purpose="remove"]', function(e){
+		$(this).parents('.uploadGroup').prev('.custom-file').show();
+		$(this).parent('div').remove();
+	});
+});
+</script>
+</sample>
