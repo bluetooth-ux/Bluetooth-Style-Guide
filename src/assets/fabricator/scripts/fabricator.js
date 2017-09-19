@@ -371,4 +371,8 @@ $(document).ready(function(){
   $('.f-item-preview').find('[href]').each(preventLinkAndButtonEvents);
   $('.f-item-preview').find('button').each(preventLinkAndButtonEvents);
 
+  // gray-out content toggles for pages where they are irrelevant
+  if (window.location.pathname !== '/components.html') {
+    $('.f-controls').addClass('inactive');
+  }
 });
