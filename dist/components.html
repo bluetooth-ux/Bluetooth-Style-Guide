@@ -1116,7 +1116,7 @@
 		// ` DOMContentLoaded ` is not supported in IE8 or earlier.
 		document.addEventListener("DOMContentLoaded", function(event) {
 			var duplicateEvent;
-			$('.listbuilder').on('click', 'label', function(e) {
+			$('.f-item-preview').on('click', '.listbuilder label', function(e) {
 				//prevent event from firing twice.
 				if (e.target.tagName !== "INPUT") {
 					return;
@@ -1168,7 +1168,7 @@
 					});
 				}
 			});
-			$('.listbuilder [for="selected"]').on('click', 'div', function(e) {
+			$('.f-item-preview').on('click', '.listbuilder [for="selected"] div', function(e) {
 				if ($(e.target).attr('purpose') === "removeSelection") {
 					$($(this).parent().siblings('[for="all"]').children()[$(this).attr('srcIndex')]).find('input').click();
 				} else {
@@ -1210,7 +1210,7 @@
 		// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
 		document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
 			var duplicateEvent;
-			$(&#x27;.listbuilder&#x27;).on(&#x27;click&#x27;, &#x27;label&#x27;, function(e) {
+			$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.listbuilder label&#x27;, function(e) {
 				//prevent event from firing twice.
 				if (e.target.tagName !&#x3D;&#x3D; &quot;INPUT&quot;) {
 					return;
@@ -1262,7 +1262,7 @@
 					});
 				}
 			});
-			$(&#x27;.listbuilder [for&#x3D;&quot;selected&quot;]&#x27;).on(&#x27;click&#x27;, &#x27;div&#x27;, function(e) {
+			$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.listbuilder [for&#x3D;&quot;selected&quot;] div&#x27;, function(e) {
 				if ($(e.target).attr(&#x27;purpose&#x27;) &#x3D;&#x3D;&#x3D; &quot;removeSelection&quot;) {
 					$($(this).parent().siblings(&#x27;[for&#x3D;&quot;all&quot;]&#x27;).children()[$(this).attr(&#x27;srcIndex&#x27;)]).find(&#x27;input&#x27;).click();
 				} else {
@@ -1434,7 +1434,7 @@
 		// use standard ` $(document).ready(function(){ ... }) ` in production code.
 		// ` DOMContentLoaded ` is not supported in IE8 or earlier.
 		document.addEventListener("DOMContentLoaded", function(event) {
-			$('.slushbucket').on('click', 'button', function(e) {
+			$('.f-item-preview').on('click', '.slushbucket button', function(e) {
 				var allList = $(this).parent().prev('div').find('[role="allList"]'),
 					userList = $(this).parent().next('div').find('[role="userList"]');
 				var selectedRows, srcRow;
@@ -1519,7 +1519,7 @@
 		// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
 		// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
 		document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
-			$(&#x27;.slushbucket&#x27;).on(&#x27;click&#x27;, &#x27;button&#x27;, function(e) {
+			$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.slushbucket button&#x27;, function(e) {
 				var allList &#x3D; $(this).parent().prev(&#x27;div&#x27;).find(&#x27;[role&#x3D;&quot;allList&quot;]&#x27;),
 					userList &#x3D; $(this).parent().next(&#x27;div&#x27;).find(&#x27;[role&#x3D;&quot;userList&quot;]&#x27;);
 				var selectedRows, srcRow;
@@ -1646,6 +1646,141 @@
 	<div class="f-item-heading-group">
 		<h2 class="f-item-heading" data-f-toggle="labels">Navigation</h2>
 	</div>
+		<div class="f-item-group" id="05-navigation.chip">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Chip</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+					<span class="f-control f-icon" data-f-toggle-control="css" title="Toggle CSS">
+						<svg>
+							<use xlink:href="#f-icon-css" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="componentClasses" data-f-toggle="labels">
+
+</div>
+<div class="f-item-preview">
+	<a class="chip" tabindex="<sample></sample>">
+	<sample>Chip</sample>
+	<i class="fa fa-times" aria-hidden="true"></i>
+</a>
+
+<style type="text/css">
+	.chip {
+		display: inline-block;
+		color: #4f6e86;
+		background-color: #a1c4e4;
+		line-height: 2.2rem;
+		padding: 0 5px 0 8px;
+		border-radius: 100px;
+		cursor: pointer;
+	}
+
+	.chip.active,
+	.chip:hover {
+		color: #fff;
+		background-color: #65a3dc;
+	}
+
+	.chip i {
+		display: inline-block;
+		color: #888;
+		background-color: #eee;
+		line-height: 1.6rem;
+		width: 1.6rem;
+		margin-bottom: .2rem;
+		border-radius: 100px;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+	.chip i:hover {
+		background-color: #000;
+		color: #fff;
+	}
+</style>
+<script type="text/javascript">
+	// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+	// use standard ` $(document).ready(function(){ ... }) ` in production code.
+	// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+	document.addEventListener("DOMContentLoaded", function(event) {
+
+		$('.f-item-preview').on('click', '.chip', function() {
+			$(this).siblings().removeClass('active');
+			$(this).addClass('active');
+		});
+		$('.f-item-preview').on('click', '.chip i', function() {
+			$(this).parent().remove();
+		});
+	});
+</script>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;a class&#x3D;&quot;chip&quot; tabindex&#x3D;&quot;&lt;sample&gt;&lt;/sample&gt;&quot;&gt;
+	&lt;sample&gt;Chip&lt;/sample&gt;
+	&lt;i class&#x3D;&quot;fa fa-times&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
+&lt;/a&gt;
+
+&lt;style type&#x3D;&quot;text/css&quot;&gt;
+	.chip {
+		display: inline-block;
+		color: #4f6e86;
+		background-color: #a1c4e4;
+		line-height: 2.2rem;
+		padding: 0 5px 0 8px;
+		border-radius: 100px;
+		cursor: pointer;
+	}
+
+	.chip.active,
+	.chip:hover {
+		color: #fff;
+		background-color: #65a3dc;
+	}
+
+	.chip i {
+		display: inline-block;
+		color: #888;
+		background-color: #eee;
+		line-height: 1.6rem;
+		width: 1.6rem;
+		margin-bottom: .2rem;
+		border-radius: 100px;
+		vertical-align: middle;
+		text-align: center;
+	}
+
+	.chip i:hover {
+		background-color: #000;
+		color: #fff;
+	}
+&lt;/style&gt;
+&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+	// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
+	// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
+	// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
+	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+
+		$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.chip&#x27;, function() {
+			$(this).siblings().removeClass(&#x27;active&#x27;);
+			$(this).addClass(&#x27;active&#x27;);
+		});
+		$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.chip i&#x27;, function() {
+			$(this).parent().remove();
+		});
+	});
+&lt;/script&gt;</code></pre>
+</div>
+<div class="f-item-css" data-f-toggle="css">
+	<pre><code class="language-css"><!-- display CSS --></code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="05-navigation.nav-bar">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Nav Bar</h3>
@@ -2697,10 +2832,10 @@ time b {
 	// ` DOMContentLoaded ` is not supported in IE8 or earlier.
 	document.addEventListener("DOMContentLoaded", function(event) {
 
-		$('.accordion').find('[role="tabpanel"]').collapse();
+		$('.f-item-preview').find('.accordion [role="tabpanel"]').collapse();
 
 		/* ENABLES CLICKING ANYWHERE ON TAB HEADER TO TRIGGER COLLAPSE-TOGGLE */
-		$('.accordion').on('click', '[role="tab"]', function() {
+		$('.f-item-preview').on('click', '.accordion [role="tab"]', function() {
 			$(this).next('[role="tabpanel"]').collapse('toggle');
 		});
 
@@ -2771,10 +2906,10 @@ time b {
 	// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
 	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
 
-		$(&#x27;.accordion&#x27;).find(&#x27;[role&#x3D;&quot;tabpanel&quot;]&#x27;).collapse();
+		$(&#x27;.f-item-preview&#x27;).find(&#x27;.accordion [role&#x3D;&quot;tabpanel&quot;]&#x27;).collapse();
 
 		/* ENABLES CLICKING ANYWHERE ON TAB HEADER TO TRIGGER COLLAPSE-TOGGLE */
-		$(&#x27;.accordion&#x27;).on(&#x27;click&#x27;, &#x27;[role&#x3D;&quot;tab&quot;]&#x27;, function() {
+		$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.accordion [role&#x3D;&quot;tab&quot;]&#x27;, function() {
 			$(this).next(&#x27;[role&#x3D;&quot;tabpanel&quot;]&#x27;).collapse(&#x27;toggle&#x27;);
 		});
 

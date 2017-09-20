@@ -15,6 +15,28 @@ function splice (snippet) {
 
   while (patternBegin.test(text)) {
     var stringSlices = [];
+
+    // Ideally this code should search for the last instance of <sample> and the find the subsequent </sample>
+    // searching as above would allow nested sample blocks, which is relevant when using toolkit components to build modules
+    //
+    //
+    // enabling multi-level nesting would allow for embedding multiple paragraphs in a container and trimming them all to a single ellipsis
+    // eg: {{> typography.paragraph}} === <p> <sample> Some text </sample> </p>
+    //
+    //   <card> <sample>
+    //    {{#iterate 3}}
+    //       {{> typography.paragraph}}
+    //     {{/iterate}}
+    //   </sample> </card>
+    //
+    // preview: <card>
+    //           <p> Some Text </p>
+    //           <p> Some Text </p>
+    //           <p> Some Text </p>
+    //         </card>
+    //
+    // snippet: <card>...</card>
+
     partOne = text.search(patternBegin);
     partTwo = text.search(patternEnd) + 9; // +10 trims off the </sample> (9 characters)
     if (partOne === 0) {

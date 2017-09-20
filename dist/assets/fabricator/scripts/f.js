@@ -374,22 +374,47 @@
 	// running filter before adding variations breaks variations function. Memory leak? Unclosed tag?
 	filterSampleText();
 	
-	/**
-	 * Prevent events from firing when example elements are clicked
-	 */
+	/*
+	  Miscellaneous Functions
+	*/
 	$(document).ready(function () {
+	  // Prevent events from firing when example elements are clicked
 	  function preventLinkAndButtonEvents(i, element) {
 	    $(element).on('click', function (event) {
 	      event.preventDefault();
 	      //event.stopPropagation(); // this may be necessary if other functions are tied to a link that you need to block
 	    });
 	  };
-	
+	  // bind preventLinkAndButtonEvents function
 	  $('.f-item-preview').find('[href]').each(preventLinkAndButtonEvents);
 	  $('.f-item-preview').find('button').each(preventLinkAndButtonEvents);
 	
-	  // gray-out content toggles for pages where they are irrelevant
-	  if (!/components.html$/.test(window.location.pathname)) {
+	  // add reset switches to components with scripts
+	  // ELSE gray-out content toggles for pages where they are irrelevant
+	  if (/components.html$/.test(window.location.pathname)) {
+	    var reset = $('<p class="resetContent" style="display:none;text-align:right;">reset</p>'),
+	        previewContainers = $('.f-item-preview script').parents('.f-item-preview'),
+	        resetContent;
+	
+	    previewContainers.each(function (i, preview) {
+	      var thisReset = reset.clone();
+	      $(preview).prepend(thisReset);
+	
+	      $(preview).on('click', function () {
+	        $(this).find('.resetContent').fadeIn();
+	      });
+	
+	      $(preview).on('click', '.resetContent', function () {
+	        // `this` refers to the reset link
+	        $(this).parents('.f-item-preview').slideUp(function () {
+	          // `this` refers to the '.f-item-preview'
+	          $(this).html(JSON.parse($(this).data('resetContent')));
+	        }).slideDown();
+	      });
+	
+	      $(preview).data('resetContent', JSON.stringify(preview.innerHTML));
+	    });
+	  } else {
 	    $('.f-controls').addClass('inactive');
 	  }
 	});
@@ -11461,6 +11486,28 @@
 	
 	  while (patternBegin.test(text)) {
 	    var stringSlices = [];
+	
+	    // Ideally this code should search for the last instance of <sample> and the find the subsequent </sample>
+	    // searching as above would allow nested sample blocks, which is relevant when using toolkit components to build modules
+	    //
+	    //
+	    // enabling multi-level nesting would allow for embedding multiple paragraphs in a container and trimming them all to a single ellipsis
+	    // eg: {{> typography.paragraph}} === <p> <sample> Some text </sample> </p>
+	    //
+	    //   <card> <sample>
+	    //    {{#iterate 3}}
+	    //       {{> typography.paragraph}}
+	    //     {{/iterate}}
+	    //   </sample> </card>
+	    //
+	    // preview: <card>
+	    //           <p> Some Text </p>
+	    //           <p> Some Text </p>
+	    //           <p> Some Text </p>
+	    //         </card>
+	    //
+	    // snippet: <card>...</card>
+	
 	    partOne = text.search(patternBegin);
 	    partTwo = text.search(patternEnd) + 9; // +10 trims off the </sample> (9 characters)
 	    if (partOne === 0) {
@@ -11488,7 +11535,7 @@
 	var $ = __webpack_require__(1);
 	
 	window.addVariations = function () {
-		//dealing with each component's variations block
+		// dealing with each component's variations block
 		$('.f-item-variations').each(function (i, element) {
 			var componentClasses = $(element).parents('.componentClasses');
 			var classList = [];
@@ -11499,12 +11546,11 @@
 			var iconName = '';
 	
 			var classes = element.textContent.split(' ').map(function (className) {
-				//do something
 				className = className.split('');
 				return className.slice(className.indexOf('.') + 1, className.length).join('');
-			}); //first array element is empty string - generates 'base' rendering
+			}); // first array element is empty string - generates 'base' rendering
 	
-			preview.html(''); //clears contents of preview section
+			preview.html(''); // clears contents of preview section
 	
 			classes.forEach(function (className, i, classes) {
 				previewElement = $(baseElement).clone().attr('variation', i > 0 ? 'true' : '');
