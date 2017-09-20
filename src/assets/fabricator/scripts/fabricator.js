@@ -356,23 +356,47 @@ highlightCSS();
 // running filter before adding variations breaks variations function. Memory leak? Unclosed tag?
 filterSampleText();
 
-
-/**
- * Prevent events from firing when example elements are clicked
- */
+/*
+  Miscellaneous Functions
+*/
 $(document).ready(function(){
+  // Prevent events from firing when example elements are clicked
   function preventLinkAndButtonEvents (i, element){
     $(element).on('click',function(event){
       event.preventDefault();
       //event.stopPropagation(); // this may be necessary if other functions are tied to a link that you need to block
     });
   };
-
+  // bind preventLinkAndButtonEvents function
   $('.f-item-preview').find('[href]').each(preventLinkAndButtonEvents);
   $('.f-item-preview').find('button').each(preventLinkAndButtonEvents);
 
-  // gray-out content toggles for pages where they are irrelevant
-  if (! /components.html$/.test(window.location.pathname)) {
-    $('.f-controls').addClass('inactive');
-  }
+
+    // add reset switches to components with scripts
+    // ELSE gray-out content toggles for pages where they are irrelevant
+  if (/components.html$/.test(window.location.pathname)) {
+    var reset = $('<p class="resetContent" style="display:none;text-align:right;">reset</p>'),
+    previewContainers = $('.f-item-preview script').parents('.f-item-preview'),
+    resetContent;
+
+    previewContainers.each(function(i, preview){
+      var thisReset = reset.clone();
+      $(preview).prepend(thisReset);
+
+      $(preview).on('click', function(){
+        $(this).find('.resetContent').fadeIn();
+      });
+
+      $(preview).on('click','.resetContent',function(){
+        // `this` refers to the reset link
+        $(this).parents('.f-item-preview').slideUp(function(){
+          // `this` refers to the '.f-item-preview'
+          $(this).html(JSON.parse($(this).data('resetContent')));
+        }).slideDown();
+      });
+
+      $(preview).data('resetContent', JSON.stringify(preview.innerHTML));
+    });
+
+  } else { $('.f-controls').addClass('inactive'); }
 });
