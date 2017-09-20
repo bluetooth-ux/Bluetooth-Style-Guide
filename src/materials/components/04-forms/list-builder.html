@@ -28,7 +28,7 @@ variations:
 // ` DOMContentLoaded ` is not supported in IE8 or earlier.
 document.addEventListener("DOMContentLoaded", function(event) {
 	var duplicateEvent;
-	$('.listbuilder').on('click', 'label', function(e){
+	$('.f-item-preview').on('click', '.listbuilder label', function(e){
 		//prevent event from firing twice.
 		if (e.target.tagName !== "INPUT") {
 			return;
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			});
 		}
 	});
-	$('.listbuilder [for="selected"]').on('click', 'div', function(e){
+	$('.f-item-preview').on('click', '.listbuilder [for="selected"] div', function(e){
 		if ($(e.target).attr('purpose') === "removeSelection") {
 			$($(this).parent().siblings('[for="all"]').children()[$(this).attr('srcIndex')]).find('input').click();
 		} else {

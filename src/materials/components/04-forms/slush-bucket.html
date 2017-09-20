@@ -37,7 +37,7 @@ variations:
 // use standard ` $(document).ready(function(){ ... }) ` in production code.
 // ` DOMContentLoaded ` is not supported in IE8 or earlier.
 document.addEventListener("DOMContentLoaded", function(event) {
-	$('.slushbucket').on('click', 'button', function(e){
+	$('.f-item-preview').on('click', '.slushbucket button', function(e){
 		var allList = $(this).parent().prev('div').find('[role="allList"]'),
 			userList = $(this).parent().next('div').find('[role="userList"]');
 		var selectedRows, srcRow;

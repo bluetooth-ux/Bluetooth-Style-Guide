@@ -13,10 +13,10 @@ notes: To allow multiple accordion tabs to be open simultaneously, omit the `dat
 // ` DOMContentLoaded ` is not supported in IE8 or earlier.
 document.addEventListener("DOMContentLoaded", function(event) {
 
-	$('.accordion').find('[role="tabpanel"]').collapse();
+	$('.f-item-preview').find('.accordion [role="tabpanel"]').collapse();
 
 	/* ENABLES CLICKING ANYWHERE ON TAB HEADER TO TRIGGER COLLAPSE-TOGGLE */
-	$('.accordion').on('click', '[role="tab"]',function(){
+	$('.f-item-preview').on('click', '.accordion [role="tab"]',function(){
 		$(this).next('[role="tabpanel"]').collapse('toggle');
 	});
 
