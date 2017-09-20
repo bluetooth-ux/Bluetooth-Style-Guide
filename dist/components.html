@@ -1669,112 +1669,56 @@
 	<sample>Chip</sample>
 	<i class="fa fa-times" aria-hidden="true"></i>
 </a>
+<span class="add-chip"></span>
+<sample>
+	<script type="text/javascript">
+		// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard ` $(document).ready(function(){ ... }) ` in production code.
+		// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+		document.addEventListener("DOMContentLoaded", function(event) {
 
-<style type="text/css">
-	.chip {
-		display: inline-block;
-		color: #4f6e86;
-		background-color: #a1c4e4;
-		line-height: 2.2rem;
-		padding: 0 5px 0 8px;
-		border-radius: 100px;
-		cursor: pointer;
-	}
-
-	.chip.active,
-	.chip:hover {
-		color: #fff;
-		background-color: #65a3dc;
-	}
-
-	.chip i {
-		display: inline-block;
-		color: #888;
-		background-color: #eee;
-		line-height: 1.6rem;
-		width: 1.6rem;
-		margin-bottom: .2rem;
-		border-radius: 100px;
-		vertical-align: middle;
-		text-align: center;
-	}
-
-	.chip i:hover {
-		background-color: #000;
-		color: #fff;
-	}
-</style>
-<script type="text/javascript">
-	// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
-	// use standard ` $(document).ready(function(){ ... }) ` in production code.
-	// ` DOMContentLoaded ` is not supported in IE8 or earlier.
-	document.addEventListener("DOMContentLoaded", function(event) {
-
-		$('.f-item-preview').on('click', '.chip', function() {
-			$(this).siblings().removeClass('active');
-			$(this).addClass('active');
+			$('.f-item-preview').on('click', '.chip', function() {
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+			});
+			$('.f-item-preview').on('click', '.chip i', function() {
+				$(this).parent().remove();
+			});
+			$('.f-item-preview').on('click', '.add-chip', function() {
+				$(this).siblings('.chip:last-of-type').after($(this).siblings('.chip:last-of-type').clone());
+				$(this).siblings('.chip:last-of-type').click();
+			});
 		});
-		$('.f-item-preview').on('click', '.chip i', function() {
-			$(this).parent().remove();
-		});
-	});
-</script>
+	</script>
+</sample>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;a class&#x3D;&quot;chip&quot; tabindex&#x3D;&quot;&lt;sample&gt;&lt;/sample&gt;&quot;&gt;
 	&lt;sample&gt;Chip&lt;/sample&gt;
 	&lt;i class&#x3D;&quot;fa fa-times&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;
 &lt;/a&gt;
+&lt;span class&#x3D;&quot;add-chip&quot;&gt;&lt;/span&gt;
+&lt;sample&gt;
+	&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+		// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
+		// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
+		document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
 
-&lt;style type&#x3D;&quot;text/css&quot;&gt;
-	.chip {
-		display: inline-block;
-		color: #4f6e86;
-		background-color: #a1c4e4;
-		line-height: 2.2rem;
-		padding: 0 5px 0 8px;
-		border-radius: 100px;
-		cursor: pointer;
-	}
-
-	.chip.active,
-	.chip:hover {
-		color: #fff;
-		background-color: #65a3dc;
-	}
-
-	.chip i {
-		display: inline-block;
-		color: #888;
-		background-color: #eee;
-		line-height: 1.6rem;
-		width: 1.6rem;
-		margin-bottom: .2rem;
-		border-radius: 100px;
-		vertical-align: middle;
-		text-align: center;
-	}
-
-	.chip i:hover {
-		background-color: #000;
-		color: #fff;
-	}
-&lt;/style&gt;
-&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-	// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
-	// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
-	// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
-	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
-
-		$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.chip&#x27;, function() {
-			$(this).siblings().removeClass(&#x27;active&#x27;);
-			$(this).addClass(&#x27;active&#x27;);
+			$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.chip&#x27;, function() {
+				$(this).siblings().removeClass(&#x27;active&#x27;);
+				$(this).addClass(&#x27;active&#x27;);
+			});
+			$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.chip i&#x27;, function() {
+				$(this).parent().remove();
+			});
+			$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.add-chip&#x27;, function() {
+				$(this).siblings(&#x27;.chip:last-of-type&#x27;).after($(this).siblings(&#x27;.chip:last-of-type&#x27;).clone());
+				$(this).siblings(&#x27;.chip:last-of-type&#x27;).click();
+			});
 		});
-		$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.chip i&#x27;, function() {
-			$(this).parent().remove();
-		});
-	});
-&lt;/script&gt;</code></pre>
+	&lt;/script&gt;
+&lt;/sample&gt;</code></pre>
 </div>
 <div class="f-item-css" data-f-toggle="css">
 	<pre><code class="language-css"><!-- display CSS --></code></pre>
@@ -2134,6 +2078,10 @@
 	<strong>Holy guacamole!</strong>
 	<sample>You should check in on some of those fields below.</sample>
 </div>
+<sample>
+	<!-- trick reset button into affecting this component -->
+	<script type="text/javascript"></script>
+</sample>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;div class&#x3D;&quot;alert alert-warning alert-dismissible fade show&quot; role&#x3D;&quot;alert&quot;&gt;
@@ -2142,7 +2090,11 @@
   &lt;/button&gt;
 	&lt;strong&gt;Holy guacamole!&lt;/strong&gt;
 	&lt;sample&gt;You should check in on some of those fields below.&lt;/sample&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+&lt;sample&gt;
+	&lt;!-- trick reset button into affecting this component --&gt;
+	&lt;script type&#x3D;&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/sample&gt;</code></pre>
 </div>
 
 		</div>
