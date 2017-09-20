@@ -5,6 +5,8 @@ css: <!-- display CSS -->
 	<sample>Chip</sample>
 	<i class="fa fa-times" aria-hidden="true"></i>
 </a>
+<span class="add-chip"></span>
+<sample>
 <script type="text/javascript">
 // using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
 // use standard ` $(document).ready(function(){ ... }) ` in production code.
@@ -18,5 +20,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	$('.f-item-preview').on('click','.chip i', function(){
 		$(this).parent().remove();
 	});
+	$('.f-item-preview').on('click','.add-chip', function(){
+		$(this).siblings('.chip:last-of-type').after($(this).siblings('.chip:last-of-type').clone());
+		$(this).siblings('.chip:last-of-type').click();
+	});
 });
 </script>
+</sample>
