@@ -389,7 +389,7 @@
 	  $('.f-item-preview').find('button').each(preventLinkAndButtonEvents);
 	
 	  // gray-out content toggles for pages where they are irrelevant
-	  if (window.location.pathname !== '/dist/components.html') {
+	  if (!/components.html$/.test(window.location.pathname)) {
 	    $('.f-controls').addClass('inactive');
 	  }
 	});
