@@ -4,7 +4,7 @@ require ('./getCSS');
 var $ = require('jquery');
 
 window.addVariations = function() {
-	//dealing with each component's variations block
+	// dealing with each component's variations block
 	$('.f-item-variations').each(function(i, element){
 		var componentClasses = $(element).parents('.componentClasses');
 		var classList = [];
@@ -15,12 +15,11 @@ window.addVariations = function() {
 		var iconName = '';
 
 		var classes = element.textContent.split(' ').map(function(className){
-			//do something
 			className = className.split('');
 			return className.slice(className.indexOf('.')+1, className.length).join('');
-		}); //first array element is empty string - generates 'base' rendering
+		}); // first array element is empty string - generates 'base' rendering
 
-		preview.html(''); //clears contents of preview section
+		preview.html(''); // clears contents of preview section
 
 		classes.forEach(function(className, i, classes){
 			previewElement = $(baseElement).clone().attr('variation', (i > 0 ? 'true' : ''));
