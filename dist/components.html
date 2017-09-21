@@ -1959,32 +1959,33 @@
 	<div class="tab-pane" id="two" role="tabpanel">...</div>
 	<div class="tab-pane" id="three" role="tabpanel">...</div>
 </div>
+<sample>
+	<script type="text/javascript">
+		// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard ` $(document).ready(function(){ ... }) ` in production code.
+		// ` DOMContentLoaded ` is not supported in IE8 or earlier.
 
-<script type="text/javascript">
-	// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
-	// use standard ` $(document).ready(function(){ ... }) ` in production code.
-	// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+		document.addEventListener("DOMContentLoaded", function(event) {
 
-	document.addEventListener("DOMContentLoaded", function(event) {
+			$('.f-item-preview').on('click', '.nav-tabs a:not(.disabled)', function(e) {
+				e.preventDefault()
+				var selectedTab = this.getAttribute('href'),
+					tabs = $(this).parents('.nav-tabs').next().children();
 
-		$('.f-item-preview').on('click', '.nav-tabs a:not(.disabled)', function(e) {
-			e.preventDefault()
-			var selectedTab = this.getAttribute('href'),
-				tabs = $(this).parents('.nav-tabs').next().children();
+				$(this).parents('.nav-tabs').find('a').removeClass('active');
+				$(this).addClass('active');
 
-			$(this).parents('.nav-tabs').find('a').removeClass('active');
-			$(this).addClass('active');
+				tabs.removeClass('active');
+				tabs.each(function(i, tab) {
+					if (tab === $(selectedTab)[0]) {
+						$(tab).addClass('active');
+					}
+				});
 
-			tabs.removeClass('active');
-			tabs.each(function(i, tab) {
-				if (tab === $(selectedTab)[0]) {
-					$(tab).addClass('active');
-				}
 			});
-
 		});
-	});
-</script>
+	</script>
+</sample>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;ul class&#x3D;&quot;nav nav-tabs&quot; role&#x3D;&quot;tablist&quot;&gt;
@@ -2010,32 +2011,33 @@
 	&lt;div class&#x3D;&quot;tab-pane&quot; id&#x3D;&quot;two&quot; role&#x3D;&quot;tabpanel&quot;&gt;...&lt;/div&gt;
 	&lt;div class&#x3D;&quot;tab-pane&quot; id&#x3D;&quot;three&quot; role&#x3D;&quot;tabpanel&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
+&lt;sample&gt;
+	&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+		// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
+		// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
 
-&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
-	// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
-	// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
-	// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
+		document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
 
-	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+			$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.nav-tabs a:not(.disabled)&#x27;, function(e) {
+				e.preventDefault()
+				var selectedTab &#x3D; this.getAttribute(&#x27;href&#x27;),
+					tabs &#x3D; $(this).parents(&#x27;.nav-tabs&#x27;).next().children();
 
-		$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.nav-tabs a:not(.disabled)&#x27;, function(e) {
-			e.preventDefault()
-			var selectedTab &#x3D; this.getAttribute(&#x27;href&#x27;),
-				tabs &#x3D; $(this).parents(&#x27;.nav-tabs&#x27;).next().children();
+				$(this).parents(&#x27;.nav-tabs&#x27;).find(&#x27;a&#x27;).removeClass(&#x27;active&#x27;);
+				$(this).addClass(&#x27;active&#x27;);
 
-			$(this).parents(&#x27;.nav-tabs&#x27;).find(&#x27;a&#x27;).removeClass(&#x27;active&#x27;);
-			$(this).addClass(&#x27;active&#x27;);
+				tabs.removeClass(&#x27;active&#x27;);
+				tabs.each(function(i, tab) {
+					if (tab &#x3D;&#x3D;&#x3D; $(selectedTab)[0]) {
+						$(tab).addClass(&#x27;active&#x27;);
+					}
+				});
 
-			tabs.removeClass(&#x27;active&#x27;);
-			tabs.each(function(i, tab) {
-				if (tab &#x3D;&#x3D;&#x3D; $(selectedTab)[0]) {
-					$(tab).addClass(&#x27;active&#x27;);
-				}
 			});
-
 		});
-	});
-&lt;/script&gt;</code></pre>
+	&lt;/script&gt;
+&lt;/sample&gt;</code></pre>
 </div>
 
 		</div>
