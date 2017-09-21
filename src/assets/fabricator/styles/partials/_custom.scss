@@ -5,6 +5,12 @@
 		-ms-user-select: none;
 			user-select: none;
 }
+.f-item-group {
+	margin-bottom: 0;
+}
+.f-item-heading-group:not([data-f-toggle]) {
+    display: none;
+}
 .f-item-preview {
 	overflow-x: auto;
 	padding-bottom: 2px;
