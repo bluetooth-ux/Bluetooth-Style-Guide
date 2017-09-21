@@ -29,7 +29,7 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-  $('.nav-tabs').on('click','a:not(.disabled)',function (e) {
+  $('.f-item-preview').on('click','.nav-tabs a:not(.disabled)',function (e) {
     e.preventDefault()
     var selectedTab = this.getAttribute('href'),
         tabs = $(this).parents('.nav-tabs').next().children();

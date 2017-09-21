@@ -1967,7 +1967,7 @@
 
 	document.addEventListener("DOMContentLoaded", function(event) {
 
-		$('.nav-tabs').on('click', 'a:not(.disabled)', function(e) {
+		$('.f-item-preview').on('click', '.nav-tabs a:not(.disabled)', function(e) {
 			e.preventDefault()
 			var selectedTab = this.getAttribute('href'),
 				tabs = $(this).parents('.nav-tabs').next().children();
@@ -2018,7 +2018,7 @@
 
 	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
 
-		$(&#x27;.nav-tabs&#x27;).on(&#x27;click&#x27;, &#x27;a:not(.disabled)&#x27;, function(e) {
+		$(&#x27;.f-item-preview&#x27;).on(&#x27;click&#x27;, &#x27;.nav-tabs a:not(.disabled)&#x27;, function(e) {
 			e.preventDefault()
 			var selectedTab &#x3D; this.getAttribute(&#x27;href&#x27;),
 				tabs &#x3D; $(this).parents(&#x27;.nav-tabs&#x27;).next().children();
