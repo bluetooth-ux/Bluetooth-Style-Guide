@@ -392,21 +392,22 @@
 	  // add reset switches to components with scripts
 	  // ELSE gray-out content toggles for pages where they are irrelevant
 	  if (/components.html$/.test(window.location.pathname)) {
-	    var reset = $('<p class="resetContent" style="display:none;text-align:right;">reset</p>'),
+	    var reset = $('<span class="btn f-ui-btn resetContent disabled">reset</span>'),
 	        previewContainers = $('.f-item-preview script').parents('.f-item-preview'),
 	        resetContent;
 	
 	    previewContainers.each(function (i, preview) {
 	      var thisReset = reset.clone();
-	      $(preview).prepend(thisReset);
+	      $(preview).closest('.f-item-group').find('.f-item-heading-group').prepend(thisReset);
 	
-	      $(preview).on('click', function () {
-	        $(this).find('.resetContent').fadeIn();
+	      $(preview).on('click', '*', function () {
+	        $(this).closest('.f-item-group').find('.resetContent').removeClass('disabled');
 	      });
 	
-	      $(preview).on('click', '.resetContent', function () {
+	      $(preview).closest('.f-item-group').on('click', '.resetContent:not(.disabled)', function () {
 	        // `this` refers to the reset link
-	        $(this).parents('.f-item-preview').slideUp(function () {
+	        $(this).addClass('disabled');
+	        $(this).closest('.f-item-group').find('.f-item-preview').slideUp(function () {
 	          // `this` refers to the '.f-item-preview'
 	          $(this).html(JSON.parse($(this).data('resetContent')));
 	        }).slideDown();
