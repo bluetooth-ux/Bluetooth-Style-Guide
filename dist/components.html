@@ -1967,11 +1967,22 @@
 
 	document.addEventListener("DOMContentLoaded", function(event) {
 
-		$('.nav-tabs a').click(function(e) {
+		$('.nav-tabs').on('click', 'a:not(.disabled)', function(e) {
 			e.preventDefault()
-			$(this).tab('show')
-		});
+			var selectedTab = this.getAttribute('href'),
+				tabs = $(this).parents('.nav-tabs').next().children();
 
+			$(this).parents('.nav-tabs').find('a').removeClass('active');
+			$(this).addClass('active');
+
+			tabs.removeClass('active');
+			tabs.each(function(i, tab) {
+				if (tab === $(selectedTab)[0]) {
+					$(tab).addClass('active');
+				}
+			});
+
+		});
 	});
 </script>
 </div>
@@ -2007,11 +2018,22 @@
 
 	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
 
-		$(&#x27;.nav-tabs a&#x27;).click(function(e) {
+		$(&#x27;.nav-tabs&#x27;).on(&#x27;click&#x27;, &#x27;a:not(.disabled)&#x27;, function(e) {
 			e.preventDefault()
-			$(this).tab(&#x27;show&#x27;)
-		});
+			var selectedTab &#x3D; this.getAttribute(&#x27;href&#x27;),
+				tabs &#x3D; $(this).parents(&#x27;.nav-tabs&#x27;).next().children();
 
+			$(this).parents(&#x27;.nav-tabs&#x27;).find(&#x27;a&#x27;).removeClass(&#x27;active&#x27;);
+			$(this).addClass(&#x27;active&#x27;);
+
+			tabs.removeClass(&#x27;active&#x27;);
+			tabs.each(function(i, tab) {
+				if (tab &#x3D;&#x3D;&#x3D; $(selectedTab)[0]) {
+					$(tab).addClass(&#x27;active&#x27;);
+				}
+			});
+
+		});
 	});
 &lt;/script&gt;</code></pre>
 </div>
