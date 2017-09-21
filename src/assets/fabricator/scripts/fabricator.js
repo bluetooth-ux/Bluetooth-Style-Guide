@@ -390,11 +390,11 @@ $(document).ready(function(){
       $(preview).closest('.f-item-group').on('click','.resetContent:not(.disabled)',function(){
         // `this` refers to the reset link
         $(this).addClass('disabled');
-        $(this).closest('.f-item-group').find('.f-item-preview').slideUp(function(){
+        $(this).closest('.f-item-group').find('.f-item-preview').fadeOut(function(){
           // `this` refers to the '.f-item-preview'
           $(this).html(JSON.parse($(this).data('resetContent')));
 
-        }).slideDown();
+        }).fadeIn();
       });
 
       $(preview).data('resetContent', JSON.stringify(preview.innerHTML));

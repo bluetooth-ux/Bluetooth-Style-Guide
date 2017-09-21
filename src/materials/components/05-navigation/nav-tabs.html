@@ -29,10 +29,21 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-  $('.nav-tabs a').click(function (e) {
+  $('.nav-tabs').on('click','a:not(.disabled)',function (e) {
     e.preventDefault()
-    $(this).tab('show')
-  });
+    var selectedTab = this.getAttribute('href'),
+        tabs = $(this).parents('.nav-tabs').next().children();
 
+    $(this).parents('.nav-tabs').find('a').removeClass('active');
+    $(this).addClass('active');
+
+    tabs.removeClass('active');
+    tabs.each(function(i, tab){
+      if (tab === $(selectedTab)[0]) {
+        $(tab).addClass('active');
+      }
+    });
+
+  });
 });
 </script>
