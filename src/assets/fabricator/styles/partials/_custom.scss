@@ -247,13 +247,19 @@ body.modal-open {
 #form-builder {
 	.f-item-controls {display: none;}
 
+	.showOutlines + form .form-group::after {display: block;}
+
 	form {
+		position:relative;
+		border: 4px dashed #e2e2e2;
+		padding: 10px;
+		margin: 20px 0;
 		&:empty::before {
 			content: 'Add form elements from the select-box below.';
 			display: block;
 			text-align: center;
 			width: 100%;
-			line-height: 300px;
+			padding: 150px 0;
 			font-size: 30px;
 			font-weight: bold;
 			color: #e2e2e2;
@@ -275,23 +281,12 @@ body.modal-open {
 				border-color: #FAC;
 			}
 		} //end outline for form-groups
-		position:relative;
-		border: 4px dashed #e2e2e2;
-		padding: 10px;
-		margin: 20px 0;
 	}
 
 	aside { //container for form builder element reference
 		border-top: 2px solid grey;
 		margin-top: 30px;
 		padding-top: 10px;
-	}
-}
-#showOutlines {
-	position: relative;
-	margin: 0 -.8rem 0 1rem;
-	&:checked ~ form .form-group::after {
-		display: block;
 	}
 }
 #form-builder-controls button {

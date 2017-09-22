@@ -1,10 +1,13 @@
 <p>Some great instructions on how to use this component.</p>
 <p>Once you've finished building your form, use your browser's <code>web inspector</code> to copy the whole <code>&lt;form&gt;</code> element (outlined with a dashed gray border).</p>
 
-<select class="custom-select" id="formSelect">
-	<option>Some pre-built form</option>
-</select>
-<input class="form-check-input" type="checkbox" id="showOutlines" checked /><label class="form-check-label"> Show Form Group Outlines</label>
+<div class="input-group showOutlines" style="align-items:baseline">
+	<select class="custom-select" id="formSelect">
+		<option>Some pre-built form</option>
+	</select>
+
+	<label class="form-check-label"><input class="form-check-input" type="checkbox" id="showOutlines" checked /> Show Form Group Outlines</label>
+</div>
 <form></form>
 
 <div class="input-group" id="form-builder-controls">
@@ -54,8 +57,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	formElements.each(function(i, element){
 		selectBox.append($('<option value='+i+' />').text($(element).data('name')));
 	});
-	$('#showOutlines + label').on('click',function(){
-		$('#showOutlines').click();
+	$('#showOutlines').on('click',function(){
+		if (this.checked) {
+			$(this).parents('.input-group').addClass('showOutlines');
+		} else {
+			$(this).parents('.input-group').removeClass('showOutlines');
+		}
 	});
 	$('#addGroup').on('click', function(){
 		var lastGroup = form.find('.form-group:last-of-type');
