@@ -103,19 +103,16 @@
 							<a href="components.html#05-navigation">Navigation</a>
 						</li>
 						<li>
-							<a href="components.html#06-alerts">Alerts</a>
+							<a href="components.html#06-notifications">Notifications</a>
 						</li>
 						<li>
-							<a href="components.html#07-notifications">Notifications</a>
+							<a href="components.html#07-images">Images</a>
 						</li>
 						<li>
-							<a href="components.html#08-images">Images</a>
+							<a href="components.html#08-tables">Tables</a>
 						</li>
 						<li>
-							<a href="components.html#10-tables">Tables</a>
-						</li>
-						<li>
-							<a href="components.html#11-modules">Modules</a>
+							<a href="components.html#09-modules">Modules</a>
 						</li>
 					</ul>
 				</li>
@@ -190,10 +187,15 @@
 	<p>Some great instructions on how to use this component.</p>
 <p>Once you've finished building your form, use your browser's <code>web inspector</code> to copy the whole <code>&lt;form&gt;</code> element (outlined with a dashed gray border).</p>
 
-<select class="custom-select" id="formSelect">
-	<option>Some pre-built form</option>
-</select>
-<input class="form-check-input" type="checkbox" id="showOutlines" checked /><label class="form-check-label"> Show Form Group Outlines</label>
+<div class="input-group showOutlines" style="align-items:baseline">
+	<select class="custom-select" id="formSelect">
+		<option>Some pre-built form</option>
+	</select>
+
+	<label class="form-check-label"><input class="form-check-input" type="checkbox" id="showOutlines" checked /> Show Form Group Outlines</label>
+
+	<p style="flex-grow:1;text-align:right;"><button class="btn btn-sm" id="getFormBuilderHTML">Get HTML</button></p>
+</div>
 <form></form>
 
 <div class="input-group" id="form-builder-controls">
@@ -257,9 +259,22 @@
 
 		formElements.each(function(i, element) {
 			selectBox.append($('<option value=' + i + ' />').text($(element).data('name')));
+
+			if ($(element).find('sample').length > 0) {
+				$(element).find('sample').each(function(i, sampleBlock) {
+					// move the <sample> content outside the <sample> block and trim whitespace
+					sampleBlock.after(String.prototype.trim.call(sampleBlock.innerHTML));
+					// remove the <sample> block
+					$(sampleBlock).remove();
+				});
+			}
 		});
-		$('#showOutlines + label').on('click', function() {
-			$('#showOutlines').click();
+		$('#showOutlines').on('click', function() {
+			if (this.checked) {
+				$(this).parents('.input-group').addClass('showOutlines');
+			} else {
+				$(this).parents('.input-group').removeClass('showOutlines');
+			}
 		});
 		$('#addGroup').on('click', function() {
 			var lastGroup = form.find('.form-group:last-of-type');
@@ -277,6 +292,17 @@
 			}
 			group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
 			$('#addGroup').removeAttr('disabled');
+		});
+
+		// get html
+		$('#getFormBuilderHTML').on('click', function() {
+			var form = $('#form-builder form'),
+				modal = $('<pre class="language-markup"/>').append($('<code class="language-markup"/>').text(form.html()));
+			if (form.next()[0].tagName === "PRE") {
+				form.next().remove();
+			}
+			form.after(modal);
+			Prism.highlightElement(modal[0]);
 		});
 
 		// remove unnecessary content
@@ -297,10 +323,15 @@
 	<pre><code class="language-markup">&lt;p&gt;Some great instructions on how to use this component.&lt;/p&gt;
 &lt;p&gt;Once you&#x27;ve finished building your form, use your browser&#x27;s &lt;code&gt;web inspector&lt;/code&gt; to copy the whole &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element (outlined with a dashed gray border).&lt;/p&gt;
 
-&lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;formSelect&quot;&gt;
-	&lt;option&gt;Some pre-built form&lt;/option&gt;
-&lt;/select&gt;
-&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;showOutlines&quot; checked /&gt;&lt;label class&#x3D;&quot;form-check-label&quot;&gt; Show Form Group Outlines&lt;/label&gt;
+&lt;div class&#x3D;&quot;input-group showOutlines&quot; style&#x3D;&quot;align-items:baseline&quot;&gt;
+	&lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;formSelect&quot;&gt;
+		&lt;option&gt;Some pre-built form&lt;/option&gt;
+	&lt;/select&gt;
+
+	&lt;label class&#x3D;&quot;form-check-label&quot;&gt;&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;showOutlines&quot; checked /&gt; Show Form Group Outlines&lt;/label&gt;
+
+	&lt;p style&#x3D;&quot;flex-grow:1;text-align:right;&quot;&gt;&lt;button class&#x3D;&quot;btn btn-sm&quot; id&#x3D;&quot;getFormBuilderHTML&quot;&gt;Get HTML&lt;/button&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;form&gt;&lt;/form&gt;
 
 &lt;div class&#x3D;&quot;input-group&quot; id&#x3D;&quot;form-builder-controls&quot;&gt;
@@ -364,9 +395,22 @@
 
 		formElements.each(function(i, element) {
 			selectBox.append($(&#x27;&lt;option value&#x3D;&#x27; + i + &#x27; /&gt;&#x27;).text($(element).data(&#x27;name&#x27;)));
+
+			if ($(element).find(&#x27;sample&#x27;).length &gt; 0) {
+				$(element).find(&#x27;sample&#x27;).each(function(i, sampleBlock) {
+					// move the &lt;sample&gt; content outside the &lt;sample&gt; block and trim whitespace
+					sampleBlock.after(String.prototype.trim.call(sampleBlock.innerHTML));
+					// remove the &lt;sample&gt; block
+					$(sampleBlock).remove();
+				});
+			}
 		});
-		$(&#x27;#showOutlines + label&#x27;).on(&#x27;click&#x27;, function() {
-			$(&#x27;#showOutlines&#x27;).click();
+		$(&#x27;#showOutlines&#x27;).on(&#x27;click&#x27;, function() {
+			if (this.checked) {
+				$(this).parents(&#x27;.input-group&#x27;).addClass(&#x27;showOutlines&#x27;);
+			} else {
+				$(this).parents(&#x27;.input-group&#x27;).removeClass(&#x27;showOutlines&#x27;);
+			}
 		});
 		$(&#x27;#addGroup&#x27;).on(&#x27;click&#x27;, function() {
 			var lastGroup &#x3D; form.find(&#x27;.form-group:last-of-type&#x27;);
@@ -384,6 +428,17 @@
 			}
 			group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
 			$(&#x27;#addGroup&#x27;).removeAttr(&#x27;disabled&#x27;);
+		});
+
+		// get html
+		$(&#x27;#getFormBuilderHTML&#x27;).on(&#x27;click&#x27;, function() {
+			var form &#x3D; $(&#x27;#form-builder form&#x27;),
+				modal &#x3D; $(&#x27;&lt;pre class&#x3D;&quot;language-markup&quot;/&gt;&#x27;).append($(&#x27;&lt;code class&#x3D;&quot;language-markup&quot;/&gt;&#x27;).text(form.html()));
+			if (form.next()[0].tagName &#x3D;&#x3D;&#x3D; &quot;PRE&quot;) {
+				form.next().remove();
+			}
+			form.after(modal);
+			Prism.highlightElement(modal[0]);
 		});
 
 		// remove unnecessary content
