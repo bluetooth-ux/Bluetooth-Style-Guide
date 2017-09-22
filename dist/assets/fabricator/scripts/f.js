@@ -11474,7 +11474,10 @@
 	
 	window.filterSampleText = function () {
 	  $('code').each(function (i, snippet) {
-	    splice(snippet);
+	    //only trim sample text from code tags that have a <sample> block
+	    if (/<sample>/g.test(snippet)) {
+	      splice(snippet);
+	    }
 	  });
 	};
 	

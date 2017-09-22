@@ -17,8 +17,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	/* ENABLES CLICKING ANYWHERE ON TAB HEADER TO TRIGGER COLLAPSE-TOGGLE */
 	$('.f-item-preview').on('click', '.accordion [role="tab"]',function(){
+		// toggles + / - on tab header
+		$(this).parent().siblings().find('[role="tab"]').removeClass('open');
+		if($(this).next().hasClass('collapsing')){ return; }
+		else if ($(this).next().hasClass('show')) { $(this).removeClass('open'); }
+		else { $(this).addClass('open'); }
+
 		$(this).next('[role="tabpanel"]').collapse('toggle');
 	});
-
 });
 </script>
