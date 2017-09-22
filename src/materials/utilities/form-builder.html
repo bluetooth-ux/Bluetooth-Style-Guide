@@ -58,6 +58,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	formElements.each(function(i, element){
 		selectBox.append($('<option value='+i+' />').text($(element).data('name')));
+
+		if ($(element).find('sample').length > 0){
+			$(element).find('sample').each(function(i, sampleBlock){
+				// move the <sample> content outside the <sample> block and trim whitespace
+				sampleBlock.after(String.prototype.trim.call(sampleBlock.innerHTML));
+				// remove the <sample> block
+				$(sampleBlock).remove();
+			});
+		}
 	});
 	$('#showOutlines').on('click',function(){
 		if (this.checked) {
