@@ -106,8 +106,12 @@
 	}
 	&.table {
 		display: table;
-		magin-right: 0;
+		margin-right: 0;
 		margin-top: 30px;
+		margin-bottom: 80px;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 		&::after {
 			top: -1.6rem;
 			bottom: auto;
@@ -139,10 +143,12 @@ span.textInputClasses {
 }
 @media (max-width:959px) {
 	[data-variation="true"] {
-		margin-top: 30px;
 		display: block;
+		margin-top: 30px;
 		margin-right: 0;
+		margin-bottom: 40px;
 		float: none;
+		&:last-of-type { margin-bottom: 0; }
 		&::after {
 			position: absolute;
 			top: -25px;
@@ -161,16 +167,14 @@ span.textInputClasses {
 		&.btn, &.alert {
 			display: block;
 			margin-top: 40px;
-			&::after {
-				top: -35px;
-			}
+			margin-bottom: 60px;
+			&:last-of-type { margin-bottom: 1rem; }
+			&::after { top: -35px; }
 		}
 		&.slushbucket, &.slushbucket:first-of-type {
 			margin-top: 60px;
 			margin-right: 0;
-			&::after {
-				top: -35px;
-			}
+			&::after { top: -35px; }
 		}
 		&.badge {
 			float: left;
@@ -179,8 +183,8 @@ span.textInputClasses {
 	}
 	span.textInputClasses {
 		float: none;
-    margin-bottom: -20px;
-    width: fit-content;
+		margin-bottom: -20px;
+		width: fit-content;
 		& + input[type="text"] {
 			width: 100% !important;
 		}
