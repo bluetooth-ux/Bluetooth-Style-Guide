@@ -11433,10 +11433,15 @@
 	
 	window.fillAllCssBlocks = function () {
 	  // find all elements with CSS 'front-matter'
-	  var elements = $('.f-item-css').siblings('.f-item-preview').children();
+	  var elements = $('.f-item-css').siblings('.f-item-preview');
 	  elements.each(function (i, element) {
-	    // run each element through writeToBody()
-	    writeToBody($(element));
+	    if ($(element).children()[0] !== undefined) {
+	      // only get styles for the first child element
+	      element = $(element).children()[0];
+	
+	      // run the element through writeToBody()
+	      writeToBody($(element));
+	    }
 	  });
 	};
 
