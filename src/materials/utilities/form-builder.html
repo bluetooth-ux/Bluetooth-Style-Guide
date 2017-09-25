@@ -8,7 +8,7 @@
 
 	<label class="form-check-label"><input class="form-check-input" type="checkbox" id="showOutlines" checked /> Show Form Group Outlines</label>
 
-	<p style="flex-grow:1;text-align:right;margin-bottom:0;"><button class="btn btn-sm" id="getFormBuilderHTML">Get HTML</button></p>
+	<p style="flex-grow:1;text-align:right;margin-bottom:0;"><button class="btn btn-sm btn-secondary" id="clear-form">clear</button><button class="btn btn-sm" id="getFormBuilderHTML">Get HTML</button></p>
 </div>
 <form></form>
 
@@ -188,6 +188,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('#addGroup').attr('disabled','disabled');
 		if (lastGroup.length === 1 && lastGroup.children().length === 0) { return; }
 		form.append($('<div class="form-group" />'));
+
+		$('#clear-form').text("Clear");
 	});
 	$('#addElement').on('click', function(){
 		group = form.find('.form-group:last-of-type');
@@ -197,6 +199,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 		group.append($($(formElements[selectBox[0].value]).children()).clone());
 		$('#addGroup').removeAttr('disabled');
+
+		// update #formSelect
+		$('#formSelect').children()[0].textContent = "Custom Form";
+		$('#formSelect').selectedIndex = 0;
+		$('#custom').html(form.html());
+
+		$('#clear-form').text("Clear");
 	});
 
 	// get html
@@ -232,6 +241,30 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			form.html($('#pre-built').children()[this.value].innerHTML);
 		}
 
+		$('#clear-form').text("Clear");
+	});
+
+	$('#clear-form').on('click',function(){
+		if (form.children().length > 0) {
+			// save the existing form and Select Box Selection
+			$('#custom').html(form[0].innerHTML);
+			$(this).attr('selectVal', $('#formSelect').selectedIndex).attr('selectText', $('#formSelect').children()[0].textContent);
+
+			// rename button
+			this.textContent = "Undo";
+
+			// reset content
+			$('#formSelect').children()[0].textContent = "Pre-built forms";
+			$('#formSelect')[0].selectedIndex = 0;
+			form.children().remove();
+
+		} else {
+			$('#formSelect').children()[0].textContent = $(this).attr('selectText');
+			$('#formSelect')[0].selectedIndex = $(this).attr('selectVal');
+			this.textContent = "Clear";
+
+			form.html($('#custom')[0].innerHTML);
+		}
 	});
 });
 
