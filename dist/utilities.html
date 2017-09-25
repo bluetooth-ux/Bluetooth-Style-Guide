@@ -195,12 +195,12 @@
 
 <div class="input-group showOutlines" style="align-items:baseline">
 	<select class="custom-select" id="formSelect">
-		<option>Some pre-built form</option>
+		<option value="-1">Pre-built forms</option>
 	</select>
 
 	<label class="form-check-label"><input class="form-check-input" type="checkbox" id="showOutlines" checked /> Show Form Group Outlines</label>
 
-	<p style="flex-grow:1;text-align:right;margin-bottom:0;"><button class="btn btn-sm" id="getFormBuilderHTML">Get HTML</button></p>
+	<p style="flex-grow:1;text-align:right;margin-bottom:0;"><button class="btn btn-sm btn-secondary" id="clear-form">clear</button><button class="btn btn-sm" id="getFormBuilderHTML">Get HTML</button></p>
 </div>
 <form></form>
 
@@ -273,11 +273,9 @@
 	</div>
 	<div class="form-builder-element" data-name="contact info">
 		<label class="control-label">Phone</label>
-		<input class="form-control" type="tel" placeholder="Phone Number" />
+		<input class="form-control" type="tel" name="tel" autocomplete="home tel" placeholder="Phone Number" />
 		<label class="control-label">E-mail</label>
-		<input class="form-control" type="email" placeholder="E-Mail Address" />
-	</div>
-	</div>
+		<input class="form-control" type="email" name="email" autocomplete="home email" placeholder="E-Mail Address" />
 	</div>
 	<h3>Individual Elements</h3>
 	<div class="form-builder-element" data-name="label">
@@ -324,9 +322,51 @@
 		<small class="form-text text-muted"><sample>Help text to assist with filling out forms. Picture me below a form input.</sample></small> </div>
 </aside>
 
+<aside id="pre-built">
+	<!-- DEMO FORM #1 -->
+	<form name="demo profile info">
+		<h3>Profile</h3>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-12 col-sm-6">
+					<label class="control-label">First Name</label>
+					<input class="form-control" type="text" name="given-name" autocomplete="given-name" placeholder="First Name" />
+				</div>
+				<div class="col-12 col-sm-6">
+					<label class="control-label">Last Name</label>
+					<input class="form-control" type="text" name="family-name" autocomplete="family-name" placeholder="Last Name" />
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Phone</label>
+			<input class="form-control" type="tel" name="tel" autocomplete="home tel" placeholder="Phone Number" />
+			<label class="control-label">E-mail</label>
+			<input class="form-control" type="email" name="email" autocomplete="home email" placeholder="E-Mail Address" />
+		</div>
+		<div class="input-group">
+			<button class="btn btn-sm btn-primary" value="submit">Submit</button>
+			<button class="btn btn-sm btn-secondary" value="cancel">Cancel</button>
+		</div>
+	</form>
+	<!-- DEMO FORM #2 -->
+	<form name="demo sign-in form">
+		<h3>Sign In</h3>
+		<div class="form-group">
+			<label class="control-label">E-mail</label>
+			<input class="form-control" type="email" name="email" autocomplete="home email" placeholder="E-Mail Address" />
+			<label class="control-label">Password</label>
+			<input class="form-control" type="password" name="current-password" autocomplete="current-password" placeholder="Password" />
+		</div>
+		<div class="form-group">
+			<button class="btn btn-sm btn-primary" value="submit">Submit</button>
+		</div>
+	</form>
+</aside>
+
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function(event) {
-		var form = $('#form-builder form'),
+		var form = $('.showOutlines + form'),
 			selectBox = $('#inputSelect'),
 			formElements = $('.form-builder-element'),
 			group;
@@ -357,6 +397,8 @@
 				return;
 			}
 			form.append($('<div class="form-group" />'));
+
+			$('#clear-form').text("Clear");
 		});
 		$('#addElement').on('click', function() {
 			group = form.find('.form-group:last-of-type');
@@ -366,17 +408,28 @@
 			}
 			group.append($($(formElements[selectBox[0].value]).children()).clone());
 			$('#addGroup').removeAttr('disabled');
+
+			// update #formSelect
+			$('#formSelect').children()[0].textContent = "Custom Form";
+			$('#formSelect').selectedIndex = 0;
+			$('#custom').html(form.html());
+
+			$('#clear-form').text("Clear");
 		});
 
 		// get html
 		$('#getFormBuilderHTML').on('click', function() {
-			var form = $('#form-builder form'),
-				modal = $('<pre class="language-markup"/>').append($('<code class="language-markup"/>').text(form.html()));
+			var modal = $('<pre class="language-markup"/>').append($('<code class="language-markup"/>').text(form[0].outerHTML));
 			if (form.next()[0].tagName === "PRE") {
 				form.next().remove();
 			}
 			form.after(modal);
 			Prism.highlightElement(modal[0]);
+			modal.prepend($('<a id="hideHTML">Hide HTML</a>'));
+		});
+
+		$('#form-builder').on('click', '#hideHTML', function() {
+			$(this).parent().slideUp();
 		});
 
 		// remove unnecessary content
@@ -385,7 +438,58 @@
 			hideOtherBlocks();
 		}
 		window.onhashchange = hideOtherBlocks;
+
+		populatePrebuiltForms();
+
+		// Replace form with Pre-built
+		$('#formSelect').on('change', function() {
+			if ($(this).children()[0].textContent === "Custom Form") {
+				if (this.value === "-1") {
+					// 'custom form' option is selected
+					form.html($('#custom')[0].innerHTML);
+				} else {
+					// save the modified form for later
+					$('#custom').html(form[0].innerHTML);
+				}
+			} else {
+				// some pre-built form is selected
+				// replace form content with that form
+				form.html($('#pre-built').children()[this.value].innerHTML);
+			}
+
+			$('#clear-form').text("Clear");
+		});
+
+		$('#clear-form').on('click', function() {
+			if (form.children().length > 0) {
+				// save the existing form and Select Box Selection
+				$('#custom').html(form[0].innerHTML);
+				$(this).attr('selectVal', $('#formSelect').selectedIndex).attr('selectText', $('#formSelect').children()[0].textContent);
+
+				// rename button
+				this.textContent = "Undo";
+
+				// reset content
+				$('#formSelect').children()[0].textContent = "Pre-built forms";
+				$('#formSelect')[0].selectedIndex = 0;
+				form.children().remove();
+
+			} else {
+				$('#formSelect').children()[0].textContent = $(this).attr('selectText');
+				$('#formSelect')[0].selectedIndex = $(this).attr('selectVal');
+				this.textContent = "Clear";
+
+				form.html($('#custom')[0].innerHTML);
+			}
+		});
 	});
+
+	var populatePrebuiltForms = function() {
+		$('#pre-built').children().each(function(i, form) {
+			$('#formSelect').append($('<option/>').text($(form).attr('name')).attr('value', i));
+		});
+		$('#pre-built').append($('<form id="custom" />'));
+	}
 
 	function hideOtherBlocks() {
 		$('.f-item-group:not(' + window.location.hash + ')').addClass('f-item-hidden');
@@ -408,12 +512,12 @@
 
 &lt;div class&#x3D;&quot;input-group showOutlines&quot; style&#x3D;&quot;align-items:baseline&quot;&gt;
 	&lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;formSelect&quot;&gt;
-		&lt;option&gt;Some pre-built form&lt;/option&gt;
+		&lt;option value&#x3D;&quot;-1&quot;&gt;Pre-built forms&lt;/option&gt;
 	&lt;/select&gt;
 
 	&lt;label class&#x3D;&quot;form-check-label&quot;&gt;&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;showOutlines&quot; checked /&gt; Show Form Group Outlines&lt;/label&gt;
 
-	&lt;p style&#x3D;&quot;flex-grow:1;text-align:right;margin-bottom:0;&quot;&gt;&lt;button class&#x3D;&quot;btn btn-sm&quot; id&#x3D;&quot;getFormBuilderHTML&quot;&gt;Get HTML&lt;/button&gt;&lt;/p&gt;
+	&lt;p style&#x3D;&quot;flex-grow:1;text-align:right;margin-bottom:0;&quot;&gt;&lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; id&#x3D;&quot;clear-form&quot;&gt;clear&lt;/button&gt;&lt;button class&#x3D;&quot;btn btn-sm&quot; id&#x3D;&quot;getFormBuilderHTML&quot;&gt;Get HTML&lt;/button&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;form&gt;&lt;/form&gt;
 
@@ -486,11 +590,9 @@
 	&lt;/div&gt;
 	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;contact info&quot;&gt;
 		&lt;label class&#x3D;&quot;control-label&quot;&gt;Phone&lt;/label&gt;
-		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;tel&quot; placeholder&#x3D;&quot;Phone Number&quot; /&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;tel&quot; name&#x3D;&quot;tel&quot; autocomplete&#x3D;&quot;home tel&quot; placeholder&#x3D;&quot;Phone Number&quot; /&gt;
 		&lt;label class&#x3D;&quot;control-label&quot;&gt;E-mail&lt;/label&gt;
-		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;E-Mail Address&quot; /&gt;
-	&lt;/div&gt;
-	&lt;/div&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; autocomplete&#x3D;&quot;home email&quot; placeholder&#x3D;&quot;E-Mail Address&quot; /&gt;
 	&lt;/div&gt;
 	&lt;h3&gt;Individual Elements&lt;/h3&gt;
 	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;label&quot;&gt;
@@ -537,9 +639,51 @@
 		&lt;small class&#x3D;&quot;form-text text-muted&quot;&gt;&lt;sample&gt;Help text to assist with filling out forms. Picture me below a form input.&lt;/sample&gt;&lt;/small&gt; &lt;/div&gt;
 &lt;/aside&gt;
 
+&lt;aside id&#x3D;&quot;pre-built&quot;&gt;
+	&lt;!-- DEMO FORM #1 --&gt;
+	&lt;form name&#x3D;&quot;demo profile info&quot;&gt;
+		&lt;h3&gt;Profile&lt;/h3&gt;
+		&lt;div class&#x3D;&quot;form-group&quot;&gt;
+			&lt;div class&#x3D;&quot;row&quot;&gt;
+				&lt;div class&#x3D;&quot;col-12 col-sm-6&quot;&gt;
+					&lt;label class&#x3D;&quot;control-label&quot;&gt;First Name&lt;/label&gt;
+					&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;given-name&quot; autocomplete&#x3D;&quot;given-name&quot; placeholder&#x3D;&quot;First Name&quot; /&gt;
+				&lt;/div&gt;
+				&lt;div class&#x3D;&quot;col-12 col-sm-6&quot;&gt;
+					&lt;label class&#x3D;&quot;control-label&quot;&gt;Last Name&lt;/label&gt;
+					&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;family-name&quot; autocomplete&#x3D;&quot;family-name&quot; placeholder&#x3D;&quot;Last Name&quot; /&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;form-group&quot;&gt;
+			&lt;label class&#x3D;&quot;control-label&quot;&gt;Phone&lt;/label&gt;
+			&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;tel&quot; name&#x3D;&quot;tel&quot; autocomplete&#x3D;&quot;home tel&quot; placeholder&#x3D;&quot;Phone Number&quot; /&gt;
+			&lt;label class&#x3D;&quot;control-label&quot;&gt;E-mail&lt;/label&gt;
+			&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; autocomplete&#x3D;&quot;home email&quot; placeholder&#x3D;&quot;E-Mail Address&quot; /&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;input-group&quot;&gt;
+			&lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; value&#x3D;&quot;submit&quot;&gt;Submit&lt;/button&gt;
+			&lt;button class&#x3D;&quot;btn btn-sm btn-secondary&quot; value&#x3D;&quot;cancel&quot;&gt;Cancel&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+	&lt;!-- DEMO FORM #2 --&gt;
+	&lt;form name&#x3D;&quot;demo sign-in form&quot;&gt;
+		&lt;h3&gt;Sign In&lt;/h3&gt;
+		&lt;div class&#x3D;&quot;form-group&quot;&gt;
+			&lt;label class&#x3D;&quot;control-label&quot;&gt;E-mail&lt;/label&gt;
+			&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;email&quot; name&#x3D;&quot;email&quot; autocomplete&#x3D;&quot;home email&quot; placeholder&#x3D;&quot;E-Mail Address&quot; /&gt;
+			&lt;label class&#x3D;&quot;control-label&quot;&gt;Password&lt;/label&gt;
+			&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;password&quot; name&#x3D;&quot;current-password&quot; autocomplete&#x3D;&quot;current-password&quot; placeholder&#x3D;&quot;Password&quot; /&gt;
+		&lt;/div&gt;
+		&lt;div class&#x3D;&quot;form-group&quot;&gt;
+			&lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; value&#x3D;&quot;submit&quot;&gt;Submit&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+&lt;/aside&gt;
+
 &lt;script type&#x3D;&quot;text/javascript&quot;&gt;
 	document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
-		var form &#x3D; $(&#x27;#form-builder form&#x27;),
+		var form &#x3D; $(&#x27;.showOutlines + form&#x27;),
 			selectBox &#x3D; $(&#x27;#inputSelect&#x27;),
 			formElements &#x3D; $(&#x27;.form-builder-element&#x27;),
 			group;
@@ -570,6 +714,8 @@
 				return;
 			}
 			form.append($(&#x27;&lt;div class&#x3D;&quot;form-group&quot; /&gt;&#x27;));
+
+			$(&#x27;#clear-form&#x27;).text(&quot;Clear&quot;);
 		});
 		$(&#x27;#addElement&#x27;).on(&#x27;click&#x27;, function() {
 			group &#x3D; form.find(&#x27;.form-group:last-of-type&#x27;);
@@ -579,17 +725,28 @@
 			}
 			group.append($($(formElements[selectBox[0].value]).children()).clone());
 			$(&#x27;#addGroup&#x27;).removeAttr(&#x27;disabled&#x27;);
+
+			// update #formSelect
+			$(&#x27;#formSelect&#x27;).children()[0].textContent &#x3D; &quot;Custom Form&quot;;
+			$(&#x27;#formSelect&#x27;).selectedIndex &#x3D; 0;
+			$(&#x27;#custom&#x27;).html(form.html());
+
+			$(&#x27;#clear-form&#x27;).text(&quot;Clear&quot;);
 		});
 
 		// get html
 		$(&#x27;#getFormBuilderHTML&#x27;).on(&#x27;click&#x27;, function() {
-			var form &#x3D; $(&#x27;#form-builder form&#x27;),
-				modal &#x3D; $(&#x27;&lt;pre class&#x3D;&quot;language-markup&quot;/&gt;&#x27;).append($(&#x27;&lt;code class&#x3D;&quot;language-markup&quot;/&gt;&#x27;).text(form.html()));
+			var modal &#x3D; $(&#x27;&lt;pre class&#x3D;&quot;language-markup&quot;/&gt;&#x27;).append($(&#x27;&lt;code class&#x3D;&quot;language-markup&quot;/&gt;&#x27;).text(form[0].outerHTML));
 			if (form.next()[0].tagName &#x3D;&#x3D;&#x3D; &quot;PRE&quot;) {
 				form.next().remove();
 			}
 			form.after(modal);
 			Prism.highlightElement(modal[0]);
+			modal.prepend($(&#x27;&lt;a id&#x3D;&quot;hideHTML&quot;&gt;Hide HTML&lt;/a&gt;&#x27;));
+		});
+
+		$(&#x27;#form-builder&#x27;).on(&#x27;click&#x27;, &#x27;#hideHTML&#x27;, function() {
+			$(this).parent().slideUp();
 		});
 
 		// remove unnecessary content
@@ -598,7 +755,58 @@
 			hideOtherBlocks();
 		}
 		window.onhashchange &#x3D; hideOtherBlocks;
+
+		populatePrebuiltForms();
+
+		// Replace form with Pre-built
+		$(&#x27;#formSelect&#x27;).on(&#x27;change&#x27;, function() {
+			if ($(this).children()[0].textContent &#x3D;&#x3D;&#x3D; &quot;Custom Form&quot;) {
+				if (this.value &#x3D;&#x3D;&#x3D; &quot;-1&quot;) {
+					// &#x27;custom form&#x27; option is selected
+					form.html($(&#x27;#custom&#x27;)[0].innerHTML);
+				} else {
+					// save the modified form for later
+					$(&#x27;#custom&#x27;).html(form[0].innerHTML);
+				}
+			} else {
+				// some pre-built form is selected
+				// replace form content with that form
+				form.html($(&#x27;#pre-built&#x27;).children()[this.value].innerHTML);
+			}
+
+			$(&#x27;#clear-form&#x27;).text(&quot;Clear&quot;);
+		});
+
+		$(&#x27;#clear-form&#x27;).on(&#x27;click&#x27;, function() {
+			if (form.children().length &gt; 0) {
+				// save the existing form and Select Box Selection
+				$(&#x27;#custom&#x27;).html(form[0].innerHTML);
+				$(this).attr(&#x27;selectVal&#x27;, $(&#x27;#formSelect&#x27;).selectedIndex).attr(&#x27;selectText&#x27;, $(&#x27;#formSelect&#x27;).children()[0].textContent);
+
+				// rename button
+				this.textContent &#x3D; &quot;Undo&quot;;
+
+				// reset content
+				$(&#x27;#formSelect&#x27;).children()[0].textContent &#x3D; &quot;Pre-built forms&quot;;
+				$(&#x27;#formSelect&#x27;)[0].selectedIndex &#x3D; 0;
+				form.children().remove();
+
+			} else {
+				$(&#x27;#formSelect&#x27;).children()[0].textContent &#x3D; $(this).attr(&#x27;selectText&#x27;);
+				$(&#x27;#formSelect&#x27;)[0].selectedIndex &#x3D; $(this).attr(&#x27;selectVal&#x27;);
+				this.textContent &#x3D; &quot;Clear&quot;;
+
+				form.html($(&#x27;#custom&#x27;)[0].innerHTML);
+			}
+		});
 	});
+
+	var populatePrebuiltForms &#x3D; function() {
+		$(&#x27;#pre-built&#x27;).children().each(function(i, form) {
+			$(&#x27;#formSelect&#x27;).append($(&#x27;&lt;option/&gt;&#x27;).text($(form).attr(&#x27;name&#x27;)).attr(&#x27;value&#x27;, i));
+		});
+		$(&#x27;#pre-built&#x27;).append($(&#x27;&lt;form id&#x3D;&quot;custom&quot; /&gt;&#x27;));
+	}
 
 	function hideOtherBlocks() {
 		$(&#x27;.f-item-group:not(&#x27; + window.location.hash + &#x27;)&#x27;).addClass(&#x27;f-item-hidden&#x27;);

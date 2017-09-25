@@ -1,9 +1,14 @@
 'use strict';
 
 window.filterSampleText = function () {
+  // only filter on components page
+  if (!/components.html$/.test(window.location.pathname)) {return;}
+
   $('code.language-markup').each(function(i, snippet) {
-    //only trim sample text from code tags that have a <sample> block
+
+    // only trim sample text from code tags that have a <sample> block
     if (/<sample>/g.test(snippet.textContent)) { splice(snippet); }
+
   });
 }
 
