@@ -216,6 +216,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			form.after(modal);
 			Prism.highlightElement(modal[0]);
+			modal.prepend($('<a id="hideHTML">Hide HTML</a>'));
+	});
+
+	$('#form-builder').on('click','#hideHTML',function(){
+		$(this).parent().slideUp();
 	});
 
 	// remove unnecessary content
