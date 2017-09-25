@@ -48,6 +48,7 @@
 	
 	__webpack_require__(2);
 	__webpack_require__(3);
+	__webpack_require__(6);
 	__webpack_require__(5);
 	__webpack_require__(4);
 	/**
@@ -366,13 +367,16 @@
 	fabricator.setInitialMenuState().menuToggle().allItemsToggles().singleItemToggle().buildColorChips().setActiveItem();
 	//.bindCodeAutoSelect(); //highlight all code in code sections
 	
-	fillAllCssBlocks();
-	addVariations();
-	addVariationTags();
-	bindVariationToggles();
-	highlightCSS();
+	// Custom Functions & Features
+	fillAllCssBlocks(); // getCSS.js
+	addVariations(); // getVariations.js
+	addVariationTags(); // getVariations.js
+	bindVariationToggles(); // getVariations.js
+	highlightCSS(); // getVariations.js
+	buildResetSwitches(); // buildResetSwitches.js
+	
 	// running filter before adding variations breaks variations function. Memory leak? Unclosed tag?
-	filterSampleText();
+	filterSampleText(); // filterSampleText.js
 	
 	/*
 	  Miscellaneous Functions
@@ -388,36 +392,6 @@
 	  // bind preventLinkAndButtonEvents function
 	  $('.f-item-preview').find('[href]').each(preventLinkAndButtonEvents);
 	  $('.f-item-preview').find('button').each(preventLinkAndButtonEvents);
-	
-	  // add reset switches to components with scripts
-	  // ELSE gray-out content toggles for pages where they are irrelevant
-	  if (/components.html$/.test(window.location.pathname)) {
-	    var reset = $('<span class="btn f-ui-btn resetContent disabled">reset</span>'),
-	        previewContainers = $('.f-item-preview script').parents('.f-item-preview'),
-	        resetContent;
-	
-	    previewContainers.each(function (i, preview) {
-	      var thisReset = reset.clone();
-	      $(preview).closest('.f-item-group').find('.f-item-heading-group').prepend(thisReset);
-	
-	      $(preview).on('click', '*', function () {
-	        $(this).closest('.f-item-group').find('.resetContent').removeClass('disabled');
-	      });
-	
-	      $(preview).closest('.f-item-group').on('click', '.resetContent:not(.disabled)', function () {
-	        // `this` refers to the reset link
-	        $(this).addClass('disabled');
-	        $(this).closest('.f-item-group').find('.f-item-preview').fadeOut(function () {
-	          // `this` refers to the '.f-item-preview'
-	          $(this).html(JSON.parse($(this).data('resetContent')));
-	        }).fadeIn();
-	      });
-	
-	      $(preview).data('resetContent', JSON.stringify(preview.innerHTML));
-	    });
-	  } else {
-	    $('.f-controls').addClass('inactive');
-	  }
 	});
 
 /***/ }),
@@ -11271,7 +11245,7 @@
 	
 	__webpack_require__(2);
 	var $ = __webpack_require__(1);
-	var specificity = __webpack_require__(8);
+	var specificity = __webpack_require__(9);
 	
 	window.getParseFilterCSS = function (cssElement) {
 	  // section 1 variables
@@ -11468,6 +11442,47 @@
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var $ = __webpack_require__(1);
+	
+	// add reset switches to components with scripts
+	// ELSE gray-out content toggles for pages where they are irrelevant
+	window.buildResetSwitches = function () {
+	
+	  if (/components.html$/.test(window.location.pathname)) {
+	    var reset = $('<span class="btn f-ui-btn resetContent disabled">reset</span>'),
+	        previewContainers = $('.f-item-preview script').parents('.f-item-preview'),
+	        resetContent;
+	
+	    previewContainers.each(function (i, preview) {
+	      var thisReset = reset.clone();
+	      $(preview).closest('.f-item-group').find('.f-item-heading-group').prepend(thisReset);
+	
+	      $(preview).on('click', '*', function () {
+	        $(this).closest('.f-item-group').find('.resetContent').removeClass('disabled');
+	      });
+	
+	      $(preview).closest('.f-item-group').on('click', '.resetContent:not(.disabled)', function () {
+	        // `this` refers to the reset link
+	        $(this).addClass('disabled');
+	        $(this).closest('.f-item-group').find('.f-item-preview').fadeOut(function () {
+	          // `this` refers to the '.f-item-preview'
+	          $(this).html(JSON.parse($(this).data('resetContent')));
+	        }).fadeIn();
+	      });
+	
+	      $(preview).data('resetContent', JSON.stringify(preview.innerHTML));
+	    });
+	  } else {
+	    $('.f-controls').addClass('inactive');
+	  }
+	};
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -11529,7 +11544,7 @@
 	}
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11541,18 +11556,24 @@
 	window.addVariations = function () {
 		// dealing with each component's variations block
 		$('.f-item-variations').each(function (i, element) {
-			var componentClasses = $(element).parents('.componentClasses');
-			var classList = [];
-			var preview = componentClasses.siblings('.f-item-preview');
-			var baseElement = preview.children()[0];
-			var previewElement = '';
-			var iconClass = '';
-			var iconName = '';
+			var componentClasses = $(element).parents('.componentClasses'),
+			    classList = [],
+			    preview = componentClasses.siblings('.f-item-preview'),
+			    baseElement = preview.children()[0],
+			    previewElement = '',
+			    hasScript = false,
+			    iconClass = '',
+			    iconName = '';
 	
 			var classes = element.textContent.split(' ').map(function (className) {
 				className = className.split('');
 				return className.slice(className.indexOf('.') + 1, className.length).join('');
 			}); // first array element is empty string - generates 'base' rendering
+	
+			// figure out if the component needs scripts and flag it
+			if (preview.find('script').length > 0) {
+				hasScript = true;
+			}
 	
 			preview.html(''); // clears contents of preview section
 	
@@ -11587,6 +11608,11 @@
 			});
 	
 			addVariationStyles(classes, element);
+	
+			// if there was a script on the component, add an empty script block to the end so that the reset button will generate
+			if (hasScript) {
+				preview.append($('<script/>'));
+			}
 	
 			return;
 		});
@@ -11631,6 +11657,10 @@
 		// find all elements with CSS 'front-matter'
 		var elements = $('.f-item-variations').parents('.componentClasses').siblings('.f-item-preview').children();
 		elements.each(function (i, element) {
+			if (element.tagName === "SCRIPT") {
+				return;
+			}
+	
 			$(element).attr('data-variation', 'true');
 			return element;
 		});
@@ -11671,9 +11701,9 @@
 	};
 
 /***/ }),
-/* 6 */,
 /* 7 */,
-/* 8 */
+/* 8 */,
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var SPECIFICITY = (function() {
