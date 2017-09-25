@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			form.append($('<div class="form-group" />'));
 			group = form.find('.form-group:last-of-type');
 		}
-		group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
+		group.append($($(formElements[selectBox[0].value]).children()).clone());
 		$('#addGroup').removeAttr('disabled');
 	});
 
