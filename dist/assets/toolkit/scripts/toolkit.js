@@ -51,9 +51,9 @@
 	 */
 	window.jQuery = __webpack_require__(1);
 	window.$ = window.jQuery;
-	__webpack_require__(7);
+	__webpack_require__(8);
 	
-	__webpack_require__(6);
+	__webpack_require__(7);
 
 /***/ }),
 /* 1 */
@@ -10319,7 +10319,8 @@
 /* 3 */,
 /* 4 */,
 /* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -10335,7 +10336,7 @@
 	};
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports) {
 
 	/*!
