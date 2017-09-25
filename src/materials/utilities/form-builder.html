@@ -106,10 +106,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	$('.f-item-code, .componentClasses').remove();
 	if (window.location.hash) {hideOtherBlocks();}
 	window.onhashchange = hideOtherBlocks;
-
-	function hideOtherBlocks () {
-		$('.f-item-group:not(' + window.location.hash + ')').addClass('f-item-hidden');
-		$(window.location.hash).removeClass('f-item-hidden');
-	}
 });
+
+function hideOtherBlocks () {
+	$('.f-item-group:not(' + window.location.hash + ')').addClass('f-item-hidden');
+	$(window.location.hash).removeClass('f-item-hidden');
+}
 </script>
