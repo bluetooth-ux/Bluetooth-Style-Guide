@@ -194,7 +194,7 @@
 
 	<label class="form-check-label"><input class="form-check-input" type="checkbox" id="showOutlines" checked /> Show Form Group Outlines</label>
 
-	<p style="flex-grow:1;text-align:right;"><button class="btn btn-sm" id="getFormBuilderHTML">Get HTML</button></p>
+	<p style="flex-grow:1;text-align:right;margin-bottom:0;"><button class="btn btn-sm" id="getFormBuilderHTML">Get HTML</button></p>
 </div>
 <form></form>
 
@@ -206,6 +206,74 @@
 
 <aside>
 	<h3>Form Element Reference</h3>
+	<div class="form-builder-element" data-name="name group">
+		<div class="row">
+			<div class="col-12 col-sm-6">
+				<label class="control-label">First Name</label>
+				<input class="form-control" type="text" name="given-name" autocomplete="given-name" placeholder="First Name" />
+			</div>
+			<div class="col-12 col-sm-6">
+				<label class="control-label">Last Name</label>
+				<input class="form-control" type="text" name="family-name" autocomplete="family-name" placeholder="Last Name" />
+			</div>
+		</div>
+	</div>
+	<div class="form-builder-element" data-name="address group">
+		<label class="control-label">Address Line 1</label>
+		<input class="form-control" type="text" name="address-line1" autocomplete="address-line1" placeholder="Address Line 1" />
+		<label class="control-label">Address Line 2</label>
+		<input class="form-control" type="text" name="address-line2" autocomplete="address-line2" placeholder="Address Line 2" />
+		<label class="control-label">Address Line 3</label>
+		<input class="form-control" type="text" name="address-line3" autocomplete="address-line3" placeholder="Address Line 3" />
+		<div class="row">
+			<div class="col-12 col-sm-7">
+				<label class="control-label">City</label>
+				<input class="form-control" type="text" name="address-level2" autocomplete="address-level2" placeholder="City" />
+			</div>
+			<div class="col-6 col-sm-2">
+				<label class="control-label">State</label>
+				<input class="form-control" type="text" name="address-level1" autocomplete="address-level1" placeholder="State" />
+			</div>
+			<div class="col-6 col-sm-3">
+				<label class="control-label">Postal Code</label>
+				<input class="form-control" type="text" name="postal-code" autocomplete="postal-code" placeholder="Postal Code" />
+			</div>
+		</div>
+		<label class="control-label">Country</label>
+		<select class="form-control" name="country-name" autocomplete="country-name">
+			<option value="0" label="Select a country..." selected="selected">Select a country...</option>
+			<optgroup id="country-optgroup-Africa" label="Africa">
+				<option value="DZ" label="Algeria">Algeria</option><option value="AO" label="Angola">Angola</option><option value="BJ" label="Benin">Benin</option><option value="BW" label="Botswana">Botswana</option><option value="BF" label="Burkina Faso">Burkina Faso</option><option value="BI" label="Burundi">Burundi</option><option value="CM" label="Cameroon">Cameroon</option><option value="CV" label="Cape Verde">Cape Verde</option><option value="CF" label="Central African Republic">Central African Republic</option><option value="TD" label="Chad">Chad</option><option value="KM" label="Comoros">Comoros</option><option value="CG" label="Congo - Brazzaville">Congo - Brazzaville</option><option value="CD" label="Congo - Kinshasa">Congo - Kinshasa</option><option value="CI" label="Côte d’Ivoire">Côte d’Ivoire</option><option value="DJ" label="Djibouti">Djibouti</option><option value="EG" label="Egypt">Egypt</option><option value="GQ" label="Equatorial Guinea">Equatorial Guinea</option><option value="ER" label="Eritrea">Eritrea</option><option value="ET" label="Ethiopia">Ethiopia</option><option value="GA" label="Gabon">Gabon</option><option value="GM" label="Gambia">Gambia</option><option value="GH" label="Ghana">Ghana</option><option value="GN" label="Guinea">Guinea</option><option value="GW" label="Guinea-Bissau">Guinea-Bissau</option><option value="KE" label="Kenya">Kenya</option><option value="LS" label="Lesotho">Lesotho</option><option value="LR" label="Liberia">Liberia</option><option value="LY" label="Libya">Libya</option><option value="MG" label="Madagascar">Madagascar</option><option value="MW" label="Malawi">Malawi</option><option value="ML" label="Mali">Mali</option><option value="MR" label="Mauritania">Mauritania</option><option value="MU" label="Mauritius">Mauritius</option><option value="YT" label="Mayotte">Mayotte</option><option value="MA" label="Morocco">Morocco</option><option value="MZ" label="Mozambique">Mozambique</option><option value="NA" label="Namibia">Namibia</option><option value="NE" label="Niger">Niger</option><option value="NG" label="Nigeria">Nigeria</option><option value="RW" label="Rwanda">Rwanda</option><option value="RE" label="Réunion">Réunion</option><option value="SH" label="Saint Helena">Saint Helena</option><option value="SN" label="Senegal">Senegal</option><option value="SC" label="Seychelles">Seychelles</option><option value="SL" label="Sierra Leone">Sierra Leone</option><option value="SO" label="Somalia">Somalia</option><option value="ZA" label="South Africa">South Africa</option><option value="SD" label="Sudan">Sudan</option><option value="SZ" label="Swaziland">Swaziland</option><option value="ST" label="São Tomé and Príncipe">São Tomé and Príncipe</option><option value="TZ" label="Tanzania">Tanzania</option><option value="TG" label="Togo">Togo</option><option value="TN" label="Tunisia">Tunisia</option><option value="UG" label="Uganda">Uganda</option><option value="EH" label="Western Sahara">Western Sahara</option><option value="ZM" label="Zambia">Zambia</option><option value="ZW" label="Zimbabwe">Zimbabwe</option>
+			</optgroup>
+			<optgroup id="country-optgroup-Americas" label="Americas">
+				<option value="AI" label="Anguilla">Anguilla</option><option value="AG" label="Antigua and Barbuda">Antigua and Barbuda</option><option value="AR" label="Argentina">Argentina</option><option value="AW" label="Aruba">Aruba</option><option value="BS" label="Bahamas">Bahamas</option><option value="BB" label="Barbados">Barbados</option><option value="BZ" label="Belize">Belize</option><option value="BM" label="Bermuda">Bermuda</option><option value="BO" label="Bolivia">Bolivia</option><option value="BR" label="Brazil">Brazil</option><option value="VG" label="British Virgin Islands">British Virgin Islands</option><option value="CA" label="Canada">Canada</option><option value="KY" label="Cayman Islands">Cayman Islands</option><option value="CL" label="Chile">Chile</option><option value="CO" label="Colombia">Colombia</option><option value="CR" label="Costa Rica">Costa Rica</option><option value="CU" label="Cuba">Cuba</option><option value="DM" label="Dominica">Dominica</option><option value="DO" label="Dominican Republic">Dominican Republic</option><option value="EC" label="Ecuador">Ecuador</option><option value="SV" label="El Salvador">El Salvador</option><option value="FK" label="Falkland Islands">Falkland Islands</option><option value="GF" label="French Guiana">French Guiana</option><option value="GL" label="Greenland">Greenland</option><option value="GD" label="Grenada">Grenada</option><option value="GP" label="Guadeloupe">Guadeloupe</option><option value="GT" label="Guatemala">Guatemala</option><option value="GY" label="Guyana">Guyana</option><option value="HT" label="Haiti">Haiti</option><option value="HN" label="Honduras">Honduras</option><option value="JM" label="Jamaica">Jamaica</option><option value="MQ" label="Martinique">Martinique</option><option value="MX" label="Mexico">Mexico</option><option value="MS" label="Montserrat">Montserrat</option><option value="AN" label="Netherlands Antilles">Netherlands Antilles</option><option value="NI" label="Nicaragua">Nicaragua</option><option value="PA" label="Panama">Panama</option><option value="PY" label="Paraguay">Paraguay</option><option value="PE" label="Peru">Peru</option><option value="PR" label="Puerto Rico">Puerto Rico</option><option value="BL" label="Saint Barthélemy">Saint Barthélemy</option><option value="KN" label="Saint Kitts and Nevis">Saint Kitts and Nevis</option><option value="LC" label="Saint Lucia">Saint Lucia</option><option value="MF" label="Saint Martin">Saint Martin</option><option value="PM" label="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option><option value="VC" label="Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</option><option value="SR" label="Suriname">Suriname</option><option value="TT" label="Trinidad and Tobago">Trinidad and Tobago</option><option value="TC" label="Turks and Caicos Islands">Turks and Caicos Islands</option><option value="VI" label="U.S. Virgin Islands">U.S. Virgin Islands</option><option value="US" label="United States">United States</option><option value="UY" label="Uruguay">Uruguay</option><option value="VE" label="Venezuela">Venezuela</option>
+			</optgroup>
+			<optgroup id="country-optgroup-Asia" label="Asia">
+				<option value="AF" label="Afghanistan">Afghanistan</option><option value="AM" label="Armenia">Armenia</option><option value="AZ" label="Azerbaijan">Azerbaijan</option><option value="BH" label="Bahrain">Bahrain</option><option value="BD" label="Bangladesh">Bangladesh</option><option value="BT" label="Bhutan">Bhutan</option><option value="BN" label="Brunei">Brunei</option><option value="KH" label="Cambodia">Cambodia</option><option value="CN" label="China">China</option><option value="CY" label="Cyprus">Cyprus</option><option value="GE" label="Georgia">Georgia</option><option value="HK" label="Hong Kong SAR China">Hong Kong SAR China</option><option value="IN" label="India">India</option><option value="ID" label="Indonesia">Indonesia</option><option value="IR" label="Iran">Iran</option><option value="IQ" label="Iraq">Iraq</option><option value="IL" label="Israel">Israel</option><option value="JP" label="Japan">Japan</option><option value="JO" label="Jordan">Jordan</option><option value="KZ" label="Kazakhstan">Kazakhstan</option><option value="KW" label="Kuwait">Kuwait</option><option value="KG" label="Kyrgyzstan">Kyrgyzstan</option><option value="LA" label="Laos">Laos</option><option value="LB" label="Lebanon">Lebanon</option><option value="MO" label="Macau SAR China">Macau SAR China</option><option value="MY" label="Malaysia">Malaysia</option><option value="MV" label="Maldives">Maldives</option><option value="MN" label="Mongolia">Mongolia</option><option value="MM" label="Myanmar [Burma]">Myanmar [Burma]</option><option value="NP" label="Nepal">Nepal</option><option value="NT" label="Neutral Zone">Neutral Zone</option><option value="KP" label="North Korea">North Korea</option><option value="OM" label="Oman">Oman</option><option value="PK" label="Pakistan">Pakistan</option><option value="PS" label="Palestinian Territories">Palestinian Territories</option><option value="YD" label="People's Democratic Republic of Yemen">People's Democratic Republic of Yemen</option><option value="PH" label="Philippines">Philippines</option><option value="QA" label="Qatar">Qatar</option><option value="SA" label="Saudi Arabia">Saudi Arabia</option><option value="SG" label="Singapore">Singapore</option><option value="KR" label="South Korea">South Korea</option><option value="LK" label="Sri Lanka">Sri Lanka</option><option value="SY" label="Syria">Syria</option><option value="TW" label="Taiwan">Taiwan</option><option value="TJ" label="Tajikistan">Tajikistan</option><option value="TH" label="Thailand">Thailand</option><option value="TL" label="Timor-Leste">Timor-Leste</option><option value="TR" label="Turkey">Turkey</option><option value="™" label="Turkmenistan">Turkmenistan</option><option value="AE" label="United Arab Emirates">United Arab Emirates</option><option value="UZ" label="Uzbekistan">Uzbekistan</option><option value="VN" label="Vietnam">Vietnam</option><option value="YE" label="Yemen">Yemen</option>
+			</optgroup>
+			<optgroup id="country-optgroup-Europe" label="Europe">
+				<option value="AL" label="Albania">Albania</option><option value="AD" label="Andorra">Andorra</option><option value="AT" label="Austria">Austria</option><option value="BY" label="Belarus">Belarus</option><option value="BE" label="Belgium">Belgium</option><option value="BA" label="Bosnia and Herzegovina">Bosnia and Herzegovina</option><option value="BG" label="Bulgaria">Bulgaria</option><option value="HR" label="Croatia">Croatia</option><option value="CY" label="Cyprus">Cyprus</option><option value="CZ" label="Czech Republic">Czech Republic</option><option value="DK" label="Denmark">Denmark</option><option value="DD" label="East Germany">East Germany</option><option value="EE" label="Estonia">Estonia</option><option value="FO" label="Faroe Islands">Faroe Islands</option><option value="FI" label="Finland">Finland</option><option value="FR" label="France">France</option><option value="DE" label="Germany">Germany</option><option value="GI" label="Gibraltar">Gibraltar</option><option value="GR" label="Greece">Greece</option><option value="GG" label="Guernsey">Guernsey</option><option value="HU" label="Hungary">Hungary</option><option value="IS" label="Iceland">Iceland</option><option value="IE" label="Ireland">Ireland</option><option value="IM" label="Isle of Man">Isle of Man</option><option value="IT" label="Italy">Italy</option><option value="JE" label="Jersey">Jersey</option><option value="LV" label="Latvia">Latvia</option><option value="LI" label="Liechtenstein">Liechtenstein</option><option value="LT" label="Lithuania">Lithuania</option><option value="LU" label="Luxembourg">Luxembourg</option><option value="MK" label="Macedonia">Macedonia</option><option value="MT" label="Malta">Malta</option><option value="FX" label="Metropolitan France">Metropolitan France</option><option value="MD" label="Moldova">Moldova</option><option value="MC" label="Monaco">Monaco</option><option value="ME" label="Montenegro">Montenegro</option><option value="NL" label="Netherlands">Netherlands</option><option value="NO" label="Norway">Norway</option><option value="PL" label="Poland">Poland</option><option value="PT" label="Portugal">Portugal</option><option value="RO" label="Romania">Romania</option><option value="RU" label="Russia">Russia</option><option value="SM" label="San Marino">San Marino</option><option value="RS" label="Serbia">Serbia</option><option value="CS" label="Serbia and Montenegro">Serbia and Montenegro</option><option value="SK" label="Slovakia">Slovakia</option><option value="SI" label="Slovenia">Slovenia</option><option value="ES" label="Spain">Spain</option><option value="SJ" label="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option><option value="SE" label="Sweden">Sweden</option><option value="CH" label="Switzerland">Switzerland</option><option value="UA" label="Ukraine">Ukraine</option><option value="SU" label="Union of Soviet Socialist Republics">Union of Soviet Socialist Republics</option><option value="GB" label="United Kingdom">United Kingdom</option><option value="VA" label="Vatican City">Vatican City</option><option value="AX" label="Åland Islands">Åland Islands</option>
+			</optgroup>
+			<optgroup id="country-optgroup-Oceania" label="Oceania">
+				<option value="AS" label="American Samoa">American Samoa</option><option value="AQ" label="Antarctica">Antarctica</option><option value="AU" label="Australia">Australia</option><option value="BV" label="Bouvet Island">Bouvet Island</option><option value="IO" label="British Indian Ocean Territory">British Indian Ocean Territory</option><option value="CX" label="Christmas Island">Christmas Island</option><option value="CC" label="Cocos [Keeling] Islands">Cocos [Keeling] Islands</option><option value="CK" label="Cook Islands">Cook Islands</option><option value="FJ" label="Fiji">Fiji</option><option value="PF" label="French Polynesia">French Polynesia</option><option value="TF" label="French Southern Territories">French Southern Territories</option><option value="GU" label="Guam">Guam</option><option value="HM" label="Heard Island and McDonald Islands">Heard Island and McDonald Islands</option><option value="KI" label="Kiribati">Kiribati</option><option value="MH" label="Marshall Islands">Marshall Islands</option><option value="FM" label="Micronesia">Micronesia</option><option value="NR" label="Nauru">Nauru</option><option value="NC" label="New Caledonia">New Caledonia</option><option value="NZ" label="New Zealand">New Zealand</option><option value="NU" label="Niue">Niue</option><option value="NF" label="Norfolk Island">Norfolk Island</option><option value="MP" label="Northern Mariana Islands">Northern Mariana Islands</option><option value="PW" label="Palau">Palau</option><option value="PG" label="Papua New Guinea">Papua New Guinea</option><option value="PN" label="Pitcairn Islands">Pitcairn Islands</option><option value="WS" label="Samoa">Samoa</option><option value="SB" label="Solomon Islands">Solomon Islands</option><option value="GS" label="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option><option value="TK" label="Tokelau">Tokelau</option><option value="TO" label="Tonga">Tonga</option><option value="TV" label="Tuvalu">Tuvalu</option><option value="UM" label="U.S. Minor Outlying Islands">U.S. Minor Outlying Islands</option><option value="VU" label="Vanuatu">Vanuatu</option><option value="WF" label="Wallis and Futuna">Wallis and Futuna</option>
+			</optgroup>
+		</select>
+	</div>
+	<div class="form-builder-element" data-name="organization info">
+		<label class="control-label">Organization</label>
+		<input class="form-control" type="text" name="company" autocomplete="organization" placeholder="Organization" />
+		<label class="control-label">Website</label>
+		<input class="form-control" type="text" name="url" autocomplete="url" placeholder="http://" />
+	</div>
+	<div class="form-builder-element" data-name="contact info">
+		<label class="control-label">Phone</label>
+		<input class="form-control" type="tel" placeholder="Phone Number" />
+		<label class="control-label">E-mail</label>
+		<input class="form-control" type="email" placeholder="E-Mail Address" />
+	</div>
+	</div>
+	</div>
+	<h3>Individual Elements</h3>
 	<div class="form-builder-element" data-name="label">
 		<label class="control-label"><sample>Label</sample></label> </div>
 	<div class="form-builder-element" data-name="checkbox">
@@ -232,9 +300,9 @@
 			<option value="">Option 4</option>
 			<option value="">Option 5</option></sample>
 		</select> </div>
-	<div class="form-builder-element" data-name="text-input">
+	<div class="form-builder-element" data-name="text input">
 		<input class="form-control" type="text" placeholder="Placeholder text" /> </div>
-	<div class="form-builder-element" data-name="input-button-group">
+	<div class="form-builder-element" data-name="input button group">
 		<div class="input-group">
 			<input type="text" class="form-control" placeholder="Text">
 			<span class="input-group-btn">
@@ -242,11 +310,11 @@
 			</span>
 		</div>
 	</div>
-	<div class="form-builder-element" data-name="text-area">
+	<div class="form-builder-element" data-name="text area">
 		<textarea class="form-control" name="" cols="30" rows="10"></textarea> </div>
 	<div class="form-builder-element" data-name="button">
 		<button class="btn"><sample>Button</sample></button> </div>
-	<div class="form-builder-element" data-name="help-text">
+	<div class="form-builder-element" data-name="help text">
 		<small class="form-text text-muted"><sample>Help text to assist with filling out forms. Picture me below a form input.</sample></small> </div>
 </aside>
 
@@ -290,7 +358,7 @@
 				form.append($('<div class="form-group" />'));
 				group = form.find('.form-group:last-of-type');
 			}
-			group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
+			group.append($($(formElements[selectBox[0].value]).children()).clone());
 			$('#addGroup').removeAttr('disabled');
 		});
 
@@ -311,13 +379,22 @@
 			hideOtherBlocks();
 		}
 		window.onhashchange = hideOtherBlocks;
-
-		function hideOtherBlocks() {
-			$('.f-item-group:not(' + window.location.hash + ')').addClass('f-item-hidden');
-			$(window.location.hash).removeClass('f-item-hidden');
-		}
 	});
+
+	function hideOtherBlocks() {
+		$('.f-item-group:not(' + window.location.hash + ')').addClass('f-item-hidden');
+		$(window.location.hash).removeClass('f-item-hidden');
+	}
 </script>
+
+<style type="text/css">
+	/*hide address line 3 unless address line 2 is filled*/
+
+	[name="address-line2"]:placeholder-shown+label,
+	[name="address-line2"]:placeholder-shown~input {
+		display: none;
+	}
+</style>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;p&gt;Some great instructions on how to use this component.&lt;/p&gt;
@@ -330,7 +407,7 @@
 
 	&lt;label class&#x3D;&quot;form-check-label&quot;&gt;&lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;showOutlines&quot; checked /&gt; Show Form Group Outlines&lt;/label&gt;
 
-	&lt;p style&#x3D;&quot;flex-grow:1;text-align:right;&quot;&gt;&lt;button class&#x3D;&quot;btn btn-sm&quot; id&#x3D;&quot;getFormBuilderHTML&quot;&gt;Get HTML&lt;/button&gt;&lt;/p&gt;
+	&lt;p style&#x3D;&quot;flex-grow:1;text-align:right;margin-bottom:0;&quot;&gt;&lt;button class&#x3D;&quot;btn btn-sm&quot; id&#x3D;&quot;getFormBuilderHTML&quot;&gt;Get HTML&lt;/button&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;form&gt;&lt;/form&gt;
 
@@ -342,6 +419,74 @@
 
 &lt;aside&gt;
 	&lt;h3&gt;Form Element Reference&lt;/h3&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;name group&quot;&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-12 col-sm-6&quot;&gt;
+				&lt;label class&#x3D;&quot;control-label&quot;&gt;First Name&lt;/label&gt;
+				&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;given-name&quot; autocomplete&#x3D;&quot;given-name&quot; placeholder&#x3D;&quot;First Name&quot; /&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-12 col-sm-6&quot;&gt;
+				&lt;label class&#x3D;&quot;control-label&quot;&gt;Last Name&lt;/label&gt;
+				&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;family-name&quot; autocomplete&#x3D;&quot;family-name&quot; placeholder&#x3D;&quot;Last Name&quot; /&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;address group&quot;&gt;
+		&lt;label class&#x3D;&quot;control-label&quot;&gt;Address Line 1&lt;/label&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;address-line1&quot; autocomplete&#x3D;&quot;address-line1&quot; placeholder&#x3D;&quot;Address Line 1&quot; /&gt;
+		&lt;label class&#x3D;&quot;control-label&quot;&gt;Address Line 2&lt;/label&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;address-line2&quot; autocomplete&#x3D;&quot;address-line2&quot; placeholder&#x3D;&quot;Address Line 2&quot; /&gt;
+		&lt;label class&#x3D;&quot;control-label&quot;&gt;Address Line 3&lt;/label&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;address-line3&quot; autocomplete&#x3D;&quot;address-line3&quot; placeholder&#x3D;&quot;Address Line 3&quot; /&gt;
+		&lt;div class&#x3D;&quot;row&quot;&gt;
+			&lt;div class&#x3D;&quot;col-12 col-sm-7&quot;&gt;
+				&lt;label class&#x3D;&quot;control-label&quot;&gt;City&lt;/label&gt;
+				&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;address-level2&quot; autocomplete&#x3D;&quot;address-level2&quot; placeholder&#x3D;&quot;City&quot; /&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-6 col-sm-2&quot;&gt;
+				&lt;label class&#x3D;&quot;control-label&quot;&gt;State&lt;/label&gt;
+				&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;address-level1&quot; autocomplete&#x3D;&quot;address-level1&quot; placeholder&#x3D;&quot;State&quot; /&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;col-6 col-sm-3&quot;&gt;
+				&lt;label class&#x3D;&quot;control-label&quot;&gt;Postal Code&lt;/label&gt;
+				&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;postal-code&quot; autocomplete&#x3D;&quot;postal-code&quot; placeholder&#x3D;&quot;Postal Code&quot; /&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;label class&#x3D;&quot;control-label&quot;&gt;Country&lt;/label&gt;
+		&lt;select class&#x3D;&quot;form-control&quot; name&#x3D;&quot;country-name&quot; autocomplete&#x3D;&quot;country-name&quot;&gt;
+			&lt;option value&#x3D;&quot;0&quot; label&#x3D;&quot;Select a country...&quot; selected&#x3D;&quot;selected&quot;&gt;Select a country...&lt;/option&gt;
+			&lt;optgroup id&#x3D;&quot;country-optgroup-Africa&quot; label&#x3D;&quot;Africa&quot;&gt;
+				&lt;option value&#x3D;&quot;DZ&quot; label&#x3D;&quot;Algeria&quot;&gt;Algeria&lt;/option&gt;&lt;option value&#x3D;&quot;AO&quot; label&#x3D;&quot;Angola&quot;&gt;Angola&lt;/option&gt;&lt;option value&#x3D;&quot;BJ&quot; label&#x3D;&quot;Benin&quot;&gt;Benin&lt;/option&gt;&lt;option value&#x3D;&quot;BW&quot; label&#x3D;&quot;Botswana&quot;&gt;Botswana&lt;/option&gt;&lt;option value&#x3D;&quot;BF&quot; label&#x3D;&quot;Burkina Faso&quot;&gt;Burkina Faso&lt;/option&gt;&lt;option value&#x3D;&quot;BI&quot; label&#x3D;&quot;Burundi&quot;&gt;Burundi&lt;/option&gt;&lt;option value&#x3D;&quot;CM&quot; label&#x3D;&quot;Cameroon&quot;&gt;Cameroon&lt;/option&gt;&lt;option value&#x3D;&quot;CV&quot; label&#x3D;&quot;Cape Verde&quot;&gt;Cape Verde&lt;/option&gt;&lt;option value&#x3D;&quot;CF&quot; label&#x3D;&quot;Central African Republic&quot;&gt;Central African Republic&lt;/option&gt;&lt;option value&#x3D;&quot;TD&quot; label&#x3D;&quot;Chad&quot;&gt;Chad&lt;/option&gt;&lt;option value&#x3D;&quot;KM&quot; label&#x3D;&quot;Comoros&quot;&gt;Comoros&lt;/option&gt;&lt;option value&#x3D;&quot;CG&quot; label&#x3D;&quot;Congo - Brazzaville&quot;&gt;Congo - Brazzaville&lt;/option&gt;&lt;option value&#x3D;&quot;CD&quot; label&#x3D;&quot;Congo - Kinshasa&quot;&gt;Congo - Kinshasa&lt;/option&gt;&lt;option value&#x3D;&quot;CI&quot; label&#x3D;&quot;Côte d’Ivoire&quot;&gt;Côte d’Ivoire&lt;/option&gt;&lt;option value&#x3D;&quot;DJ&quot; label&#x3D;&quot;Djibouti&quot;&gt;Djibouti&lt;/option&gt;&lt;option value&#x3D;&quot;EG&quot; label&#x3D;&quot;Egypt&quot;&gt;Egypt&lt;/option&gt;&lt;option value&#x3D;&quot;GQ&quot; label&#x3D;&quot;Equatorial Guinea&quot;&gt;Equatorial Guinea&lt;/option&gt;&lt;option value&#x3D;&quot;ER&quot; label&#x3D;&quot;Eritrea&quot;&gt;Eritrea&lt;/option&gt;&lt;option value&#x3D;&quot;ET&quot; label&#x3D;&quot;Ethiopia&quot;&gt;Ethiopia&lt;/option&gt;&lt;option value&#x3D;&quot;GA&quot; label&#x3D;&quot;Gabon&quot;&gt;Gabon&lt;/option&gt;&lt;option value&#x3D;&quot;GM&quot; label&#x3D;&quot;Gambia&quot;&gt;Gambia&lt;/option&gt;&lt;option value&#x3D;&quot;GH&quot; label&#x3D;&quot;Ghana&quot;&gt;Ghana&lt;/option&gt;&lt;option value&#x3D;&quot;GN&quot; label&#x3D;&quot;Guinea&quot;&gt;Guinea&lt;/option&gt;&lt;option value&#x3D;&quot;GW&quot; label&#x3D;&quot;Guinea-Bissau&quot;&gt;Guinea-Bissau&lt;/option&gt;&lt;option value&#x3D;&quot;KE&quot; label&#x3D;&quot;Kenya&quot;&gt;Kenya&lt;/option&gt;&lt;option value&#x3D;&quot;LS&quot; label&#x3D;&quot;Lesotho&quot;&gt;Lesotho&lt;/option&gt;&lt;option value&#x3D;&quot;LR&quot; label&#x3D;&quot;Liberia&quot;&gt;Liberia&lt;/option&gt;&lt;option value&#x3D;&quot;LY&quot; label&#x3D;&quot;Libya&quot;&gt;Libya&lt;/option&gt;&lt;option value&#x3D;&quot;MG&quot; label&#x3D;&quot;Madagascar&quot;&gt;Madagascar&lt;/option&gt;&lt;option value&#x3D;&quot;MW&quot; label&#x3D;&quot;Malawi&quot;&gt;Malawi&lt;/option&gt;&lt;option value&#x3D;&quot;ML&quot; label&#x3D;&quot;Mali&quot;&gt;Mali&lt;/option&gt;&lt;option value&#x3D;&quot;MR&quot; label&#x3D;&quot;Mauritania&quot;&gt;Mauritania&lt;/option&gt;&lt;option value&#x3D;&quot;MU&quot; label&#x3D;&quot;Mauritius&quot;&gt;Mauritius&lt;/option&gt;&lt;option value&#x3D;&quot;YT&quot; label&#x3D;&quot;Mayotte&quot;&gt;Mayotte&lt;/option&gt;&lt;option value&#x3D;&quot;MA&quot; label&#x3D;&quot;Morocco&quot;&gt;Morocco&lt;/option&gt;&lt;option value&#x3D;&quot;MZ&quot; label&#x3D;&quot;Mozambique&quot;&gt;Mozambique&lt;/option&gt;&lt;option value&#x3D;&quot;NA&quot; label&#x3D;&quot;Namibia&quot;&gt;Namibia&lt;/option&gt;&lt;option value&#x3D;&quot;NE&quot; label&#x3D;&quot;Niger&quot;&gt;Niger&lt;/option&gt;&lt;option value&#x3D;&quot;NG&quot; label&#x3D;&quot;Nigeria&quot;&gt;Nigeria&lt;/option&gt;&lt;option value&#x3D;&quot;RW&quot; label&#x3D;&quot;Rwanda&quot;&gt;Rwanda&lt;/option&gt;&lt;option value&#x3D;&quot;RE&quot; label&#x3D;&quot;Réunion&quot;&gt;Réunion&lt;/option&gt;&lt;option value&#x3D;&quot;SH&quot; label&#x3D;&quot;Saint Helena&quot;&gt;Saint Helena&lt;/option&gt;&lt;option value&#x3D;&quot;SN&quot; label&#x3D;&quot;Senegal&quot;&gt;Senegal&lt;/option&gt;&lt;option value&#x3D;&quot;SC&quot; label&#x3D;&quot;Seychelles&quot;&gt;Seychelles&lt;/option&gt;&lt;option value&#x3D;&quot;SL&quot; label&#x3D;&quot;Sierra Leone&quot;&gt;Sierra Leone&lt;/option&gt;&lt;option value&#x3D;&quot;SO&quot; label&#x3D;&quot;Somalia&quot;&gt;Somalia&lt;/option&gt;&lt;option value&#x3D;&quot;ZA&quot; label&#x3D;&quot;South Africa&quot;&gt;South Africa&lt;/option&gt;&lt;option value&#x3D;&quot;SD&quot; label&#x3D;&quot;Sudan&quot;&gt;Sudan&lt;/option&gt;&lt;option value&#x3D;&quot;SZ&quot; label&#x3D;&quot;Swaziland&quot;&gt;Swaziland&lt;/option&gt;&lt;option value&#x3D;&quot;ST&quot; label&#x3D;&quot;São Tomé and Príncipe&quot;&gt;São Tomé and Príncipe&lt;/option&gt;&lt;option value&#x3D;&quot;TZ&quot; label&#x3D;&quot;Tanzania&quot;&gt;Tanzania&lt;/option&gt;&lt;option value&#x3D;&quot;TG&quot; label&#x3D;&quot;Togo&quot;&gt;Togo&lt;/option&gt;&lt;option value&#x3D;&quot;TN&quot; label&#x3D;&quot;Tunisia&quot;&gt;Tunisia&lt;/option&gt;&lt;option value&#x3D;&quot;UG&quot; label&#x3D;&quot;Uganda&quot;&gt;Uganda&lt;/option&gt;&lt;option value&#x3D;&quot;EH&quot; label&#x3D;&quot;Western Sahara&quot;&gt;Western Sahara&lt;/option&gt;&lt;option value&#x3D;&quot;ZM&quot; label&#x3D;&quot;Zambia&quot;&gt;Zambia&lt;/option&gt;&lt;option value&#x3D;&quot;ZW&quot; label&#x3D;&quot;Zimbabwe&quot;&gt;Zimbabwe&lt;/option&gt;
+			&lt;/optgroup&gt;
+			&lt;optgroup id&#x3D;&quot;country-optgroup-Americas&quot; label&#x3D;&quot;Americas&quot;&gt;
+				&lt;option value&#x3D;&quot;AI&quot; label&#x3D;&quot;Anguilla&quot;&gt;Anguilla&lt;/option&gt;&lt;option value&#x3D;&quot;AG&quot; label&#x3D;&quot;Antigua and Barbuda&quot;&gt;Antigua and Barbuda&lt;/option&gt;&lt;option value&#x3D;&quot;AR&quot; label&#x3D;&quot;Argentina&quot;&gt;Argentina&lt;/option&gt;&lt;option value&#x3D;&quot;AW&quot; label&#x3D;&quot;Aruba&quot;&gt;Aruba&lt;/option&gt;&lt;option value&#x3D;&quot;BS&quot; label&#x3D;&quot;Bahamas&quot;&gt;Bahamas&lt;/option&gt;&lt;option value&#x3D;&quot;BB&quot; label&#x3D;&quot;Barbados&quot;&gt;Barbados&lt;/option&gt;&lt;option value&#x3D;&quot;BZ&quot; label&#x3D;&quot;Belize&quot;&gt;Belize&lt;/option&gt;&lt;option value&#x3D;&quot;BM&quot; label&#x3D;&quot;Bermuda&quot;&gt;Bermuda&lt;/option&gt;&lt;option value&#x3D;&quot;BO&quot; label&#x3D;&quot;Bolivia&quot;&gt;Bolivia&lt;/option&gt;&lt;option value&#x3D;&quot;BR&quot; label&#x3D;&quot;Brazil&quot;&gt;Brazil&lt;/option&gt;&lt;option value&#x3D;&quot;VG&quot; label&#x3D;&quot;British Virgin Islands&quot;&gt;British Virgin Islands&lt;/option&gt;&lt;option value&#x3D;&quot;CA&quot; label&#x3D;&quot;Canada&quot;&gt;Canada&lt;/option&gt;&lt;option value&#x3D;&quot;KY&quot; label&#x3D;&quot;Cayman Islands&quot;&gt;Cayman Islands&lt;/option&gt;&lt;option value&#x3D;&quot;CL&quot; label&#x3D;&quot;Chile&quot;&gt;Chile&lt;/option&gt;&lt;option value&#x3D;&quot;CO&quot; label&#x3D;&quot;Colombia&quot;&gt;Colombia&lt;/option&gt;&lt;option value&#x3D;&quot;CR&quot; label&#x3D;&quot;Costa Rica&quot;&gt;Costa Rica&lt;/option&gt;&lt;option value&#x3D;&quot;CU&quot; label&#x3D;&quot;Cuba&quot;&gt;Cuba&lt;/option&gt;&lt;option value&#x3D;&quot;DM&quot; label&#x3D;&quot;Dominica&quot;&gt;Dominica&lt;/option&gt;&lt;option value&#x3D;&quot;DO&quot; label&#x3D;&quot;Dominican Republic&quot;&gt;Dominican Republic&lt;/option&gt;&lt;option value&#x3D;&quot;EC&quot; label&#x3D;&quot;Ecuador&quot;&gt;Ecuador&lt;/option&gt;&lt;option value&#x3D;&quot;SV&quot; label&#x3D;&quot;El Salvador&quot;&gt;El Salvador&lt;/option&gt;&lt;option value&#x3D;&quot;FK&quot; label&#x3D;&quot;Falkland Islands&quot;&gt;Falkland Islands&lt;/option&gt;&lt;option value&#x3D;&quot;GF&quot; label&#x3D;&quot;French Guiana&quot;&gt;French Guiana&lt;/option&gt;&lt;option value&#x3D;&quot;GL&quot; label&#x3D;&quot;Greenland&quot;&gt;Greenland&lt;/option&gt;&lt;option value&#x3D;&quot;GD&quot; label&#x3D;&quot;Grenada&quot;&gt;Grenada&lt;/option&gt;&lt;option value&#x3D;&quot;GP&quot; label&#x3D;&quot;Guadeloupe&quot;&gt;Guadeloupe&lt;/option&gt;&lt;option value&#x3D;&quot;GT&quot; label&#x3D;&quot;Guatemala&quot;&gt;Guatemala&lt;/option&gt;&lt;option value&#x3D;&quot;GY&quot; label&#x3D;&quot;Guyana&quot;&gt;Guyana&lt;/option&gt;&lt;option value&#x3D;&quot;HT&quot; label&#x3D;&quot;Haiti&quot;&gt;Haiti&lt;/option&gt;&lt;option value&#x3D;&quot;HN&quot; label&#x3D;&quot;Honduras&quot;&gt;Honduras&lt;/option&gt;&lt;option value&#x3D;&quot;JM&quot; label&#x3D;&quot;Jamaica&quot;&gt;Jamaica&lt;/option&gt;&lt;option value&#x3D;&quot;MQ&quot; label&#x3D;&quot;Martinique&quot;&gt;Martinique&lt;/option&gt;&lt;option value&#x3D;&quot;MX&quot; label&#x3D;&quot;Mexico&quot;&gt;Mexico&lt;/option&gt;&lt;option value&#x3D;&quot;MS&quot; label&#x3D;&quot;Montserrat&quot;&gt;Montserrat&lt;/option&gt;&lt;option value&#x3D;&quot;AN&quot; label&#x3D;&quot;Netherlands Antilles&quot;&gt;Netherlands Antilles&lt;/option&gt;&lt;option value&#x3D;&quot;NI&quot; label&#x3D;&quot;Nicaragua&quot;&gt;Nicaragua&lt;/option&gt;&lt;option value&#x3D;&quot;PA&quot; label&#x3D;&quot;Panama&quot;&gt;Panama&lt;/option&gt;&lt;option value&#x3D;&quot;PY&quot; label&#x3D;&quot;Paraguay&quot;&gt;Paraguay&lt;/option&gt;&lt;option value&#x3D;&quot;PE&quot; label&#x3D;&quot;Peru&quot;&gt;Peru&lt;/option&gt;&lt;option value&#x3D;&quot;PR&quot; label&#x3D;&quot;Puerto Rico&quot;&gt;Puerto Rico&lt;/option&gt;&lt;option value&#x3D;&quot;BL&quot; label&#x3D;&quot;Saint Barthélemy&quot;&gt;Saint Barthélemy&lt;/option&gt;&lt;option value&#x3D;&quot;KN&quot; label&#x3D;&quot;Saint Kitts and Nevis&quot;&gt;Saint Kitts and Nevis&lt;/option&gt;&lt;option value&#x3D;&quot;LC&quot; label&#x3D;&quot;Saint Lucia&quot;&gt;Saint Lucia&lt;/option&gt;&lt;option value&#x3D;&quot;MF&quot; label&#x3D;&quot;Saint Martin&quot;&gt;Saint Martin&lt;/option&gt;&lt;option value&#x3D;&quot;PM&quot; label&#x3D;&quot;Saint Pierre and Miquelon&quot;&gt;Saint Pierre and Miquelon&lt;/option&gt;&lt;option value&#x3D;&quot;VC&quot; label&#x3D;&quot;Saint Vincent and the Grenadines&quot;&gt;Saint Vincent and the Grenadines&lt;/option&gt;&lt;option value&#x3D;&quot;SR&quot; label&#x3D;&quot;Suriname&quot;&gt;Suriname&lt;/option&gt;&lt;option value&#x3D;&quot;TT&quot; label&#x3D;&quot;Trinidad and Tobago&quot;&gt;Trinidad and Tobago&lt;/option&gt;&lt;option value&#x3D;&quot;TC&quot; label&#x3D;&quot;Turks and Caicos Islands&quot;&gt;Turks and Caicos Islands&lt;/option&gt;&lt;option value&#x3D;&quot;VI&quot; label&#x3D;&quot;U.S. Virgin Islands&quot;&gt;U.S. Virgin Islands&lt;/option&gt;&lt;option value&#x3D;&quot;US&quot; label&#x3D;&quot;United States&quot;&gt;United States&lt;/option&gt;&lt;option value&#x3D;&quot;UY&quot; label&#x3D;&quot;Uruguay&quot;&gt;Uruguay&lt;/option&gt;&lt;option value&#x3D;&quot;VE&quot; label&#x3D;&quot;Venezuela&quot;&gt;Venezuela&lt;/option&gt;
+			&lt;/optgroup&gt;
+			&lt;optgroup id&#x3D;&quot;country-optgroup-Asia&quot; label&#x3D;&quot;Asia&quot;&gt;
+				&lt;option value&#x3D;&quot;AF&quot; label&#x3D;&quot;Afghanistan&quot;&gt;Afghanistan&lt;/option&gt;&lt;option value&#x3D;&quot;AM&quot; label&#x3D;&quot;Armenia&quot;&gt;Armenia&lt;/option&gt;&lt;option value&#x3D;&quot;AZ&quot; label&#x3D;&quot;Azerbaijan&quot;&gt;Azerbaijan&lt;/option&gt;&lt;option value&#x3D;&quot;BH&quot; label&#x3D;&quot;Bahrain&quot;&gt;Bahrain&lt;/option&gt;&lt;option value&#x3D;&quot;BD&quot; label&#x3D;&quot;Bangladesh&quot;&gt;Bangladesh&lt;/option&gt;&lt;option value&#x3D;&quot;BT&quot; label&#x3D;&quot;Bhutan&quot;&gt;Bhutan&lt;/option&gt;&lt;option value&#x3D;&quot;BN&quot; label&#x3D;&quot;Brunei&quot;&gt;Brunei&lt;/option&gt;&lt;option value&#x3D;&quot;KH&quot; label&#x3D;&quot;Cambodia&quot;&gt;Cambodia&lt;/option&gt;&lt;option value&#x3D;&quot;CN&quot; label&#x3D;&quot;China&quot;&gt;China&lt;/option&gt;&lt;option value&#x3D;&quot;CY&quot; label&#x3D;&quot;Cyprus&quot;&gt;Cyprus&lt;/option&gt;&lt;option value&#x3D;&quot;GE&quot; label&#x3D;&quot;Georgia&quot;&gt;Georgia&lt;/option&gt;&lt;option value&#x3D;&quot;HK&quot; label&#x3D;&quot;Hong Kong SAR China&quot;&gt;Hong Kong SAR China&lt;/option&gt;&lt;option value&#x3D;&quot;IN&quot; label&#x3D;&quot;India&quot;&gt;India&lt;/option&gt;&lt;option value&#x3D;&quot;ID&quot; label&#x3D;&quot;Indonesia&quot;&gt;Indonesia&lt;/option&gt;&lt;option value&#x3D;&quot;IR&quot; label&#x3D;&quot;Iran&quot;&gt;Iran&lt;/option&gt;&lt;option value&#x3D;&quot;IQ&quot; label&#x3D;&quot;Iraq&quot;&gt;Iraq&lt;/option&gt;&lt;option value&#x3D;&quot;IL&quot; label&#x3D;&quot;Israel&quot;&gt;Israel&lt;/option&gt;&lt;option value&#x3D;&quot;JP&quot; label&#x3D;&quot;Japan&quot;&gt;Japan&lt;/option&gt;&lt;option value&#x3D;&quot;JO&quot; label&#x3D;&quot;Jordan&quot;&gt;Jordan&lt;/option&gt;&lt;option value&#x3D;&quot;KZ&quot; label&#x3D;&quot;Kazakhstan&quot;&gt;Kazakhstan&lt;/option&gt;&lt;option value&#x3D;&quot;KW&quot; label&#x3D;&quot;Kuwait&quot;&gt;Kuwait&lt;/option&gt;&lt;option value&#x3D;&quot;KG&quot; label&#x3D;&quot;Kyrgyzstan&quot;&gt;Kyrgyzstan&lt;/option&gt;&lt;option value&#x3D;&quot;LA&quot; label&#x3D;&quot;Laos&quot;&gt;Laos&lt;/option&gt;&lt;option value&#x3D;&quot;LB&quot; label&#x3D;&quot;Lebanon&quot;&gt;Lebanon&lt;/option&gt;&lt;option value&#x3D;&quot;MO&quot; label&#x3D;&quot;Macau SAR China&quot;&gt;Macau SAR China&lt;/option&gt;&lt;option value&#x3D;&quot;MY&quot; label&#x3D;&quot;Malaysia&quot;&gt;Malaysia&lt;/option&gt;&lt;option value&#x3D;&quot;MV&quot; label&#x3D;&quot;Maldives&quot;&gt;Maldives&lt;/option&gt;&lt;option value&#x3D;&quot;MN&quot; label&#x3D;&quot;Mongolia&quot;&gt;Mongolia&lt;/option&gt;&lt;option value&#x3D;&quot;MM&quot; label&#x3D;&quot;Myanmar [Burma]&quot;&gt;Myanmar [Burma]&lt;/option&gt;&lt;option value&#x3D;&quot;NP&quot; label&#x3D;&quot;Nepal&quot;&gt;Nepal&lt;/option&gt;&lt;option value&#x3D;&quot;NT&quot; label&#x3D;&quot;Neutral Zone&quot;&gt;Neutral Zone&lt;/option&gt;&lt;option value&#x3D;&quot;KP&quot; label&#x3D;&quot;North Korea&quot;&gt;North Korea&lt;/option&gt;&lt;option value&#x3D;&quot;OM&quot; label&#x3D;&quot;Oman&quot;&gt;Oman&lt;/option&gt;&lt;option value&#x3D;&quot;PK&quot; label&#x3D;&quot;Pakistan&quot;&gt;Pakistan&lt;/option&gt;&lt;option value&#x3D;&quot;PS&quot; label&#x3D;&quot;Palestinian Territories&quot;&gt;Palestinian Territories&lt;/option&gt;&lt;option value&#x3D;&quot;YD&quot; label&#x3D;&quot;People&#x27;s Democratic Republic of Yemen&quot;&gt;People&#x27;s Democratic Republic of Yemen&lt;/option&gt;&lt;option value&#x3D;&quot;PH&quot; label&#x3D;&quot;Philippines&quot;&gt;Philippines&lt;/option&gt;&lt;option value&#x3D;&quot;QA&quot; label&#x3D;&quot;Qatar&quot;&gt;Qatar&lt;/option&gt;&lt;option value&#x3D;&quot;SA&quot; label&#x3D;&quot;Saudi Arabia&quot;&gt;Saudi Arabia&lt;/option&gt;&lt;option value&#x3D;&quot;SG&quot; label&#x3D;&quot;Singapore&quot;&gt;Singapore&lt;/option&gt;&lt;option value&#x3D;&quot;KR&quot; label&#x3D;&quot;South Korea&quot;&gt;South Korea&lt;/option&gt;&lt;option value&#x3D;&quot;LK&quot; label&#x3D;&quot;Sri Lanka&quot;&gt;Sri Lanka&lt;/option&gt;&lt;option value&#x3D;&quot;SY&quot; label&#x3D;&quot;Syria&quot;&gt;Syria&lt;/option&gt;&lt;option value&#x3D;&quot;TW&quot; label&#x3D;&quot;Taiwan&quot;&gt;Taiwan&lt;/option&gt;&lt;option value&#x3D;&quot;TJ&quot; label&#x3D;&quot;Tajikistan&quot;&gt;Tajikistan&lt;/option&gt;&lt;option value&#x3D;&quot;TH&quot; label&#x3D;&quot;Thailand&quot;&gt;Thailand&lt;/option&gt;&lt;option value&#x3D;&quot;TL&quot; label&#x3D;&quot;Timor-Leste&quot;&gt;Timor-Leste&lt;/option&gt;&lt;option value&#x3D;&quot;TR&quot; label&#x3D;&quot;Turkey&quot;&gt;Turkey&lt;/option&gt;&lt;option value&#x3D;&quot;™&quot; label&#x3D;&quot;Turkmenistan&quot;&gt;Turkmenistan&lt;/option&gt;&lt;option value&#x3D;&quot;AE&quot; label&#x3D;&quot;United Arab Emirates&quot;&gt;United Arab Emirates&lt;/option&gt;&lt;option value&#x3D;&quot;UZ&quot; label&#x3D;&quot;Uzbekistan&quot;&gt;Uzbekistan&lt;/option&gt;&lt;option value&#x3D;&quot;VN&quot; label&#x3D;&quot;Vietnam&quot;&gt;Vietnam&lt;/option&gt;&lt;option value&#x3D;&quot;YE&quot; label&#x3D;&quot;Yemen&quot;&gt;Yemen&lt;/option&gt;
+			&lt;/optgroup&gt;
+			&lt;optgroup id&#x3D;&quot;country-optgroup-Europe&quot; label&#x3D;&quot;Europe&quot;&gt;
+				&lt;option value&#x3D;&quot;AL&quot; label&#x3D;&quot;Albania&quot;&gt;Albania&lt;/option&gt;&lt;option value&#x3D;&quot;AD&quot; label&#x3D;&quot;Andorra&quot;&gt;Andorra&lt;/option&gt;&lt;option value&#x3D;&quot;AT&quot; label&#x3D;&quot;Austria&quot;&gt;Austria&lt;/option&gt;&lt;option value&#x3D;&quot;BY&quot; label&#x3D;&quot;Belarus&quot;&gt;Belarus&lt;/option&gt;&lt;option value&#x3D;&quot;BE&quot; label&#x3D;&quot;Belgium&quot;&gt;Belgium&lt;/option&gt;&lt;option value&#x3D;&quot;BA&quot; label&#x3D;&quot;Bosnia and Herzegovina&quot;&gt;Bosnia and Herzegovina&lt;/option&gt;&lt;option value&#x3D;&quot;BG&quot; label&#x3D;&quot;Bulgaria&quot;&gt;Bulgaria&lt;/option&gt;&lt;option value&#x3D;&quot;HR&quot; label&#x3D;&quot;Croatia&quot;&gt;Croatia&lt;/option&gt;&lt;option value&#x3D;&quot;CY&quot; label&#x3D;&quot;Cyprus&quot;&gt;Cyprus&lt;/option&gt;&lt;option value&#x3D;&quot;CZ&quot; label&#x3D;&quot;Czech Republic&quot;&gt;Czech Republic&lt;/option&gt;&lt;option value&#x3D;&quot;DK&quot; label&#x3D;&quot;Denmark&quot;&gt;Denmark&lt;/option&gt;&lt;option value&#x3D;&quot;DD&quot; label&#x3D;&quot;East Germany&quot;&gt;East Germany&lt;/option&gt;&lt;option value&#x3D;&quot;EE&quot; label&#x3D;&quot;Estonia&quot;&gt;Estonia&lt;/option&gt;&lt;option value&#x3D;&quot;FO&quot; label&#x3D;&quot;Faroe Islands&quot;&gt;Faroe Islands&lt;/option&gt;&lt;option value&#x3D;&quot;FI&quot; label&#x3D;&quot;Finland&quot;&gt;Finland&lt;/option&gt;&lt;option value&#x3D;&quot;FR&quot; label&#x3D;&quot;France&quot;&gt;France&lt;/option&gt;&lt;option value&#x3D;&quot;DE&quot; label&#x3D;&quot;Germany&quot;&gt;Germany&lt;/option&gt;&lt;option value&#x3D;&quot;GI&quot; label&#x3D;&quot;Gibraltar&quot;&gt;Gibraltar&lt;/option&gt;&lt;option value&#x3D;&quot;GR&quot; label&#x3D;&quot;Greece&quot;&gt;Greece&lt;/option&gt;&lt;option value&#x3D;&quot;GG&quot; label&#x3D;&quot;Guernsey&quot;&gt;Guernsey&lt;/option&gt;&lt;option value&#x3D;&quot;HU&quot; label&#x3D;&quot;Hungary&quot;&gt;Hungary&lt;/option&gt;&lt;option value&#x3D;&quot;IS&quot; label&#x3D;&quot;Iceland&quot;&gt;Iceland&lt;/option&gt;&lt;option value&#x3D;&quot;IE&quot; label&#x3D;&quot;Ireland&quot;&gt;Ireland&lt;/option&gt;&lt;option value&#x3D;&quot;IM&quot; label&#x3D;&quot;Isle of Man&quot;&gt;Isle of Man&lt;/option&gt;&lt;option value&#x3D;&quot;IT&quot; label&#x3D;&quot;Italy&quot;&gt;Italy&lt;/option&gt;&lt;option value&#x3D;&quot;JE&quot; label&#x3D;&quot;Jersey&quot;&gt;Jersey&lt;/option&gt;&lt;option value&#x3D;&quot;LV&quot; label&#x3D;&quot;Latvia&quot;&gt;Latvia&lt;/option&gt;&lt;option value&#x3D;&quot;LI&quot; label&#x3D;&quot;Liechtenstein&quot;&gt;Liechtenstein&lt;/option&gt;&lt;option value&#x3D;&quot;LT&quot; label&#x3D;&quot;Lithuania&quot;&gt;Lithuania&lt;/option&gt;&lt;option value&#x3D;&quot;LU&quot; label&#x3D;&quot;Luxembourg&quot;&gt;Luxembourg&lt;/option&gt;&lt;option value&#x3D;&quot;MK&quot; label&#x3D;&quot;Macedonia&quot;&gt;Macedonia&lt;/option&gt;&lt;option value&#x3D;&quot;MT&quot; label&#x3D;&quot;Malta&quot;&gt;Malta&lt;/option&gt;&lt;option value&#x3D;&quot;FX&quot; label&#x3D;&quot;Metropolitan France&quot;&gt;Metropolitan France&lt;/option&gt;&lt;option value&#x3D;&quot;MD&quot; label&#x3D;&quot;Moldova&quot;&gt;Moldova&lt;/option&gt;&lt;option value&#x3D;&quot;MC&quot; label&#x3D;&quot;Monaco&quot;&gt;Monaco&lt;/option&gt;&lt;option value&#x3D;&quot;ME&quot; label&#x3D;&quot;Montenegro&quot;&gt;Montenegro&lt;/option&gt;&lt;option value&#x3D;&quot;NL&quot; label&#x3D;&quot;Netherlands&quot;&gt;Netherlands&lt;/option&gt;&lt;option value&#x3D;&quot;NO&quot; label&#x3D;&quot;Norway&quot;&gt;Norway&lt;/option&gt;&lt;option value&#x3D;&quot;PL&quot; label&#x3D;&quot;Poland&quot;&gt;Poland&lt;/option&gt;&lt;option value&#x3D;&quot;PT&quot; label&#x3D;&quot;Portugal&quot;&gt;Portugal&lt;/option&gt;&lt;option value&#x3D;&quot;RO&quot; label&#x3D;&quot;Romania&quot;&gt;Romania&lt;/option&gt;&lt;option value&#x3D;&quot;RU&quot; label&#x3D;&quot;Russia&quot;&gt;Russia&lt;/option&gt;&lt;option value&#x3D;&quot;SM&quot; label&#x3D;&quot;San Marino&quot;&gt;San Marino&lt;/option&gt;&lt;option value&#x3D;&quot;RS&quot; label&#x3D;&quot;Serbia&quot;&gt;Serbia&lt;/option&gt;&lt;option value&#x3D;&quot;CS&quot; label&#x3D;&quot;Serbia and Montenegro&quot;&gt;Serbia and Montenegro&lt;/option&gt;&lt;option value&#x3D;&quot;SK&quot; label&#x3D;&quot;Slovakia&quot;&gt;Slovakia&lt;/option&gt;&lt;option value&#x3D;&quot;SI&quot; label&#x3D;&quot;Slovenia&quot;&gt;Slovenia&lt;/option&gt;&lt;option value&#x3D;&quot;ES&quot; label&#x3D;&quot;Spain&quot;&gt;Spain&lt;/option&gt;&lt;option value&#x3D;&quot;SJ&quot; label&#x3D;&quot;Svalbard and Jan Mayen&quot;&gt;Svalbard and Jan Mayen&lt;/option&gt;&lt;option value&#x3D;&quot;SE&quot; label&#x3D;&quot;Sweden&quot;&gt;Sweden&lt;/option&gt;&lt;option value&#x3D;&quot;CH&quot; label&#x3D;&quot;Switzerland&quot;&gt;Switzerland&lt;/option&gt;&lt;option value&#x3D;&quot;UA&quot; label&#x3D;&quot;Ukraine&quot;&gt;Ukraine&lt;/option&gt;&lt;option value&#x3D;&quot;SU&quot; label&#x3D;&quot;Union of Soviet Socialist Republics&quot;&gt;Union of Soviet Socialist Republics&lt;/option&gt;&lt;option value&#x3D;&quot;GB&quot; label&#x3D;&quot;United Kingdom&quot;&gt;United Kingdom&lt;/option&gt;&lt;option value&#x3D;&quot;VA&quot; label&#x3D;&quot;Vatican City&quot;&gt;Vatican City&lt;/option&gt;&lt;option value&#x3D;&quot;AX&quot; label&#x3D;&quot;Åland Islands&quot;&gt;Åland Islands&lt;/option&gt;
+			&lt;/optgroup&gt;
+			&lt;optgroup id&#x3D;&quot;country-optgroup-Oceania&quot; label&#x3D;&quot;Oceania&quot;&gt;
+				&lt;option value&#x3D;&quot;AS&quot; label&#x3D;&quot;American Samoa&quot;&gt;American Samoa&lt;/option&gt;&lt;option value&#x3D;&quot;AQ&quot; label&#x3D;&quot;Antarctica&quot;&gt;Antarctica&lt;/option&gt;&lt;option value&#x3D;&quot;AU&quot; label&#x3D;&quot;Australia&quot;&gt;Australia&lt;/option&gt;&lt;option value&#x3D;&quot;BV&quot; label&#x3D;&quot;Bouvet Island&quot;&gt;Bouvet Island&lt;/option&gt;&lt;option value&#x3D;&quot;IO&quot; label&#x3D;&quot;British Indian Ocean Territory&quot;&gt;British Indian Ocean Territory&lt;/option&gt;&lt;option value&#x3D;&quot;CX&quot; label&#x3D;&quot;Christmas Island&quot;&gt;Christmas Island&lt;/option&gt;&lt;option value&#x3D;&quot;CC&quot; label&#x3D;&quot;Cocos [Keeling] Islands&quot;&gt;Cocos [Keeling] Islands&lt;/option&gt;&lt;option value&#x3D;&quot;CK&quot; label&#x3D;&quot;Cook Islands&quot;&gt;Cook Islands&lt;/option&gt;&lt;option value&#x3D;&quot;FJ&quot; label&#x3D;&quot;Fiji&quot;&gt;Fiji&lt;/option&gt;&lt;option value&#x3D;&quot;PF&quot; label&#x3D;&quot;French Polynesia&quot;&gt;French Polynesia&lt;/option&gt;&lt;option value&#x3D;&quot;TF&quot; label&#x3D;&quot;French Southern Territories&quot;&gt;French Southern Territories&lt;/option&gt;&lt;option value&#x3D;&quot;GU&quot; label&#x3D;&quot;Guam&quot;&gt;Guam&lt;/option&gt;&lt;option value&#x3D;&quot;HM&quot; label&#x3D;&quot;Heard Island and McDonald Islands&quot;&gt;Heard Island and McDonald Islands&lt;/option&gt;&lt;option value&#x3D;&quot;KI&quot; label&#x3D;&quot;Kiribati&quot;&gt;Kiribati&lt;/option&gt;&lt;option value&#x3D;&quot;MH&quot; label&#x3D;&quot;Marshall Islands&quot;&gt;Marshall Islands&lt;/option&gt;&lt;option value&#x3D;&quot;FM&quot; label&#x3D;&quot;Micronesia&quot;&gt;Micronesia&lt;/option&gt;&lt;option value&#x3D;&quot;NR&quot; label&#x3D;&quot;Nauru&quot;&gt;Nauru&lt;/option&gt;&lt;option value&#x3D;&quot;NC&quot; label&#x3D;&quot;New Caledonia&quot;&gt;New Caledonia&lt;/option&gt;&lt;option value&#x3D;&quot;NZ&quot; label&#x3D;&quot;New Zealand&quot;&gt;New Zealand&lt;/option&gt;&lt;option value&#x3D;&quot;NU&quot; label&#x3D;&quot;Niue&quot;&gt;Niue&lt;/option&gt;&lt;option value&#x3D;&quot;NF&quot; label&#x3D;&quot;Norfolk Island&quot;&gt;Norfolk Island&lt;/option&gt;&lt;option value&#x3D;&quot;MP&quot; label&#x3D;&quot;Northern Mariana Islands&quot;&gt;Northern Mariana Islands&lt;/option&gt;&lt;option value&#x3D;&quot;PW&quot; label&#x3D;&quot;Palau&quot;&gt;Palau&lt;/option&gt;&lt;option value&#x3D;&quot;PG&quot; label&#x3D;&quot;Papua New Guinea&quot;&gt;Papua New Guinea&lt;/option&gt;&lt;option value&#x3D;&quot;PN&quot; label&#x3D;&quot;Pitcairn Islands&quot;&gt;Pitcairn Islands&lt;/option&gt;&lt;option value&#x3D;&quot;WS&quot; label&#x3D;&quot;Samoa&quot;&gt;Samoa&lt;/option&gt;&lt;option value&#x3D;&quot;SB&quot; label&#x3D;&quot;Solomon Islands&quot;&gt;Solomon Islands&lt;/option&gt;&lt;option value&#x3D;&quot;GS&quot; label&#x3D;&quot;South Georgia and the South Sandwich Islands&quot;&gt;South Georgia and the South Sandwich Islands&lt;/option&gt;&lt;option value&#x3D;&quot;TK&quot; label&#x3D;&quot;Tokelau&quot;&gt;Tokelau&lt;/option&gt;&lt;option value&#x3D;&quot;TO&quot; label&#x3D;&quot;Tonga&quot;&gt;Tonga&lt;/option&gt;&lt;option value&#x3D;&quot;TV&quot; label&#x3D;&quot;Tuvalu&quot;&gt;Tuvalu&lt;/option&gt;&lt;option value&#x3D;&quot;UM&quot; label&#x3D;&quot;U.S. Minor Outlying Islands&quot;&gt;U.S. Minor Outlying Islands&lt;/option&gt;&lt;option value&#x3D;&quot;VU&quot; label&#x3D;&quot;Vanuatu&quot;&gt;Vanuatu&lt;/option&gt;&lt;option value&#x3D;&quot;WF&quot; label&#x3D;&quot;Wallis and Futuna&quot;&gt;Wallis and Futuna&lt;/option&gt;
+			&lt;/optgroup&gt;
+		&lt;/select&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;organization info&quot;&gt;
+		&lt;label class&#x3D;&quot;control-label&quot;&gt;Organization&lt;/label&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;company&quot; autocomplete&#x3D;&quot;organization&quot; placeholder&#x3D;&quot;Organization&quot; /&gt;
+		&lt;label class&#x3D;&quot;control-label&quot;&gt;Website&lt;/label&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; name&#x3D;&quot;url&quot; autocomplete&#x3D;&quot;url&quot; placeholder&#x3D;&quot;http://&quot; /&gt;
+	&lt;/div&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;contact info&quot;&gt;
+		&lt;label class&#x3D;&quot;control-label&quot;&gt;Phone&lt;/label&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;tel&quot; placeholder&#x3D;&quot;Phone Number&quot; /&gt;
+		&lt;label class&#x3D;&quot;control-label&quot;&gt;E-mail&lt;/label&gt;
+		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;email&quot; placeholder&#x3D;&quot;E-Mail Address&quot; /&gt;
+	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;h3&gt;Individual Elements&lt;/h3&gt;
 	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;label&quot;&gt;
 		&lt;label class&#x3D;&quot;control-label&quot;&gt;&lt;sample&gt;Label&lt;/sample&gt;&lt;/label&gt; &lt;/div&gt;
 	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;checkbox&quot;&gt;
@@ -368,9 +513,9 @@
 			&lt;option value&#x3D;&quot;&quot;&gt;Option 4&lt;/option&gt;
 			&lt;option value&#x3D;&quot;&quot;&gt;Option 5&lt;/option&gt;&lt;/sample&gt;
 		&lt;/select&gt; &lt;/div&gt;
-	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;text-input&quot;&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;text input&quot;&gt;
 		&lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; placeholder&#x3D;&quot;Placeholder text&quot; /&gt; &lt;/div&gt;
-	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;input-button-group&quot;&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;input button group&quot;&gt;
 		&lt;div class&#x3D;&quot;input-group&quot;&gt;
 			&lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Text&quot;&gt;
 			&lt;span class&#x3D;&quot;input-group-btn&quot;&gt;
@@ -378,11 +523,11 @@
 			&lt;/span&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;text-area&quot;&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;text area&quot;&gt;
 		&lt;textarea class&#x3D;&quot;form-control&quot; name&#x3D;&quot;&quot; cols&#x3D;&quot;30&quot; rows&#x3D;&quot;10&quot;&gt;&lt;/textarea&gt; &lt;/div&gt;
 	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;button&quot;&gt;
 		&lt;button class&#x3D;&quot;btn&quot;&gt;&lt;sample&gt;Button&lt;/sample&gt;&lt;/button&gt; &lt;/div&gt;
-	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;help-text&quot;&gt;
+	&lt;div class&#x3D;&quot;form-builder-element&quot; data-name&#x3D;&quot;help text&quot;&gt;
 		&lt;small class&#x3D;&quot;form-text text-muted&quot;&gt;&lt;sample&gt;Help text to assist with filling out forms. Picture me below a form input.&lt;/sample&gt;&lt;/small&gt; &lt;/div&gt;
 &lt;/aside&gt;
 
@@ -426,7 +571,7 @@
 				form.append($(&#x27;&lt;div class&#x3D;&quot;form-group&quot; /&gt;&#x27;));
 				group &#x3D; form.find(&#x27;.form-group:last-of-type&#x27;);
 			}
-			group.append($($(formElements[selectBox[0].value]).children()[0]).clone());
+			group.append($($(formElements[selectBox[0].value]).children()).clone());
 			$(&#x27;#addGroup&#x27;).removeAttr(&#x27;disabled&#x27;);
 		});
 
@@ -447,13 +592,22 @@
 			hideOtherBlocks();
 		}
 		window.onhashchange &#x3D; hideOtherBlocks;
-
-		function hideOtherBlocks() {
-			$(&#x27;.f-item-group:not(&#x27; + window.location.hash + &#x27;)&#x27;).addClass(&#x27;f-item-hidden&#x27;);
-			$(window.location.hash).removeClass(&#x27;f-item-hidden&#x27;);
-		}
 	});
-&lt;/script&gt;</code></pre>
+
+	function hideOtherBlocks() {
+		$(&#x27;.f-item-group:not(&#x27; + window.location.hash + &#x27;)&#x27;).addClass(&#x27;f-item-hidden&#x27;);
+		$(window.location.hash).removeClass(&#x27;f-item-hidden&#x27;);
+	}
+&lt;/script&gt;
+
+&lt;style type&#x3D;&quot;text/css&quot;&gt;
+	/*hide address line 3 unless address line 2 is filled*/
+
+	[name&#x3D;&quot;address-line2&quot;]:placeholder-shown+label,
+	[name&#x3D;&quot;address-line2&quot;]:placeholder-shown~input {
+		display: none;
+	}
+&lt;/style&gt;</code></pre>
 </div>
 
 
