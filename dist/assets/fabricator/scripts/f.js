@@ -381,17 +381,19 @@
 	/*
 	  Miscellaneous Functions
 	*/
+	
+	// Prevent events from firing when example elements are clicked
+	function preventLinkAndButtonEvents(i, element) {
+	  $(element).on('click', function (event) {
+	    event.preventDefault();
+	    //event.stopPropagation(); // this may be necessary if other functions are tied to a link that you need to block
+	  });
+	};
+	
 	$(document).ready(function () {
-	  // Prevent events from firing when example elements are clicked
-	  function preventLinkAndButtonEvents(i, element) {
-	    $(element).on('click', function (event) {
-	      event.preventDefault();
-	      //event.stopPropagation(); // this may be necessary if other functions are tied to a link that you need to block
-	    });
-	  };
 	  // bind preventLinkAndButtonEvents function
-	  $('.f-item-preview').find('[href]').each(preventLinkAndButtonEvents);
-	  $('.f-item-preview').find('button').each(preventLinkAndButtonEvents);
+	  $('.f-item-preview').find('[href]:not(.allow)').each(preventLinkAndButtonEvents);
+	  $('.f-item-preview').find('button:not(.allow)').each(preventLinkAndButtonEvents);
 	});
 
 /***/ }),
