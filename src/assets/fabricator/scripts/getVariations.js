@@ -6,18 +6,22 @@ var $ = require('jquery');
 window.addVariations = function() {
 	// dealing with each component's variations block
 	$('.f-item-variations').each(function(i, element){
-		var componentClasses = $(element).parents('.componentClasses');
-		var classList = [];
-		var preview = componentClasses.siblings('.f-item-preview');
-		var baseElement = preview.children()[0];
-		var previewElement = '';
-		var iconClass = '';
-		var iconName = '';
+		var componentClasses = $(element).parents('.componentClasses'),
+			classList = [],
+			preview = componentClasses.siblings('.f-item-preview'),
+			baseElement = preview.children()[0],
+			previewElement = '',
+			hasScript = false,
+			iconClass = '',
+			iconName = '';
 
 		var classes = element.textContent.split(' ').map(function(className){
 			className = className.split('');
 			return className.slice(className.indexOf('.')+1, className.length).join('');
 		}); // first array element is empty string - generates 'base' rendering
+
+		// figure out if the component needs scripts and flag it
+		if (preview.find('script').length > 0) { hasScript = true; }
 
 		preview.html(''); // clears contents of preview section
 
@@ -50,6 +54,11 @@ window.addVariations = function() {
 		});
 
 		addVariationStyles(classes, element);
+
+		// if there was a script on the component, add an empty script block to the end so that the reset button will generate
+		if (hasScript) {
+			preview.append($('<script/>'));
+		}
 
 		return;
 	});
@@ -94,6 +103,8 @@ window.addVariationTags = function() {
   // find all elements with CSS 'front-matter'
   var elements = $('.f-item-variations').parents('.componentClasses').siblings('.f-item-preview').children();
   elements.each(function(i, element){
+  	if (element.tagName === "SCRIPT") { return; }
+
     $(element).attr('data-variation','true');
     return element;
   });
