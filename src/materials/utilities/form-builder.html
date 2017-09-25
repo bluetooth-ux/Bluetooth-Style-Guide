@@ -8,7 +8,7 @@
 
 	<label class="form-check-label"><input class="form-check-input" type="checkbox" id="showOutlines" checked /> Show Form Group Outlines</label>
 
-	<p style="flex-grow:1;text-align:right;"><button class="btn btn-sm" id="getFormBuilderHTML">Get HTML</button></p>
+	<p style="flex-grow:1;text-align:right;margin-bottom:0;"><button class="btn btn-sm" id="getFormBuilderHTML">Get HTML</button></p>
 </div>
 <form></form>
 
@@ -32,19 +32,19 @@
 	<div class="form-builder-element" data-name="select">
 		{{> forms.select}}
 	</div>
-	<div class="form-builder-element" data-name="text-input">
+	<div class="form-builder-element" data-name="text input">
 		{{> forms.text-input}}
 	</div>
-	<div class="form-builder-element" data-name="input-button-group">
+	<div class="form-builder-element" data-name="input button group">
 		{{> forms.input-button-group}}
 	</div>
-	<div class="form-builder-element" data-name="text-area">
+	<div class="form-builder-element" data-name="text area">
 		{{> forms.text-area}}
 	</div>
 	<div class="form-builder-element" data-name="button">
 		{{> buttons.button}}
 	</div>
-	<div class="form-builder-element" data-name="help-text">
+	<div class="form-builder-element" data-name="help text">
 		{{> forms.help-text}}
 	</div>
 </aside>
@@ -113,3 +113,11 @@ function hideOtherBlocks () {
 	$(window.location.hash).removeClass('f-item-hidden');
 }
 </script>
+
+<style type="text/css">
+/*hide address line 3 unless address line 2 is filled*/
+[name="address-line2"]:placeholder-shown + label,
+[name="address-line2"]:placeholder-shown ~ input {
+	display: none;
+}
+</style>

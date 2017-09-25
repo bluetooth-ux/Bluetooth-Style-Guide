@@ -253,7 +253,7 @@ body.modal-open {
 		position:relative;
 		border: 4px dashed #e2e2e2;
 		padding: 10px;
-		margin: 20px 0;
+		margin: 10px 0;
 		&:empty::before {
 			content: 'Add form elements from the select-box below.';
 			display: block;
@@ -286,7 +286,7 @@ body.modal-open {
 	aside { //container for form builder element reference
 		border-top: 2px solid grey;
 		margin-top: 30px;
-		padding-top: 10px;
+		padding: 10px;
 	}
 }
 #form-builder-controls button {
