@@ -348,13 +348,15 @@ fabricator
  .setActiveItem();
  //.bindCodeAutoSelect(); //highlight all code in code sections
 
-fillAllCssBlocks();
-addVariations();
-addVariationTags();
-bindVariationToggles();
-highlightCSS();
+// Custom Functions & Features
+fillAllCssBlocks();     // getCSS.js
+addVariations();        // getVariations.js
+addVariationTags();     // getVariations.js
+bindVariationToggles(); // getVariations.js
+highlightCSS();         // getVariations.js
+
 // running filter before adding variations breaks variations function. Memory leak? Unclosed tag?
-filterSampleText();
+filterSampleText();     // filterSampleText.js
 
 /*
   Miscellaneous Functions
