@@ -3,7 +3,7 @@
 
 <div class="input-group showOutlines" style="align-items:baseline">
 	<select class="custom-select" id="formSelect">
-		<option>Some pre-built form</option>
+		<option value="-1">Pre-built forms</option>
 	</select>
 
 	<label class="form-check-label"><input class="form-check-input" type="checkbox" id="showOutlines" checked /> Show Form Group Outlines</label>
@@ -159,8 +159,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 	// get html
 	$('#getFormBuilderHTML').on('click',function(){
-		var form = $('#form-builder form'),
-			modal = $('<pre class="language-markup"/>').append($('<code class="language-markup"/>').text(form.html()));
+		var modal = $('<pre class="language-markup"/>').append($('<code class="language-markup"/>').text(form[0].outerHTML));
 			if (form.next()[0].tagName === "PRE") {
 				form.next().remove();
 			}
