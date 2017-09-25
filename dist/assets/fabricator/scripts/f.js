@@ -11495,9 +11495,9 @@
 	'use strict';
 	
 	window.filterSampleText = function () {
-	  $('code').each(function (i, snippet) {
+	  $('code.language-markup').each(function (i, snippet) {
 	    //only trim sample text from code tags that have a <sample> block
-	    if (/<sample>/g.test(snippet)) {
+	    if (/<sample>/g.test(snippet.textContent)) {
 	      splice(snippet);
 	    }
 	  });
