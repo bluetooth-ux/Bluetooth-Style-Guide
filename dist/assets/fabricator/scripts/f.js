@@ -381,17 +381,19 @@
 	/*
 	  Miscellaneous Functions
 	*/
+	
+	// Prevent events from firing when example elements are clicked
+	function preventLinkAndButtonEvents(i, element) {
+	  $(element).on('click', function (event) {
+	    event.preventDefault();
+	    //event.stopPropagation(); // this may be necessary if other functions are tied to a link that you need to block
+	  });
+	};
+	
 	$(document).ready(function () {
-	  // Prevent events from firing when example elements are clicked
-	  function preventLinkAndButtonEvents(i, element) {
-	    $(element).on('click', function (event) {
-	      event.preventDefault();
-	      //event.stopPropagation(); // this may be necessary if other functions are tied to a link that you need to block
-	    });
-	  };
 	  // bind preventLinkAndButtonEvents function
-	  $('.f-item-preview').find('[href]').each(preventLinkAndButtonEvents);
-	  $('.f-item-preview').find('button').each(preventLinkAndButtonEvents);
+	  $('.f-item-preview').find('[href]:not(.allow)').each(preventLinkAndButtonEvents);
+	  $('.f-item-preview').find('button:not(.allow)').each(preventLinkAndButtonEvents);
 	});
 
 /***/ }),
@@ -11493,9 +11495,9 @@
 	'use strict';
 	
 	window.filterSampleText = function () {
-	  $('code').each(function (i, snippet) {
+	  $('code.language-markup').each(function (i, snippet) {
 	    //only trim sample text from code tags that have a <sample> block
-	    if (/<sample>/g.test(snippet)) {
+	    if (/<sample>/g.test(snippet.textContent)) {
 	      splice(snippet);
 	    }
 	  });

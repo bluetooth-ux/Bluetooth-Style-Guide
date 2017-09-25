@@ -96,7 +96,8 @@
 		position: absolute;
 		bottom: -2px;
 		left: calc(100% + 10px);
-		font: 1rem normal monospace;
+		font-size: .8rem;
+		line-height: 1rem;
 		color: black;
 		background-color: #fff6e3;
 		border: 1px solid #ffd9b8;
@@ -128,7 +129,8 @@
 }
 span.textInputClasses {
 	float: right;
-	font: 1rem normal;
+	font-size: .8rem;
+	line-height: 1rem;
 	color: black;
 	background-color: #fff6e3;
 	border: 1px solid #ffd9b8;

@@ -130,7 +130,7 @@ LINE ~332
 #### index.js
 `node_modules/fabricator-assemble/index.js`
 
-Add a {{#NEW_HELPER}} function.
+Add a `{{#NEW_HELPER}}` function.
 
 ```javascript
 LINE ~219
