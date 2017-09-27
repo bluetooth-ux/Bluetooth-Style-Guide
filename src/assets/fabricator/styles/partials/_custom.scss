@@ -74,19 +74,34 @@
 }
 
 // Nested Navigation
-.f-menu .nested {
-	margin-left: 10px;
-	display: none;
-}
-.f-menu .f-active + .nested {
-	display:block;
+.f-menu {
+	.nested {
+		display: none;
+	    //background-color: #444;
+	    margin-left: 0;
+	    padding-left: 10px;
+	    a {
+	    	padding: 0 1.5rem;
+	    	color: #aaa !important; // important is necessary to override default styles
+	    	font-size: .8125rem;
+	    	line-height: 1.4rem;
+		    &::before {
+		    	content: '>';
+		    	padding-right: 10px;
+		    	display: inline-block;
+		    }
+		}
+	}
+	.f-active + .nested {
+		display:block;
+	}
 }
 .f-item-group {
 	margin-top: 0;
-}
-.f-item-group > .f-item-group:last-child {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
+	> .f-item-group:last-child {
+ 	   margin-bottom: 1.5rem;
+    	padding-bottom: 1.5rem;
+    }
 }
 
 // Fabricator headings
