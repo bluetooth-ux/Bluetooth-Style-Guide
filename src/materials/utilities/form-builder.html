@@ -1,5 +1,6 @@
-<p>Once you've finished building your form, use your browser's <code>web inspector</code> to copy the whole <code>&lt;form&gt;</code> element (outlined with a dashed gray border).</p>
+<p>Once you've finished building your form, use the <code>Show HTML</code> button at the bottom of the page to get the form code. You may want to use a tool like <a href="http://htmlformatter.com/" target="new" class="allow">htmlformatter.com</a> to tidy the output code.</p>
 <p>Cloudfour has a <a class="allow" href="https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont/" target="new">great article</a> on setting up <code>auto-fill</code> / <code>auto-complete</code> for forms.</p>
+
 
 <div class="input-group showOutlines" style="align-items:baseline">
 	<select class="custom-select" id="formSelect">
@@ -190,6 +191,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		form.append($('<div class="form-group" />'));
 
 		$('#clear-form').text("Clear");
+		$('#hideHTML').click();
 	});
 	$('#addElement').on('click', function(){
 		group = form.find('.form-group:last-of-type');
@@ -206,6 +208,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('#custom').html(form.html());
 
 		$('#clear-form').text("Clear");
+		$('#hideHTML').click();
 	});
 
 	// get html
@@ -248,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}
 
 		$('#clear-form').text("Clear");
+		$('#hideHTML').click();
 	});
 
 	$('#clear-form').on('click',function(){
@@ -271,6 +275,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 			form.html($('#custom')[0].innerHTML);
 		}
+		$('#hideHTML').click();
 	});
 });
 
