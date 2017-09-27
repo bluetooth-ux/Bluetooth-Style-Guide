@@ -8,7 +8,7 @@ Materials have been extended in the following way:
 
 ```markup
 ---
-notes: This is a note in `markup`.
+notes: This is a note in `markdown`.
 css: <!-- display CSS -->
 base: .alert
 variations:
