@@ -411,7 +411,7 @@
 
 			// update #formSelect
 			$('#formSelect').children()[0].textContent = "Custom Form";
-			$('#formSelect').selectedIndex = 0;
+			$('#formSelect')[0].selectedIndex = 0;
 			$('#custom').html(form.html());
 
 			$('#clear-form').text("Clear");
@@ -450,6 +450,7 @@
 				} else {
 					// save the modified form for later
 					$('#custom').html(form[0].innerHTML);
+					form.html($('#pre-built').children()[this.value].innerHTML);
 				}
 			} else {
 				// some pre-built form is selected
@@ -728,7 +729,7 @@
 
 			// update #formSelect
 			$(&#x27;#formSelect&#x27;).children()[0].textContent &#x3D; &quot;Custom Form&quot;;
-			$(&#x27;#formSelect&#x27;).selectedIndex &#x3D; 0;
+			$(&#x27;#formSelect&#x27;)[0].selectedIndex &#x3D; 0;
 			$(&#x27;#custom&#x27;).html(form.html());
 
 			$(&#x27;#clear-form&#x27;).text(&quot;Clear&quot;);
@@ -767,6 +768,7 @@
 				} else {
 					// save the modified form for later
 					$(&#x27;#custom&#x27;).html(form[0].innerHTML);
+					form.html($(&#x27;#pre-built&#x27;).children()[this.value].innerHTML);
 				}
 			} else {
 				// some pre-built form is selected
