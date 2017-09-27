@@ -900,11 +900,13 @@
 		$('#addRow').on('click', function() {
 			row = body.find('tr:last-of-type');
 			body.append(row.clone());
+			hideTableHTML();
 		});
 		$('#removeRow').on('click', function() {
 			if (body.find('tr').length > 1) {
 				body.find('tr:last-of-type').remove();
 			}
+			hideTableHTML();
 		});
 
 		// COLUMNS
@@ -913,6 +915,7 @@
 				cell = $(row).find(':last-child').clone();
 				row.append(cell[0]);
 			});
+			hideTableHTML();
 		});
 		$('#removeColumn').on('click', function() {
 			table.find('tr').each(function(i, row) {
@@ -920,6 +923,7 @@
 					$(row).find(':last-child').remove();
 				}
 			});
+			hideTableHTML();
 		});
 
 		// HEADER
@@ -933,6 +937,7 @@
 			} else {
 				$('thead').remove();
 			}
+			hideTableHTML();
 		});
 		$('#toggleFooter').on('click', function() {
 			if ($(this).is(':checked')) {
@@ -949,17 +954,45 @@
 			} else {
 				$('tfoot').remove();
 			}
+			hideTableHTML();
 		});
 
 		// STYLES
 		$('#style').on('change', function() {
 			table.removeClass().addClass('table ' + $(this).val());
+			hideTableHTML();
 		});
+
+		// get html
+		$('#getTableHTML').on('click', function() {
+
+			$(this).stop();
+
+			if (this.textContent === "Hide HTML") {
+				hideTableHTML();
+			} else {
+				this.textContent = "Hide HTML";
+				var modal = $('<pre class="language-markup" style="display:none;margin-top:0;"/>').append('<code class="language-markup" style="display:none;"/>').text(table[0].outerHTML);
+				$(this).after(modal);
+				Prism.highlightElement(modal[0]);
+				$(modal).slideDown();
+			}
+		});
+
+		var hideTableHTML = function() {
+			$('#getTableHTML').text("Show HTML");
+
+			$('#table-builder pre').slideUp(function() {
+				$(this).remove();
+			});
+		}
 
 		// remove unnecessary content
 		$('.f-item-code, .componentClasses').remove();
 	});
 </script>
+
+<a id="getTableHTML">Show HTML</a>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;p&gt;Once you&#x27;ve finished building your table, use your browser&#x27;s &lt;code&gt;web inspector&lt;/code&gt; to copy the whole &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; element.&lt;/p&gt;
@@ -1017,11 +1050,13 @@
 		$(&#x27;#addRow&#x27;).on(&#x27;click&#x27;, function() {
 			row &#x3D; body.find(&#x27;tr:last-of-type&#x27;);
 			body.append(row.clone());
+			hideTableHTML();
 		});
 		$(&#x27;#removeRow&#x27;).on(&#x27;click&#x27;, function() {
 			if (body.find(&#x27;tr&#x27;).length &gt; 1) {
 				body.find(&#x27;tr:last-of-type&#x27;).remove();
 			}
+			hideTableHTML();
 		});
 
 		// COLUMNS
@@ -1030,6 +1065,7 @@
 				cell &#x3D; $(row).find(&#x27;:last-child&#x27;).clone();
 				row.append(cell[0]);
 			});
+			hideTableHTML();
 		});
 		$(&#x27;#removeColumn&#x27;).on(&#x27;click&#x27;, function() {
 			table.find(&#x27;tr&#x27;).each(function(i, row) {
@@ -1037,6 +1073,7 @@
 					$(row).find(&#x27;:last-child&#x27;).remove();
 				}
 			});
+			hideTableHTML();
 		});
 
 		// HEADER
@@ -1050,6 +1087,7 @@
 			} else {
 				$(&#x27;thead&#x27;).remove();
 			}
+			hideTableHTML();
 		});
 		$(&#x27;#toggleFooter&#x27;).on(&#x27;click&#x27;, function() {
 			if ($(this).is(&#x27;:checked&#x27;)) {
@@ -1066,17 +1104,45 @@
 			} else {
 				$(&#x27;tfoot&#x27;).remove();
 			}
+			hideTableHTML();
 		});
 
 		// STYLES
 		$(&#x27;#style&#x27;).on(&#x27;change&#x27;, function() {
 			table.removeClass().addClass(&#x27;table &#x27; + $(this).val());
+			hideTableHTML();
 		});
+
+		// get html
+		$(&#x27;#getTableHTML&#x27;).on(&#x27;click&#x27;, function() {
+
+			$(this).stop();
+
+			if (this.textContent &#x3D;&#x3D;&#x3D; &quot;Hide HTML&quot;) {
+				hideTableHTML();
+			} else {
+				this.textContent &#x3D; &quot;Hide HTML&quot;;
+				var modal &#x3D; $(&#x27;&lt;pre class&#x3D;&quot;language-markup&quot; style&#x3D;&quot;display:none;margin-top:0;&quot;/&gt;&#x27;).append(&#x27;&lt;code class&#x3D;&quot;language-markup&quot; style&#x3D;&quot;display:none;&quot;/&gt;&#x27;).text(table[0].outerHTML);
+				$(this).after(modal);
+				Prism.highlightElement(modal[0]);
+				$(modal).slideDown();
+			}
+		});
+
+		var hideTableHTML &#x3D; function() {
+			$(&#x27;#getTableHTML&#x27;).text(&quot;Show HTML&quot;);
+
+			$(&#x27;#table-builder pre&#x27;).slideUp(function() {
+				$(this).remove();
+			});
+		}
 
 		// remove unnecessary content
 		$(&#x27;.f-item-code, .componentClasses&#x27;).remove();
 	});
-&lt;/script&gt;</code></pre>
+&lt;/script&gt;
+
+&lt;a id&#x3D;&quot;getTableHTML&quot;&gt;Show HTML&lt;/a&gt;</code></pre>
 </div>
 
 

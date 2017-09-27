@@ -49,11 +49,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	$('#addRow').on('click', function(){
 		row = body.find('tr:last-of-type');
 		body.append(row.clone());
+		hideTableHTML();
 	});
 	$('#removeRow').on('click', function(){
 		if (body.find('tr').length > 1) {
 			body.find('tr:last-of-type').remove();
 		}
+		hideTableHTML();
 	});
 
 	// COLUMNS
@@ -62,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			cell = $(row).find(':last-child').clone();
 			row.append(cell[0]);
 		});
+		hideTableHTML();
 	});
 	$('#removeColumn').on('click', function(){
 		table.find('tr').each(function(i, row){
@@ -69,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$(row).find(':last-child').remove();
 			}
 		});
+		hideTableHTML();
 	});
 
 	// HEADER
@@ -82,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		} else {
 			$('thead').remove();
 		}
+		hideTableHTML();
 	});
 	$('#toggleFooter').on('click', function(){
 		if ($(this).is(':checked')) {
@@ -98,14 +103,42 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		} else {
 			$('tfoot').remove();
 		}
+		hideTableHTML();
 	});
 
 	// STYLES
 	$('#style').on('change',function(){
 		table.removeClass().addClass('table ' + $(this).val());
+		hideTableHTML();
 	});
+
+	// get html
+	$('#getTableHTML').on('click',function(){
+
+		$(this).stop();
+
+		if (this.textContent === "Hide HTML") {
+			hideTableHTML();
+		} else {
+			this.textContent = "Hide HTML";
+			var modal = $('<pre class="language-markup" style="display:none;margin-top:0;"/>').append('<code class="language-markup" style="display:none;"/>').text(table[0].outerHTML);
+			$(this).after(modal);
+			Prism.highlightElement(modal[0]);
+			$(modal).slideDown();
+		}
+	});
+
+	var hideTableHTML = function() {
+		$('#getTableHTML').text("Show HTML");
+
+		$('#table-builder pre').slideUp(function(){
+			$(this).remove();
+		});
+	}
 
 	// remove unnecessary content
 	$('.f-item-code, .componentClasses').remove();
 });
 </script>
+
+<a id="getTableHTML">Show HTML</a>
