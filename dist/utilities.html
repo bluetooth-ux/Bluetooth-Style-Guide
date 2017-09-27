@@ -190,8 +190,10 @@
 
 </div>
 <div class="f-item-preview">
-	<p>Once you've finished building your form, use your browser's <code>web inspector</code> to copy the whole <code>&lt;form&gt;</code> element (outlined with a dashed gray border).</p>
+	<p>Once you've finished building your form, use the <code>Show HTML</code> button at the bottom of the page to get the form code. You may want to use a tool like <a href="http://htmlformatter.com/" target="new" class="allow">htmlformatter.com</a> to tidy
+	the output code.</p>
 <p>Cloudfour has a <a class="allow" href="https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont/" target="new">great article</a> on setting up <code>auto-fill</code> / <code>auto-complete</code> for forms.</p>
+
 
 <div class="input-group showOutlines" style="align-items:baseline">
 	<select class="custom-select" id="formSelect">
@@ -399,6 +401,7 @@
 			form.append($('<div class="form-group" />'));
 
 			$('#clear-form').text("Clear");
+			$('#hideHTML').click();
 		});
 		$('#addElement').on('click', function() {
 			group = form.find('.form-group:last-of-type');
@@ -415,6 +418,7 @@
 			$('#custom').html(form.html());
 
 			$('#clear-form').text("Clear");
+			$('#hideHTML').click();
 		});
 
 		// get html
@@ -459,6 +463,7 @@
 			}
 
 			$('#clear-form').text("Clear");
+			$('#hideHTML').click();
 		});
 
 		$('#clear-form').on('click', function() {
@@ -482,6 +487,7 @@
 
 				form.html($('#custom')[0].innerHTML);
 			}
+			$('#hideHTML').click();
 		});
 	});
 
@@ -508,8 +514,10 @@
 </style>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;p&gt;Once you&#x27;ve finished building your form, use your browser&#x27;s &lt;code&gt;web inspector&lt;/code&gt; to copy the whole &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element (outlined with a dashed gray border).&lt;/p&gt;
+	<pre><code class="language-markup">&lt;p&gt;Once you&#x27;ve finished building your form, use the &lt;code&gt;Show HTML&lt;/code&gt; button at the bottom of the page to get the form code. You may want to use a tool like &lt;a href&#x3D;&quot;http://htmlformatter.com/&quot; target&#x3D;&quot;new&quot; class&#x3D;&quot;allow&quot;&gt;htmlformatter.com&lt;/a&gt; to tidy
+	the output code.&lt;/p&gt;
 &lt;p&gt;Cloudfour has a &lt;a class&#x3D;&quot;allow&quot; href&#x3D;&quot;https://cloudfour.com/thinks/autofill-what-web-devs-should-know-but-dont/&quot; target&#x3D;&quot;new&quot;&gt;great article&lt;/a&gt; on setting up &lt;code&gt;auto-fill&lt;/code&gt; / &lt;code&gt;auto-complete&lt;/code&gt; for forms.&lt;/p&gt;
+
 
 &lt;div class&#x3D;&quot;input-group showOutlines&quot; style&#x3D;&quot;align-items:baseline&quot;&gt;
 	&lt;select class&#x3D;&quot;custom-select&quot; id&#x3D;&quot;formSelect&quot;&gt;
@@ -717,6 +725,7 @@
 			form.append($(&#x27;&lt;div class&#x3D;&quot;form-group&quot; /&gt;&#x27;));
 
 			$(&#x27;#clear-form&#x27;).text(&quot;Clear&quot;);
+			$(&#x27;#hideHTML&#x27;).click();
 		});
 		$(&#x27;#addElement&#x27;).on(&#x27;click&#x27;, function() {
 			group &#x3D; form.find(&#x27;.form-group:last-of-type&#x27;);
@@ -733,6 +742,7 @@
 			$(&#x27;#custom&#x27;).html(form.html());
 
 			$(&#x27;#clear-form&#x27;).text(&quot;Clear&quot;);
+			$(&#x27;#hideHTML&#x27;).click();
 		});
 
 		// get html
@@ -777,6 +787,7 @@
 			}
 
 			$(&#x27;#clear-form&#x27;).text(&quot;Clear&quot;);
+			$(&#x27;#hideHTML&#x27;).click();
 		});
 
 		$(&#x27;#clear-form&#x27;).on(&#x27;click&#x27;, function() {
@@ -800,6 +811,7 @@
 
 				form.html($(&#x27;#custom&#x27;)[0].innerHTML);
 			}
+			$(&#x27;#hideHTML&#x27;).click();
 		});
 	});
 
@@ -845,7 +857,8 @@
 
 </div>
 <div class="f-item-preview">
-	<p>Once you've finished building your table, use your browser's <code>web inspector</code> to copy the whole <code>&lt;table&gt;</code> element.</p>
+	<p>Once you've finished building your table, use the <code>Show HTML</code> button at the bottom of the page to get the table code. You may want to use a tool like <a href="http://htmlformatter.com/" target="new" class="allow">htmlformatter.com</a> to tidy
+	the output code.</p>
 
 <div class="container-fluid">
 	<div class="row">
@@ -995,7 +1008,8 @@
 <a id="getTableHTML">Show HTML</a>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
-	<pre><code class="language-markup">&lt;p&gt;Once you&#x27;ve finished building your table, use your browser&#x27;s &lt;code&gt;web inspector&lt;/code&gt; to copy the whole &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; element.&lt;/p&gt;
+	<pre><code class="language-markup">&lt;p&gt;Once you&#x27;ve finished building your table, use the &lt;code&gt;Show HTML&lt;/code&gt; button at the bottom of the page to get the table code. You may want to use a tool like &lt;a href&#x3D;&quot;http://htmlformatter.com/&quot; target&#x3D;&quot;new&quot; class&#x3D;&quot;allow&quot;&gt;htmlformatter.com&lt;/a&gt; to tidy
+	the output code.&lt;/p&gt;
 
 &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
 	&lt;div class&#x3D;&quot;row&quot;&gt;
