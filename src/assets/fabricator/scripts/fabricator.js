@@ -3,6 +3,7 @@ require('./getCSS');
 require('./getVariations');
 require('./filterSampleText');
 require('./buildResetSwitches');
+require('./buildNestedNavigation');
 /**
  * Global `fabricator` object
  * @namespace
@@ -359,6 +360,9 @@ buildResetSwitches();   // buildResetSwitches.js
 
 // running filter before adding variations breaks variations function. Memory leak? Unclosed tag?
 filterSampleText();     // filterSampleText.js
+
+// build nested navigation for component scroll-spy
+buildNestedNavigation();
 
 /*
   Miscellaneous Functions
