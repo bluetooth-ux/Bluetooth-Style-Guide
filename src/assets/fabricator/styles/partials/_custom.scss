@@ -11,7 +11,7 @@
 	border-bottom: none;
 }
 .f-item-heading-group:not([data-f-toggle]) {
-    display: none;
+	display: none;
 }
 .f-item-preview {
 	overflow-x: auto;
@@ -77,19 +77,19 @@
 .f-menu {
 	.nested {
 		display: none;
-	    //background-color: #444;
-	    margin-left: 0;
-	    padding-left: 10px;
-	    a {
-	    	padding: 0 1.5rem;
-	    	color: #aaa !important; // important is necessary to override default styles
-	    	font-size: .8125rem;
-	    	line-height: 1.4rem;
-		    &::before {
-		    	content: '>';
-		    	padding-right: 10px;
-		    	display: inline-block;
-		    }
+		//background-color: #444;
+		margin-left: 0;
+		padding-left: 10px;
+		a {
+			padding: 0 1.5rem;
+			color: #aaa !important; // important is necessary to override default styles
+			font-size: .8125rem;
+			line-height: 1.4rem;
+			&::before {
+				content: '>';
+				padding-right: 10px;
+				display: inline-block;
+			}
 		}
 	}
 	.f-active + .nested {
@@ -99,9 +99,9 @@
 .f-item-group {
 	margin-top: 0;
 	> .f-item-group:last-child {
- 	   margin-bottom: 1.5rem;
-    	padding-bottom: 1.5rem;
-    }
+		margin-bottom: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
 }
 
 // Fabricator headings
@@ -122,6 +122,9 @@
 	display: block;
 	margin-right: 30%;
 	float: none;
+	&.custom-select {
+		margin-right: inherit;
+	}
 	&::after {
 		content: 'class: ' attr(class);
 		position: absolute;
@@ -173,6 +176,13 @@ span.textInputClasses {
 		content: none;
 		display: none;
 	}
+	&:first-of-type {
+		margin-top: 0;
+	}
+}
+span.selectClasses {
+	@extend span.textInputClasses;
+	float: none;
 }
 @media (max-width:959px) {
 	[data-variation="true"] {
@@ -214,6 +224,9 @@ span.textInputClasses {
 			clear: left;
 		}
 	}
+	select[data-variation="true"] {
+		margin: 10px 0;
+	}
 	span.textInputClasses {
 		float: none;
 		margin-bottom: -20px;
@@ -221,6 +234,9 @@ span.textInputClasses {
 		& + input[type="text"] {
 			width: 100% !important;
 		}
+	}
+	span.selectClasses {
+		margin-bottom: 0;
 	}
 }
 

@@ -11720,6 +11720,8 @@
 					}
 					if ($(baseElement).is('input[type="text"]')) {
 						preview.append($('<span class="textInputClasses" input-variation="' + previewElement.attr('class') + '">class: ' + previewElement.attr('class') + '</span>').attr('variation', i > 0 ? 'true' : ''));
+					} else if ($(baseElement).is('select')) {
+						preview.append($('<span class="selectClasses" input-variation="' + previewElement.attr('class') + '">class: ' + previewElement.attr('class') + '</span>').attr('variation', i > 0 ? 'true' : ''));
 					}
 				}
 				preview.append(previewElement);
