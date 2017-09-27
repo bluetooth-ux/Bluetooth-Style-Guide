@@ -380,3 +380,16 @@ body.modal-open {
 	.f-item-controls {display: none;}
 	table {margin: 1rem 0;}
 }
+#getTableHTML {
+	display:block;
+	margin:1rem 0 0;
+	padding: .25rem;
+	text-align: center;
+	background-color: #888;
+	color: #fff;
+	cursor:pointer;
+	border-radius: 5px 5px 0 0;
+	&:last-child {
+		border-radius: 5px;
+	}
+}
