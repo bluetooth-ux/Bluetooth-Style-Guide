@@ -316,6 +316,7 @@ body.modal-open {
 		& .form-group { //adds outline for form-groups
 			min-height: 1.5rem;
 			position: relative;
+			padding: 5px;
 			&::after {
 				display: none;
 				content: '';
