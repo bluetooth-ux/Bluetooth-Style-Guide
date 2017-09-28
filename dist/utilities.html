@@ -926,7 +926,7 @@
 		$('#addColumn').on('click', function() {
 			table.find('tr').each(function(i, row) {
 				cell = $(row).find(':last-child').clone();
-				row.append(cell[0]);
+				$(row).append(cell[0]);
 			});
 			hideTableHTML();
 		});
@@ -1077,7 +1077,7 @@
 		$(&#x27;#addColumn&#x27;).on(&#x27;click&#x27;, function() {
 			table.find(&#x27;tr&#x27;).each(function(i, row) {
 				cell &#x3D; $(row).find(&#x27;:last-child&#x27;).clone();
-				row.append(cell[0]);
+				$(row).append(cell[0]);
 			});
 			hideTableHTML();
 		});

@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	$('#addColumn').on('click', function(){
 		table.find('tr').each(function(i, row){
 			cell = $(row).find(':last-child').clone();
-			row.append(cell[0]);
+			$(row).append(cell[0]);
 		});
 		hideTableHTML();
 	});
