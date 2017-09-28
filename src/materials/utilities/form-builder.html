@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		if ($(element).find('sample').length > 0){
 			$(element).find('sample').each(function(i, sampleBlock){
 				// move the <sample> content outside the <sample> block and trim whitespace
-				sampleBlock.after(String.prototype.trim.call(sampleBlock.innerHTML));
+				$(sampleBlock).after(String.prototype.trim.call(sampleBlock.innerHTML));
 				// remove the <sample> block
 				$(sampleBlock).remove();
 			});

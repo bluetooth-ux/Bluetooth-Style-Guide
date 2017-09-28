@@ -379,7 +379,7 @@
 			if ($(element).find('sample').length > 0) {
 				$(element).find('sample').each(function(i, sampleBlock) {
 					// move the <sample> content outside the <sample> block and trim whitespace
-					sampleBlock.after(String.prototype.trim.call(sampleBlock.innerHTML));
+					$(sampleBlock).after(String.prototype.trim.call(sampleBlock.innerHTML));
 					// remove the <sample> block
 					$(sampleBlock).remove();
 				});
@@ -703,7 +703,7 @@
 			if ($(element).find(&#x27;sample&#x27;).length &gt; 0) {
 				$(element).find(&#x27;sample&#x27;).each(function(i, sampleBlock) {
 					// move the &lt;sample&gt; content outside the &lt;sample&gt; block and trim whitespace
-					sampleBlock.after(String.prototype.trim.call(sampleBlock.innerHTML));
+					$(sampleBlock).after(String.prototype.trim.call(sampleBlock.innerHTML));
 					// remove the &lt;sample&gt; block
 					$(sampleBlock).remove();
 				});
