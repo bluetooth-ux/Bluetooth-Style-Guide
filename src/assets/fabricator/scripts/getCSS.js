@@ -165,9 +165,18 @@ window.writeToBody = function (jqueryElement) {
            )
          );
 
-  // filter out "meaningless" properties that don't affect marketing, design, or desktop development
+  // Filter out "meaningless" properties that don't affect marketing, design, or desktop development
+  // TODO: These two loops could probably be combined into one loop. That might be fun for a dev to figure out...
   propertiesToFilter.forEach(function(property, i){
     delete unorderedProperties[property];
+  });
+  propertyValuePairsToFilter.forEach(function(pair, i){
+    var property = Object.keys(pair)[0],
+        value = pair[property];
+
+    if (unorderedProperties[property] !== undefined && unorderedProperties[property] === value) {
+      delete unorderedProperties[property];
+    }
   });
 
   // alphabetize the properties
@@ -182,7 +191,7 @@ window.writeToBody = function (jqueryElement) {
     // TODO: Multiply out rem values to px values
     // 1. If there's an instance of 'rem' in orderedProperties[property]
     // 2. Slice to orderedProperties[property].indexof('rem')
-    // 3. Multiply sliced value by 16
+    // 3. Multiply sliced value by 16, our base font-size
     // 4. Add 'px' to the string
     // 5. Assign the result to orderedProperties[property]
 
