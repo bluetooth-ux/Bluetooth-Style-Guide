@@ -169,6 +169,14 @@ window.writeToBody = function (jqueryElement) {
   propertiesToFilter.forEach(function(property, i){
     delete unorderedProperties[property];
   });
+  propertyValuePairsToFilter.forEach(function(pair, i){
+    var property = Object.keys(pair)[0],
+        value = pair[property];
+
+    if (unorderedProperties[property] !== undefined && unorderedProperties[property] === value) {
+      delete unorderedProperties[property];
+    }
+  });
 
   // alphabetize the properties
   Object.keys(unorderedProperties).sort().forEach(function(key) {
