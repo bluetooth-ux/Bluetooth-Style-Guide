@@ -1,0 +1,23 @@
+<div class="dropdown">
+  <button class="btn" type="button" id="dropdownEllipsisBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><sample><i class="fa fa-ellipsis-v" aria-hidden="true"></i></sample></button>
+  <div class="dropdown-menu" aria-labelledby="dropdownEllipsisBtn">
+    <a class="dropdown-item" href="#">Action</a>
+    <sample><a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a></sample>
+  </div>
+</div>
+
+<sample>
+<div style="height:150px"></div>
+<script type="text/javascript">
+// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+// use standard ` $(document).ready(function(){ ... }) ` in production code.
+// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+document.addEventListener("DOMContentLoaded", function(event) {
+	$('[data-toggle="dropdown"]').on('click', function(){
+      $(this).next('.dropdown-menu').toggleClass('show');
+    });
+});
+
+</script>
+</sample>

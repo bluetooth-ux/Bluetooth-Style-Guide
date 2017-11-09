@@ -684,6 +684,69 @@
 	<div class="f-item-heading-group">
 		<h2 class="f-item-heading" data-f-toggle="labels">Dropdowns</h2>
 	</div>
+		<div class="f-item-group" id="03-dropdowns.dropdown-ellipsis">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Dropdown Ellipsis</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="componentClasses" data-f-toggle="labels">
+
+</div>
+<div class="f-item-preview">
+	<div class="dropdown">
+	<button class="btn" type="button" id="dropdownEllipsisBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><sample><i class="fa fa-ellipsis-v" aria-hidden="true"></i></sample></button>
+	<div class="dropdown-menu" aria-labelledby="dropdownEllipsisBtn">
+		<a class="dropdown-item" href="#">Action</a>
+		<sample><a class="dropdown-item" href="#">Another action</a>
+			<a class="dropdown-item" href="#">Something else here</a></sample>
+	</div>
+</div>
+
+<sample>
+	<div style="height:150px"></div>
+	<script type="text/javascript">
+		// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard ` $(document).ready(function(){ ... }) ` in production code.
+		// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+		document.addEventListener("DOMContentLoaded", function(event) {
+			$('[data-toggle="dropdown"]').on('click', function() {
+				$(this).next('.dropdown-menu').toggleClass('show');
+			});
+		});
+	</script>
+</sample>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;div class&#x3D;&quot;dropdown&quot;&gt;
+	&lt;button class&#x3D;&quot;btn&quot; type&#x3D;&quot;button&quot; id&#x3D;&quot;dropdownEllipsisBtn&quot; data-toggle&#x3D;&quot;dropdown&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;&lt;sample&gt;&lt;i class&#x3D;&quot;fa fa-ellipsis-v&quot; aria-hidden&#x3D;&quot;true&quot;&gt;&lt;/i&gt;&lt;/sample&gt;&lt;/button&gt;
+	&lt;div class&#x3D;&quot;dropdown-menu&quot; aria-labelledby&#x3D;&quot;dropdownEllipsisBtn&quot;&gt;
+		&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Action&lt;/a&gt;
+		&lt;sample&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Another action&lt;/a&gt;
+			&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/sample&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;sample&gt;
+	&lt;div style&#x3D;&quot;height:150px&quot;&gt;&lt;/div&gt;
+	&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+		// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
+		// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
+		document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+			$(&#x27;[data-toggle&#x3D;&quot;dropdown&quot;]&#x27;).on(&#x27;click&#x27;, function() {
+				$(this).next(&#x27;.dropdown-menu&#x27;).toggleClass(&#x27;show&#x27;);
+			});
+		});
+	&lt;/script&gt;
+&lt;/sample&gt;</code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="03-dropdowns.dropdown">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Dropdown</h3>
@@ -706,6 +769,10 @@
 			<a class="dropdown-item" href="#">Something else here</a></sample>
 	</div>
 </div>
+<sample>
+	<div style="height:150px"></div>
+	<script type="text/javascript"></script>
+</sample>
 </div>
 <div class="f-item-code f-item-hidden" data-f-toggle="code">
 	<pre><code class="language-markup">&lt;div class&#x3D;&quot;dropdown&quot;&gt;
@@ -715,7 +782,11 @@
 		&lt;sample&gt;&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Another action&lt;/a&gt;
 			&lt;a class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;Something else here&lt;/a&gt;&lt;/sample&gt;
 	&lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt;
+&lt;sample&gt;
+	&lt;div style&#x3D;&quot;height:150px&quot;&gt;&lt;/div&gt;
+	&lt;script type&#x3D;&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;/sample&gt;</code></pre>
 </div>
 
 		</div>
@@ -2637,27 +2708,13 @@
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Accordion Panel</h3>
 				<div class="f-item-controls">
-					<span class="f-control f-icon" data-f-toggle-control="notes" title="Toggle Notes">
-						<svg>
-							<use xlink:href="#f-icon-notes" />
-						</svg>
-					</span>
 					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
 						<svg>
 							<use xlink:href="#f-icon-code" />
 						</svg>
 					</span>
-					<span class="f-control f-icon" data-f-toggle-control="css" title="Toggle CSS">
-						<svg>
-							<use xlink:href="#f-icon-css" />
-						</svg>
-					</span>
 				</div>
 			</div><div class="componentClasses" data-f-toggle="labels">
-<div class="f-item-notes" data-f-toggle="notes">
-	<p>To allow multiple accordion tabs to be open simultaneously, omit the <code>data-parent</code> attribute from the <code>[role=&quot;tabpanel&quot;]</code> <code>&lt;div&gt;</code>s.</p>
-
-</div>
 
 </div>
 <div class="f-item-preview">
@@ -2699,9 +2756,6 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-</div>
-<div class="f-item-css" data-f-toggle="css">
-	<pre><code class="language-css"><!-- display CSS --></code></pre>
 </div>
 
 		</div>
