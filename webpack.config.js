@@ -71,8 +71,13 @@ module.exports = (config) => {
     },
     plugins: getPlugins(config.dev),
     module: {
-      loaders: getLoaders(),
-      //exclude: /(node_modules | prism.js)/,
+      loaders: [
+        {
+            test: /\.js$/,
+            exclude: /(node_modules|prism\.js)/,
+            loaders: ['babel-loader']
+        }
+    ]
     },
   };
 };
