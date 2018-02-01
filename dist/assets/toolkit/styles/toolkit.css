@@ -7492,8 +7492,8 @@ ul.tree {
     text-align: right;
     width: 100%; }
     header .nav.sub-nav .nav-item .nav {
-      margin-left: -15px;
-      margin-right: -15px;
+      margin:0;
+      width:100%;
       position: relative;
       right: 0;
       /*width:cal(100% + 30px);*/ }
