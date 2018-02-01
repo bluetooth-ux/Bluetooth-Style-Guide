@@ -3,10 +3,177 @@
 	{
 		"selected_items":
 		[
+			[
+				"ex",
+				"exclude"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"po",
+				"pointer"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"col",
+				"column"
+			],
+			[
+				"dro",
+				"dropdown-toggle"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"nav",
+				"nav-link"
+			],
+			[
+				"i",
+				"important"
+			],
+			[
+				"blu",
+				"blue50"
+			],
+			[
+				"bl",
+				"blue50"
+			],
+			[
+				"gray",
+				"gray-dark"
+			],
+			[
+				"trans",
+				"transparent"
+			],
+			[
+				"bordr",
+				"border-radius"
+			],
+			[
+				"w",
+				"white"
+			],
+			[
+				"gr",
+				"gray-light"
+			],
+			[
+				"gra",
+				"gray-dark"
+			],
+			[
+				"med",
+				"gray-med"
+			],
+			[
+				"box",
+				"box-sizing: "
+			],
+			[
+				"background",
+				"background-color: "
+			],
+			[
+				"blue",
+				"blue20"
+			],
+			[
+				"backgr",
+				"background-color: "
+			],
+			[
+				"bac",
+				"background-color: "
+			],
+			[
+				"gray-l",
+				"gray-light"
+			],
+			[
+				"me",
+				"gray-med"
+			],
+			[
+				"marg",
+				"margin-top: "
+			],
+			[
+				"font",
+				"font-family: "
+			],
+			[
+				"card",
+				"card-title"
+			],
+			[
+				"u",
+				"uppercase"
+			],
+			[
+				"dr",
+				"dropdown-menu"
+			],
+			[
+				"drop",
+				"dropdown"
+			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/node_modules/bootstrap/scss/_custom.scss",
+			"settings":
+			{
+				"buffer_size": 25796,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/03-dropdowns/dropdown-CSS-only.html",
+			"settings":
+			{
+				"buffer_size": 535,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/webpack.config.js",
+			"settings":
+			{
+				"buffer_size": 1433,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/assets/toolkit/styles/toolkit.scss",
+			"settings":
+			{
+				"buffer_size": 216,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -40,6 +207,27 @@
 	},
 	"file_history":
 	[
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/.babelrc",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/assets/fabricator/styles/partials/_custom.scss",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/05-navigation/nav-pagination.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/06-notifications/tooltip.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/node_modules/bootstrap/scss/_custom.scss",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/09-modules/footer.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/09-modules/header.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/09-modules/log-in.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/03-dropdowns/dropdown-language-CSS-only.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/03-dropdowns/dropdown.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/05-navigation/loading.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/02-buttons/button.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/05-navigation/nav-progress.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/05-navigation/chip.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/09-modules/enhanced-popover.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/09-modules/accordion-panel.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/09-modules/accordion.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/node_modules/bootstrap/scss/_custom-forms.scss",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/03-dropdowns/dropdown-ellipsis.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/09-modules/modal-dialog.html",
+		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/03-dropdowns/dropdown-small.html",
 		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/modules/card.html",
 		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/structures/form.html",
 		"/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/src/materials/navigation/nav-fill-justify.html",
@@ -101,6 +289,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".sub-nav",
+			"label",
+			"&:",
+			"header",
+			"ol ",
+			"#ccc",
+			"#fff",
+			"#ccc",
+			"#fff",
+			"h4",
+			"h6",
+			" btn-sm",
+			"all",
+			"dropdownMenuButton",
 			"</blockquote",
 			"blockquote",
 			"Button",
@@ -128,8 +330,124 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/node_modules/bootstrap/scss/_custom.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25008,
+								25008
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 15791.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/materials/components/03-dropdowns/dropdown-CSS-only.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 535,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								136,
+								136
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/webpack.config.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1388,
+								1388
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 651.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/hmalloy/Documents/Bluetooth-Style-Guide/bluetooth-ux.github.io/src/assets/toolkit/styles/toolkit.scss",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 216,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -139,7 +457,7 @@
 	},
 	"input":
 	{
-		"height": 31.0
+		"height": 35.0
 	},
 	"layout":
 	{
@@ -186,12 +504,12 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
@@ -210,7 +528,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 245.0,
+	"side_bar_width": 263.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
