@@ -10677,13 +10677,6 @@
 	 * MIT license http://www.opensource.org/licenses/mit-license.php/
 	 * @author Lea Verou http://lea.verou.me
 	 */
-	var self = (typeof window !== 'undefined')
-	    ? window   // if in browser
-	    : (
-	        (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)
-	        ? self // if in worker
-	        : {}   // if in node js
-	    );
 	
 	var Prism = (function(){
 	
