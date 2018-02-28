@@ -1,0 +1,71 @@
+<sample>
+<div class="modal-dialog modal-lg" role="document">
+  <div class="modal-content">
+    <header class="modal-header">
+      <h5 class="modal-title">Modal title</h5>
+      <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    </header>
+    <div class="modal-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</p>
+    </div>
+    <footer class="modal-footer">
+      <button class="btn btn-primary">Primary Button</button>
+      <button class="btn btn-secondary">Secondary Button</button>
+    </footer>
+  </div>
+</div>
+</sample>
+<!-- Button trigger modal -->
+
+<button type="button" class="btn f-ui-btn" data-toggle="modal" data-target="#exampleModal">Launch demo modal - large</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close bg-black text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{> typography.paragraph}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<sample>
+<script type="text/javascript">
+// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+// use standard ` $(document).ready(function(){ ... }) ` in production code.
+// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+document.addEventListener("DOMContentLoaded", function(event) {
+  // Make sure the button data-target matches the ID of the modal you want to trigger.
+  // Data-Target should start with a #
+
+  // None of this javascript should be necessary outside of the `Fabricator` environment.
+  // Please follow the bootstrap instructions instead of reusing this code.
+  // https://getbootstrap.com/docs/4.0/components/modal/
+
+  $('[data-toggle="modal"]').click(function(){
+    $('body').addClass('modal-open').find('.modal').append($('<div class="modal-backdrop fade show"/>'));
+      var modal = $(this).data('target');
+      window.setTimeout(function (){
+        $(modal).addClass('show');
+      }, 100);
+
+    // Add listeners to close modal
+    $('[data-dismiss="modal"], .modal-backdrop').on('click', function(){
+      $('.modal').removeClass('show');
+      $('.modal-backdrop').remove();
+      $('body').removeClass('modal-open');
+    });
+  });
+});
+</script>
+</sample>

@@ -3672,6 +3672,171 @@
 </div>
 
 		</div>
+		<div class="f-item-group" id="09-modules.modal-dialog-large">
+			<div class="f-item-heading-group" data-f-toggle="labels">
+				<h3 class="f-item-heading">Modal Dialog Large</h3>
+				<div class="f-item-controls">
+					<span class="f-control f-icon" data-f-toggle-control="code" title="Toggle Code">
+						<svg>
+							<use xlink:href="#f-icon-code" />
+						</svg>
+					</span>
+				</div>
+			</div><div class="componentClasses" data-f-toggle="labels">
+
+</div>
+<div class="f-item-preview">
+	<sample>
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<header class="modal-header">
+				<h5 class="modal-title">Modal title</h5>
+				<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</header>
+			<div class="modal-body">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</p>
+			</div>
+			<footer class="modal-footer">
+				<button class="btn btn-primary">Primary Button</button>
+				<button class="btn btn-secondary">Secondary Button</button>
+			</footer>
+		</div>
+	</div>
+</sample>
+<!-- Button trigger modal -->
+
+<button type="button" class="btn f-ui-btn" data-toggle="modal" data-target="#exampleModal">Launch demo modal - large</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				<button type="button" class="close bg-black text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+			</div>
+			<div class="modal-body">
+				<p>
+					<sample>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.</sample>
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">Save changes</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<sample>
+	<script type="text/javascript">
+		// using "alternative" document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard ` $(document).ready(function(){ ... }) ` in production code.
+		// ` DOMContentLoaded ` is not supported in IE8 or earlier.
+		document.addEventListener("DOMContentLoaded", function(event) {
+			// Make sure the button data-target matches the ID of the modal you want to trigger.
+			// Data-Target should start with a #
+
+			// None of this javascript should be necessary outside of the `Fabricator` environment.
+			// Please follow the bootstrap instructions instead of reusing this code.
+			// https://getbootstrap.com/docs/4.0/components/modal/
+
+			$('[data-toggle="modal"]').click(function() {
+				$('body').addClass('modal-open').find('.modal').append($('<div class="modal-backdrop fade show"/>'));
+				var modal = $(this).data('target');
+				window.setTimeout(function() {
+					$(modal).addClass('show');
+				}, 100);
+
+				// Add listeners to close modal
+				$('[data-dismiss="modal"], .modal-backdrop').on('click', function() {
+					$('.modal').removeClass('show');
+					$('.modal-backdrop').remove();
+					$('body').removeClass('modal-open');
+				});
+			});
+		});
+	</script>
+</sample>
+</div>
+<div class="f-item-code f-item-hidden" data-f-toggle="code">
+	<pre><code class="language-markup">&lt;sample&gt;
+	&lt;div class&#x3D;&quot;modal-dialog modal-lg&quot; role&#x3D;&quot;document&quot;&gt;
+		&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+			&lt;header class&#x3D;&quot;modal-header&quot;&gt;
+				&lt;h5 class&#x3D;&quot;modal-title&quot;&gt;Modal title&lt;/h5&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close&quot; aria-label&#x3D;&quot;Close&quot;&gt;&lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
+			&lt;/header&gt;
+			&lt;div class&#x3D;&quot;modal-body&quot;&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;footer class&#x3D;&quot;modal-footer&quot;&gt;
+				&lt;button class&#x3D;&quot;btn btn-primary&quot;&gt;Primary Button&lt;/button&gt;
+				&lt;button class&#x3D;&quot;btn btn-secondary&quot;&gt;Secondary Button&lt;/button&gt;
+			&lt;/footer&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/sample&gt;
+&lt;!-- Button trigger modal --&gt;
+
+&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn f-ui-btn&quot; data-toggle&#x3D;&quot;modal&quot; data-target&#x3D;&quot;#exampleModal&quot;&gt;Launch demo modal - large&lt;/button&gt;
+
+&lt;!-- Modal --&gt;
+&lt;div class&#x3D;&quot;modal fade&quot; id&#x3D;&quot;exampleModal&quot; tabindex&#x3D;&quot;-1&quot; role&#x3D;&quot;dialog&quot; aria-labelledby&#x3D;&quot;exampleModalLabel&quot; aria-hidden&#x3D;&quot;true&quot;&gt;
+	&lt;div class&#x3D;&quot;modal-dialog modal-lg&quot; role&#x3D;&quot;document&quot;&gt;
+		&lt;div class&#x3D;&quot;modal-content&quot;&gt;
+			&lt;div class&#x3D;&quot;modal-header&quot;&gt;
+				&lt;h5 class&#x3D;&quot;modal-title&quot; id&#x3D;&quot;exampleModalLabel&quot;&gt;Modal title&lt;/h5&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;close bg-black text-white&quot; data-dismiss&#x3D;&quot;modal&quot; aria-label&#x3D;&quot;Close&quot;&gt;
+          &lt;span aria-hidden&#x3D;&quot;true&quot;&gt;&amp;times;&lt;/span&gt;
+        &lt;/button&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;modal-body&quot;&gt;
+				&lt;p&gt;
+					&lt;sample&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus pulvinar sagittis. Proin fermentum dapibus felis non efficitur. Nunc tincidunt libero metus, bibendum suscipit nulla euismod vitae.&lt;/sample&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class&#x3D;&quot;modal-footer&quot;&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-primary&quot;&gt;Save changes&lt;/button&gt;
+				&lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-secondary&quot; data-dismiss&#x3D;&quot;modal&quot;&gt;Close&lt;/button&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;sample&gt;
+	&lt;script type&#x3D;&quot;text/javascript&quot;&gt;
+		// using &quot;alternative&quot; document.ready listener to compensate for jQuery loading after style guide page is built.
+		// use standard &#x60; $(document).ready(function(){ ... }) &#x60; in production code.
+		// &#x60; DOMContentLoaded &#x60; is not supported in IE8 or earlier.
+		document.addEventListener(&quot;DOMContentLoaded&quot;, function(event) {
+			// Make sure the button data-target matches the ID of the modal you want to trigger.
+			// Data-Target should start with a #
+
+			// None of this javascript should be necessary outside of the &#x60;Fabricator&#x60; environment.
+			// Please follow the bootstrap instructions instead of reusing this code.
+			// https://getbootstrap.com/docs/4.0/components/modal/
+
+			$(&#x27;[data-toggle&#x3D;&quot;modal&quot;]&#x27;).click(function() {
+				$(&#x27;body&#x27;).addClass(&#x27;modal-open&#x27;).find(&#x27;.modal&#x27;).append($(&#x27;&lt;div class&#x3D;&quot;modal-backdrop fade show&quot;/&gt;&#x27;));
+				var modal &#x3D; $(this).data(&#x27;target&#x27;);
+				window.setTimeout(function() {
+					$(modal).addClass(&#x27;show&#x27;);
+				}, 100);
+
+				// Add listeners to close modal
+				$(&#x27;[data-dismiss&#x3D;&quot;modal&quot;], .modal-backdrop&#x27;).on(&#x27;click&#x27;, function() {
+					$(&#x27;.modal&#x27;).removeClass(&#x27;show&#x27;);
+					$(&#x27;.modal-backdrop&#x27;).remove();
+					$(&#x27;body&#x27;).removeClass(&#x27;modal-open&#x27;);
+				});
+			});
+		});
+	&lt;/script&gt;
+&lt;/sample&gt;</code></pre>
+</div>
+
+		</div>
 		<div class="f-item-group" id="09-modules.modal-dialog">
 			<div class="f-item-heading-group" data-f-toggle="labels">
 				<h3 class="f-item-heading">Modal Dialog</h3>
